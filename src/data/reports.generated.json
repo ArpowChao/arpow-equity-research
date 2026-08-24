@@ -132,6 +132,149 @@
     "modelNotes": "正常化 EPS 不是 Q2 單季年化；同列 FCF 與營運資金以檢查非 GAAP 盈餘品質。"
   },
   {
+    "ticker": "ARM",
+    "company": "Arm Holdings plc",
+    "asOf": "2026-08-24",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 238.57,
+      "baseFairValue": 168,
+      "fairRange": [
+        145,
+        190
+      ],
+      "marginOfSafety": [
+        134.4,
+        142.8
+      ],
+      "bear": 81,
+      "base": 168,
+      "bull": 288
+    },
+    "thesis": "Arm 的架構、CSS 與資料中心 royalty 正從行動裝置護城河擴張到 AI 基礎設施，AGI CPU 又增加直接矽產品選擇權；但現價已要求高成長、高 royalty rate 與矽產品成功同時成立，且 GAAP 利潤仍被巨額股權薪酬壓低。",
+    "metrics": [
+      {
+        "label": "Q1 FY2027 營收",
+        "value": "12.89 億美元",
+        "note": "年增 22%；再創第一季紀錄"
+      },
+      {
+        "label": "Royalty／License",
+        "value": "7.15／5.74 億美元",
+        "note": "分別年增 22%／23%；資料中心 royalty 超過翻倍"
+      },
+      {
+        "label": "GAAP／非 GAAP EPS",
+        "value": "0.25／0.45 美元",
+        "note": "Q2 非 GAAP EPS 指引 0.47±0.04"
+      },
+      {
+        "label": "GAAP／非 GAAP 營益",
+        "value": "0.91／5.31 億美元",
+        "note": "Q1 股權薪酬 3.43 億美元，是口徑差異核心"
+      },
+      {
+        "label": "OCF／調整後 FCF",
+        "value": "9.02／6.65 億美元",
+        "note": "受應收收款與稅款時點有利影響，不宜直接年化"
+      },
+      {
+        "label": "現金＋短投／稀釋股",
+        "value": "38.88 億／10.78 億股",
+        "note": "每一 ADS 代表一股普通股；SoftBank 為控制股東"
+      }
+    ],
+    "drivers": [
+      "Armv9／CSS 的 royalty rate 與晶片滲透率",
+      "Neoverse 在 AWS、Google、Microsoft、NVIDIA 與 Meta 基礎設施的部署",
+      "AGI CPU 超過 20 億美元需求 pipeline 的收入、毛利與供應轉換",
+      "ACV、license 合約時點與中國相關收入／收款",
+      "股權薪酬、稀釋股數與 SoftBank 控制股東治理"
+    ],
+    "risks": [
+      "高估值對任何成長或指引失誤極度敏感",
+      "AGI CPU 使低資本 IP 模式增加製造與供應風險",
+      "RISC-V、x86、自研 IP 與客戶議價競爭",
+      "Arm China、出口限制與地緣政治",
+      "高額股權薪酬及控制股東利益衝突"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 2.4,
+      "bearMultiple": 45,
+      "baseMultiple": 70,
+      "bullMultiple": 90
+    },
+    "chart": "/charts/arm-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Arm Q1 FY2027 shareholder letter（SEC exhibit 99.2）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1973239/000197323926000113/exhibit992fye27q130-junx26.htm"
+      },
+      {
+        "label": "Arm Q1 FY2027 interim report Form 6-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1973239/000197323926000114/arm-20260630.htm"
+      },
+      {
+        "label": "Arm FY2026 Form 20-F",
+        "url": "https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm"
+      },
+      {
+        "label": "Yahoo Finance ARM chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 15:17 EDT",
+      "marketState": "regular-market",
+      "source": "Yahoo Finance chart API（NASDAQ ADS）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "NTM 正常化 EPS 1.80 × 45 倍",
+        "value": 81,
+        "condition": "license 時點轉弱、智慧型手機停滯、AGI CPU 毛利與供應不及預期"
+      },
+      {
+        "label": "基準",
+        "assumption": "NTM 正常化 EPS 2.40 × 70 倍",
+        "value": 168,
+        "condition": "Armv9／CSS 提升 royalty rate、資料中心維持高成長且費用率受控"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "NTM 正常化 EPS 3.20 × 90 倍",
+        "value": 288,
+        "condition": "AGI CPU 超越 10 億美元機會、資料中心與 edge AI 同時放量且高倍數延續"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Business quality",
+        "title": "IP royalty 模式仍是核心，資料中心提高每顆晶片價值",
+        "body": "Q1 royalty 7.15 億美元、年增 22%，資料中心 royalty 超過翻倍；Armv9、CSS 與 Neoverse 提高每顆晶片 royalty rate。高毛利 IP 模式具強大營運槓桿，但 license 收入會受大型合約簽署時點影響而波動。"
+      },
+      {
+        "kicker": "New silicon option",
+        "title": "AGI CPU 把 Arm 從 IP 授權推向直接矽產品",
+        "body": "公司稱 FY2027～FY2028 的 AGI CPU 客戶需求已超過 20 億美元，並已取得支援原先 10 億美元機會的製造產能。這是 pipeline 與管理層前瞻聲明，不是已實現收入；直接矽產品也會帶來供應、存貨與毛利風險。"
+      },
+      {
+        "kicker": "Accounting quality",
+        "title": "98% 毛利率不等於 98% 股東經濟利潤",
+        "body": "Q1 GAAP 毛利率 97.2%，但 GAAP 營業利益只有 9,100 萬美元，非 GAAP 為 5.31 億；3.43 億美元股權薪酬是主要差異。估值不能只使用 0.45 美元非 GAAP EPS 而忽略持續稀釋。"
+      },
+      {
+        "kicker": "Valuation and control",
+        "title": "現價在基準與樂觀之間，且 SoftBank 控制提高治理折價",
+        "body": "238.57 美元乘 10.68 億期末股數，近似市值約 2,548 億美元；即使以 Q1 調整後 FCF 年化，P/FCF 仍接近百倍。每一 ADS 代表一股普通股，但 SoftBank 是控制股東，少數股東對重大決策影響有限。"
+      }
+    ],
+    "modelNotes": "正常化 EPS 位於 GAAP 與公司非 GAAP 口徑之間，並對持續股權薪酬與稀釋保留折價。"
+  },
+  {
     "ticker": "DIS",
     "company": "The Walt Disney Company",
     "asOf": "2026-08-24",
@@ -263,6 +406,145 @@
     ],
     "modelNotes": "基準使用未來十二月正常化 EPS；安全邊際區為基準價折讓 15%～20%，不是買入訊號。",
     "updatedFrom": "2026-08-20"
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Alphabet Inc.",
+    "asOf": "2026-08-24",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 348.44,
+      "baseFairValue": 356.5,
+      "fairRange": [
+        310,
+        390
+      ],
+      "marginOfSafety": [
+        285.2,
+        303.03
+      ],
+      "bear": 225,
+      "base": 356.5,
+      "bull": 518
+    },
+    "thesis": "Search、YouTube 與高速成長的 Google Cloud 讓 Alphabet 成為少數能直接用現金流資助全棧 AI 的平台；但 Q2 EPS 被 980 億美元投資評價利益嚴重扭曲，且 AI CapEx、股權融資與監管風險令現價僅接近合理而非便宜。",
+    "metrics": [
+      {
+        "label": "Q2 2026 營收",
+        "value": "1,197.96 億美元",
+        "note": "年增 24%；Google Services 945.4 億"
+      },
+      {
+        "label": "Google Cloud",
+        "value": "營收 247.68 億／營益 88.14 億",
+        "note": "營收年增 82%；AI infrastructure 與 solutions 驅動"
+      },
+      {
+        "label": "Q2 報告／核心 EPS",
+        "value": "9.11／約 2.85 美元",
+        "note": "公司揭露股權投資淨利每股貢獻 6.26 美元"
+      },
+      {
+        "label": "TTM OCF／CapEx／FCF",
+        "value": "1,856.75／1,324.02／532.73 億美元",
+        "note": "Q2 單季 FCF 為負 58.55 億，AI CapEx 正快速上升"
+      },
+      {
+        "label": "現金＋有價證券／總債務",
+        "value": "2,424.74／1,001.64 億美元",
+        "note": "簡化淨現金約 1,423 億；另須看強制可轉優先股"
+      },
+      {
+        "label": "期末普通股／Q2 稀釋股",
+        "value": "122.30／123.09 億股",
+        "note": "涵蓋所有經濟權益類別；行情以 GOOGL Class A 代表"
+      }
+    ],
+    "drivers": [
+      "Search 查詢量、AI Overviews／Gemini 的廣告變現與推理成本",
+      "Google Cloud AI infrastructure／solutions 收入、營益率與 backlog",
+      "YouTube 廣告、訂閱及 connected TV 變現",
+      "CapEx 對 OCF、折舊、能源與增量 ROIC 的回報",
+      "強制可轉優先股、ATM、股權薪酬與未來完全稀釋股數"
+    ],
+    "risks": [
+      "生成式 AI 改變搜尋入口與廣告經濟",
+      "AI 基建投資速度快於可量化收入與 FCF",
+      "美國／歐洲反壟斷、隱私與內容監管",
+      "股權投資評價使 GAAP EPS 高度波動",
+      "大量融資與股權薪酬造成每股稀釋"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 15.5,
+      "bearMultiple": 18,
+      "baseMultiple": 23,
+      "bullMultiple": 28
+    },
+    "chart": "/charts/googl-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Alphabet Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm"
+      },
+      {
+        "label": "Alphabet Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+      },
+      {
+        "label": "Yahoo Finance GOOGL chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/GOOGL?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 15:17 EDT",
+      "marketState": "regular-market",
+      "source": "Yahoo Finance chart API（GOOGL Class A）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "NTM 核心 EPS 12.50 × 18 倍",
+        "value": 225,
+        "condition": "AI 回答侵蝕搜尋變現、Cloud 成長降溫、CapEx 報酬與監管結果惡化"
+      },
+      {
+        "label": "基準",
+        "assumption": "NTM 核心 EPS 15.50 × 23 倍",
+        "value": 356.5,
+        "condition": "Search 維持雙位數、Cloud 高成長且 AI 基建開始轉為營益與 OCF"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "NTM 核心 EPS 18.50 × 28 倍",
+        "value": 518,
+        "condition": "Gemini 提高搜尋使用與廣告效率，Cloud／TPU／訂閱同步超預期"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Core earnings",
+        "title": "Q2 的 9.11 美元 EPS 不能拿來算低本益比",
+        "body": "Q2 其他收益包含約 980 億美元股權投資淨利；公司明確揭露其稅後每股貢獻 6.26 美元。扣除後核心 EPS 約 2.85 美元，因此估值使用 12.5／15.5／18.5 美元的未來十二月核心 EPS，而非把報告 EPS 年化。"
+      },
+      {
+        "kicker": "AI monetization",
+        "title": "搜尋尚未被 AI 破壞，Cloud 已進入高獲利擴張",
+        "body": "Google Search & other 年增 17%，Cloud 營收年增 82%至 247.68 億美元、營業利益 88.14 億。Gemini Enterprise 與 AI infrastructure 已產生可量化收入，但仍需驗證 AI 回答的廣告密度、推理成本及長期搜尋份額。"
+      },
+      {
+        "kicker": "Capital allocation",
+        "title": "AI CapEx 已使 FCF 與會計盈餘明顯脫鉤",
+        "body": "TTM OCF 1,856.75 億美元很強，但 CapEx 高達 1,324.02 億，使 FCF 只剩 532.73 億；Q2 單季 FCF甚至為負。公司另完成 496 億美元普通股與強制可轉優先股融資、發行 203 億美元債務，尚有 400 億美元 ATM 額度。"
+      },
+      {
+        "kicker": "Share classes",
+        "title": "GOOGL 是行情代表，估值涵蓋 Alphabet 全部股權",
+        "body": "GOOGL 為 Class A、每股一票；GOOG 為無一般投票權的 Class C，Class B 具有較高投票權。三類普通股經濟權益大致相同，但總市值與每股盈餘必須使用全部類別股數，不能只拿 GOOGL 流通股。"
+      }
+    ],
+    "modelNotes": "核心 EPS 排除公司明確揭露的股權投資評價每股影響；安全邊際區為基準價折讓 15%～20%。"
   },
   {
     "ticker": "INTC",
