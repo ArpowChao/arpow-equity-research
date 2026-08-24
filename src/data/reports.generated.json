@@ -1,45 +1,10 @@
 [
   {
-    "thesis": "EPYC 與 Instinct 推動資料中心高速成長，資產負債表與 FCF 品質優於重資本晶圓廠；但接近 4.7 百美元的股價已要求 AI 銷售、毛利與生態系持續高速兌現。",
     "ticker": "AMD",
-    "priceMeta": {
-      "asOf": "2026-08-24 07:38 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
-    },
+    "company": "Advanced Micro Devices, Inc.",
+    "asOf": "2026-08-24",
     "status": "current",
-    "analysis": [
-      {
-        "kicker": "Value creation",
-        "title": "無晶圓廠模式讓高成長更容易轉成現金",
-        "body": "Q2 Data Center 營收 67 億美元、年增 107%；H1 簡化 FCF 約 41.24 億美元。相較自行建廠，AMD 把製造資本密集度外包，但仍承擔先進封裝、供應配置與客戶集中風險。"
-      },
-      {
-        "kicker": "Quality of growth",
-        "title": "應收與存貨上升需要與營收一起檢查",
-        "body": "截至 Q2，應收 72.81 億、存貨 84.68 億美元，均高於 2025 年底。這與高速擴張一致，但若 OCF 開始落後收入，就不能只用非 GAAP EPS 為高倍數辯護。"
-      },
-      {
-        "kicker": "Expectations",
-        "title": "現價接近基準合理價，容錯率有限",
-        "body": "基準 36 倍正常化 EPS 已承認資料中心成長與較長利潤持續期；若把樂觀 42 倍當基準，等於忽略 NVIDIA、自研 ASIC、出口限制與軟體生態系競爭。"
-      }
-    ],
-    "drivers": [
-      "Instinct 出貨、供應與軟體生態系採用",
-      "EPYC 伺服器 CPU 市占與平台週期",
-      "Data Center 毛利率與 FCF 轉換",
-      "Client／Gaming／Embedded 是否形成第二成長腿"
-    ],
-    "valuation": {
-      "type": "forward-pe",
-      "earnings": 12.5,
-      "bearMultiple": 28,
-      "baseMultiple": 36,
-      "bullMultiple": 42
-    },
     "currency": "USD",
-    "chart": "/charts/amd-analysis-2026-08-24.png",
     "snapshot": {
       "price": 466.61,
       "baseFairValue": 450,
@@ -55,6 +20,7 @@
       "base": 450,
       "bull": 672
     },
+    "thesis": "EPYC 與 Instinct 推動資料中心高速成長，資產負債表與 FCF 品質優於重資本晶圓廠；但接近 4.7 百美元的股價已要求 AI 銷售、毛利與生態系持續高速兌現。",
     "metrics": [
       {
         "label": "Q2 2026 營收",
@@ -87,8 +53,45 @@
         "note": "較 2025 年底分別上升 5.48／9.66 億"
       }
     ],
-    "modelNotes": "正常化 EPS 不是 Q2 單季年化；同列 FCF 與營運資金以檢查非 GAAP 盈餘品質。",
-    "company": "Advanced Micro Devices, Inc.",
+    "drivers": [
+      "Instinct 出貨、供應與軟體生態系採用",
+      "EPYC 伺服器 CPU 市占與平台週期",
+      "Data Center 毛利率與 FCF 轉換",
+      "Client／Gaming／Embedded 是否形成第二成長腿"
+    ],
+    "risks": [
+      "AI GPU 競爭與大型客戶自研 ASIC",
+      "高估值對成長或毛利失誤敏感",
+      "出口限制、先進封裝與晶圓供應",
+      "收購調整、股權薪酬、應收與存貨累積"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 12.5,
+      "bearMultiple": 28,
+      "baseMultiple": 36,
+      "bullMultiple": 42
+    },
+    "chart": "/charts/amd-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "AMD Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm"
+      },
+      {
+        "label": "AMD Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
+      },
+      {
+        "label": "Yahoo Finance AMD chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 07:38 EDT",
+      "marketState": "pre-market",
+      "source": "Yahoo Finance chart API"
+    },
     "scenarios": [
       {
         "label": "悲觀",
@@ -109,70 +112,31 @@
         "condition": "Instinct 平台、生態系與 EPYC 市占超預期，毛利率持續擴張"
       }
     ],
-    "sources": [
-      {
-        "label": "AMD Q2 2026 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm"
-      },
-      {
-        "label": "AMD Q2 2026 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
-      },
-      {
-        "label": "Yahoo Finance AMD chart snapshot",
-        "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d"
-      }
-    ],
-    "risks": [
-      "AI GPU 競爭與大型客戶自研 ASIC",
-      "高估值對成長或毛利失誤敏感",
-      "出口限制、先進封裝與晶圓供應",
-      "收購調整、股權薪酬、應收與存貨累積"
-    ],
-    "asOf": "2026-08-24"
-  },
-  {
-    "thesis": "串流與 Experiences 已形成獲利雙引擎，回購支持每股價值；但 Sports 權利成本、約 409 億美元淨負債與內容週期，使估值不宜只看成長。",
-    "ticker": "DIS",
-    "priceMeta": {
-      "asOf": "2026-08-24 07:35 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
-    },
-    "updatedFrom": "2026-08-20",
-    "status": "current",
     "analysis": [
       {
         "kicker": "Value creation",
-        "title": "品牌 IP 橫跨內容、串流與實體體驗",
-        "body": "Disney 的優勢不只是一部電影，而是同一 IP 能在院線、串流、授權、樂園與郵輪反覆變現。Q3 Experiences 營收成長 10%，九個月營業利益率約 30%；公司稱新專案生命週期報酬目標為雙位數。"
+        "title": "無晶圓廠模式讓高成長更容易轉成現金",
+        "body": "Q2 Data Center 營收 67 億美元、年增 107%；H1 簡化 FCF 約 41.24 億美元。相較自行建廠，AMD 把製造資本密集度外包，但仍承擔先進封裝、供應配置與客戶集中風險。"
       },
       {
-        "kicker": "Normalization",
-        "title": "GAAP 與調整後 EPS 必須分開",
-        "body": "Q3 GAAP EPS 1.51 美元、調整後 EPS 2.06 美元；估值採未來十二月正常化 EPS，而不是直接年化單季。9M FCF 約 57.35 億美元，仍需觀察 Q4 季節性與 Experiences 擴建支出。"
+        "kicker": "Quality of growth",
+        "title": "應收與存貨上升需要與營收一起檢查",
+        "body": "截至 Q2，應收 72.81 億、存貨 84.68 億美元，均高於 2025 年底。這與高速擴張一致，但若 OCF 開始落後收入，就不能只用非 GAAP EPS 為高倍數辯護。"
       },
       {
         "kicker": "Expectations",
-        "title": "現價主要定價可執行、但非完美的基準情境",
-        "body": "盤前價格低於基準合理價，但 2027 雙位數 EPS 成長仍是管理層前瞻聲明。Sports Q3 營業利益年減 17%，內容權利與線性電視衰退仍是主要折價來源。"
+        "title": "現價接近基準合理價，容錯率有限",
+        "body": "基準 36 倍正常化 EPS 已承認資料中心成長與較長利潤持續期；若把樂觀 42 倍當基準，等於忽略 NVIDIA、自研 ASIC、出口限制與軟體生態系競爭。"
       }
     ],
-    "drivers": [
-      "FY2027 調整後 EPS 雙位數成長能否兌現",
-      "SVOD 利潤率、訂戶品質與 ARPU",
-      "Experiences 全球賓客、價格與新增資本回報",
-      "至少 90 億美元回購是否實際降低完全稀釋股數"
-    ],
-    "valuation": {
-      "type": "forward-pe",
-      "earnings": 7.6,
-      "bearMultiple": 15,
-      "baseMultiple": 18,
-      "bullMultiple": 21
-    },
+    "modelNotes": "正常化 EPS 不是 Q2 單季年化；同列 FCF 與營運資金以檢查非 GAAP 盈餘品質。"
+  },
+  {
+    "ticker": "DIS",
+    "company": "The Walt Disney Company",
+    "asOf": "2026-08-24",
+    "status": "current",
     "currency": "USD",
-    "chart": "/charts/dis-analysis-2026-08-24.png",
     "snapshot": {
       "price": 107.96,
       "baseFairValue": 136.8,
@@ -188,6 +152,7 @@
       "base": 136.8,
       "bull": 172.2
     },
+    "thesis": "串流與 Experiences 已形成獲利雙引擎，回購支持每股價值；但 Sports 權利成本、約 409 億美元淨負債與內容週期，使估值不宜只看成長。",
     "metrics": [
       {
         "label": "Q3 FY2026 營收",
@@ -220,8 +185,45 @@
         "note": "公司 2026-08-05 更新"
       }
     ],
-    "modelNotes": "基準使用未來十二月正常化 EPS；安全邊際區為基準價折讓 15%～20%，不是買入訊號。",
-    "company": "The Walt Disney Company",
+    "drivers": [
+      "FY2027 調整後 EPS 雙位數成長能否兌現",
+      "SVOD 利潤率、訂戶品質與 ARPU",
+      "Experiences 全球賓客、價格與新增資本回報",
+      "至少 90 億美元回購是否實際降低完全稀釋股數"
+    ],
+    "risks": [
+      "Sports 權利成本與線性網路衰退",
+      "樂園／郵輪重資本支出遇上景氣下行",
+      "約 409 億美元淨負債限制資本配置",
+      "電影內容、會計調整與 53 週效應造成基期波動"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 7.6,
+      "bearMultiple": 15,
+      "baseMultiple": 18,
+      "bullMultiple": 21
+    },
+    "chart": "/charts/dis-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Disney FY2026 Q3 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000056/fy2026_q3xerxex991.htm"
+      },
+      {
+        "label": "Disney FY2026 Q3 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000057/dis-20260627.htm"
+      },
+      {
+        "label": "Yahoo Finance DIS chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/DIS?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 07:35 EDT",
+      "marketState": "pre-market",
+      "source": "Yahoo Finance chart API"
+    },
     "scenarios": [
       {
         "label": "悲觀",
@@ -242,69 +244,32 @@
         "condition": "SVOD 利潤率、全球賓客與 ESPN DTC 同步超預期"
       }
     ],
-    "sources": [
-      {
-        "label": "Disney FY2026 Q3 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000056/fy2026_q3xerxex991.htm"
-      },
-      {
-        "label": "Disney FY2026 Q3 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000057/dis-20260627.htm"
-      },
-      {
-        "label": "Yahoo Finance DIS chart snapshot",
-        "url": "https://query1.finance.yahoo.com/v8/finance/chart/DIS?range=1y&interval=1d"
-      }
-    ],
-    "risks": [
-      "Sports 權利成本與線性網路衰退",
-      "樂園／郵輪重資本支出遇上景氣下行",
-      "約 409 億美元淨負債限制資本配置",
-      "電影內容、會計調整與 53 週效應造成基期波動"
-    ],
-    "asOf": "2026-08-24"
-  },
-  {
-    "thesis": "產品需求與 18A 執行正在改善，但 Foundry 仍重資本、債務高，且政府 escrow shares 的市值重估使 GAAP EPS 嚴重失真；現價已要求復甦大致成功。",
-    "ticker": "INTC",
-    "priceMeta": {
-      "asOf": "2026-08-24 07:38 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
-    },
-    "status": "current",
     "analysis": [
       {
-        "kicker": "Accounting bridge",
-        "title": "Q2 巨額 GAAP 淨損主要不是核心營運崩潰",
-        "body": "Q2 營業利益為 17.96 億美元，但 interest and other 淨額約負 125.76 億；公司非 GAAP 對帳列出約 136.19 億美元政府 escrow shares 市值損失。核心評估應保留 GAAP，再另看非 GAAP EPS 0.42 與現金流。"
+        "kicker": "Value creation",
+        "title": "品牌 IP 橫跨內容、串流與實體體驗",
+        "body": "Disney 的優勢不只是一部電影，而是同一 IP 能在院線、串流、授權、樂園與郵輪反覆變現。Q3 Experiences 營收成長 10%，九個月營業利益率約 30%；公司稱新專案生命週期報酬目標為雙位數。"
       },
       {
-        "kicker": "Capital intensity",
-        "title": "18A 執行改善，但資本報酬仍是關鍵",
-        "body": "H1 OCF 81.02 億、CapEx 61.92 億，簡化 FCF 19.10 億。管理層同時要增加設備、無塵室與基板投資；若外部 Foundry 收入不夠快，增量 ROIC 仍可能低於資金成本。"
+        "kicker": "Normalization",
+        "title": "GAAP 與調整後 EPS 必須分開",
+        "body": "Q3 GAAP EPS 1.51 美元、調整後 EPS 2.06 美元；估值採未來十二月正常化 EPS，而不是直接年化單季。9M FCF 約 57.35 億美元，仍需觀察 Q4 季節性與 Experiences 擴建支出。"
       },
       {
-        "kicker": "Valuation",
-        "title": "基準價已假設多年復甦，而不是拿 Q3 EPS 年化",
-        "body": "Q3 非 GAAP EPS 指引 0.38 不適合直接年化成長期能力。模型改用復甦後正常化 EPS 2.5／3.8／5.0，並因執行與資本強度給 16～25 倍。"
+        "kicker": "Expectations",
+        "title": "現價主要定價可執行、但非完美的基準情境",
+        "body": "盤前價格低於基準合理價，但 2027 雙位數 EPS 成長仍是管理層前瞻聲明。Sports Q3 營業利益年減 17%，內容權利與線性電視衰退仍是主要折價來源。"
       }
     ],
-    "drivers": [
-      "Intel 18A／18A-P 良率、cycle time 與外部客戶",
-      "CCPG、DCAI 與 ASIC 收入／毛利",
-      "Foundry 內外部收入、利用率與營業虧損",
-      "CapEx、政府資金、債務與每股稀釋"
-    ],
-    "valuation": {
-      "type": "forward-pe",
-      "earnings": 3.8,
-      "bearMultiple": 16,
-      "baseMultiple": 22,
-      "bullMultiple": 25
-    },
+    "modelNotes": "基準使用未來十二月正常化 EPS；安全邊際區為基準價折讓 15%～20%，不是買入訊號。",
+    "updatedFrom": "2026-08-20"
+  },
+  {
+    "ticker": "INTC",
+    "company": "Intel Corporation",
+    "asOf": "2026-08-24",
+    "status": "current",
     "currency": "USD",
-    "chart": "/charts/intc-analysis-2026-08-24.png",
     "snapshot": {
       "price": 88.8629,
       "baseFairValue": 83.6,
@@ -320,6 +285,7 @@
       "base": 83.6,
       "bull": 125
     },
+    "thesis": "產品需求與 18A 執行正在改善，但 Foundry 仍重資本、債務高，且政府 escrow shares 的市值重估使 GAAP EPS 嚴重失真；現價已要求復甦大致成功。",
     "metrics": [
       {
         "label": "Q2 2026 營收",
@@ -352,8 +318,45 @@
         "note": "政府 escrow shares 與股權工具需續追蹤"
       }
     ],
-    "modelNotes": "使用復甦正常化 EPS，不把 Q2 的 escrow shares 市值損失視為核心，也不把 Q3 單季指引直接年化。",
-    "company": "Intel Corporation",
+    "drivers": [
+      "Intel 18A／18A-P 良率、cycle time 與外部客戶",
+      "CCPG、DCAI 與 ASIC 收入／毛利",
+      "Foundry 內外部收入、利用率與營業虧損",
+      "CapEx、政府資金、債務與每股稀釋"
+    ],
+    "risks": [
+      "Foundry 巨額投入回報低於 WACC",
+      "政府 escrow shares 市值與稀釋造成會計／供給波動",
+      "先進製程與 AI 加速器競爭落後",
+      "債務、庫存與再投資需求壓縮 FCF"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 3.8,
+      "bearMultiple": 16,
+      "baseMultiple": 22,
+      "bullMultiple": 25
+    },
+    "chart": "/charts/intc-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Intel Q2 2026 earnings release（SEC exhibit）",
+        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm"
+      },
+      {
+        "label": "Intel Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm"
+      },
+      {
+        "label": "Yahoo Finance INTC chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 07:38 EDT",
+      "marketState": "pre-market",
+      "source": "Yahoo Finance chart API"
+    },
     "scenarios": [
       {
         "label": "悲觀",
@@ -374,49 +377,31 @@
         "condition": "DCAI、ASIC、先進封裝與外部 Foundry 共同放量"
       }
     ],
-    "sources": [
+    "analysis": [
       {
-        "label": "Intel Q2 2026 earnings release（SEC exhibit）",
-        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm"
+        "kicker": "Accounting bridge",
+        "title": "Q2 巨額 GAAP 淨損主要不是核心營運崩潰",
+        "body": "Q2 營業利益為 17.96 億美元，但 interest and other 淨額約負 125.76 億；公司非 GAAP 對帳列出約 136.19 億美元政府 escrow shares 市值損失。核心評估應保留 GAAP，再另看非 GAAP EPS 0.42 與現金流。"
       },
       {
-        "label": "Intel Q2 2026 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm"
+        "kicker": "Capital intensity",
+        "title": "18A 執行改善，但資本報酬仍是關鍵",
+        "body": "H1 OCF 81.02 億、CapEx 61.92 億，簡化 FCF 19.10 億。管理層同時要增加設備、無塵室與基板投資；若外部 Foundry 收入不夠快，增量 ROIC 仍可能低於資金成本。"
       },
       {
-        "label": "Yahoo Finance INTC chart snapshot",
-        "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1y&interval=1d"
+        "kicker": "Valuation",
+        "title": "基準價已假設多年復甦，而不是拿 Q3 EPS 年化",
+        "body": "Q3 非 GAAP EPS 指引 0.38 不適合直接年化成長期能力。模型改用復甦後正常化 EPS 2.5／3.8／5.0，並因執行與資本強度給 16～25 倍。"
       }
     ],
-    "risks": [
-      "Foundry 巨額投入回報低於 WACC",
-      "政府 escrow shares 市值與稀釋造成會計／供給波動",
-      "先進製程與 AI 加速器競爭落後",
-      "債務、庫存與再投資需求壓縮 FCF"
-    ],
-    "asOf": "2026-08-24"
+    "modelNotes": "使用復甦正常化 EPS，不把 Q2 的 escrow shares 市值損失視為核心，也不把 Q3 單季指引直接年化。"
   },
   {
-    "thesis": "大量現金提供下檔緩衝，但商業化、現金消耗、治理與完全稀釋風險使它更接近高波動選擇權。",
     "ticker": "LAES",
+    "company": "SEALSQ Corp",
+    "asOf": "2026-08-20",
     "status": "archived",
-    "drivers": [
-      "Bookings → RPO → Revenue 的轉換",
-      "量子安全產品的實際商業部署",
-      "營運現金消耗與現金 runway",
-      "新增股本與認股權證稀釋"
-    ],
-    "valuation": {
-      "type": "ev-sales-diluted",
-      "forwardRevenue": 38,
-      "bearMultiple": 5,
-      "baseMultiple": 9.31384,
-      "bullMultiple": 14,
-      "netCash": 485,
-      "dilutedShares": 376.2
-    },
     "currency": "USD",
-    "chart": "/charts/laes-analysis-2026-08-20.png",
     "snapshot": {
       "price": 2.5,
       "baseFairValue": 2.23,
@@ -432,6 +417,7 @@
       "base": 2.23,
       "bull": 3.54
     },
+    "thesis": "大量現金提供下檔緩衝，但商業化、現金消耗、治理與完全稀釋風險使它更接近高波動選擇權。",
     "metrics": [
       {
         "label": "FY2025 營收",
@@ -454,12 +440,11 @@
         "note": "需納入完全稀釋"
       }
     ],
-    "company": "SEALSQ Corp",
-    "sources": [
-      {
-        "label": "SEALSQ SEC filings",
-        "url": "https://www.sec.gov/edgar/search/#/q=LAES"
-      }
+    "drivers": [
+      "Bookings → RPO → Revenue 的轉換",
+      "量子安全產品的實際商業部署",
+      "營運現金消耗與現金 runway",
+      "新增股本與認股權證稀釋"
     ],
     "risks": [
       "營收基礎小且仍虧損",
@@ -467,49 +452,179 @@
       "認股權證與關聯交易複雜",
       "遠期技術故事尚未完全轉為現金流"
     ],
-    "asOf": "2026-08-20"
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 38,
+      "bearMultiple": 5,
+      "baseMultiple": 9.31384,
+      "bullMultiple": 14,
+      "netCash": 485,
+      "dilutedShares": 376.2
+    },
+    "chart": "/charts/laes-analysis-2026-08-20.png",
+    "sources": [
+      {
+        "label": "SEALSQ SEC filings",
+        "url": "https://www.sec.gov/edgar/search/#/q=LAES"
+      }
+    ]
   },
   {
-    "thesis": "HBM 與 AI 記憶體把本輪高點推得遠高於歷史週期，但 86% 毛利指引、應收暴增與創紀錄 CapEx 都警告不能用峰值 EPS 永久年化。",
-    "ticker": "MU",
-    "priceMeta": {
-      "asOf": "2026-08-24 07:38 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
-    },
+    "ticker": "MP",
+    "company": "MP Materials Corp.",
+    "asOf": "2026-08-24",
     "status": "current",
-    "analysis": [
+    "currency": "USD",
+    "snapshot": {
+      "price": 59.32,
+      "baseFairValue": 28.15486,
+      "fairRange": [
+        24,
+        34
+      ],
+      "marginOfSafety": [
+        22.52,
+        23.93
+      ],
+      "bear": 8.66515,
+      "base": 28.15486,
+      "bull": 58.88364
+    },
+    "thesis": "MP 已從單一礦山升級為受美國政府價格保護、承購與客戶預付款支持的垂直整合稀土磁材平台；但現價已接近本模型對 2029 年產能、獲利與稀釋皆順利兌現的樂觀情境。",
+    "metrics": [
       {
-        "kicker": "Cycle normalization",
-        "title": "31 美元季度 EPS 指引不是 124 美元正常化 EPS",
-        "body": "FQ4 非 GAAP EPS 指引中點 31 美元、毛利率約 86%，若機械年化會把供需極端緊張永久化。模型將價格、出貨與 HBM 組合回到中週期，使用 38／60／85 美元 EPS。"
+        "label": "Q2 營收＋PPA Income",
+        "value": "1.261 億美元",
+        "note": "營收 1.085 億＋價格保護收入 1,758 萬"
       },
       {
-        "kicker": "Structural layer",
-        "title": "HBM 延長利潤持續期，但不能消滅供給反應",
-        "body": "HBM4 已向主要客戶大量出貨，HBM4E 預計 2027 年量產；多年 Strategic Customer Agreements 提高可預測性。仍需追蹤 Samsung、SK Hynix、Micron 的有效產能、先進封裝與客戶 ASIC/GPU 出貨。"
+        "label": "Q2 調整後 EBITDA",
+        "value": "2,850 萬美元",
+        "note": "GAAP 淨損 2,030 萬；調整後淨損 210 萬"
       },
       {
-        "kicker": "Cash quality",
-        "title": "現金流很強，但應收與 CapEx 同時跳升",
-        "body": "9M OCF 457.02 億、CapEx 196.02 億；應收升至 268.94 億美元。高景氣可以解釋增幅，卻也表示未來估值要驗證收款、存貨、預付款與新增產能，而非只看 EPS。"
+        "label": "NdPr 生產／銷售",
+        "value": "840／1,006 公噸",
+        "note": "生產年增 41%；銷售年增 127%"
+      },
+      {
+        "label": "H1 OCF／CapEx／FCF",
+        "value": "0.049／3.077／−3.028 億美元",
+        "note": "10X、Independence 與 HREE 建設使自由現金流大幅為負"
+      },
+      {
+        "label": "現金＋短投／長債",
+        "value": "14.526／9.346 億美元",
+        "note": "簡化淨現金約 5.18 億；另有優先股與可轉債稀釋"
+      },
+      {
+        "label": "10X 計畫",
+        "value": "7,000 公噸／年",
+        "note": "預計 2028 年開始 commissioning；投資逾 12.5 億美元"
       }
     ],
     "drivers": [
-      "HBM4／HBM4E 出貨、認證、價格與供應協議",
-      "Cloud Memory／Core Data Center 的營收與毛利",
-      "DRAM／NAND ASP、bit shipment 與同業產能",
-      "應收、OCF、CapEx、政府補助與實際回購"
+      "NdPr 每公斤 110 美元價格保護收入與實際市場價差",
+      "Independence 3,000 公噸磁材產能的認證、良率與客戶交付",
+      "10X 7,000 公噸產能的建設成本、2028 commissioning 與 1.40 億美元保證 EBITDA",
+      "GM／Apple 預付款轉收入、國防 HREE 合約與 Project Swarm 實際訂單",
+      "CapEx、政府補助、淨負債、可轉債與完全稀釋股數"
+    ],
+    "risks": [
+      "磁材量產良率、客戶認證與建廠時程不及預期",
+      "10X 成本超支或需要更多債務／股權融資",
+      "政府政策、合約條款或承購安排變動",
+      "中國稀土供給與價格策略仍可影響非保護部分",
+      "政府權證、可轉換優先股、2030 可轉債與股權薪酬稀釋"
     ],
     "valuation": {
-      "type": "cycle-pe",
-      "earnings": 60,
+      "type": "future-ev-ebitda",
+      "forwardEbitda": 650,
       "bearMultiple": 10,
       "baseMultiple": 14,
-      "bullMultiple": 16
+      "bullMultiple": 18,
+      "netCash": -200,
+      "discountFactor": 1.404928,
+      "dilutedShares": 225
     },
+    "chart": "/charts/mp-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "MP Materials Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000047/mpmcq22026er.htm"
+      },
+      {
+        "label": "MP Materials Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+      },
+      {
+        "label": "MP Materials DoW agreements Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1801368/000119312525157310/d43796d8k.htm"
+      },
+      {
+        "label": "MP Materials Apple agreement Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1801368/000119312525159093/d904727d8k.htm"
+      },
+      {
+        "label": "Yahoo Finance MP chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/MP?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 08:02 EDT",
+      "marketState": "pre-market",
+      "source": "Yahoo Finance chart API"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2029E EBITDA 3.5 億 × 10 倍 − 7 億淨負債；12% 折現三年；2.30 億股",
+        "value": 8.66515,
+        "condition": "10X／Independence 延誤、磁材良率不足、成本超支且需額外股權融資"
+      },
+      {
+        "label": "基準",
+        "assumption": "2029E EBITDA 6.5 億 × 14 倍 − 2 億淨負債；12% 折現三年；2.25 億股",
+        "value": 28.15486,
+        "condition": "NdPr 價格保護有效、Independence 放量、10X 按期爬坡並控制融資稀釋"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2029E EBITDA 10 億 × 18 倍＋2 億淨現金；12% 折現三年；2.20 億股",
+        "value": 58.88364,
+        "condition": "10,000 公噸磁材產能快速達標，政府／GM／Apple／國防客戶需求與高毛利同步兌現"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Value creation",
+        "title": "護城河已從礦體延伸至政策支持與磁材製造",
+        "body": "Mountain Pass 提供稀缺美國礦源，NdPr 分離、Independence 磁材與規劃中的 10X 將價值鏈向下游延伸。美國政府對 Mountain Pass 產品提供每公斤 110 美元等值的 NdPr 價格保護，並對 10X 保證至少 1.40 億美元 EBITDA、承購全部磁材，明顯降低價格與需求尾端風險。"
+      },
+      {
+        "kicker": "Capital and dilution",
+        "title": "需求風險下降，施工、融資與每股稀釋成為核心",
+        "body": "H1 營運現金流僅 494 萬美元、CapEx 3.077 億美元；10X 預計投入逾 12.5 億美元。除 1.78 億基本流通股外，政府認股權證可增發 1,120 萬股、可轉換優先股可轉 1,332 萬股，7.475 億美元 2030 可轉債亦已價內，因此估值使用 2.20～2.30 億未來稀釋股數。"
+      },
+      {
+        "kicker": "Commercial evidence",
+        "title": "Magnetics 已有收入，但完整量產仍在認證與爬坡",
+        "body": "Q2 Magnetics 營收 1,650 萬美元、調整後 EBITDA 750 萬美元；Apple 已支付 7,200 萬美元預付款但尚未認列收入，預計不早於 2027 年下半年履約。10X 預計 2028 年才開始 commissioning，現價主要反映的是未來產能而非目前現金流。"
+      },
+      {
+        "kicker": "Market expectations",
+        "title": "盤前價格幾乎等於樂觀情境現值",
+        "body": "59.32 美元以 1.78 億基本股估算市值約 105.6 億美元；若加入政府權證、優先股與 2030 可轉債的潛在股數，名目完全稀釋市值約 140.6 億美元。市場已要求產能、客戶、利潤率、融資與時程多項假設同時成立。"
+      }
+    ],
+    "modelNotes": "模型將 2029 年 EBITDA 折回 2026 年；基準遠期淨現金為負 2 億美元，代表建設後淨負債。折現率、產能爬坡與稀釋任一變化都會顯著影響結果。"
+  },
+  {
+    "ticker": "MU",
+    "company": "Micron Technology, Inc.",
+    "asOf": "2026-08-24",
+    "status": "current",
     "currency": "USD",
-    "chart": "/charts/mu-analysis-2026-08-24.png",
     "snapshot": {
       "price": 941.6,
       "baseFairValue": 840,
@@ -525,6 +640,7 @@
       "base": 840,
       "bull": 1360
     },
+    "thesis": "HBM 與 AI 記憶體把本輪高點推得遠高於歷史週期，但 86% 毛利指引、應收暴增與創紀錄 CapEx 都警告不能用峰值 EPS 永久年化。",
     "metrics": [
       {
         "label": "FQ3 2026 營收",
@@ -557,8 +673,45 @@
         "note": "估值採正常化每股口徑"
       }
     ],
-    "modelNotes": "週期正常化 EPS 明顯低於 FQ4 峰值指引年化；合理倍數同時反映 HBM 結構成長與供給週期。",
-    "company": "Micron Technology, Inc.",
+    "drivers": [
+      "HBM4／HBM4E 出貨、認證、價格與供應協議",
+      "Cloud Memory／Core Data Center 的營收與毛利",
+      "DRAM／NAND ASP、bit shipment 與同業產能",
+      "應收、OCF、CapEx、政府補助與實際回購"
+    ],
+    "risks": [
+      "峰值毛利與 EPS 被錯當長期常態",
+      "新增產能引發 DRAM／NAND 價格反轉",
+      "客戶集中、長約重談與 AI CapEx 放緩",
+      "應收快速增加及資本支出週期延長"
+    ],
+    "valuation": {
+      "type": "cycle-pe",
+      "earnings": 60,
+      "bearMultiple": 10,
+      "baseMultiple": 14,
+      "bullMultiple": 16
+    },
+    "chart": "/charts/mu-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Micron FQ3 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/a2026q3ex991-pressrelease.htm"
+      },
+      {
+        "label": "Micron FQ3 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm"
+      },
+      {
+        "label": "Yahoo Finance MU chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 07:38 EDT",
+      "marketState": "pre-market",
+      "source": "Yahoo Finance chart API"
+    },
     "scenarios": [
       {
         "label": "悲觀",
@@ -579,71 +732,31 @@
         "condition": "HBM4／4E、資料中心 DRAM／SSD 長期供不應求且 CapEx 報酬維持"
       }
     ],
-    "sources": [
-      {
-        "label": "Micron FQ3 2026 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/a2026q3ex991-pressrelease.htm"
-      },
-      {
-        "label": "Micron FQ3 2026 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm"
-      },
-      {
-        "label": "Yahoo Finance MU chart snapshot",
-        "url": "https://query1.finance.yahoo.com/v8/finance/chart/MU?range=1y&interval=1d"
-      }
-    ],
-    "risks": [
-      "峰值毛利與 EPS 被錯當長期常態",
-      "新增產能引發 DRAM／NAND 價格反轉",
-      "客戶集中、長約重談與 AI CapEx 放緩",
-      "應收快速增加及資本支出週期延長"
-    ],
-    "asOf": "2026-08-24"
-  },
-  {
-    "thesis": "RPO 與商業客戶證據改善，但約 74 億美元基本市值仍遠超目前營收與現金；它是商業化選擇權，不是可以用每股現金保底的成熟企業。",
-    "ticker": "QBTS",
-    "priceMeta": {
-      "asOf": "2026-08-24 07:38 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
-    },
-    "status": "current",
     "analysis": [
       {
-        "kicker": "Commercial chain",
-        "title": "Bookings → RPO → Revenue 的中段開始變強",
-        "body": "H1 bookings 3,550 萬美元包含一筆 2,000 萬美元系統銷售；期末 RPO 4,070 萬美元，其中 57% 預計十二個月內認列。這是進展，但 Q2 營收仍只有 307.6 萬美元，因此不能把 bookings 或 RPO 直接當收入。"
+        "kicker": "Cycle normalization",
+        "title": "31 美元季度 EPS 指引不是 124 美元正常化 EPS",
+        "body": "FQ4 非 GAAP EPS 指引中點 31 美元、毛利率約 86%，若機械年化會把供需極端緊張永久化。模型將價格、出貨與 HBM 組合回到中週期，使用 38／60／85 美元 EPS。"
       },
       {
-        "kicker": "Cash and dilution",
-        "title": "現金來自融資與收購配置，不是營運護城河",
-        "body": "現金及有價證券為 5.462 億美元，但 H1 OCF 為負 7,346 萬美元，且 Quantum Circuits 收購已消耗大量資金。基本股數 3.72 億；基準估值用 4.10 億未來稀釋股數，避免只用加權平均股數低估稀釋。"
+        "kicker": "Structural layer",
+        "title": "HBM 延長利潤持續期，但不能消滅供給反應",
+        "body": "HBM4 已向主要客戶大量出貨，HBM4E 預計 2027 年量產；多年 Strategic Customer Agreements 提高可預測性。仍需追蹤 Samsung、SK Hynix、Micron 的有效產能、先進封裝與客戶 ASIC/GPU 出貨。"
       },
       {
-        "kicker": "Market expectations",
-        "title": "現價已超過本模型的樂觀商業化情境",
-        "body": "約 19.98 美元盤前價對應的市值，要求遠高於目前 RPO 的收入規模、長期高倍數與有限稀釋同時成立。即使技術成功，股東回報仍可能被燒錢與新增股本稀釋。"
+        "kicker": "Cash quality",
+        "title": "現金流很強，但應收與 CapEx 同時跳升",
+        "body": "9M OCF 457.02 億、CapEx 196.02 億；應收升至 268.94 億美元。高景氣可以解釋增幅，卻也表示未來估值要驗證收款、存貨、預付款與新增產能，而非只看 EPS。"
       }
     ],
-    "drivers": [
-      "RPO 認列速度與新 bookings 補充率",
-      "商業客戶、QCaaS production revenue 與系統交付",
-      "Quantum Circuits 整合後的費用與產品里程碑",
-      "現金消耗、基本股數與完全稀釋股數"
-    ],
-    "valuation": {
-      "type": "ev-sales-diluted",
-      "forwardRevenue": 65,
-      "bearMultiple": 8,
-      "baseMultiple": 20,
-      "bullMultiple": 35,
-      "netCash": 350,
-      "dilutedShares": 410
-    },
+    "modelNotes": "週期正常化 EPS 明顯低於 FQ4 峰值指引年化；合理倍數同時反映 HBM 結構成長與供給週期。"
+  },
+  {
+    "ticker": "QBTS",
+    "company": "D-Wave Quantum Inc.",
+    "asOf": "2026-08-24",
+    "status": "current",
     "currency": "USD",
-    "chart": "/charts/qbts-analysis-2026-08-24.png",
     "snapshot": {
       "price": 19.98,
       "baseFairValue": 4.02439,
@@ -659,6 +772,7 @@
       "base": 4.02439,
       "bull": 9.875
     },
+    "thesis": "RPO 與商業客戶證據改善，但約 74 億美元基本市值仍遠超目前營收與現金；它是商業化選擇權，不是可以用每股現金保底的成熟企業。",
     "metrics": [
       {
         "label": "H1 2026 營收",
@@ -691,8 +805,47 @@
         "note": "Q2 淨損受認股權證負債重估變化影響"
       }
     ],
-    "modelNotes": "單位均為百萬美元／百萬股。淨現金是扣除未來燒錢後的情境值，不是 2026-06-30 帳面現金照搬。",
-    "company": "D-Wave Quantum Inc.",
+    "drivers": [
+      "RPO 認列速度與新 bookings 補充率",
+      "商業客戶、QCaaS production revenue 與系統交付",
+      "Quantum Circuits 整合後的費用與產品里程碑",
+      "現金消耗、基本股數與完全稀釋股數"
+    ],
+    "risks": [
+      "技術里程碑不等於大規模商業收入",
+      "單筆系統銷售造成 bookings／毛利波動",
+      "營收遠低於研發與營運費用",
+      "收購、股權薪酬與後續融資造成稀釋"
+    ],
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 65,
+      "bearMultiple": 8,
+      "baseMultiple": 20,
+      "bullMultiple": 35,
+      "netCash": 350,
+      "dilutedShares": 410
+    },
+    "chart": "/charts/qbts-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "D-Wave Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm"
+      },
+      {
+        "label": "D-Wave Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000129/qbts-20260630.htm"
+      },
+      {
+        "label": "Yahoo Finance QBTS chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/QBTS?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 07:38 EDT",
+      "marketState": "pre-market",
+      "source": "Yahoo Finance chart API"
+    },
     "scenarios": [
       {
         "label": "悲觀",
@@ -713,69 +866,31 @@
         "condition": "雙平台產品形成可重複的大型商業部署且費用率收斂"
       }
     ],
-    "sources": [
-      {
-        "label": "D-Wave Q2 2026 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000127/qbts-20260806xexx991.htm"
-      },
-      {
-        "label": "D-Wave Q2 2026 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000129/qbts-20260630.htm"
-      },
-      {
-        "label": "Yahoo Finance QBTS chart snapshot",
-        "url": "https://query1.finance.yahoo.com/v8/finance/chart/QBTS?range=1y&interval=1d"
-      }
-    ],
-    "risks": [
-      "技術里程碑不等於大規模商業收入",
-      "單筆系統銷售造成 bookings／毛利波動",
-      "營收遠低於研發與營運費用",
-      "收購、股權薪酬與後續融資造成稀釋"
-    ],
-    "asOf": "2026-08-24"
-  },
-  {
-    "thesis": "資料中心 SSD 與 NAND 緊缺帶來爆發式獲利、淨現金改善；但 83%～85% 毛利與單季 44～46 美元 EPS 指引都屬高峰，不可當永久常態。",
-    "ticker": "SNDK",
-    "priceMeta": {
-      "asOf": "2026-08-24 07:38 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
-    },
-    "status": "current",
     "analysis": [
       {
-        "kicker": "Cycle normalization",
-        "title": "單季 45 美元指引不可年化成 180 美元常態",
-        "body": "FQ1 2027 非 GAAP EPS 指引 44～46 美元、毛利率 83%～85%。NAND 的供給彈性通常高於 DRAM；模型改用 50／85／110 美元中週期 EPS，而不是拿峰值季度直接乘四。"
+        "kicker": "Commercial chain",
+        "title": "Bookings → RPO → Revenue 的中段開始變強",
+        "body": "H1 bookings 3,550 萬美元包含一筆 2,000 萬美元系統銷售；期末 RPO 4,070 萬美元，其中 57% 預計十二個月內認列。這是進展，但 Q2 營收仍只有 307.6 萬美元，因此不能把 bookings 或 RPO 直接當收入。"
       },
       {
-        "kicker": "Cash and capital",
-        "title": "表面 CapEx 很低，仍要看 Kioxia 合資製造義務",
-        "body": "FY2026 OCF 116.71 億、PP&E 購置 1.77 億，且長債降至零；但 Sandisk 依賴與 Kioxia 的策略製造關係，晶圓設備投資、合約承諾與供應配置不能只從表面 CapEx 判斷。"
+        "kicker": "Cash and dilution",
+        "title": "現金來自融資與收購配置，不是營運護城河",
+        "body": "現金及有價證券為 5.462 億美元，但 H1 OCF 為負 7,346 萬美元，且 Quantum Circuits 收購已消耗大量資金。基本股數 3.72 億；基準估值用 4.10 億未來稀釋股數，避免只用加權平均股數低估稀釋。"
       },
       {
-        "kicker": "Comparability",
-        "title": "分拆後歷史口徑與週期高點增加比較難度",
-        "body": "公司 2025-02-21 才自 Western Digital 分拆，較早期間是 carve-out 基礎。FY2026 的價格、資料中心組合與獨立公司成本同時變動，不能只用前一年度低基期推論持續成長率。"
+        "kicker": "Market expectations",
+        "title": "現價已超過本模型的樂觀商業化情境",
+        "body": "約 19.98 美元盤前價對應的市值，要求遠高於目前 RPO 的收入規模、長期高倍數與有限稀釋同時成立。即使技術成功，股東回報仍可能被燒錢與新增股本稀釋。"
       }
     ],
-    "drivers": [
-      "資料中心 SSD 營收、容量與毛利組合",
-      "NAND ASP、bit shipment 與產業新增供給",
-      "Kioxia 合資製造、資本承諾與技術節點",
-      "OCF、合約負債、存貨、應收與實際回購"
-    ],
-    "valuation": {
-      "type": "cycle-pe",
-      "earnings": 85,
-      "bearMultiple": 10,
-      "baseMultiple": 15,
-      "bullMultiple": 18
-    },
+    "modelNotes": "單位均為百萬美元／百萬股。淨現金是扣除未來燒錢後的情境值，不是 2026-06-30 帳面現金照搬。"
+  },
+  {
+    "ticker": "SNDK",
+    "company": "Sandisk Corporation",
+    "asOf": "2026-08-24",
+    "status": "current",
     "currency": "USD",
-    "chart": "/charts/sndk-analysis-2026-08-24.png",
     "snapshot": {
       "price": 1523.44,
       "baseFairValue": 1275,
@@ -791,6 +906,7 @@
       "base": 1275,
       "bull": 1980
     },
+    "thesis": "資料中心 SSD 與 NAND 緊缺帶來爆發式獲利、淨現金改善；但 83%～85% 毛利與單季 44～46 美元 EPS 指引都屬高峰，不可當永久常態。",
     "metrics": [
       {
         "label": "FY2026 營收",
@@ -823,8 +939,45 @@
         "note": "分拆後股數口徑；估值採稀釋每股"
       }
     ],
-    "modelNotes": "FY2026 與 FQ1 指引反映高峰；基準採中週期 EPS，並對 NAND 較高供給彈性保留折價。",
-    "company": "Sandisk Corporation",
+    "drivers": [
+      "資料中心 SSD 營收、容量與毛利組合",
+      "NAND ASP、bit shipment 與產業新增供給",
+      "Kioxia 合資製造、資本承諾與技術節點",
+      "OCF、合約負債、存貨、應收與實際回購"
+    ],
+    "risks": [
+      "NAND 高峰毛利快速均值回歸",
+      "Kioxia 依賴、合資承諾與供應決策",
+      "分拆後歷史資料可比性有限",
+      "客戶部署延遲、消費儲存需求與回購時點"
+    ],
+    "valuation": {
+      "type": "cycle-pe",
+      "earnings": 85,
+      "bearMultiple": 10,
+      "baseMultiple": 15,
+      "bullMultiple": 18
+    },
+    "chart": "/charts/sndk-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Sandisk FY2026 Q4 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/2023554/000162828026053346/sndkq4-26ex991xpressrelease.htm"
+      },
+      {
+        "label": "Sandisk FY2026 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm"
+      },
+      {
+        "label": "Yahoo Finance SNDK chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNDK?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 07:38 EDT",
+      "marketState": "pre-market",
+      "source": "Yahoo Finance chart API"
+    },
     "scenarios": [
       {
         "label": "悲觀",
@@ -845,26 +998,23 @@
         "condition": "高容量資料中心 SSD 長期供不應求，Kioxia 合資與現金配置創造高 ROIC"
       }
     ],
-    "sources": [
+    "analysis": [
       {
-        "label": "Sandisk FY2026 Q4 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/2023554/000162828026053346/sndkq4-26ex991xpressrelease.htm"
+        "kicker": "Cycle normalization",
+        "title": "單季 45 美元指引不可年化成 180 美元常態",
+        "body": "FQ1 2027 非 GAAP EPS 指引 44～46 美元、毛利率 83%～85%。NAND 的供給彈性通常高於 DRAM；模型改用 50／85／110 美元中週期 EPS，而不是拿峰值季度直接乘四。"
       },
       {
-        "label": "Sandisk FY2026 Form 10-K",
-        "url": "https://www.sec.gov/Archives/edgar/data/2023554/000162828026057406/sndk-20260703.htm"
+        "kicker": "Cash and capital",
+        "title": "表面 CapEx 很低，仍要看 Kioxia 合資製造義務",
+        "body": "FY2026 OCF 116.71 億、PP&E 購置 1.77 億，且長債降至零；但 Sandisk 依賴與 Kioxia 的策略製造關係，晶圓設備投資、合約承諾與供應配置不能只從表面 CapEx 判斷。"
       },
       {
-        "label": "Yahoo Finance SNDK chart snapshot",
-        "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNDK?range=1y&interval=1d"
+        "kicker": "Comparability",
+        "title": "分拆後歷史口徑與週期高點增加比較難度",
+        "body": "公司 2025-02-21 才自 Western Digital 分拆，較早期間是 carve-out 基礎。FY2026 的價格、資料中心組合與獨立公司成本同時變動，不能只用前一年度低基期推論持續成長率。"
       }
     ],
-    "risks": [
-      "NAND 高峰毛利快速均值回歸",
-      "Kioxia 依賴、合資承諾與供應決策",
-      "分拆後歷史資料可比性有限",
-      "客戶部署延遲、消費儲存需求與回購時點"
-    ],
-    "asOf": "2026-08-24"
+    "modelNotes": "FY2026 與 FQ1 指引反映高峰；基準採中週期 EPS，並對 NAND 較高供給彈性保留折價。"
   }
 ]

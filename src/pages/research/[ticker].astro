@@ -4,7 +4,8 @@ import reports from '../../data/reports.generated.json';
 export function getStaticPaths(){ return reports.map(report => ({params:{ticker:report.ticker.toLowerCase()},props:{report}})); }
 type Scenario = { label: string; assumption: string; value: number; condition: string };
 type AnalysisBlock = { kicker: string; title: string; body: string };
-type ExtendedReport = (typeof reports)[number] & {
+type ExtendedReport = Omit<(typeof reports)[number], 'valuation'> & {
+  valuation: any;
   priceMeta?: { marketState: string; asOf: string; source: string };
   scenarios?: Scenario[];
   analysis?: AnalysisBlock[];
@@ -12,7 +13,7 @@ type ExtendedReport = (typeof reports)[number] & {
 };
 const report = Astro.props.report as ExtendedReport;
 const upside = ((report.snapshot.baseFairValue/report.snapshot.price)-1)*100;
-const methodFor = report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
+const methodFor = report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const chartUrl = `${base}${report.chart.replace(/^\//, '')}`;
 const priceMeta = report.priceMeta;
@@ -44,7 +45,7 @@ const analysis = report.analysis ?? [];
     <aside>
       <div class="calc card">
         <div class="eyebrow">Model explorer</div><h2>估值試算</h2>
-        {report.valuation.type !== 'ev-sales-diluted' ? <div data-calculator="pe"><label>{report.valuation.type === 'cycle-pe' ? '週期正常化 EPS' : '正常化 EPS'}<input id="earnings" type="number" step="0.01" value={report.valuation.earnings}/></label><label>合理 P/E<input id="multiple" type="number" step="0.01" value={report.valuation.baseMultiple}/></label><div class="result"><span>試算合理價</span><strong id="result">—</strong></div></div> : <div data-calculator="ev"><label>前瞻營收（百萬）<input id="revenue" type="number" step="1" value={report.valuation.forwardRevenue}/></label><label>EV/Sales<input id="multiple" type="number" step="0.1" value={report.valuation.baseMultiple}/></label><label>情境淨現金（百萬）<input id="cash" type="number" step="1" value={report.valuation.netCash}/></label><label>完全稀釋股數（百萬）<input id="shares" type="number" step="0.1" value={report.valuation.dilutedShares}/></label><div class="result"><span>試算合理價</span><strong id="result">—</strong></div></div>}
+        {report.valuation.type === 'future-ev-ebitda' ? <div data-calculator="future-ebitda"><label>遠期 EBITDA（百萬）<input id="ebitda" type="number" step="10" value={report.valuation.forwardEbitda}/></label><label>EV/EBITDA<input id="multiple" type="number" step="0.5" value={report.valuation.baseMultiple}/></label><label>遠期淨現金（百萬；淨負債填負值）<input id="cash" type="number" step="10" value={report.valuation.netCash}/></label><label>折現因子<input id="discount" type="number" step="0.01" value={report.valuation.discountFactor}/></label><label>未來稀釋股數（百萬）<input id="shares" type="number" step="1" value={report.valuation.dilutedShares}/></label><div class="result"><span>試算現值</span><strong id="result">—</strong></div></div> : report.valuation.type !== 'ev-sales-diluted' ? <div data-calculator="pe"><label>{report.valuation.type === 'cycle-pe' ? '週期正常化 EPS' : '正常化 EPS'}<input id="earnings" type="number" step="0.01" value={report.valuation.earnings}/></label><label>合理 P/E<input id="multiple" type="number" step="0.01" value={report.valuation.baseMultiple}/></label><div class="result"><span>試算合理價</span><strong id="result">—</strong></div></div> : <div data-calculator="ev"><label>前瞻營收（百萬）<input id="revenue" type="number" step="1" value={report.valuation.forwardRevenue}/></label><label>EV/Sales<input id="multiple" type="number" step="0.1" value={report.valuation.baseMultiple}/></label><label>情境淨現金（百萬）<input id="cash" type="number" step="1" value={report.valuation.netCash}/></label><label>完全稀釋股數（百萬）<input id="shares" type="number" step="0.1" value={report.valuation.dilutedShares}/></label><div class="result"><span>試算合理價</span><strong id="result">—</strong></div></div>}
         {report.modelNotes && <p class="model-note">{report.modelNotes}</p>}
         <a class="method-link" href={`${base}methodology/${methodFor}`}>查看公式、理論與限制 →</a>
       </div>
@@ -58,7 +59,8 @@ const analysis = report.analysis ?? [];
     function calculate(){
       if(!root || !result) return;
       const v = (id: string) => Number((document.querySelector(`#${id}`) as HTMLInputElement)?.value || 0);
-      const value = root.getAttribute('data-calculator') === 'pe' ? v('earnings')*v('multiple') : (v('revenue')*v('multiple')+v('cash'))/v('shares');
+      const kind = root.getAttribute('data-calculator');
+      const value = kind === 'pe' ? v('earnings')*v('multiple') : kind === 'future-ebitda' ? (v('ebitda')*v('multiple')+v('cash'))/v('discount')/v('shares') : (v('revenue')*v('multiple')+v('cash'))/v('shares');
       result.textContent = Number.isFinite(value) ? `$${value.toFixed(2)}` : '—';
     }
     inputs.forEach(i=>i.addEventListener('input',calculate)); calculate();
