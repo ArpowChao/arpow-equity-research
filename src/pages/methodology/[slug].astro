@@ -1,0 +1,16 @@
+---
+import Base from '../../layouts/Base.astro';
+import { methods } from '../../data/methods';
+export function getStaticPaths(){ return methods.map(method=>({params:{slug:method.slug},props:{method}})); }
+const { method } = Astro.props;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<Base title={`${method.title}｜研究方法`} description={method.summary}>
+  <article class="shell method-page">
+    <a class="back" href={`${base}#methods`}>← 返回計算方法</a><div class="eyebrow">Open methodology</div><h1>{method.title}</h1><p class="lead">{method.summary}</p>
+    <div class="formula"><span>核心公式</span><code>{method.formula}</code></div>
+    {method.sections.map(([title,body])=><section><h2>{title}</h2><p>{body}</p></section>)}
+    <aside><strong>使用原則</strong><p>公式是壓縮過的決策工具，不是事實本身。每次分析都應標示期間、資料單位、股數口徑、來源與失效條件。</p></aside>
+  </article>
+  <style>.method-page{max-width:800px;padding-top:60px}.back{color:var(--blue);font-weight:600}.method-page h1{font-size:clamp(42px,7vw,70px)}.lead{font-size:21px;color:var(--muted)}.formula{background:#101b2a;color:#fff;padding:25px;border-radius:14px;margin:36px 0}.formula span{display:block;color:#88afff;font:600 11px 'IBM Plex Mono';letter-spacing:.1em}.formula code{display:block;margin-top:10px;font:500 17px/1.6 'IBM Plex Mono';white-space:normal}.method-page section{padding:22px 0;border-bottom:1px solid var(--line)}.method-page section h2{font-size:25px}.method-page section p{font-size:17px;color:#44515e}.method-page aside{margin-top:30px;border-left:4px solid var(--blue);background:var(--blue-soft);padding:18px 22px}.method-page aside p{margin-bottom:0}</style>
+</Base>

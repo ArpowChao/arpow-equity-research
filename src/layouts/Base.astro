@@ -1,0 +1,28 @@
+---
+interface Props { title: string; description?: string; }
+const { title, description = '以原始資料、透明計算與版本紀錄建立的個股研究網站。' } = Astro.props;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#f7f8fa" />
+  <title>{title}</title>
+  <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+TC:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
+    :root{--paper:#f7f8fa;--surface:#fff;--ink:#15202b;--muted:#65717e;--line:#dfe4e8;--blue:#155eef;--blue-soft:#eaf1ff;--green:#087a5b;--red:#b42318;--amber:#9a6700;--shadow:0 14px 38px rgba(20,32,43,.07);font-family:'IBM Plex Sans TC',system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+    *{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f4f7fb 0,#f7f8fa 270px);line-height:1.65}a{color:inherit}.shell{max-width:1180px;margin:auto;padding:0 28px}.topbar{height:68px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(21,32,43,.1)}.brand{font-weight:700;text-decoration:none;letter-spacing:-.02em}.brand small{font:500 11px 'IBM Plex Mono';color:var(--blue);display:block;letter-spacing:.12em}.nav{display:flex;gap:24px;font-size:14px}.nav a{text-decoration:none;color:var(--muted)}.nav a:hover{color:var(--blue)}main{min-height:calc(100vh - 150px)}footer{border-top:1px solid var(--line);margin-top:70px;padding:30px 0;color:var(--muted);font-size:13px}.eyebrow{font:600 12px 'IBM Plex Mono';letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}h1,h2,h3{line-height:1.18;letter-spacing:-.035em}h1{font-size:clamp(38px,6vw,72px);margin:.3em 0}h2{font-size:30px;margin:0 0 18px}h3{font-size:19px}.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font:600 11px 'IBM Plex Mono'}.muted{color:var(--muted)}.mono{font-family:'IBM Plex Mono',monospace}.grid{display:grid;gap:20px}.section{padding:46px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.section-head p{max-width:620px;margin:0;color:var(--muted)}.link{color:var(--blue);font-weight:600;text-underline-offset:3px}.metric{font:600 28px 'IBM Plex Mono';letter-spacing:-.04em}.positive{color:var(--green)}.negative{color:var(--red)}button,input{font:inherit}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid rgba(21,94,239,.35);outline-offset:3px}@media(max-width:720px){.shell{padding:0 18px}.nav{gap:12px}.nav a:first-child{display:none}.section{padding:32px 0}.section-head{display:block}.section-head p{margin-top:8px}}
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="brand" href={base}><small>ARPOW RESEARCH</small>個股研究簿</a>
+    <nav class="nav" aria-label="主要導覽"><a href={base}>研究首頁</a><a href={`${base}#methods`}>計算方法</a><a href={`${base}about`}>關於資料</a></nav>
+  </header>
+  <main><slot /></main>
+  <footer><div class="shell">資料、假設與價格皆標示快照日期。內容為研究紀錄，不構成個人化投資建議。</div></footer>
+</body>
+</html>

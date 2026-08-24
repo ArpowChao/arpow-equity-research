@@ -1,0 +1,154 @@
+[
+  {
+    "snapshot": {
+      "price": 107.32,
+      "baseFairValue": 127.5,
+      "fairRange": [
+        105,
+        140
+      ],
+      "marginOfSafety": [
+        95,
+        105
+      ],
+      "bear": 100,
+      "base": 127.5,
+      "bull": 160
+    },
+    "asOf": "2026-08-20",
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 6.88,
+      "bearMultiple": 14.5,
+      "baseMultiple": 18.53198,
+      "bullMultiple": 23.25
+    },
+    "risks": [
+      "體育版權與內容成本上升",
+      "景氣循環拖累樂園需求",
+      "淨負債限制資本配置",
+      "電影內容表現波動"
+    ],
+    "drivers": [
+      "SVOD 營業利益率與訂戶品質",
+      "Experiences 入園人次、房價與資本回報",
+      "ESPN 內容成本與 DTC 轉型",
+      "回購能否持續降低完全稀釋股數"
+    ],
+    "sources": [
+      {
+        "label": "Disney SEC filings",
+        "url": "https://www.sec.gov/edgar/browse/?CIK=DIS&owner=exclude"
+      },
+      {
+        "label": "Disney Investor Relations",
+        "url": "https://thewaltdisneycompany.com/investor-relations/"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "FY2026E 調整後 EPS",
+        "value": "6.88",
+        "note": "分析快照估計"
+      },
+      {
+        "label": "FY2026E 自由現金流",
+        "value": "約 100 億美元",
+        "note": "OCF 指引減 CapEx"
+      },
+      {
+        "label": "淨負債",
+        "value": "約 408.6 億美元",
+        "note": "截至分析快照"
+      },
+      {
+        "label": "回購目標",
+        "value": "至少 90 億美元",
+        "note": "FY2026 公司目標"
+      }
+    ],
+    "thesis": "串流獲利改善與 Experiences 現金流支持估值，但 Sports 成本、淨負債與內容週期仍需折價。",
+    "company": "The Walt Disney Company",
+    "currency": "USD",
+    "status": "archived",
+    "chart": "/charts/dis-analysis-2026-08-20.png",
+    "ticker": "DIS"
+  },
+  {
+    "snapshot": {
+      "price": 2.5,
+      "baseFairValue": 2.23,
+      "fairRange": [
+        1.5,
+        2.8
+      ],
+      "marginOfSafety": [
+        1.4,
+        1.7
+      ],
+      "bear": 1.2,
+      "base": 2.23,
+      "bull": 3.54
+    },
+    "asOf": "2026-08-20",
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 38,
+      "bearMultiple": 5,
+      "baseMultiple": 9.31384,
+      "bullMultiple": 14,
+      "netCash": 485,
+      "dilutedShares": 376.2
+    },
+    "risks": [
+      "營收基礎小且仍虧損",
+      "基本股數快速增加",
+      "認股權證與關聯交易複雜",
+      "遠期技術故事尚未完全轉為現金流"
+    ],
+    "drivers": [
+      "Bookings → RPO → Revenue 的轉換",
+      "量子安全產品的實際商業部署",
+      "營運現金消耗與現金 runway",
+      "新增股本與認股權證稀釋"
+    ],
+    "sources": [
+      {
+        "label": "SEALSQ SEC filings",
+        "url": "https://www.sec.gov/edgar/search/#/q=LAES"
+      },
+      {
+        "label": "SEALSQ Investors",
+        "url": "https://www.sealsq.com/investors"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "FY2025 營收",
+        "value": "1,825 萬美元",
+        "note": "公司申報"
+      },
+      {
+        "label": "FY2025 毛利率",
+        "value": "47%",
+        "note": "公司申報"
+      },
+      {
+        "label": "基本流通股",
+        "value": "約 2.228 億股",
+        "note": "2026-03-27 快照"
+      },
+      {
+        "label": "潛在認股權證",
+        "value": "約 1.534 億股",
+        "note": "需納入完全稀釋"
+      }
+    ],
+    "thesis": "大量現金提供下檔緩衝，但商業化、現金消耗、治理與完全稀釋風險使它更接近高波動選擇權。",
+    "company": "SEALSQ Corp",
+    "currency": "USD",
+    "status": "archived",
+    "chart": "/charts/laes-analysis-2026-08-20.png",
+    "ticker": "LAES"
+  }
+]

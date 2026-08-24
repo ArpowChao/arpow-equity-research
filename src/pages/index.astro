@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import reports from '../data/reports.generated.json';
+import { methods } from '../data/methods';
+const sorted = [...reports].sort((a,b) => b.asOf.localeCompare(a.asOf));
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<Base title="Arpow 個股研究簿">
+  <section class="shell hero">
+    <div>
+      <div class="eyebrow">Evidence → Model → Decision</div>
+      <h1>把每一次分析，<br><span>變成可追溯的研究資產。</span></h1>
+      <p>不是把聊天複製成文章。每一個合理價、股數與現金流，都能回到公式、假設和原始來源。</p>
+    </div>
+    <aside class="hero-ledger card" aria-label="研究流程">
+      <div class="ledger-row"><span>01</span><b>原始證據</b><small>SEC／公司 IR／行情快照</small></div>
+      <div class="ledger-row"><span>02</span><b>計算底稿</b><small>正常化、稀釋、情境敏感度</small></div>
+      <div class="ledger-row"><span>03</span><b>公開結論</b><small>驗證條件、風險與版本差異</small></div>
+    </aside>
+  </section>
+
+  <section class="shell section">
+    <div class="section-head"><div><div class="eyebrow">Research archive</div><h2>最新個股研究</h2></div><p>目前先匯入已完成且有明確日期的研究快照；後續每次分析會自動新增版本。</p></div>
+    <div class="reports grid">
+      {sorted.map((r) => {
+        const upside = ((r.snapshot.baseFairValue / r.snapshot.price - 1) * 100);
+        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`}>
+          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">封存快照 · {r.asOf}</span></div>
+          <h3>{r.company}</h3><p>{r.thesis}</p>
+          <div class="report-numbers">
+            <div><small>快照價格</small><strong>${r.snapshot.price.toFixed(2)}</strong></div>
+            <div><small>基準合理價</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong></div>
+            <div><small>基準差距</small><strong class={upside >= 0 ? 'positive':'negative'}>{upside >= 0 ? '+':''}{upside.toFixed(1)}%</strong></div>
+          </div>
+          <span class="open">開啟完整研究 →</span>
+        </a>
+      })}
+    </div>
+  </section>
+
+  <section id="methods" class="method-wrap">
+    <div class="shell section">
+      <div class="section-head"><div><div class="eyebrow">Open methodology</div><h2>計算不是黑盒子</h2></div><p>報告中的專業計算都連到獨立方法頁；公式、適用條件和模型限制一起公開。</p></div>
+      <div class="methods grid">{methods.map((m, i) => <a class="method" href={`${base}methodology/${m.slug}`}><span class="mono">M{String(i+1).padStart(2,'0')}</span><div><h3>{m.title}</h3><p>{m.summary}</p></div><b>↗</b></a>)}</div>
+    </div>
+  </section>
+  <style>
+    .hero{padding-top:78px;padding-bottom:58px;display:grid;grid-template-columns:1.35fr .65fr;align-items:end;gap:70px}.hero h1 span{color:var(--blue)}.hero p{max-width:650px;font-size:19px;color:var(--muted)}.hero-ledger{padding:12px 20px}.ledger-row{display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:17px 0;border-bottom:1px solid var(--line)}.ledger-row:last-child{border:0}.ledger-row span{grid-row:1/3;color:var(--blue);font:600 12px 'IBM Plex Mono'}.ledger-row small{color:var(--muted)}.reports{grid-template-columns:repeat(2,1fr)}.report{padding:24px;text-decoration:none;transition:.2s transform,.2s box-shadow}.report:hover{transform:translateY(-3px);box-shadow:0 20px 45px rgba(20,32,43,.11)}.report-top{display:flex;justify-content:space-between;align-items:center}.ticker{font-size:27px;font-weight:600}.report h3{font-size:23px;margin:18px 0 8px}.report p{color:var(--muted);min-height:76px}.report-numbers{display:grid;grid-template-columns:repeat(3,1fr);padding:17px 0;margin:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.report-numbers div+div{border-left:1px solid var(--line);padding-left:16px}.report-numbers small{display:block;color:var(--muted);font-size:11px}.report-numbers strong{display:block;font:600 18px 'IBM Plex Mono';margin-top:5px}.open{color:var(--blue);font-weight:600;font-size:14px}.method-wrap{background:#101b2a;color:#edf4ff;margin-top:30px}.method-wrap .section-head p{color:#9fb0c5}.methods{grid-template-columns:repeat(2,1fr)}.method{display:grid;grid-template-columns:42px 1fr 20px;gap:14px;text-decoration:none;border-top:1px solid #2a3a4d;padding:24px 4px}.method>span,.method>b{color:#6ea2ff}.method h3{margin:0 0 6px}.method p{margin:0;color:#9fb0c5}@media(max-width:800px){.hero{grid-template-columns:1fr;gap:28px;padding-top:48px}.reports,.methods{grid-template-columns:1fr}.report p{min-height:auto}}@media(max-width:480px){.report-numbers{grid-template-columns:1fr}.report-numbers div+div{border-left:0;border-top:1px solid var(--line);padding:10px 0 0;margin-top:10px}}
+  </style>
+</Base>

@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="關於資料｜Arpow 個股研究簿">
+  <article class="shell about"><div class="eyebrow">Research policy</div><h1>公開結論，私有底稿。</h1><p class="lead">網站只發布可合法引用、已核對且不含憑證或付費內容原文的研究成果。</p>
+  <section><h2>雙層資料架構</h2><p>私有 repository 保存工作底稿、原始擷取、未核對筆記與計算中間值；公開 repository 只接收白名單欄位。匯出腳本會拒絕常見私密欄位。</p></section>
+  <section><h2>來源優先順序</h2><ol><li>公司與 SEC 原始申報</li><li>交易所或可靠行情快照</li><li>新聞與第三方研究作為補充觀點</li></ol></section>
+  <section><h2>版本與限制</h2><p>每份分析固定 as-of 日期。舊研究不會被新價格偽裝成即時分析；更新時保留假設差異與版本紀錄。</p></section></article>
+  <style>.about{max-width:800px;padding-top:65px}.about h1{font-size:clamp(44px,7vw,72px)}.lead{font-size:21px;color:var(--muted)}.about section{padding:24px 0;border-top:1px solid var(--line)}.about p,.about li{font-size:17px}</style>
+</Base>
