@@ -25,7 +25,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
       {sorted.map((r) => {
         const upside = ((r.snapshot.baseFairValue / r.snapshot.price - 1) * 100);
         return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`}>
-          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">封存快照 · {r.asOf}</span></div>
+          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{r.status === 'current' ? '最新研究' : '封存快照'} · {r.asOf}</span></div>
           <h3>{r.company}</h3><p>{r.thesis}</p>
           <div class="report-numbers">
             <div><small>快照價格</small><strong>${r.snapshot.price.toFixed(2)}</strong></div>

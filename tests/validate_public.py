@@ -6,8 +6,9 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "/arpow-equity-research/"
 reports = json.loads((ROOT / "src/data/reports.generated.json").read_text(encoding="utf-8"))
-assert len(reports) >= 2
-assert {r["ticker"] for r in reports} >= {"DIS", "LAES"}
+assert len(reports) >= 7
+expected = {"DIS", "LAES", "QBTS", "INTC", "AMD", "MU", "SNDK"}
+assert {r["ticker"] for r in reports} >= expected
 serialized = json.dumps(reports, ensure_ascii=False).lower()
 for forbidden in ("paidsourcenotes", "workingnotes", "password", "cookie", "token"):
     assert forbidden not in serialized, f"private field leaked: {forbidden}"
@@ -19,7 +20,7 @@ for page in pages:
     for link in re.findall(r'(?:href|src)="(/[^"]*)"', html):
         assert link.startswith(BASE), f"bad Pages path in {page}: {link}"
 
-for ticker in ("dis", "laes"):
+for ticker in (x.lower() for x in expected):
     html = (ROOT / f"dist/research/{ticker}/index.html").read_text(encoding="utf-8")
     assert "查看公式、理論與限制" in html
     assert "原始來源" in html
