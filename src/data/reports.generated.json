@@ -275,6 +275,179 @@
     "modelNotes": "正常化 EPS 位於 GAAP 與公司非 GAAP 口徑之間，並對持續股權薪酬與稀釋保留折價。"
   },
   {
+    "ticker": "CBRS",
+    "company": "Cerebras Systems Inc.",
+    "asOf": "2026-08-25",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 180.735,
+      "baseFairValue": 143.0769230769,
+      "fairRange": [
+        120,
+        160
+      ],
+      "marginOfSafety": [
+        114.46,
+        121.62
+      ],
+      "bear": 53.43,
+      "base": 143.0769230769,
+      "bull": 270.48
+    },
+    "thesis": "Cerebras 的 wafer-scale 架構與極高速推論已取得 OpenAI、AWS、AMD 等關鍵驗證，254 億美元 RPO 與 2027 營收逾三倍目標提供罕見成長可見度；然而這是高度資本密集、客戶集中且以巨額客戶認股權證換取需求的新上市公司。180.735 美元盤中價在納入所有類別、員工股權與客戶認股權證後，已高於基準情境。",
+    "metrics": [
+      {
+        "label": "Q2 GAAP／核心營收",
+        "value": "1.80／2.10 億美元",
+        "note": "年增 74%／103%；核心口徑排除 pass-through 並加回客戶權證攤銷"
+      },
+      {
+        "label": "Q2 GAAP／核心毛利率",
+        "value": "14.2%／40.6%",
+        "note": "核心口徑仍不是 GAAP；全年核心毛利率指引 41%～43%"
+      },
+      {
+        "label": "Q2 GAAP／核心營業虧損",
+        "value": "4.77／0.34 億美元",
+        "note": "Q2 SBC 3.77 億，IPO 解鎖使 GAAP 費用大增"
+      },
+      {
+        "label": "H1 OCF／CapEx／簡化 FCF",
+        "value": "-0.47／5.49／-5.96 億美元",
+        "note": "雲端容量爬坡高度資本密集，核心營業改善尚未等於自由現金流"
+      },
+      {
+        "label": "2026 核心營收指引",
+        "value": "8.80～8.90 億美元",
+        "note": "管理層計畫 2027 營收超過三倍；屬前瞻目標，尚未實現"
+      },
+      {
+        "label": "RPO",
+        "value": "254 億美元",
+        "note": "很大部分來自 OpenAI；22%預計前24個月認列、43%於第25～48個月"
+      },
+      {
+        "label": "流動性／簡化淨現金",
+        "value": "86.1／約70.0 億美元",
+        "note": "後者排除受限制現金並扣除 OpenAI working-capital loan"
+      },
+      {
+        "label": "期末經濟股數／基準未來稀釋股數",
+        "value": "2.376／3.25 億股",
+        "note": "納入期權、RSU、OpenAI／AWS 認股權證與持續股權薪酬緩衝"
+      }
+    ],
+    "drivers": [
+      "OpenAI 750MW committed capacity 分批交付、服務水準與收入認列",
+      "600MW 資料中心容量上線速度、利用率、電力與建置成本",
+      "AWS、AMD、企業客戶是否形成 OpenAI 以外的多元收入",
+      "GAAP／核心營收橋接、客戶認股權證攤銷與 pass-through 占比",
+      "核心毛利、GAAP OCF、CapEx、資料中心租約與後續融資",
+      "基本股數、RSU／期權、OpenAI／AWS 權證及 lock-up 供給"
+    ],
+    "risks": [
+      "RPO 與未來收入高度集中於 OpenAI",
+      "資料中心與製造爬坡延誤可能觸發合約終止或容量閒置",
+      "GAAP 毛利低、自由現金流為負且資本需求龐大",
+      "客戶認股權證、員工股權與未來融資造成顯著稀釋",
+      "TSMC 單一晶圓代工、供應鏈、良率與地緣政治風險",
+      "NVIDIA、AMD、hyperscaler 自研晶片與模型架構轉變",
+      "Class B 每股20票、Class N無投票權與新上市供給波動"
+    ],
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 2800,
+      "bearMultiple": 8,
+      "baseMultiple": 15,
+      "bullMultiple": 22,
+      "netCash": 4500,
+      "dilutedShares": 325
+    },
+    "chart": "/charts/cbrs-analysis-2026-08-25.png",
+    "sources": [
+      {
+        "label": "Cerebras Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026056186/cbrsannouncesfinancialresu.htm"
+      },
+      {
+        "label": "Cerebras Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026056357/cbrs-20260630.htm"
+      },
+      {
+        "label": "Cerebras IPO prospectus（Form 424B4）",
+        "url": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026035214/cerebras-424b4.htm"
+      },
+      {
+        "label": "Yahoo Finance CBRS chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/CBRS?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-25 11:15 EDT",
+      "marketState": "regular-market",
+      "source": "Yahoo Finance chart API（NASDAQ CBRS intraday snapshot）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2027 核心營收 18 億 × 8 倍 EV/Sales＋35 億淨現金÷3.35 億股",
+        "value": 53.43,
+        "condition": "OpenAI 容量交付延誤、成長遠低於三倍目標、資本支出與稀釋高於預期"
+      },
+      {
+        "label": "基準",
+        "assumption": "2027 核心營收 28 億 × 15 倍 EV/Sales＋45 億淨現金÷3.25 億股",
+        "value": 143.08,
+        "condition": "2027 約達三倍成長、核心毛利約40%、600MW容量按期上線且無重大再融資"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2027 核心營收 36 億 × 22 倍 EV/Sales＋60 億淨現金÷3.15 億股",
+        "value": 270.48,
+        "condition": "OpenAI 交付加速、AWS／企業客戶擴張、核心毛利改善且資本效率優於計畫"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Identity",
+        "title": "CBRS 已確認為 2026 年 5 月上市的 Cerebras",
+        "body": "SEC CIK 0002021728、10-Q 封面與 Nasdaq 行情均一致；Class A 交易代號為 CBRS。IPO 定價 185 美元，分析時 180.735 美元盤中價略低於 IPO 價，但不能只看 IPO 價判斷便宜。"
+      },
+      {
+        "kicker": "Technology and demand",
+        "title": "Wafer-scale 推論速度已取得重要商業驗證",
+        "body": "Q2 GAAP cloud revenue 年增 281%；公司已支援 OpenAI GPT-5.6 Sol、與 AMD 建立 disaggregated inference、並規劃進入 Amazon Bedrock。600MW 已上線或簽約待交付，技術驗證鏈明顯強於一般早期 AI 晶片公司。"
+      },
+      {
+        "kicker": "RPO quality",
+        "title": "254 億美元 RPO 很強，但高度集中於 OpenAI",
+        "body": "OpenAI 已承諾購買 750MW，另有 1.25GW 選擇權；RPO 很大部分來自該 MRA，且只約22%預計於前24個月認列。OpenAI 若因交付或服務水準問題終止部分或全部合約，收入、資金與容量利用率會同時受壓。"
+      },
+      {
+        "kicker": "Accounting bridge",
+        "title": "核心營收與 GAAP 收入不可混用",
+        "body": "Q2 核心營收由 GAAP 1.801 億減去 1,450 萬 pass-through，再加回 4,426 萬客戶認股權證攤銷而得 2.099 億。核心口徑有助觀察技術業務，但權證是真實股東稀釋，不能因非現金就從每股估值消失。"
+      },
+      {
+        "kicker": "Capital intensity",
+        "title": "帳上現金雄厚，但擴張義務也快速增加",
+        "body": "H1 CapEx 已達 5.49 億美元；截至 Q2 尚未開始的資料中心租約最低付款約15億，Q3 後續再簽約約7.53億，另有資產負債表內租約。RPO 對應的是大型電力、資料中心與設備交付義務，不是無資本成本的軟體 backlog。"
+      },
+      {
+        "kicker": "Dilution and supply",
+        "title": "基本股數會嚴重低估未來每股稀釋",
+        "body": "8月5日三類普通股合計約2.376億股；另有約5,485萬員工期權／RSU、OpenAI 尚餘約2,341萬潛在權證股及 AWS 約270萬股。公司也披露 lock-up 期間可能有大量股份提早釋出；這代表潛在供給，不等於持有人必然出售。"
+      },
+      {
+        "kicker": "Market expectations",
+        "title": "現價要求 2027 三倍成長接近順利落地",
+        "body": "以3.25億未來稀釋股估算，現價對應約587億股權價值；扣除情境淨現金後，約為2027基準核心營收的19倍 EV/Sales。這已不是單靠RPO即可支撐的低估值，還要求交付、毛利、融資與稀釋同時受控。"
+      }
+    ],
+    "modelNotes": "採 2027 核心營收與未來完全稀釋股數，單位為百萬美元／百萬股；基準價由 (2,800×15＋4,500)÷325 精確重現。核心營收不是 GAAP 收入，情境淨現金已考慮容量建置消耗。"
+  },
+  {
     "ticker": "DIS",
     "company": "The Walt Disney Company",
     "asOf": "2026-08-24",

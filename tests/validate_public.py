@@ -6,8 +6,8 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "/arpow-equity-research/"
 reports = json.loads((ROOT / "src/data/reports.generated.json").read_text(encoding="utf-8"))
-assert len(reports) >= 12
-expected = {"DIS", "LAES", "QBTS", "INTC", "AMD", "MU", "SNDK", "MP", "GOOGL", "ARM", "FISV", "PLTR"}
+assert len(reports) >= 13
+expected = {"DIS", "LAES", "QBTS", "INTC", "AMD", "MU", "SNDK", "MP", "GOOGL", "ARM", "FISV", "PLTR", "CBRS"}
 assert {r["ticker"] for r in reports} >= expected
 serialized = json.dumps(reports, ensure_ascii=False).lower()
 for forbidden in ("paidsourcenotes", "workingnotes", "password", "cookie", "token"):
