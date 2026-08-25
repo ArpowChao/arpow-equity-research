@@ -25,4 +25,7 @@ for ticker in (x.lower() for x in expected):
     assert "查看公式、理論與限制" in html
     assert "原始來源" in html
     assert "估值試算" in html
+    assert "第一次看這家公司，先看這裡" in html
+    assert "這家公司最該追蹤的業務引擎" in html
+    assert "點開白話名詞表" in html
 print(f"validated {len(reports)} reports and {len(pages)} pages")
