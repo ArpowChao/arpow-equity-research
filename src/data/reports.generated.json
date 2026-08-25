@@ -408,6 +408,155 @@
     "updatedFrom": "2026-08-20"
   },
   {
+    "ticker": "FISV",
+    "company": "Fiserv, Inc.",
+    "asOf": "2026-08-24",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 52.96,
+      "baseFairValue": 62.05,
+      "fairRange": [
+        50,
+        72
+      ],
+      "marginOfSafety": [
+        49.64,
+        52.74
+      ],
+      "bear": 33,
+      "base": 62.05,
+      "bull": 102
+    },
+    "thesis": "Fiserv 的支付、核心銀行系統與 Clover 仍具高轉換成本和大量經常性收入，但 2026 年營收、獲利率與 EPS 同步倒退，One Fiserv 轉型尚未證明能恢復成長；約 7.3 倍指引 EPS 看似便宜，卻同時反映高淨負債、商譽減損與管理層執行風險。",
+    "metrics": [
+      {
+        "label": "Q2 GAAP／調整後營收",
+        "value": "52.92／49.60 億美元",
+        "note": "均年減約 4%；有機營收年減 5%"
+      },
+      {
+        "label": "Merchant／Financial 有機成長",
+        "value": "-1%／-8%",
+        "note": "並非單一事業短期波動，兩大部門均承壓"
+      },
+      {
+        "label": "Q2 GAAP／調整後 EPS",
+        "value": "1.17／1.84 美元",
+        "note": "分別年減 37%／26%；調整項目仍很大"
+      },
+      {
+        "label": "2026 調整後 EPS 指引",
+        "value": "7.20～7.40 美元",
+        "note": "由年初 8.00～8.30 下修；有機營收由 +1%～+3%降至 -1%～0%"
+      },
+      {
+        "label": "H1 OCF／CapEx／簡化 FCF",
+        "value": "20.82／9.56／11.26 億美元",
+        "note": "公司調整後 FCF 為 13.60 億，包含轉型與遣散現金調整"
+      },
+      {
+        "label": "總債務／非結算現金",
+        "value": "278.86／6.27 億美元",
+        "note": "簡化淨負債約 272.59 億，接近目前股權市值"
+      },
+      {
+        "label": "期末普通股／近似市值",
+        "value": "5.318 億股／281.6 億美元",
+        "note": "Q2 加權稀釋股 5.337 億；SBC H1 為 2.35 億"
+      }
+    ],
+    "drivers": [
+      "Merchant Solutions 與 Clover 的有機營收、支付量、每商戶收入及流失率",
+      "Financial Solutions 帳戶處理、卡片處理與數位銀行續約／轉換",
+      "One Fiserv 轉型費用是否下降並帶來可驗證的收入與生產力",
+      "簡化 FCF、調整後 FCF、債務償還與淨槓桿",
+      "MoneyPass Group 49%持股、資產出售及商譽減損測試"
+    ],
+    "risks": [
+      "有機營收負成長延續，管理層再次下修指引",
+      "調整項目常態化，GAAP／非 GAAP 差距長期存在",
+      "高淨負債、利息成本與再融資限制資本配置",
+      "375 億美元商譽與低減損緩衝 reporting units",
+      "過去高價回購與收購削弱資本配置可信度",
+      "競爭、銀行客戶整併、資安／營運事故及監管風險"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 7.3,
+      "bearMultiple": 6,
+      "baseMultiple": 8.5,
+      "bullMultiple": 12
+    },
+    "chart": "/charts/fisv-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Fiserv Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000028/fisvq226earningsrelease.htm"
+      },
+      {
+        "label": "Fiserv Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000031/fisv-20260630.htm"
+      },
+      {
+        "label": "Fiserv Q4/FY2025 earnings release（原始 2026 指引）",
+        "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000006/fisv4q25earningsrelease.htm"
+      },
+      {
+        "label": "Yahoo Finance FISV chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/FISV?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 16:00 EDT",
+      "marketState": "regular-close",
+      "source": "Yahoo Finance chart API（NASDAQ FISV regular close）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "正常化 EPS 5.50 × 6 倍",
+        "value": 33,
+        "condition": "有機營收持續負成長、轉型費用常態化、商譽減損或槓桿升高"
+      },
+      {
+        "label": "基準",
+        "assumption": "正常化 EPS 7.30 × 8.5 倍",
+        "value": 62.05,
+        "condition": "2026 指引達標，2027 恢復低個位數成長且調整後 FCF 支持去槓桿"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "正常化 EPS 8.50 × 12 倍",
+        "value": 102,
+        "condition": "Clover 與銀行平台恢復中個位數成長、利潤率回升且市場重建管理層信用"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Earnings reset",
+        "title": "低本益比來自獲利下修，不是單純市場誤價",
+        "body": "年初公司預期 2026 有機成長 1%～3%、調整後 EPS 8.00～8.30 美元；Q2 後已下修至 -1%～0%與 7.20～7.40 美元。Q2 有機營收年減 5%、調整後 EPS 年減 26%，因此不能直接套用過去成長型支付公司的 15～20 倍本益比。"
+      },
+      {
+        "kicker": "Adjustment quality",
+        "title": "調整後 EPS 有經濟意義，但不能完全忽略 GAAP 差距",
+        "body": "H1 GAAP 淨利 11.98 億美元、調整後淨利 19.40 億；調整包括 6.26 億收購無形資產攤銷、3.29 億 One Fiserv 費用與 1.13 億遣散。攤銷雖非當期現金，背後收購資本真實；持續轉型與遣散也不應全部視為零成本。"
+      },
+      {
+        "kicker": "Cash and leverage",
+        "title": "現金流仍正，但資產負債表沒有想像中便宜",
+        "body": "H1 OCF 20.82 億減 CapEx 9.56 億，簡化 FCF 為 11.26 億；公司調整後 FCF 13.60 億。總債務約 278.86 億、非結算現金只有 6.27 億，近似企業價值約 554 億美元，去槓桿優先度高於積極回購。"
+      },
+      {
+        "kicker": "Goodwill and allocation",
+        "title": "商譽與歷史回購暴露資本配置風險",
+        "body": "商譽高達 375.24 億美元；公司揭露八個 reporting units、合計 185 億美元商譽的公允價值僅高於帳面不到 15%，若成長與利潤率再降可能減損。2025 年回購 56 億美元、平均約 174 美元／股，遠高於現價；H1 2026 又以約 60 美元均價回購 3 億美元。"
+      }
+    ],
+    "modelNotes": "基準 EPS 採 2026 公司調整後指引中位數；低倍數反映負成長、高淨負債、調整項目與執行風險。安全邊際區為基準價折讓 15%～20%。"
+  },
+  {
     "ticker": "GOOGL",
     "company": "Alphabet Inc.",
     "asOf": "2026-08-24",
