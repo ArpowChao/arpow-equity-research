@@ -1183,6 +1183,163 @@
     "modelNotes": "週期正常化 EPS 明顯低於 FQ4 峰值指引年化；合理倍數同時反映 HBM 結構成長與供給週期。"
   },
   {
+    "ticker": "PLTR",
+    "company": "Palantir Technologies Inc.",
+    "asOf": "2026-08-24",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 175.89,
+      "baseFairValue": 116.6666666667,
+      "fairRange": [
+        100,
+        135
+      ],
+      "marginOfSafety": [
+        93.33,
+        99.17
+      ],
+      "bear": 60.55,
+      "base": 116.6666666667,
+      "bull": 202.64
+    },
+    "thesis": "Palantir 已把 AIP 從 AI 敘事轉成高速成長、GAAP 高獲利與強現金流，Q2 的美國商業與政府收入同時加速，基本面品質極高；但現價以未來稀釋市值計算約 54 倍 2026 EV/Sales、調整後 FCF 殖利率僅約 1%，已要求超高速成長維持多年。",
+    "metrics": [
+      {
+        "label": "Q2 2026 營收",
+        "value": "19.35 億美元",
+        "note": "年增 93%、季增 19%；全年指引 81.50～81.58 億"
+      },
+      {
+        "label": "美國商業／政府收入",
+        "value": "7.64／8.09 億美元",
+        "note": "分別年增 149%／90%，兩個引擎同步加速"
+      },
+      {
+        "label": "GAAP／調整後營業利益",
+        "value": "9.12／11.94 億美元",
+        "note": "營益率 47%／62%；Rule of 40 為 155%"
+      },
+      {
+        "label": "Q2 GAAP／調整後 EPS",
+        "value": "0.41／0.41 美元",
+        "note": "GAAP 淨利 10.62 億；現金利息收入亦推升淨利率"
+      },
+      {
+        "label": "Q2 OCF／調整後 FCF",
+        "value": "12.16／12.20 億美元",
+        "note": "全年調整後 FCF 指引 45～47 億"
+      },
+      {
+        "label": "RPO／美國商業 RDV",
+        "value": "49.0／62.38 億美元",
+        "note": "RPO 43%預計一年內認列；RDV 包含選擇權及可便利終止合約"
+      },
+      {
+        "label": "現金＋短期美債",
+        "value": "約 92 億美元",
+        "note": "無重大淨負債，資產負債表非常強"
+      },
+      {
+        "label": "基本／Q2 稀釋股數",
+        "value": "24.03／25.69 億股",
+        "note": "Q2 SBC 2.65 億美元，約占營收 13.7%"
+      }
+    ],
+    "drivers": [
+      "AIP bootcamp 轉成長期 production 合約的速度與客戶擴張",
+      "美國商業收入、TCV、RDV 與真正不可取消 RPO 的轉換",
+      "美國政府／國防預算、主權 AI 與大型合約認列時點",
+      "GAAP 營益率、OCF、調整後 FCF 及利息收入占比",
+      "SBC、基本股數、稀釋股數與多重股權治理"
+    ],
+    "risks": [
+      "約 54 倍 2026 EV/Sales 對成長降速極度敏感",
+      "大型政府與商業合約造成季度波動及客戶集中",
+      "TCV／RDV 含選擇權與便利終止條款，未必全數成為收入",
+      "SBC 與未來稀釋降低每股價值",
+      "創辦人集中投票控制與治理風險",
+      "AI 競爭、資料隱私、國防倫理、採購與預算監管"
+    ],
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 12200,
+      "bearMultiple": 15,
+      "baseMultiple": 25,
+      "bullMultiple": 35,
+      "netCash": 10000,
+      "dilutedShares": 2700
+    },
+    "chart": "/charts/pltr-analysis-2026-08-24.png",
+    "sources": [
+      {
+        "label": "Palantir Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm"
+      },
+      {
+        "label": "Palantir Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm"
+      },
+      {
+        "label": "Yahoo Finance PLTR chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-24 16:00 EDT",
+      "marketState": "regular-close",
+      "source": "Yahoo Finance chart API（NASDAQ PLTR regular close）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2027 營收 105 億 × 15 倍 EV/Sales＋90 億淨現金÷27.5 億股",
+        "value": 60.55,
+        "condition": "成長迅速降至約 30%、政府大單時點反轉、倍數向成熟軟體收斂"
+      },
+      {
+        "label": "基準",
+        "assumption": "2027 營收 122 億 × 25 倍 EV/Sales＋100 億淨現金÷27.0 億股",
+        "value": 116.67,
+        "condition": "2027 維持約 50%成長、高營益率與強 FCF，但估值倍數正常化"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2027 營收 150 億 × 35 倍 EV/Sales＋120 億淨現金÷26.5 億股",
+        "value": 202.64,
+        "condition": "美國商業與政府收入維持近 70%～80%成長，AIP 成為標準作業層且稀釋受控"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Operating evidence",
+        "title": "這已不是只有故事的 AI 公司",
+        "body": "Q2 營收年增 93%至 19.35 億美元，GAAP 營業利益率達 47%、OCF margin 63%。美國商業收入年增 149%，美國政府收入亦年增 90%，顯示 AIP、國防與主權 AI 需求均已轉成實際收入及現金流。"
+      },
+      {
+        "kicker": "Bookings quality",
+        "title": "TCV、RDV 與 RPO 必須分開解讀",
+        "body": "Q2 TCV 33.73 億美元、美國商業 RDV 62.38 億，但 TCV／RDV 多數假設客戶行使選擇權且不便利終止；真正不可取消的 RPO 為 49 億，其中約 43%預計十二個月內認列。合約動能很強，但不能把全部 RDV 當作已鎖定收入。"
+      },
+      {
+        "kicker": "Dilution",
+        "title": "GAAP 已獲利，但股權薪酬仍是股東成本",
+        "body": "Q2 SBC 為 2.65 億美元、約占營收 13.7%；基本期末股數 24.03 億，而 Q2 稀釋加權股數 25.69 億，差約 6.9%。本模型使用 26.5～27.5 億未來稀釋股，避免只以基本股數低估估值。"
+      },
+      {
+        "kicker": "Market expectations",
+        "title": "完美基本面仍可能不是好價格",
+        "body": "175.89 美元對應基本市值約 4,226 億、以 Q2 稀釋股估算約 4,518 億美元；扣除 92 億現金後約為 2026 指引營收的 54 倍，全年調整後 FCF 殖利率約 1%。現價已接近本模型樂觀情境，任何成長降速都可能造成營運與估值倍數雙重壓縮。"
+      },
+      {
+        "kicker": "Governance",
+        "title": "多重股權結構使創辦人保有集中控制",
+        "body": "Class A 是公開交易類別；Class B 與 Class F 形成強化投票控制。這有助長期策略一致，但一般股東對董事會與重大事項的影響有限，估值需保留治理折價。"
+      }
+    ],
+    "modelNotes": "估值採 2027 前瞻營收與未來稀釋股數；單位為百萬美元／百萬股。基準價由 (12,200×25＋10,000)÷2,700 精確重現。"
+  },
+  {
     "ticker": "QBTS",
     "company": "D-Wave Quantum Inc.",
     "asOf": "2026-08-24",
