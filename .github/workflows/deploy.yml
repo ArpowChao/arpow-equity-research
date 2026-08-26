@@ -3,6 +3,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # 04:00–20:00 New York during daylight time; captures pre/regular/post market.
+    - cron: '*/15 8-23 * * 1-5'
+    - cron: '*/15 0 * * 2-6'
 permissions:
   contents: read
   pages: write
@@ -20,6 +24,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Refresh delayed quote snapshot
+        run: python3 scripts/update_live_quotes.py
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
