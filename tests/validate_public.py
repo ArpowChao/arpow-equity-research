@@ -38,4 +38,8 @@ for ticker in (x.lower() for x in expected):
     assert "最新可得行情" in html
     assert "本篇分析快照" in html
     assert "data-live-quote" in html
+index_html = (ROOT / "dist/index.html").read_text(encoding="utf-8")
+assert len(re.findall(r'<a[^>]+data-live-card', index_html)) == len(reports)
+for marker in ("最新行情", "分析快照", "基準合理價", "data-live-grid", "約每15分鐘更新"):
+    assert marker in index_html
 print(f"validated {len(reports)} reports and {len(pages)} pages")
