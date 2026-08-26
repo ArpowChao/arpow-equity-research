@@ -1356,6 +1356,192 @@
     "modelNotes": "週期正常化 EPS 明顯低於 FQ4 峰值指引年化；合理倍數同時反映 HBM 結構成長與供給週期。"
   },
   {
+    "ticker": "NVDA",
+    "company": "NVIDIA Corporation",
+    "asOf": "2026-08-25",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 213.05,
+      "baseFairValue": 240,
+      "fairRange": [
+        190,
+        270
+      ],
+      "marginOfSafety": [
+        192,
+        204
+      ],
+      "bear": 144,
+      "base": 240,
+      "bull": 375
+    },
+    "thesis": "NVIDIA 已從 GPU 供應商進化為整合運算、網路與 CUDA 軟體的 AI factory 全棧平台，Q1 FY27 資料中心營收年增92%、毛利率約75%、單季 FCF 486億美元，基本面仍是大型科技最強之一；但 213.05 美元已對應約5.16兆美元近似市值，且本快照位於 Q2 財報公布前一天，現價雖低於240美元基準值，卻尚未提供足夠安全邊際。",
+    "metrics": [
+      {
+        "label": "Q1 FY27 營收／資料中心",
+        "value": "816.15／752.46 億美元",
+        "note": "總營收年增85%；資料中心年增92%、占比約92%"
+      },
+      {
+        "label": "Hyperscale／ACIE",
+        "value": "378.69／373.77 億美元",
+        "note": "約各占資料中心一半；ACIE含AI cloud、企業、工業與主權AI"
+      },
+      {
+        "label": "資料中心 Compute／Networking",
+        "value": "604／148 億美元",
+        "note": "分別年增77%／199%，顯示NVLink、InfiniBand與Ethernet不是附帶業務"
+      },
+      {
+        "label": "Q1 GAAP／正常化 EPS",
+        "value": "2.39／1.87 美元",
+        "note": "GAAP含159億美元證券淨利；新非GAAP口徑已包含SBC"
+      },
+      {
+        "label": "Q2 公司指引／市場EPS預估",
+        "value": "營收910億／EPS 2.09美元",
+        "note": "財報預定8月26日盤後；公司指引未假設中國資料中心compute收入"
+      },
+      {
+        "label": "Q1 OCF／公司FCF",
+        "value": "503.44／485.54 億美元",
+        "note": "TTM FCF約1,190億；以近似市值計算殖利率約2.3%"
+      },
+      {
+        "label": "庫存／供應承諾／雲端承諾",
+        "value": "258／1,190／300 億美元",
+        "note": "提前鎖定供給與研發算力，同時放大需求預估錯誤的風險"
+      },
+      {
+        "label": "期末股數／Q1稀釋股數",
+        "value": "242.21／243.91 億股",
+        "note": "Q1回購193.12億美元；SBC 19.28億且已納入新正常化口徑"
+      },
+      {
+        "label": "PORTS初始或有擔保上限",
+        "value": "1,050 億美元",
+        "note": "OpenAI為承租人；僅在特定違約／付款觸發事件下產生NVIDIA付款義務"
+      }
+    ],
+    "drivers": [
+      "Hyperscale與ACIE收入成長、客戶集中及CSP AI CapEx報酬",
+      "Blackwell 300、Rubin與Groq 3 LPX的量產、良率、供給及產品轉換",
+      "Data Center compute、networking與CUDA軟體的全棧附加價值",
+      "GAAP／正常化毛利、EPS、OCF與FCF，以及投資評價利益",
+      "庫存、供應承諾、雲端承諾與PORTS或有擔保",
+      "中國出口限制、客戶自研ASIC、AMD與其他加速器競爭",
+      "股權薪酬、回購價格與完全稀釋股數"
+    ],
+    "risks": [
+      "Q2財報即將公布，快照可能因新指引迅速失效",
+      "約5.16兆美元市值需要多年高速AI支出與高毛利",
+      "CSP與模型公司資本回報不佳可能導致訂單降速",
+      "TSMC、HBM、先進封裝、網路與電力供給瓶頸",
+      "客戶自研ASIC、AMD及替代推論架構降低定價權",
+      "中國出口限制、監管與地緣政治",
+      "供應／雲端承諾與1,050億美元或有擔保放大集中風險",
+      "投資評價利益使GAAP EPS高估核心營運盈餘"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 10,
+      "bearMultiple": 18,
+      "baseMultiple": 24,
+      "bullMultiple": 30
+    },
+    "chart": "/charts/nvda-analysis-2026-08-25.png",
+    "sources": [
+      {
+        "label": "NVIDIA Q1 FY2027 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm"
+      },
+      {
+        "label": "NVIDIA Q1 FY2027 CFO commentary（SEC exhibit 99.2）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27cfocommentary.htm"
+      },
+      {
+        "label": "NVIDIA Q1 FY2027 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm"
+      },
+      {
+        "label": "NVIDIA PORTS／OpenAI facility guarantee Form 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm"
+      },
+      {
+        "label": "Nasdaq 2026-08-26 earnings calendar",
+        "url": "https://api.nasdaq.com/api/calendar/earnings?date=2026-08-26"
+      },
+      {
+        "label": "Yahoo Finance NVDA chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-25 16:00 EDT",
+      "marketState": "regular-close",
+      "source": "Yahoo Finance chart API（NASDAQ NVDA regular close；財報前快照）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "NTM 正常化 EPS 8.00 × 18 倍",
+        "value": 144,
+        "condition": "CSP CapEx降速、Blackwell／Rubin轉換失誤、中國與出口限制惡化、毛利向下正常化"
+      },
+      {
+        "label": "基準",
+        "assumption": "NTM 正常化 EPS 10.00 × 24 倍",
+        "value": 240,
+        "condition": "Q2指引達標，資料中心維持高成長，約75%毛利及強FCF可延續但倍數逐步正常化"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "NTM 正常化 EPS 12.50 × 30 倍",
+        "value": 375,
+        "condition": "Agentic inference帶動Blackwell與Rubin超預期，Hyperscale與ACIE同步擴張且供給／能源瓶頸受控"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Earnings timing",
+        "title": "這是一份 Q2 財報公布前的快照",
+        "body": "NASDAQ行事曆顯示NVIDIA將於2026年8月26日盤後公布截至7月的季度，市場EPS預估約2.09美元；8月25日收盤價213.05美元較前收179.81美元上漲約18.5%。因此本頁合理價是財報前壓力測試，新結果可能立即改變營收、毛利與EPS假設。"
+      },
+      {
+        "kicker": "Business engine",
+        "title": "真正護城河是 Compute、Networking 與 CUDA 的整體系統",
+        "body": "Q1資料中心compute營收604億美元，networking達148億且年增199%。NVIDIA不只賣單顆GPU，也控制NVLink、InfiniBand、Spectrum-X、系統與軟體堆疊；客戶若要替換，必須同時重建開發工具、通訊與部署生態。"
+      },
+      {
+        "kicker": "Earnings quality",
+        "title": "2.39美元 GAAP EPS 被投資評價利益推高",
+        "body": "Q1證券投資淨利159億美元，使GAAP淨利583億及EPS 2.39高於正常化淨利455億與EPS 1.87。新非GAAP口徑已不再排除SBC，品質比舊口徑更嚴格；本估值使用正常化前瞻EPS，不把未實現投資收益永久年化。"
+      },
+      {
+        "kicker": "Demand quality",
+        "title": "資料中心客戶已多元化，但最終仍依賴大型AI資本支出",
+        "body": "Hyperscale與ACIE各約占資料中心一半，較只依賴少數雲端巨頭健康；然而直接與間接客戶集中、OpenAI等模型公司透過雲端採購，以及CSP自研ASIC，意味市場必須持續證明AI算力能轉成收入與生產力。"
+      },
+      {
+        "kicker": "Capital exposure",
+        "title": "無晶圓廠不代表沒有巨額資本承諾",
+        "body": "庫存258億、供應相關承諾1,190億、研發雲端承諾300億；8月另為OpenAI承租的Ohio AI campus提供初始累計上限1,050億美元或有擔保。該擔保有明確觸發條件與OpenAI補償安排，不是當期負債，但會增加長期信用與集中風險。"
+      },
+      {
+        "kicker": "China and regulation",
+        "title": "Q2指引已排除中國資料中心compute收入",
+        "body": "Q1已沒有對中國出貨Data Center Hopper，而Q2營收指引910億也未假設中國compute收入。這降低指引對中國恢復的依賴，但出口規則、授權條件及中國替代晶片仍會影響長期市場與供應鏈規劃。"
+      },
+      {
+        "kicker": "Market expectations",
+        "title": "好公司仍需要合理的預期與價格",
+        "body": "以4月期末242.21億股估算，213.05美元對應約5.16兆美元股權價值；TTM FCF殖利率約2.3%。基準使用10美元NTM正常化EPS與24倍本益比，隱含240美元；現價已有約12.6%上行，但離192～204美元安全邊際區很近卻尚未進入。"
+      }
+    ],
+    "modelNotes": "採未來12個月正常化EPS；公司自Q1 FY27起的非GAAP口徑已包含SBC並排除證券評價損益。基準價由10.00×24精確重現。"
+  },
+  {
     "ticker": "PLTR",
     "company": "Palantir Technologies Inc.",
     "asOf": "2026-08-24",

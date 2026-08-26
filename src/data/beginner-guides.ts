@@ -93,6 +93,15 @@ export const beginnerGuides: Record<string, BeginnerGuide> = {
       {name:'庫存與 CapEx',why:'庫存與供給紀律決定 NAND 週期。',good:'庫存下降、產能投資克制。',warning:'庫存堆積、同業擴產。'}
     ],terms:['毛利率','CapEx','FCF','P/E']
   },
+  NVDA: {
+    industry:'AI 加速運算＋全棧資料中心', earns:'主要銷售資料中心 GPU／整機、NVLink／InfiniBand／Ethernet 網路與 CUDA 軟體生態；遊戲、工作站、車用與機器人歸入 Edge Computing。', keyQuestion:'Hyperscaler 與企業 AI 支出能否長期成長，讓 Blackwell／Rubin 的收入與現金流跑贏供應承諾、客戶自研晶片與出口限制？',
+    watch:[
+      {name:'Data Center：Hyperscale／ACIE',why:'占營收絕大多數；前者是大型雲端與網路公司，後者含 AI cloud、企業、工業與主權 AI。',good:'兩類客戶同步成長，單一客戶集中下降。',warning:'CSP CapEx 降速、專案延後或中國收入受限。'},
+      {name:'Compute＋Networking 全棧',why:'GPU 之外，NVLink、InfiniBand、Spectrum-X 與軟體共同形成平台護城河。',good:'運算與網路收入同步成長，Blackwell／Rubin 轉換順利。',warning:'新平台延期、良率問題或客戶改用自研 ASIC。'},
+      {name:'Edge Computing',why:'包含遊戲、工作站、汽車、機器人與邊緣 AI，可降低只依賴大型資料中心的風險。',good:'RTX、車用與機器人收入多元成長。',warning:'PC／遊戲週期疲弱，邊緣 AI 仍只有展示沒有量產。'},
+      {name:'毛利、庫存與資本承諾',why:'高毛利來自稀缺與平台定價，但公司也提前鎖定大量供應、雲端與資料中心容量。',good:'毛利約75%、庫存周轉健康且 FCF 快速成長。',warning:'供給承諾、庫存或擔保增加，終端需求與現金回收跟不上。'}
+    ],terms:['GAAP','核心口徑','毛利率','FCF','SBC','P/E']
+  },
   ARM: {
     industry:'半導體 IP 授權', earns:'先收架構／核心設計授權費，再依客戶晶片出貨收 royalty；不直接製造多數晶片。', keyQuestion:'v9 與高價值資料中心／AI 晶片能否提高每顆 royalty，同時控制 SBC 與直接做晶片的資本風險？',
     watch:[
