@@ -22,13 +22,15 @@ const scenarios = report.scenarios ?? [];
 const analysis = report.analysis ?? [];
 const guide = beginnerGuides[report.ticker];
 const [mosLow, mosHigh] = report.snapshot.marginOfSafety;
-const priceVerdict = report.snapshot.price <= mosHigh
-  ? `目前價格已進入本模型的安全邊際區（$${mosLow}–$${mosHigh}），但仍要確認基本面沒有惡化。`
-  : report.snapshot.price < report.snapshot.baseFairValue
-    ? `目前價格低於基準合理價，但還沒進入安全邊際區；便宜一些，不等於風險已經很低。`
-    : report.snapshot.price <= report.snapshot.bull
-      ? `目前價格高於基準合理價，市場已預先相信不少好消息，接下來更怕成長不如預期。`
-      : `目前價格已高於本模型樂觀情境，市場要求多項好事同時發生，容錯空間很小。`;
+const priceVerdict = report.snapshot.price < mosLow
+  ? `目前價格低於本模型安全邊際區下緣（$${mosLow}–$${mosHigh}）；估值折價已足，但要先確認市場是否正在反映基本面惡化。`
+  : report.snapshot.price <= mosHigh
+    ? `目前價格位於本模型的安全邊際區（$${mosLow}–$${mosHigh}），但仍要確認基本面沒有惡化。`
+    : report.snapshot.price < report.snapshot.baseFairValue
+      ? `目前價格低於基準合理價，但還沒進入安全邊際區；便宜一些，不等於風險已經很低。`
+      : report.snapshot.price <= report.snapshot.bull
+        ? `目前價格高於基準合理價，市場已預先相信不少好消息，接下來更怕成長不如預期。`
+        : `目前價格已高於本模型樂觀情境，市場要求多項好事同時發生，容錯空間很小。`;
 ---
 <Base title={`${report.ticker}｜${report.company} 個股研究`} description={report.thesis}>
   <section class="shell report-hero">

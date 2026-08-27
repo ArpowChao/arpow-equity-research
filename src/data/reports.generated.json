@@ -1358,188 +1358,191 @@
   {
     "ticker": "NVDA",
     "company": "NVIDIA Corporation",
-    "asOf": "2026-08-25",
+    "asOf": "2026-08-26",
     "status": "current",
     "currency": "USD",
     "snapshot": {
-      "price": 213.05,
-      "baseFairValue": 240,
+      "price": 219.53,
+      "baseFairValue": 328.62,
       "fairRange": [
-        190,
-        270
+        285,
+        370
       ],
       "marginOfSafety": [
-        192,
-        204
+        262.9,
+        279.33
       ],
-      "bear": 144,
-      "base": 240,
-      "bull": 375
+      "bear": 189,
+      "base": 328.62,
+      "bull": 446.06
     },
-    "thesis": "NVIDIA 已從 GPU 供應商進化為整合運算、網路與 CUDA 軟體的 AI factory 全棧平台，Q1 FY27 資料中心營收年增92%、毛利率約75%、單季 FCF 486億美元，基本面仍是大型科技最強之一；但 213.05 美元已對應約5.16兆美元近似市值，且本快照位於 Q2 財報公布前一天，現價雖低於240美元基準值，卻尚未提供足夠安全邊際。",
+    "thesis": "NVIDIA Q2 FY27營收962.21億美元、資料中心890.23億，均再創紀錄；更重要的是管理層首次預告FY28營收約成長70%，並稱客戶需求接近翻倍、交付受限於供給。219.53美元盤後價在FY28基準正常化EPS約14.94美元下僅約14.7倍，風險報酬轉為正面；但毛利將由75%降至Q4的71%～72%，加上供應、租賃、投資與保證最大曝險合計約5,305億美元，投資人必須把循環融資、營運資金與客戶信用列為核心風險，而不能只看AI需求。",
     "metrics": [
       {
-        "label": "Q1 FY27 營收／資料中心",
-        "value": "816.15／752.46 億美元",
-        "note": "總營收年增85%；資料中心年增92%、占比約92%"
+        "label": "Q2 FY27 營收／資料中心",
+        "value": "962.21／890.23 億美元",
+        "note": "總營收季增18%、年增106%；資料中心季增18%、年增117%"
       },
       {
-        "label": "Hyperscale／ACIE",
-        "value": "378.69／373.77 億美元",
-        "note": "約各占資料中心一半；ACIE含AI cloud、企業、工業與主權AI"
+        "label": "Hyperscale／ACIE／Edge",
+        "value": "487.10／403.13／71.98 億美元",
+        "note": "ACIE季增25%、年增138%，顯示非Hyperscaler需求已接近資料中心一半"
       },
       {
-        "label": "資料中心 Compute／Networking",
-        "value": "604／148 億美元",
-        "note": "分別年增77%／199%，顯示NVLink、InfiniBand與Ethernet不是附帶業務"
+        "label": "Q2 GAAP／正常化 EPS",
+        "value": "2.46／2.22 美元",
+        "note": "GAAP含78億美元證券投資淨利；公司新非GAAP口徑已包含SBC"
       },
       {
-        "label": "Q1 GAAP／正常化 EPS",
-        "value": "2.39／1.87 美元",
-        "note": "GAAP含159億美元證券淨利；新非GAAP口徑已包含SBC"
+        "label": "Q2 OCF／公司定義FCF",
+        "value": "240.77／213.41 億美元",
+        "note": "FCF較Q1明顯下降，主因營運資金與現金稅；H1 FCF約698.95億"
       },
       {
-        "label": "Q2 公司指引／市場EPS預估",
-        "value": "營收910億／EPS 2.09美元",
-        "note": "財報預定8月26日盤後；公司指引未假設中國資料中心compute收入"
+        "label": "Q3營收／毛利指引",
+        "value": "1,080億／74.0%",
+        "note": "營收上下2%；未假設中國資料中心compute收入"
       },
       {
-        "label": "Q1 OCF／公司FCF",
-        "value": "503.44／485.54 億美元",
-        "note": "TTM FCF約1,190億；以近似市值計算殖利率約2.3%"
+        "label": "FY28初步營收成長",
+        "value": "約70%",
+        "note": "管理層稱需求接近翻倍，但目前供給只能有信心支持約70%成長"
       },
       {
-        "label": "庫存／供應承諾／雲端承諾",
-        "value": "258／1,190／300 億美元",
-        "note": "提前鎖定供給與研發算力，同時放大需求預估錯誤的風險"
+        "label": "庫存／應收／DSO",
+        "value": "315.75／630.59億／60天",
+        "note": "DSO由45天升至60天，源自部分投資級客戶的大型跨季協議延長付款條件"
       },
       {
-        "label": "期末股數／Q1稀釋股數",
-        "value": "242.21／243.91 億股",
-        "note": "Q1回購193.12億美元；SBC 19.28億且已納入新正常化口徑"
+        "label": "供應承諾／其他承諾／保證",
+        "value": "2,790／870／1,085 億美元",
+        "note": "合計最大名目曝險約5,305億，但期限、觸發條件與是否轉讓不同，不能直接當成當期現金負債"
       },
       {
-        "label": "PORTS初始或有擔保上限",
-        "value": "1,050 億美元",
-        "note": "OpenAI為承租人；僅在特定違約／付款觸發事件下產生NVIDIA付款義務"
+        "label": "期末／Q2稀釋股數與SBC",
+        "value": "241.47／242.85億股；20.27億美元",
+        "note": "Q2回購約200億美元；回購有助抵銷股權薪酬，但高價回購仍須檢查資本效率"
       }
     ],
     "drivers": [
-      "Hyperscale與ACIE收入成長、客戶集中及CSP AI CapEx報酬",
-      "Blackwell 300、Rubin與Groq 3 LPX的量產、良率、供給及產品轉換",
-      "Data Center compute、networking與CUDA軟體的全棧附加價值",
-      "GAAP／正常化毛利、EPS、OCF與FCF，以及投資評價利益",
-      "庫存、供應承諾、雲端承諾與PORTS或有擔保",
-      "中國出口限制、客戶自研ASIC、AMD與其他加速器競爭",
-      "股權薪酬、回購價格與完全稀釋股數"
+      "FY28約70%供給受限營收成長是否按季轉化為可收現收入",
+      "Vera Rubin量產、良率、Q3約20%資料中心占比及每GW收入提升",
+      "Hyperscale與ACIE各約一半的成長、客戶集中與AI投資報酬",
+      "Q3／Q4／FY28毛利率路徑、記憶體成本與Q1價格調整",
+      "OCF、FCF、DSO、庫存及延長付款條件",
+      "供應、雲端、租賃、投資承諾與土地電力機房保證",
+      "中國收入、出口限制、客戶自研ASIC與AMD／替代架構",
+      "SBC、回購價格、期末與完全稀釋股數"
     ],
     "risks": [
-      "Q2財報即將公布，快照可能因新指引迅速失效",
-      "約5.16兆美元市值需要多年高速AI支出與高毛利",
-      "CSP與模型公司資本回報不佳可能導致訂單降速",
-      "TSMC、HBM、先進封裝、網路與電力供給瓶頸",
-      "客戶自研ASIC、AMD及替代推論架構降低定價權",
-      "中國出口限制、監管與地緣政治",
-      "供應／雲端承諾與1,050億美元或有擔保放大集中風險",
-      "投資評價利益使GAAP EPS高估核心營運盈餘"
+      "FY28 70%成長是初步且供給受限的前瞻指引，不是已簽收現金收入",
+      "毛利率預計由75%降至Q4的71%～72%，記憶體價格仍可能惡化",
+      "DSO升至60天、庫存升至315.75億，營運資金可能持續壓低FCF",
+      "約5,305億美元不同類型承諾與保證放大客戶信用及循環融資風險",
+      "OpenAI、Anthropic與Hyperscaler自研ASIC可能降低長期市占與定價權",
+      "電力、機房、HBM、晶圓、封裝與Networking整條供應鏈均滿載",
+      "未來指引不含中國資料中心compute，出口管制限制長期市場",
+      "投資評價利益使GAAP EPS高於核心營運盈餘"
     ],
     "valuation": {
       "type": "forward-pe",
-      "earnings": 10,
+      "earnings": 14.9372384937,
       "bearMultiple": 18,
-      "baseMultiple": 24,
-      "bullMultiple": 30
+      "baseMultiple": 22,
+      "bullMultiple": 26
     },
-    "chart": "/charts/nvda-analysis-2026-08-25.png",
+    "chart": "/charts/nvda-analysis-2026-08-26.png",
     "sources": [
       {
-        "label": "NVIDIA Q1 FY2027 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm"
+        "label": "NVIDIA Q2 FY2027 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"
       },
       {
-        "label": "NVIDIA Q1 FY2027 CFO commentary（SEC exhibit 99.2）",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27cfocommentary.htm"
+        "label": "NVIDIA Q2 FY2027 CFO commentary（SEC exhibit 99.2）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm"
       },
       {
-        "label": "NVIDIA Q1 FY2027 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm"
+        "label": "NVIDIA Q2 FY2027 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
       },
       {
-        "label": "NVIDIA PORTS／OpenAI facility guarantee Form 8-K",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm"
+        "label": "NVIDIA Q2 FY2027 official earnings-call replay",
+        "url": "https://events.q4inc.com/attendee/842602961"
       },
       {
-        "label": "Nasdaq 2026-08-26 earnings calendar",
-        "url": "https://api.nasdaq.com/api/calendar/earnings?date=2026-08-26"
-      },
-      {
-        "label": "Yahoo Finance NVDA chart snapshot",
-        "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1y&interval=1d"
+        "label": "Yahoo Finance NVDA post-market chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m&includePrePost=true"
       }
     ],
     "priceMeta": {
-      "asOf": "2026-08-25 16:00 EDT",
-      "marketState": "regular-close",
-      "source": "Yahoo Finance chart API（NASDAQ NVDA regular close；財報前快照）"
+      "asOf": "2026-08-26 19:59:59 EDT",
+      "marketState": "post-market",
+      "source": "Yahoo Finance chart API（NASDAQ NVDA；Q2 FY27財報與電話會議後盤後快照，非交易所即時報價）"
     },
     "scenarios": [
       {
         "label": "悲觀",
-        "assumption": "NTM 正常化 EPS 8.00 × 18 倍",
-        "value": 144,
-        "condition": "CSP CapEx降速、Blackwell／Rubin轉換失誤、中國與出口限制惡化、毛利向下正常化"
+        "assumption": "FY28營收5,600億 × 正常化淨利率45% ÷ 240億股 × 18倍",
+        "value": 189,
+        "condition": "Rubin供應或良率不順、毛利壓力超預期、AI客戶融資惡化、自研ASIC侵蝕需求，FY28只成長約36%"
       },
       {
         "label": "基準",
-        "assumption": "NTM 正常化 EPS 10.00 × 24 倍",
-        "value": 240,
-        "condition": "Q2指引達標，資料中心維持高成長，約75%毛利及強FCF可延續但倍數逐步正常化"
+        "assumption": "FY28營收7,000億 × 正常化淨利率51% ÷ 239億股 × 22倍",
+        "value": 328.62,
+        "condition": "公司約70%供給受限指引大致兌現，FY28毛利維持72%～73%，ACIE與Hyperscale各自保持高成長"
       },
       {
         "label": "樂觀",
-        "assumption": "NTM 正常化 EPS 12.50 × 30 倍",
-        "value": 375,
-        "condition": "Agentic inference帶動Blackwell與Rubin超預期，Hyperscale與ACIE同步擴張且供給／能源瓶頸受控"
+        "assumption": "FY28營收7,600億 × 正常化淨利率53.5% ÷ 237億股 × 26倍",
+        "value": 446.06,
+        "condition": "供給缺口縮小、Rubin成為史上最快爬坡、全棧收入／GW提升且信用支持未出現損失"
       }
     ],
     "analysis": [
       {
-        "kicker": "Earnings timing",
-        "title": "這是一份 Q2 財報公布前的快照",
-        "body": "NASDAQ行事曆顯示NVIDIA將於2026年8月26日盤後公布截至7月的季度，市場EPS預估約2.09美元；8月25日收盤價213.05美元較前收208.48美元上漲約2.2%。因此本頁合理價是財報前壓力測試，新結果可能立即改變營收、毛利與EPS假設。"
+        "kicker": "Post-earnings update",
+        "title": "財報遠超原指引，真正的新資訊是FY28約70%成長",
+        "body": "Q2營收962.21億美元，高於財報前公司910億美元指引中點約5.7%；資料中心890.23億美元，ACIE增速高於Hyperscale。電話會議中管理層首次提前一年給出FY28約70%營收成長，並表示客戶預測需求接近翻倍，但現有供給只能有信心交付約70%。這使估值基礎由財報前NTM EPS，轉為可核對的FY28供給與正常化EPS。"
       },
       {
-        "kicker": "Business engine",
-        "title": "真正護城河是 Compute、Networking 與 CUDA 的整體系統",
-        "body": "Q1資料中心compute營收604億美元，networking達148億且年增199%。NVIDIA不只賣單顆GPU，也控制NVLink、InfiniBand、Spectrum-X、系統與軟體堆疊；客戶若要替換，必須同時重建開發工具、通訊與部署生態。"
+        "kicker": "Call — prepared remarks",
+        "title": "Vera Rubin已開始量產，Q3預計占資料中心約20%",
+        "body": "完整官方會議錄音長59分30秒，prepared remarks約27分鐘。管理層表示Vera Rubin已於8月開始量產出貨，主要Hyperscaler、AI cloud與OEM均已有訂單；Q3營收指引1,080億美元，Rubin預計占資料中心約20%。NVIDIA估計收入機會由Hopper每GW約180億美元、Blackwell約250億，提升至Rubin約400億，反映CPU、GPU、NVLink與Networking的全棧擴張。"
+      },
+      {
+        "kicker": "Call — Q&A quality",
+        "title": "需求回答強，但承諾曝險、ASIC與瓶頸排序回答不足",
+        "body": "八組Q&A中，管理層對70%成長的供給基礎與開放／封閉模型都能受益的邏輯說得清楚；然而分析師追問約5,000億美元生態承諾及FY28現金額時，CFO只說供給承諾集中前三年，沒有直接量化。被問到OpenAI、Anthropic自研ASIC時，Jensen以全棧平台優勢回答，未量化市占侵蝕；被要求排序電力、記憶體、晶圓等瓶頸時，也只回答整條供應鏈都滿載。這三處是會議最重要的未解問題。"
       },
       {
         "kicker": "Earnings quality",
-        "title": "2.39美元 GAAP EPS 被投資評價利益推高",
-        "body": "Q1證券投資淨利159億美元，使GAAP淨利583億及EPS 2.39高於正常化淨利455億與EPS 1.87。新非GAAP口徑已不再排除SBC，品質比舊口徑更嚴格；本估值使用正常化前瞻EPS，不把未實現投資收益永久年化。"
+        "title": "GAAP EPS仍被投資利益推高，正常化2.22美元較可用",
+        "body": "Q2 GAAP淨利596.88億、EPS 2.46美元，包含78億美元證券投資淨利；公司非GAAP淨利539.54億、EPS 2.22美元已包含20.27億美元SBC，並排除投資評價等非核心項目。估值不把投資收益永久年化，而是以FY28收入、正常化淨利率與完全稀釋股數重建每股價值。"
       },
       {
-        "kicker": "Demand quality",
-        "title": "資料中心客戶已多元化，但最終仍依賴大型AI資本支出",
-        "body": "Hyperscale與ACIE各約占資料中心一半，較只依賴少數雲端巨頭健康；然而直接與間接客戶集中、OpenAI等模型公司透過雲端採購，以及CSP自研ASIC，意味市場必須持續證明AI算力能轉成收入與生產力。"
+        "kicker": "Cash-flow warning",
+        "title": "營收創高，但Q2 FCF降至213億美元、DSO升至60天",
+        "body": "Q2 OCF 240.77億、公司定義FCF 213.41億，遠低於Q1的485.54億，主要因營運資金與現金稅。應收帳款630.59億，DSO由45天升至60天；公司解釋為部分投資級客戶的大型跨季協議延長付款。庫存也由258億升至315.75億，為Rubin備貨。這些未必代表需求變差，但後續必須確認收入、收現與庫存能同步轉化。"
       },
       {
-        "kicker": "Capital exposure",
-        "title": "無晶圓廠不代表沒有巨額資本承諾",
-        "body": "庫存258億、供應相關承諾1,190億、研發雲端承諾300億；8月另為OpenAI承租的Ohio AI campus提供初始累計上限1,050億美元或有擔保。該擔保有明確觸發條件與OpenAI補償安排，不是當期負債，但會增加長期信用與集中風險。"
+        "kicker": "Margin reset",
+        "title": "記憶體成本迫使毛利率先降後回升",
+        "body": "Q2 GAAP與非GAAP毛利率均為75%；公司預估Q3為74%，Q4落底於71%～72%，FY28在Q1價格調整生效後回到72%～73%。管理層對記憶體價格壓力的說法相當直接，顯示需求強不代表毛利永遠停在75%；估值使用51%基準正常化淨利率，而非永久外推本季56%的非GAAP淨利率。"
       },
       {
-        "kicker": "China and regulation",
-        "title": "Q2指引已排除中國資料中心compute收入",
-        "body": "Q1已沒有對中國出貨Data Center Hopper，而Q2營收指引910億也未假設中國compute收入。這降低指引對中國恢復的依賴，但出口規則、授權條件及中國替代晶片仍會影響長期市場與供應鏈規劃。"
+        "kicker": "Balance-sheet expansion",
+        "title": "NVIDIA已不只是無晶圓廠晶片商，也開始承擔基礎設施信用風險",
+        "body": "截至7月，公司列示供應與容量、雲端、租賃、股權投資及CapEx承諾合計3,660億美元；另有560億美元AI cloud與第三方租賃承諾，以及最高1,085億美元土地、電力與機房保證。總名目曝險約5,305億美元，但期限與觸發條件不同，不能當成當期負債。公司另與六家資本供應者動員逾5,000億美元第三方資金，那部分也不是NVIDIA自身現金承諾。"
       },
       {
-        "kicker": "Market expectations",
-        "title": "好公司仍需要合理的預期與價格",
-        "body": "以4月期末242.21億股估算，213.05美元對應約5.16兆美元股權價值；TTM FCF殖利率約2.3%。基準使用10美元NTM正常化EPS與24倍本益比，隱含240美元；現價已有約12.6%上行，但離192～204美元安全邊際區很近卻尚未進入。"
+        "kicker": "Valuation",
+        "title": "219.53美元低於基準安全邊際，但不是沒有尾端風險",
+        "body": "以盤後219.53美元及約241.9億股估算，近似股權價值約5.31兆美元。基準假設FY28營收7,000億、正常化淨利率51%、239億稀釋股，EPS約14.94美元，給22倍得328.62美元；安全邊際區約262.90～279.33美元。現價低於安全邊際，風險報酬轉為正面，但悲觀情境189美元仍代表約14%下行，適合分批而非把70%指引視為無條件保證。"
       }
     ],
-    "modelNotes": "採未來12個月正常化EPS；公司自Q1 FY27起的非GAAP口徑已包含SBC並排除證券評價損益。基準價由10.00×24精確重現。"
+    "modelNotes": "採FY28正常化EPS作12至18個月風險調整估值。基準：7,000億美元營收×51%正常化淨利率÷239億稀釋股×22倍＝328.62美元；安全邊際為基準值的80%至85%。悲觀與樂觀情境各自使用不同營收、淨利率、股數與倍數，不把單季75%毛利或投資利益永久年化。",
+    "updatedFrom": "2026-08-25 財報前研究"
   },
   {
     "ticker": "PLTR",
