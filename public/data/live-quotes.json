@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-08-28T00:47:54.787579Z",
+  "fetchedAt": "2026-08-28T03:31:19.247581Z",
   "updatePolicy": "Scheduled snapshot; normally refreshed about every 15 minutes during U.S. extended trading hours on weekdays.",
   "quotes": {
     "AMD": {
@@ -12,6 +12,20 @@
       "exchangeTimezone": "America/New_York",
       "regularMarketPrice": 476.67,
       "referencePrice": 476.67,
+      "currency": "USD",
+      "exchange": "NasdaqGS",
+      "source": "Yahoo Finance chart API"
+    },
+    "AMZN": {
+      "ticker": "AMZN",
+      "price": 256.31,
+      "change": 0.05,
+      "changePercent": 0.0195,
+      "phase": "post-market",
+      "observedAt": "2026-08-27T23:59:55Z",
+      "exchangeTimezone": "America/New_York",
+      "regularMarketPrice": 256.26,
+      "referencePrice": 256.26,
       "currency": "USD",
       "exchange": "NasdaqGS",
       "source": "Yahoo Finance chart API"

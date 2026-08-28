@@ -132,6 +132,157 @@
     "modelNotes": "正常化 EPS 不是 Q2 單季年化；同列 FCF 與營運資金以檢查非 GAAP 盈餘品質。"
   },
   {
+    "ticker": "AMZN",
+    "company": "Amazon.com, Inc.",
+    "asOf": "2026-08-27",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 256.26,
+      "bear": 174,
+      "base": 286.75,
+      "bull": 414,
+      "baseFairValue": 286.75,
+      "fairRange": [
+        250,
+        315
+      ],
+      "fairRangeLow": 250,
+      "fairRangeHigh": 315,
+      "marginOfSafetyLow": 229.4,
+      "marginOfSafetyHigh": 243.74,
+      "chart": "/arpow-equity-research/charts/amzn-analysis-2026-08-27.png",
+      "marginOfSafety": [
+        229.4,
+        243.74
+      ]
+    },
+    "thesis": "Amazon目前最重要的改變是AWS重新加速至36.7%，且4960億美元長約backlog支持多年需求；但真正的檢驗不是GAAP EPS，而是2200億美元AI CapEx何時轉成可重複FCF。現價低於基準合理價約10.6%，仍未進入20%至15%安全邊際區。",
+    "metrics": [
+      {
+        "label": "Q2營收／營業利益",
+        "value": "2006.06／274.61億美元",
+        "note": "年增20%／43%；本業成長強，但GAAP淨利另含巨額投資評價利益"
+      },
+      {
+        "label": "AWS收入／營業利益",
+        "value": "422.32／166.21億美元",
+        "note": "收入年增36.7%，報告營益率39.4%；約6億美元能源衍生品利益屬一次性"
+      },
+      {
+        "label": "AWS backlog",
+        "value": "4960億美元",
+        "note": "一年以上合約、加權剩餘6.4年；不能一次當成收入或現金"
+      },
+      {
+        "label": "廣告收入",
+        "value": "198.09億美元／+26%",
+        "note": "高購物意圖流量的高毛利變現引擎"
+      },
+      {
+        "label": "北美／國際營業利益",
+        "value": "91.23／17.17億美元",
+        "note": "兩個零售分部均獲利；運輸成本年增19%仍是壓力"
+      },
+      {
+        "label": "TTM OCF／CapEx／FCF",
+        "value": "1614.03／1690.07／-76.04億美元",
+        "note": "2026現金CapEx指引提高至約2200億美元，主要支持AWS與AI"
+      },
+      {
+        "label": "Q2 GAAP／估算正常化EPS",
+        "value": "5.75／約2.31美元",
+        "note": "正常化估算移除534億美元稅前Anthropic評價利益及相關離散稅負"
+      },
+      {
+        "label": "現金證券／長債／長期租賃",
+        "value": "1229.88／1288.94／943.38億美元",
+        "note": "未計租賃近似淨負債59.06億；含長期租賃約1002.44億"
+      },
+      {
+        "label": "流通股／含股權獎勵",
+        "value": "107.83／約110億股",
+        "note": "H1 SBC 193.14億美元；Globalstar股票對價估計另增約0.2%股數"
+      }
+    ],
+    "drivers": [
+      "AWS core與AI收入增速、容量上線、利用率及排除一次性項目後的營益率",
+      "4960億美元backlog轉成收入與現金的速度、客戶集中及長約成本保護",
+      "廣告、第三方賣家服務與Prime訂閱占比帶來的高毛利組合",
+      "北美／國際零售配送距離、機器人、生鮮密度與每單履約成本",
+      "2200億美元現金CapEx、OCF、FCF、債務、租賃與資料中心回收期",
+      "Anthropic／OpenAI投資、Globalstar收購、SBC及完全稀釋股數"
+    ],
+    "risks": [
+      "2026現金CapEx約2200億美元，TTM FCF已轉負；需求或利用率不如預期會形成折舊、電力與融資壓力。",
+      "4960億美元backlog平均年限6.4年，不能全部視為短期營收；既有固定價格長約可能吸收記憶體、電力與SSD成本上漲。",
+      "Anthropic評價利益使GAAP EPS嚴重失真，未來重估亦可能反向造成巨額損失。",
+      "AWS AI需求集中於大型模型公司；OpenAI與Anthropic同時是大客戶、被投資公司及生態合作夥伴，存在信用與資本配置集中風險。",
+      "零售運輸成本年增19%，燃油與幹線運力壓力可能侵蝕北美／國際利潤改善。",
+      "債務、租賃、OpenAI／Anthropic投資與Globalstar收購同時提高資本需求；未來融資結構尚未量化。",
+      "反壟斷、勞工、資料隱私、雲端集中與AI監管可能限制業務或增加成本。"
+    ],
+    "valuation": {
+      "kind": "earnings",
+      "earnings": 9.25,
+      "baseMultiple": 31,
+      "baseFairValue": 286.75,
+      "modelNotes": "以FY2027正常化EPS估值，排除Anthropic等未實現投資評價利益。基準假設AWS與廣告延續成長、零售效率改善，但2200億美元AI CapEx仍壓低FCF；31倍反映AWS 30%以上成長與廣告品質，也高於成熟零售商。",
+      "type": "earnings"
+    },
+    "chart": "/charts/amzn-analysis-2026-08-27.png",
+    "sources": [
+      {
+        "label": "SEC Q2 2026 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+      },
+      {
+        "label": "SEC Q2 2026 earnings release",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm"
+      },
+      {
+        "label": "SEC Globalstar S-4",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926089294/tm2617924-1_s4.htm"
+      },
+      {
+        "label": "Amazon official Q2 2026 event page",
+        "url": "https://ir.aboutamazon.com/events/event-details/2026/Q2-2026-Amazoncom-Inc-Earnings-Conference-Call/default.aspx"
+      },
+      {
+        "label": "Q2 2026 call transcript cross-check",
+        "url": "https://www.fool.com/earnings/call-transcripts/2026/08/07/amazon-amzn-q2-2026-earnings-call-transcript/"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-27 16:00 EDT",
+      "marketState": "regular-close",
+      "source": "Yahoo Finance chart API",
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/AMZN?range=1d&interval=1m&includePrePost=true",
+      "note": "分析快照固定使用8月27日正規盤收盤256.26美元；盤後與網站延遲行情只供比較，不自動改寫估值。"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "FY2027正常化EPS 7.25美元 × 24倍P/E",
+        "value": 174,
+        "condition": "AWS降至20%附近、長約成本與折舊壓縮利潤，零售運費上升，AI CapEx回報延後。"
+      },
+      {
+        "label": "基準",
+        "assumption": "FY2027正常化EPS 9.25美元 × 31倍P/E",
+        "value": 286.75,
+        "condition": "AWS維持高20%至低30%成長、廣告約20%，零售效率抵銷部分物流成本，正常化本業盈餘穩健增加。"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "FY2027正常化EPS 11.50美元 × 36倍P/E",
+        "value": 414,
+        "condition": "AWS AI容量迅速滿載，Trainium提高成本效率，廣告與高毛利服務擴張，2027後CapEx增速開始低於收入。"
+      }
+    ],
+    "modelNotes": "採FY2027正常化EPS，不把Anthropic未實現評價利益當作可重複盈餘。基準為9.25美元×31倍＝286.75美元；2200億美元AI CapEx及負FCF用較保守EPS與安全邊際反映。"
+  },
+  {
     "ticker": "ARM",
     "company": "Arm Holdings plc",
     "asOf": "2026-08-24",
