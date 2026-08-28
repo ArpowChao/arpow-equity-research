@@ -1966,5 +1966,192 @@
       }
     ],
     "modelNotes": "FY2026 與 FQ1 指引反映高峰；基準採中週期 EPS，並對 NAND 較高供給彈性保留折價。"
+  },
+  {
+    "ticker": "SPCX",
+    "company": "Space Exploration Technologies Corp.",
+    "asOf": "2026-08-27",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 140.87,
+      "baseFairValue": 134.3065693431,
+      "fairRange": [
+        120,
+        145
+      ],
+      "marginOfSafety": [
+        107.45,
+        114.16
+      ],
+      "bear": 63.67,
+      "base": 134.31,
+      "bull": 222.43
+    },
+    "thesis": "SPCX 已確認為2026年6月上市的SpaceX，而不是歷史上使用同代號的SPAC ETF。公司把Launch、Starlink與合併xAI後的AI算力整合為三個引擎；Q2營收年增92%、Starlink達1200萬訂戶，AI cloud合約讓Adjusted EBITDA大增。然而H1簡化FCF為負250億美元，未來兩季CapEx仍可能各接近184億，1000億美元年末ARR也尚未由GAAP收入與現金流驗證。140.87美元收盤價略高於134.31美元基準價，已反映大部分順利執行情境。",
+    "metrics": [
+      {
+        "label": "Q2營收／年增",
+        "value": "78.14億美元／+92%",
+        "note": "Space 9.62億、Connectivity 42.91億、AI 25.61億；AI含新cloud合約初始認列"
+      },
+      {
+        "label": "Q2 GAAP營業損失／淨損",
+        "value": "-1.43／-5.41億美元",
+        "note": "本業接近損益兩平，但利息及其他項目使GAAP仍虧損"
+      },
+      {
+        "label": "Q2 Adjusted EBITDA",
+        "value": "35.38億美元",
+        "note": "加回28.48億折舊攤銷、8.31億SBC等；不能替代FCF"
+      },
+      {
+        "label": "H1 OCF／CapEx／簡化FCF",
+        "value": "34.66／284.76／-250.10億美元",
+        "note": "AI CapEx占235.51億；公司預期Q3、Q4各約接近Q2的183.69億"
+      },
+      {
+        "label": "Starlink訂戶／ARPU",
+        "value": "1200萬／每月66美元",
+        "note": "訂戶年增一倍；ARPU由去年85美元降至66美元，反映海外在地定價"
+      },
+      {
+        "label": "Connectivity營業利益",
+        "value": "16.56億美元",
+        "note": "年增79%，是目前最成熟的獲利引擎"
+      },
+      {
+        "label": "Backlog",
+        "value": "474.61億美元",
+        "note": "56%預計一年內認列、34%於一至三年；Q2兩大客戶占營收18.3%與19.5%"
+      },
+      {
+        "label": "現金＋有價證券／債務租賃",
+        "value": "1000.09／393.64億美元",
+        "note": "簡化淨現金約606億；IPO與250億美元債券是主要資金來源"
+      },
+      {
+        "label": "期末股數／Cursor潛在稀釋",
+        "value": "131.82億／約4.26億股",
+        "note": "Cursor以600億美元股票收購，按140.87美元近似約3.2%額外稀釋；實際依交割前七日VWAP"
+      }
+    ],
+    "drivers": [
+      "Starlink消費者訂戶、ARPU、企業／航空／政府收入與V3容量",
+      "Starship V3軌道任務、船體／助推器回收、發射頻率與單位成本",
+      "AI nameplate compute、利用率、每瓦變現、cloud合約續約與客戶集中",
+      "2026年12月ARR能否由GAAP收入、遞延收入與現金回收驗證",
+      "OCF、AI／Space／Connectivity CapEx、負FCF與資產負債表消耗",
+      "Cursor股票收購、RSU／期權、Musk績效股與完全稀釋股數"
+    ],
+    "risks": [
+      "Starship測試失敗、監管延誤或完整快速重複使用未如期落地",
+      "AI客戶高度集中、GPU／HBM／電力供應受限與算力價格正常化",
+      "CapEx遠高於OCF，流動性主要來自IPO與發債而非內生FCF",
+      "Starlink ARPU下降、頻譜／各國監管、地面網路與競爭風險",
+      "Cursor 600億美元股票收購的整合、估值與約3%以上即時稀釋",
+      "X／Grok相關內容、隱私、著作權與監管訴訟外溢至合併公司",
+      "雙層股權與Musk控制權使少數股東治理保護較弱",
+      "新上市股票、lock-up釋出、員工股權與高估值造成劇烈波動"
+    ],
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 100000,
+      "bearMultiple": 12,
+      "baseMultiple": 18,
+      "bullMultiple": 24,
+      "netCash": 40000,
+      "dilutedShares": 13700
+    },
+    "chart": "/charts/spcx-analysis-2026-08-27.png",
+    "sources": [
+      {
+        "label": "SpaceX Q2 2026 earnings release（SEC exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052515/earningsreleaseq22608042.htm"
+      },
+      {
+        "label": "SpaceX Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm"
+      },
+      {
+        "label": "SpaceX IPO prospectus（Form 424B4）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm"
+      },
+      {
+        "label": "SpaceX Q2 2026 official earnings event",
+        "url": "https://ir.spacex.com/events/event-details/2026/SpaceX-Q2-2026-Earnings/default.aspx"
+      },
+      {
+        "label": "Q2 2026 earnings call transcript（cross-check）",
+        "url": "https://www.fool.com/earnings/call-transcripts/2026/08/11/spacex-spcx-q2-2026-earnings-call-transcript/"
+      },
+      {
+        "label": "Yahoo Finance SPCX chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/SPCX?range=3mo&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-08-27 16:00 EDT",
+      "marketState": "regular-close",
+      "source": "Yahoo Finance chart API（NASDAQ SPCX regular-market close）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2026年12月ARR 700億 × 12倍EV/Sales＋450億情境淨現金÷139億未來稀釋股",
+        "value": 63.67,
+        "condition": "AI cloud合約爬坡或續約不及預期、Starship延誤、CapEx與稀釋超標，ARR遠低於管理層目標"
+      },
+      {
+        "label": "基準",
+        "assumption": "2026年12月ARR 1000億 × 18倍EV/Sales＋400億情境淨現金÷137億未來稀釋股",
+        "value": 134.31,
+        "condition": "已簽AI合約與Cursor按期貢獻、Starlink維持高成長，但高CapEx延續且完全稀釋股數增加"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2026年12月ARR 1250億 × 24倍EV/Sales＋250億情境淨現金÷136億未來稀釋股",
+        "value": 222.43,
+        "condition": "AI容量、Starlink V3與Mobile順利放量，Starship快速重複使用落地，市場持續給予極高成長倍數"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Identity",
+        "title": "SPCX現在是SpaceX，不是舊SPAC ETF",
+        "body": "SEC company tickers、CIK 0001181412、Nasdaq與10-Q封面均一致。SpaceX於6月以135美元IPO，8月27日收140.87美元；歷史ETF搜尋結果屬代號舊用途，不能混用其費用率或持倉。"
+      },
+      {
+        "kicker": "Business engines",
+        "title": "Starlink是現金引擎，AI是成長與燒錢引擎",
+        "body": "Connectivity Q2營收42.91億、營業利益16.56億；AI營收25.61億但GAAP營業損失12.57億，同時單季CapEx達158.28億。Launch仍因Starship R&D而虧損，真正的估值核心是Starlink現金流能否支撐AI與Starship投資。"
+      },
+      {
+        "kicker": "Growth visibility",
+        "title": "474.61億backlog與AI合約提供可見度，但集中度高",
+        "body": "公司Q2簽下141億美元AI contracted sales，Q3初另簽67億；但Q2最大兩名客戶占營收18.3%與19.5%。新容量若客戶延後、GPU供應不足或價格回落，收入、回收期和CapEx效率可能同時惡化。"
+      },
+      {
+        "kicker": "Cash flow",
+        "title": "Adjusted EBITDA很好看，FCF卻仍大幅為負",
+        "body": "Q2 Adjusted EBITDA 35.38億主要加回折舊攤銷與SBC；H1 OCF 34.66億遠不足覆蓋284.76億CapEx。IPO與發債帶來1000億流動性，但管理層指引下半年仍可能再投入約368億CapEx。"
+      },
+      {
+        "kicker": "Management targets",
+        "title": "1000億美元ARR是年末單月年化，不是2026全年營收",
+        "body": "管理層稱即使不再簽新單也可在12月達到1000億美元ARR，並把1兆美元年度營收目標提前至2030；但沒有提供完整分部橋接。估值以此作基準情境條件，而非已實現GAAP收入。"
+      },
+      {
+        "kicker": "Dilution and control",
+        "title": "Cursor、員工股權與雙層股權都要納入每股價值",
+        "body": "7月28日A、B類合計約131.82億股；600億美元Cursor交易採股票支付，按快照價近似新增4.26億股。Elon Musk控制B類高投票權股份，且約13.02億股受績效條件限制但可投票，少數股東治理權有限。"
+      },
+      {
+        "kicker": "Market expectations",
+        "title": "現價約等於18倍管理層年末ARR的企業價值",
+        "body": "按期末股數計算，140.87美元約對應1.86兆美元股權價值；扣除簡化淨現金後，約為1000億美元ARR的18倍。這要求AI合約、Starlink V3、Cursor及Starship多項里程碑大致同步成功，並非低預期估值。"
+      }
+    ],
+    "modelNotes": "採管理層2026年12月ARR作前瞻run-rate代理，單位為百萬美元／百萬股；不是2026全年GAAP收入。基準價由(100,000×18＋40,000)÷13,700精確重現。情境淨現金已考慮H2高CapEx；未來稀釋股納入Cursor股票交易、員工股權與緩衝。"
   }
 ]

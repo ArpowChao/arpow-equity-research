@@ -31,12 +31,24 @@ export const glossary: Record<string, string> = {
   ARPU: '每位使用者平均收入；訂戶增加但 ARPU 下滑，獲利未必改善。',
   TAC: '流量取得成本：Google 為取得搜尋流量付給合作夥伴的費用。',
   bookings: '新簽訂單或預約量；要繼續追蹤它能否轉成 RPO、營收與現金。',
+  backlog: '已簽約、尚待履行的合約價值。要看取消條款、客戶集中與預計認列時間，不能直接當成現金。',
+  ARR: '年度經常性收入或年化收入運行率。若以單月乘以 12 推算，代表當下速度，不等於全年已實現營收。',
+  'Adjusted EBITDA': '公司加回折舊、股權薪酬、利息等項目後的非 GAAP 利潤；可能與自由現金流差很大。',
   EMA20: '近 20 個交易日價格的加權平均線，只描述短期價格趨勢，不代表公司價值。',
   'EV/Sales': '企業價值除以營收。常用於尚未成熟或虧損公司；倍數越高，市場要求的未來成長越高。',
   'P/E': '股價除以每股盈餘。只適合盈餘相對正常的公司；一次性利益或週期高峰會讓它失真。'
 };
 
 export const beginnerGuides: Record<string, BeginnerGuide> = {
+  SPCX: {
+    industry:'太空運輸＋衛星網路＋AI算力', earns:'Launch替客戶與政府發射火箭；Starlink向消費者、企業與政府收網路費；合併xAI後也出售AI算力、模型與X平台服務。', keyQuestion:'Starlink的現金利潤能否支撐Starship與AI的巨額CapEx，並把1000億美元年末ARR轉成可持續的GAAP收入與FCF？',
+    watch:[
+      {name:'Connectivity／Starlink',why:'目前唯一大型且GAAP營業獲利的分部，是整體現金引擎。',good:'訂戶、企業／政府收入與營業利益快於ARPU下滑。',warning:'ARPU、容量或監管限制使收入成長慢於衛星投資。'},
+      {name:'Starship里程碑',why:'完整快速重複使用決定發射成本、V3衛星部署和長期太空經濟選擇權。',good:'軌道任務、船體／助推器回收與日常發射依序落地。',warning:'測試失敗、監管延誤或單位成本沒有下降。'},
+      {name:'AI算力與合約',why:'目前成長最快，也占絕大多數CapEx；合約客戶集中。',good:'已簽合約按期認列、利用率與現金回收支持不到一年回收期。',warning:'GPU／電力延誤、價格回落、客戶不續約或AI仍GAAP虧損。'},
+      {name:'CapEx／FCF／稀釋',why:'Adjusted EBITDA會加回巨額折舊與SBC，不能代表股東真正剩下的現金。',good:'OCF逐步覆蓋CapEx，淨現金不再快速消耗，每股收入快於股數。',warning:'靠IPO、發債或發股持續填補負FCF。'}
+    ],terms:['GAAP','Adjusted EBITDA','ARR','backlog','OCF','CapEx','FCF','SBC','稀釋股數','EV/Sales']
+  },
   GOOGL: {
     industry: '數位廣告＋雲端平台',
     earns: '主要靠搜尋與 YouTube 廣告賺錢，Google Cloud 是第二成長引擎；AI 目前同時帶來新產品與龐大資料中心支出。',
