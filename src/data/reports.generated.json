@@ -2304,5 +2304,201 @@
       }
     ],
     "modelNotes": "採管理層2026年12月ARR作前瞻run-rate代理，單位為百萬美元／百萬股；不是2026全年GAAP收入。基準價由(100,000×18＋40,000)÷13,700精確重現。情境淨現金已考慮H2高CapEx；未來稀釋股納入Cursor股票交易、員工股權與緩衝。"
+  },
+  {
+    "ticker": "UAMY",
+    "company": "United States Antimony Corporation",
+    "asOf": "2026-09-02",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 4.8985,
+      "baseFairValue": 3.3974358974,
+      "fairRange": [
+        3.0,
+        4.0
+      ],
+      "marginOfSafety": [
+        2.72,
+        2.89
+      ],
+      "bear": 1.46,
+      "base": 3.4,
+      "bull": 7.18
+    },
+    "thesis": "UAMY具備美國唯一營運中、獲許可銻加工平台與DLA戰略價值，但Q2本業仍虧損、毛利率僅7%，2026營收指引更由1.25億美元大降至6000萬至7500萬美元。現價約對應2026中位營收近10倍企業價值，已提前反映DLA交付、產能爬坡與國內礦源成功；在可驗證毛利及FCF出現前，4.90美元高於3.40美元基準合理價。",
+    "metrics": [
+      {
+        "label": "Q2營收／年增",
+        "value": "792.6萬美元／-24.7%",
+        "note": "銻售量增26%，但平均售價由28.32降至13.70美元／磅"
+      },
+      {
+        "label": "Q2毛利／毛利率",
+        "value": "58.3萬美元／7%",
+        "note": "銻每磅售價13.70、平均成本13.34，單位價差僅約0.36美元"
+      },
+      {
+        "label": "Q2營業損失／淨利",
+        "value": "-698.1／+11.0萬美元",
+        "note": "淨利主要靠Larvotto未實現利益678.6萬美元，不代表本業獲利"
+      },
+      {
+        "label": "銻／沸石收入",
+        "value": "590／190萬美元",
+        "note": "銻年減39%；沸石收入年增110%、銷量增114%，但規模仍小"
+      },
+      {
+        "label": "DLA合約／已下單",
+        "value": "最高2.45億／5730萬美元",
+        "note": "最高額IDIQ不是backlog；10-Q截至6月底只揭露約1200萬，5730萬為8月管理層更新"
+      },
+      {
+        "label": "2026營收指引",
+        "value": "6000萬–7500萬美元",
+        "note": "由1.25億美元大幅下修，反映銻價、Thompson Falls爬坡與政府驗收時程"
+      },
+      {
+        "label": "H1 OCF／gross CapEx／簡化FCF",
+        "value": "-2072／2281／-4353萬美元",
+        "note": "部分CapEx由1280萬美元DPA grant補助；現金仍主要靠發股"
+      },
+      {
+        "label": "現金＋Treasury＋Larvotto",
+        "value": "約1.02億美元",
+        "note": "現金4140萬、Treasury 2070萬；Larvotto按9月2日行情估約4000萬，會隨股價與匯率波動"
+      },
+      {
+        "label": "流通／完全稀釋估計股數",
+        "value": "1.497／約1.56億股",
+        "note": "6月底另有443萬options與167萬RSUs；H1 SBC 774萬美元"
+      },
+      {
+        "label": "10000萬美元回購授權",
+        "value": "未承諾執行",
+        "note": "金額大於6月底現金＋Treasury，需權衡Larvotto變現、CapEx與負OCF"
+      }
+    ],
+    "drivers": [
+      "DLA delivery orders、正式驗收、每磅realized price／fees與實際毛利",
+      "Thompson Falls爐體利用率、Radersburg回收率與Mexico原料／加工量",
+      "Stibnite Hill噸數與品位、Alaska由探索轉成合規資源及商業產量的進度",
+      "銻現貨價、採購成本、庫存可變現價值與價格下跌時的減記風險",
+      "Zeolite銷量、每噸價格、毛利及飼料／環保應用客戶多元化",
+      "OCF、CapEx、DPA grant、政府股權／權證、Larvotto變現與回購執行",
+      "SBC、options、RSUs、基本／完全稀釋股數與每股收入"
+    ],
+    "risks": [
+      "銻價由2025高點回落，價格與採購成本錯配使庫存及毛利承壓",
+      "DLA IDIQ最高額不保證訂單或認列時點；交貨仍受產能、檢驗與政府接受影響",
+      "Thompson Falls、Radersburg、Mexico與hydromet JV的爬坡、回收率、設備及成本超支風險",
+      "H1負OCF與高CapEx依靠發股／grant支撐，未來政府股權或權證可能稀釋",
+      "Larvotto約占流動投資很大部分，股價與AUD/USD波動可再次扭曲GAAP淨利與資產價值",
+      "10000萬美元回購授權大於現金＋Treasury，若過度執行可能削弱營運與擴產資金",
+      "Montana現有自產量仍小；Alaska、Nolan Creek與Fostung尚未形成可驗證商業現金流",
+      "採礦許可、環境、MSHA、氣候、運輸、墨西哥營運及供應國地緣政治風險",
+      "小型股交易波動大，且股價曾在一年內由約19.71跌至5美元附近"
+    ],
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 120,
+      "baseMultiple": 4,
+      "netCash": 50,
+      "dilutedShares": 156
+    },
+    "chart": "/charts/uamy-analysis-2026-09-02.png",
+    "sources": [
+      {
+        "label": "UAMY Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926094035/uamy-20260630x10q.htm"
+      },
+      {
+        "label": "Q2 2026 earnings release（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926094130/tm2622899d1_ex99-1.htm"
+      },
+      {
+        "label": "Q2 2026 official call transcript（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926097708/tm2622899d2_ex99-1.htm"
+      },
+      {
+        "label": "$100 million repurchase authorization（SEC Exhibit）",
+        "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926098593/tm2623553d1_ex99-1.htm"
+      },
+      {
+        "label": "Stibnite Hill August 2026 update（SEC Exhibit）",
+        "url": "https://www.sec.gov/Archives/edgar/data/101538/000110465926100539/tm2623553d2_ex99-1.htm"
+      },
+      {
+        "label": "Yahoo Finance UAMY chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/UAMY?range=1y&interval=1d"
+      },
+      {
+        "label": "Yahoo Finance Larvotto and AUD/USD cross-check",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/LRV.AX?range=5d&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-09-02 09:38 EDT",
+      "marketState": "regular",
+      "source": "Yahoo Finance chart API（NYSE UAMY intraday）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2027營收8000萬 × 2.5倍EV/Sales＋3000萬情境淨現金÷1.58億未來股數",
+        "value": 1.46,
+        "condition": "銻價約10美元但DLA驗收慢、毛利薄、擴建低利用率，現金繼續消耗且政府資金未落地"
+      },
+      {
+        "label": "基準",
+        "assumption": "2027營收1.20億 × 4倍EV/Sales＋5000萬情境淨現金÷1.56億未來股數",
+        "value": 3.4,
+        "condition": "5730萬美元DLA訂單逐步交付、Thompson Falls與Radersburg爬坡，毛利改善但FCF尚未完全成熟"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2027營收1.80億 × 6倍EV/Sales＋4000萬情境淨現金÷1.56億未來股數",
+        "value": 7.18,
+        "condition": "DLA快速驗收、國內礦源與Mexico供應穩定、政府支持到位，銻／沸石放量並形成雙位數毛利"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Business model",
+        "title": "真正的生意是加工與交付，不是把地下資源直接乘現貨價",
+        "body": "UAMY在Montana與Mexico把礦料加工成銻氧化物、金屬與三硫化銻，另在Idaho生產沸石。價值來自合格原料、回收率、產能、政府驗收與每磅加工毛利；Alaska／Fostung的遠期資源在成為合規reserve、完成礦山工程並產生現金前，不能按地下金屬總值估值。"
+      },
+      {
+        "kicker": "Contract quality",
+        "title": "2.45億美元是IDIQ上限，不是已鎖定收入",
+        "body": "SEC 10-Q顯示DLA五年sole-source IDIQ最高2.45億美元，但每張delivery order才形成履約義務，定價依下單時市場價格。6月底已下單約1200萬美元；管理層8月更新為5730萬美元。收入必須等產品送達並由政府正式接受，故Q2已送出的82000磅仍延至Q3認列260萬美元。"
+      },
+      {
+        "kicker": "Unit economics",
+        "title": "銷量成長被價格崩跌吃掉，Q2銻單位價差只有0.36美元／磅",
+        "body": "Q2銻銷量增26%至428425磅，但售價年減52%至13.70美元／磅，平均成本13.34美元，分部幾乎沒有吸收公司費用的空間。未來DLA的特定fees可能提高毛利，但公司尚未完整公開單位毛利橋接。"
+      },
+      {
+        "kicker": "Liquidity",
+        "title": "資產負債表看似有1億美元流動資產，但營運與擴產仍在燒現金",
+        "body": "現金、Treasury與Larvotto按9月初市價合計約1.02億美元、債務很低；然而H1簡化FCF為負4353萬美元，現金增加主要來自平均11.56美元發股。Larvotto是波動股權，不等同現金；10000萬美元回購授權也不是承諾。"
+      },
+      {
+        "kicker": "Domestic feedstock",
+        "title": "Montana已有真實出礦，Alaska與tungsten仍多為早期選擇權",
+        "body": "Stibnite Hill截至8月25日運出576噸、平均約10%銻，約每日42噸，屬可核對的國內原料進展。相反地，管理層在電話會議明確承認Alaska尚無銻產量；Fostung的5420萬磅tungsten只是inferred resource、不是mineral reserve。"
+      },
+      {
+        "kicker": "Capital allocation",
+        "title": "先在11.56美元發股、再於低價授權大額回購，方向可能增值但資金來源關鍵",
+        "body": "H1以平均11.56美元發股取得約4910萬美元，8月股價大跌後董事會授權最高1億美元回購。若以遠低於內在價值且不妨礙產能爬坡的多餘資金執行，可能增值；若需出售戰略資產或壓縮必要CapEx，則可能適得其反。"
+      },
+      {
+        "kicker": "Market expectations",
+        "title": "現價仍約是2026中位營收的9.8倍EV/Sales",
+        "body": "以約1.56億未來稀釋股與4.8985美元估算股權價值約7.64億美元，扣除約1.02億流動投資後EV約6.62億，約為2026營收指引中位6750萬美元的9.8倍。對毛利7%、本業虧損的材料加工商而言，市場仍要求2027交付與毛利大幅改善。"
+      }
+    ],
+    "modelNotes": "單位為百萬美元／百萬股。基準合理價由(120×4＋50)÷156＝3.3974美元精確重現。2027營收是分析情境，不是公司指引；情境淨現金已折減Larvotto波動、營運消耗、CapEx與回購不確定性。EV/Sales倍數隨毛利、政府合約品質與產能爬坡調整。"
   }
 ]
