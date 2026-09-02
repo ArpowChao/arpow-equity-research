@@ -881,6 +881,216 @@
     "modelNotes": "基準 EPS 採 2026 公司調整後指引中位數；低倍數反映負成長、高淨負債、調整項目與執行風險。安全邊際區為基準價折讓 15%～20%。"
   },
   {
+    "ticker": "FSLR",
+    "company": "First Solar, Inc.",
+    "asOf": "2026-09-02",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 202.6,
+      "baseFairValue": 238.89,
+      "fairRange": [
+        190,
+        250
+      ],
+      "marginOfSafety": [
+        191.11,
+        203.06
+      ],
+      "bear": 134.26,
+      "base": 238.89,
+      "bull": 312.04
+    },
+    "thesis": "First Solar擁有45.1GW／136億美元至2030的backlog、美國薄膜太陽能製造稀缺性與強勁淨現金，202.60美元約位於238.89美元基準價折15%的安全邊際上緣；但2026預估21.0億至21.9億美元45X抵免幾乎等同全年24億至26億美元毛利的大部分，投資論點本質上是可見訂單、技術差異與美國產業政策的組合，不能把57%報告毛利視為完全無補貼的模組經濟。",
+    "metrics": [
+      {
+        "label": "Q2營收／年增",
+        "value": "10.56億美元／-4%",
+        "note": "去年同期終止合約收入較高；Q2第三方模組銷量仍增5.3%"
+      },
+      {
+        "label": "Q2產量／銷量",
+        "value": "4.3／3.7GW",
+        "note": "售出3.4GW美國模組、0.3GW印度模組；全球利用率86%、美國98%"
+      },
+      {
+        "label": "backlog",
+        "value": "45.1GW／136億美元",
+        "note": "交付至2030，隱含未含adjuster平均約30.2美分／瓦；約41GW含國內內容要求"
+      },
+      {
+        "label": "新增美國booking／ASP",
+        "value": "1.9GW／約36美分每瓦",
+        "note": "自4月30電話會議後至7月30，ASP含技術adjuster；不是全部已認列收入"
+      },
+      {
+        "label": "Q2毛利率／淨利／EPS",
+        "value": "57.3%／4.23億／$3.92",
+        "note": "含8860萬IEEPA退款淨利益與大量45X抵免，政策成分不可忽略"
+      },
+      {
+        "label": "2026 45X抵免指引",
+        "value": "21.0億–21.9億美元",
+        "note": "約17美分／瓦的美國完整製造抵免；2030開始phase-down、至2032結束"
+      },
+      {
+        "label": "2026營收／毛利指引",
+        "value": "49億–52億／24億–26億美元",
+        "note": "45X抵免約等於毛利指引的81%至91%，無補貼本業需另做壓力測試"
+      },
+      {
+        "label": "2026 Adjusted EBITDA",
+        "value": "26億–28億美元",
+        "note": "約另加回2.25億SBC、45X折價、閒置與啟動成本；不是FCF"
+      },
+      {
+        "label": "H1 OCF／CapEx／簡化FCF",
+        "value": "-3.60／2.80／-6.40億美元",
+        "note": "主要是季節性working capital與South Carolina投資；全年CapEx指引8億至10億"
+      },
+      {
+        "label": "Q2淨現金／2026年末指引",
+        "value": "17億／17億–23億美元",
+        "note": "另有15億未動用revolver；政府補助應收約12.6億使現金轉換時點仍重要"
+      },
+      {
+        "label": "稀釋股數／H1 SBC",
+        "value": "約1.078億／1400萬美元",
+        "note": "股數相對穩定，SBC低於多數高成長科技公司，但估值仍採完全稀釋股數"
+      },
+      {
+        "label": "BP合約爭議",
+        "value": "追索3.236億美元",
+        "note": "先前終止款總額3.846億、已認列6100萬；對方另反訴約1.90億，未列入基準價值"
+      }
+    ],
+    "drivers": [
+      "backlog GW／美元、gross與net bookings、取消／終止、信用支持與每瓦ASP",
+      "美國／印度銷量、fleet utilization、每瓦成本、物流與underutilization",
+      "45X抵免的資格、每瓦金額、收現／出售折價及2030後phase-down",
+      "Section 232／301、FEOC、safe harbor與AD/CVD對美國供需及ASP的影響",
+      "South Carolina啟動、CuRe通知與adjuster實現、perovskite進度",
+      "AR、inventory、government-grant receivable、OCF、CapEx與FCF轉換",
+      "淨現金、revolver、供應商承諾、M&A報酬與每股股數",
+      "BP終止款訴訟、客戶融資與data-center／hyperscaler專案進度"
+    ],
+    "risks": [
+      "45X抵免約構成2026預估毛利大部分，法規資格、FEOC或政治變動將直接打擊獲利",
+      "中國晶矽結構性過剩與低價競爭可能壓低全球及美國模組ASP",
+      "45.1GW backlog可能因客戶融資、許可、連網、safe harbor或合約爭議延後／取消",
+      "BP訴訟涉及3.236億美元追索與約1.90億反訴，結果及現金時點不確定",
+      "H1簡化FCF負6.40億、政府補助應收12.6億，營運資金與稅抵收現可能持續波動",
+      "South Carolina、CuRe與perovskite的時程、良率、成本與技術商業化風險",
+      "Malaysia／Vietnam約1.8GW產能每季約3000萬美元閒置成本，政策結果可能導致減損",
+      "玻璃、tellurium、鋼、鋁、能源與物流成本上升，且中國tellurium出口限制可能干擾供應",
+      "資料中心可改用天然氣等電源，地方反對、電網與變壓器限制也會延後solar需求",
+      "Adjusted EBITDA排除約2.25億調整項，且低估CapEx、working capital與45X出售折價"
+    ],
+    "valuation": {
+      "type": "future-ev-ebitda",
+      "forwardEbitda": 3000,
+      "baseMultiple": 8,
+      "netCash": 1800,
+      "discountFactor": 1,
+      "dilutedShares": 108
+    },
+    "chart": "/charts/fslr-analysis-2026-09-02.png",
+    "sources": [
+      {
+        "label": "First Solar Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1274494/000127449426000170/fslr-20260630.htm"
+      },
+      {
+        "label": "Q2 2026 earnings release（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1274494/000127449426000169/ex991pressreleaseq2-2026.htm"
+      },
+      {
+        "label": "First Solar official Q2 2026 presentation",
+        "url": "https://s202.q4cdn.com/499595574/files/doc_financials/2026/q2/Q2-26-Earnings-Presentation-vf-Secured.pdf"
+      },
+      {
+        "label": "First Solar official Q2 2026 event／webcast",
+        "url": "https://investor.firstsolar.com/events-and-presentations/events/event-details/2026/First-Solar-Q2-2026-Financial-Results/default.aspx"
+      },
+      {
+        "label": "Q2 2026 call transcript cross-check",
+        "url": "https://www.earningscall.ai/stock/transcript/FSLR-2026-Q2"
+      },
+      {
+        "label": "Yahoo Finance FSLR chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/FSLR?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-09-02 16:00 EDT",
+      "marketState": "regular-close",
+      "source": "Yahoo Finance chart API（Nasdaq FSLR regular close）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2027 Adjusted EBITDA 22億 × 6倍EV/EBITDA＋13億淨現金÷1.08億股",
+        "value": 134.26,
+        "condition": "政策保護／45X可得性或客戶專案惡化、backlog取消、東南亞持續低利用率，毛利與cash conversion低於指引"
+      },
+      {
+        "label": "基準",
+        "assumption": "2027 Adjusted EBITDA 30億 × 8倍EV/EBITDA＋18億淨現金÷1.08億股",
+        "value": 238.89,
+        "condition": "backlog按期交付、45X資格維持、South Carolina與CuRe爬坡，2027 EBITDA溫和高於2026指引"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2027 Adjusted EBITDA 35億 × 9倍EV/EBITDA＋22億淨現金÷1.08億股",
+        "value": 312.04,
+        "condition": "資料中心電力需求、Section 232與FEOC提升美國ASP，CuRe adjuster與產能利用率超預期"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Business engine",
+        "title": "FSLR賣的是utility-scale CdTe模組與交付確定性，不是開發太陽能案場",
+        "body": "收入主要來自每瓦模組銷售。薄膜CdTe、國內供應鏈、較佳高溫／真實世界energy yield、回收體系及長約交付，讓FSLR在中國晶矽低價競爭以外建立差異；CuRe提升衰減與性能，才可能轉成合約adjuster與更高ASP。"
+      },
+      {
+        "kicker": "Backlog quality",
+        "title": "45.1GW／136億美元提供罕見能見度，但backlog不是無風險現金",
+        "body": "美國整合產能大致承諾至2028、總交付延伸至2030，隱含未含adjuster ASP約30.2美分／瓦。約41GW帶國內內容條件強化競爭力；但開發商融資、safe harbor、FEOC、tariff、信用支持及終止條款都可能改變認列。"
+      },
+      {
+        "kicker": "Profit normalization",
+        "title": "57%毛利很強，但45X幾乎是2026毛利池的核心，而非附帶小補助",
+        "body": "2026 45X抵免指引21.0億至21.9億美元，而毛利指引24億至26億；Q2另有8860萬美元IEEPA退款淨利益。45X是合法且可預期至2032的現金經濟，但估值必須給有限期限與政策風險折價，不能用高峰毛利永久外推。"
+      },
+      {
+        "kicker": "Demand and pricing",
+        "title": "美國新booking約36美分／瓦，遠高於印度約20美分，產地與政策決定經濟性",
+        "body": "自前次會議後美國新增1.9GW gross bookings，含adjuster ASP約36美分；H1印度1.1GW約20美分。資料中心與國內供應鏈需求是上行來源，全球晶矽過剩、進口政策與印度價格則限制國際資產回報。"
+      },
+      {
+        "kicker": "Cash flow quality",
+        "title": "H1淨利7.69億卻簡化FCF負6.40億，主要差異在working capital、CapEx與抵免收現時點",
+        "body": "AR約14.8億、inventory約12.7億、government-grant receivables約12.6億，現金轉換具季節性；全年年末淨現金仍指引17億至23億。對成熟製造商而言，必須同時看GAAP盈餘、45X應收變現、working capital與擴產支出。"
+      },
+      {
+        "kicker": "Manufacturing optionality",
+        "title": "South Carolina帶來3.5GW finishing能力，東南亞剩餘1.8GW則是昂貴的政策選擇權",
+        "body": "South Carolina第一階段預計2026下半年啟動、第二階段延至2027年中並提前導入CuRe。Malaysia／Vietnam剩餘約1.8GW完整產能等待Section 232，每季閒置成本約3000萬美元、一半為現金。"
+      },
+      {
+        "kicker": "Capital allocation",
+        "title": "17億淨現金與15億revolver支援擴產和技術，但M&A與長約供應承諾仍須紀律",
+        "body": "2026 CapEx指引8億至10億，另有perovskite、CuRe與第六座美國設施；公司也更願意考慮技術／IP併購。玻璃長約若終止的總罰款最高約3億美元，不能把全部現金視為可自由分配。"
+      },
+      {
+        "kicker": "Valuation",
+        "title": "現價落在基準價折15%的安全邊際上緣，但不是低政策風險的便宜股",
+        "body": "以2027情境Adjusted EBITDA 30億、8倍EV/EBITDA、18億淨現金及1.08億股得238.89美元；202.60美元提供約15.2%上行。低倍數已反映45X 2030起遞減及產業週期，若政策前提失效則悲觀價134.26美元更具參考性。"
+      }
+    ],
+    "modelNotes": "單位為百萬美元／百萬股。基準合理價由(3000×8＋1800)÷108＝238.89美元重現。2027 Adjusted EBITDA與淨現金均為分析情境，不是公司指引；倍數刻意低於長久期成長股，以反映45X自2030 phase-down、2032終止、政策／tariff與模組週期風險。"
+  },
+  {
     "ticker": "GOOGL",
     "company": "Alphabet Inc.",
     "asOf": "2026-08-24",

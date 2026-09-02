@@ -44,10 +44,25 @@ export const glossary: Record<string, string> = {
   庫存: '已買入或已生產、尚未售出的原料與成品；能支援交付，也可能因商品跌價而減記。',
   LiDAR: '用雷射脈衝測量距離並建立3D環境圖；實際價值取決於性能、可靠度、成本、軟體整合與量產採用。',
   ASP: '平均售價。出貨量增加但ASP降得更快時，營收與毛利未必改善。',
-  design_win: '客戶選定某零件進入產品設計；仍需通過驗證並真正量產，不能直接當成收入。'
+  design_win: '客戶選定某零件進入產品設計；仍需通過驗證並真正量產，不能直接當成收入。',
+  Section_45X: '美國先進製造生產抵免，符合資格的國內元件與模組按產量取得稅務利益；是真實經濟價值，但有資格、政策與到期風險。',
+  GW: 'Gigawatt，十億瓦。太陽能公司用GW表示產量、銷量與訂單，還要搭配每瓦價格及成本才知道價值。',
+  adjuster: '合約約定的價格調整機制，例如技術性能、原料、關稅或物流變動；尚未觸發前不能全部視為已鎖定收入。',
+  CdTe: '碲化鎘薄膜半導體，是First Solar不同於主流晶矽模組的核心材料與製程。'
 };
 
 export const beginnerGuides: Record<string, BeginnerGuide> = {
+  FSLR: {
+    industry:'美國utility-scale碲化鎘薄膜太陽能模組製造', earns:'以每瓦價格銷售大型太陽能案場所需的CdTe模組，並透過美國國內製造取得Section 45X抵免；CuRe性能提升、合約adjuster與交付確定性也能增加ASP。', keyQuestion:'45.1GW backlog能否按時轉成現金，且在45X於2030後遞減時，模組ASP、每瓦成本與技術優勢是否足以維持本業獲利？',
+    watch:[
+      {name:'backlog與booking品質',why:'長約提供至2030的出貨與價格能見度。',good:'net bookings、信用支持、ASP與交付同步增加，取消率低。',warning:'只看gross GW，忽略終止條款、客戶融資、safe harbor與專案延期。'},
+      {name:'45X與政策獲利',why:'2026抵免指引約21億美元，幾乎是毛利池核心。',good:'資格與收現穩定、FEOC規則支持國內製造，無補貼每瓦成本也改善。',warning:'把政策抵免當永久高毛利，忽略2030 phase-down及2032到期。'},
+      {name:'美國／印度ASP',why:'同樣一瓦在美國與印度的價格、補助與競爭結構完全不同。',good:'美國booking維持約36美分以上，CuRe adjuster開始貢獻。',warning:'全球晶矽過剩或政策放寬使ASP快速下跌。'},
+      {name:'產能與CuRe',why:'新設施良率、利用率及瓦數提升決定每瓦成本。',good:'South Carolina準時啟動、CuRe通知轉成收入、美國利用率維持高檔。',warning:'啟動延遲、良率差或東南亞長期閒置造成現金成本與減損。'},
+      {name:'現金轉換',why:'GAAP盈餘與45X應收不代表同季收到現金。',good:'政府補助應收下降、working capital釋放，OCF扣CapEx後持續為正。',warning:'AR、庫存與補助應收升高，淨利增加但FCF持續為負。'},
+      {name:'技術與供應鏈',why:'CdTe、CuRe與perovskite是差異，也帶來原料和研發風險。',good:'每瓦輸出提升、衰減改善、tellurium來源多元。',warning:'競爭技術效率領先、tellurium出口限制或研發商業化失敗。'}
+    ],terms:['GAAP','backlog','ASP','GW','adjuster','CdTe','Section_45X','毛利率','OCF','CapEx','FCF','EV/EBITDA']
+  },
   OUST: {
     industry:'數位LiDAR＋3D camera＋Physical AI感知軟體', earns:'銷售LiDAR、立體／單目camera與AI compute硬體，並透過BlueCity、Gemini、專利royalty及感知軟體增加每個部署的收入與黏著度。', keyQuestion:'Rev8與Stereolabs的高出貨成長能否在正常化35%至40%毛利下帶來正FCF，並讓軟體收入真正快過SBC與股數增長？',
     watch:[
