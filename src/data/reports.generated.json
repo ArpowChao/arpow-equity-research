@@ -1696,6 +1696,204 @@
     "updatedFrom": "2026-08-25 財報前研究"
   },
   {
+    "ticker": "OUST",
+    "company": "Ouster, Inc.",
+    "asOf": "2026-09-02",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 34.265,
+      "baseFairValue": 34.5,
+      "fairRange": [
+        30,
+        40
+      ],
+      "marginOfSafety": [
+        27.6,
+        29.33
+      ],
+      "bear": 19.51,
+      "base": 34.5,
+      "bull": 56.63
+    },
+    "thesis": "Ouster已從單一lidar供應商轉成lidar、camera、AI compute與perception software平台，Q2營收年增56%、出貨逾17000顆且Adjusted EBITDA接近損益兩平；但報告49%毛利含約10個百分點一次性COGS refund，正常化仍約35%至40%。7月高價增資使post-offering現金約4.54億美元、資金風險明顯下降，但34.27美元現價已接近34.50美元基準合理價，屬成長品質改善但估值大致合理。",
+    "metrics": [
+      {
+        "label": "Q2營收／年增",
+        "value": "5463萬美元／+56%",
+        "note": "含Stereolabs完整季度；pro forma比較仍約+44%"
+      },
+      {
+        "label": "sensor出貨",
+        "value": ">17000顆",
+        "note": "lidar逾9000、camera逾8000；lidar單位量年增約70%"
+      },
+      {
+        "label": "報告／正常化GAAP毛利率",
+        "value": "49%／約high-30s",
+        "note": "約1000bp來自一次性COGS refund，管理層近中期模型仍為35%至40%"
+      },
+      {
+        "label": "Adjusted EBITDA／GAAP營業損失",
+        "value": "-400／-2005萬美元",
+        "note": "Adjusted EBITDA排除SBC、折舊與收購相關項目，尚未等於GAAP或FCF獲利"
+      },
+      {
+        "label": "Q3營收指引",
+        "value": "5450萬–5750萬美元",
+        "note": "Rev8於Q3量產爬坡；指引代表管理層認為可實際交付的範圍"
+      },
+      {
+        "label": "產品／royalty收入",
+        "value": "5276／186萬美元",
+        "note": "產品仍占絕大多數；2026 royalty預估約500萬美元"
+      },
+      {
+        "label": "BlueCity／Gemini銷售占比",
+        "value": "約15%",
+        "note": "更接近solution與軟體附加，但公司未揭露ARR或獨立毛利"
+      },
+      {
+        "label": "H1 OCF／CapEx／簡化FCF",
+        "value": "-2004／521／-2525萬美元",
+        "note": "燒錢幅度相對post-offering現金可控，但尚未自給自足"
+      },
+      {
+        "label": "post-offering現金投資／債務",
+        "value": "約4.54億／0美元",
+        "note": "6月底2.625億，加7月發股淨額1.919億；未扣後續營運與投資"
+      },
+      {
+        "label": "流通／未來稀釋估計股數",
+        "value": "7211萬／約8000–8200萬股",
+        "note": "另有options、RSUs、Stereolabs留任股及Amazon warrant；H1 SBC 1888萬美元"
+      },
+      {
+        "label": "Q2最大客戶收入占比",
+        "value": "32%",
+        "note": "另一客戶占12%；應收帳款亦集中，營收成長仍有單一客戶波動"
+      }
+    ],
+    "drivers": [
+      "lidar／camera單位量、ASP、產品組合及Rev8由prototype轉量產的速度",
+      "Stereolabs的獨立成長、產能、camera毛利與跨售lidar／AI compute成效",
+      "BlueCity／Gemini部署數、軟體附加率、續約／royalty收入與solution毛利",
+      "報告毛利與排除refund／SBC／收購項目後正常化毛利的橋接",
+      "Q3出貨指引、bookings／backlog透明度、客戶集中與應收回收",
+      "Adjusted EBITDA、GAAP營業利益、OCF、CapEx與FCF損益兩平",
+      "post-offering現金、SBC、RSUs、options、Amazon warrant與完全稀釋股數",
+      "Benchmark／Fabrinet產能、良率、單一供應鏈與tariff成本"
+    ],
+    "risks": [
+      "Q2 49%毛利含約1000bp一次性refund，量產／競價下正常化毛利可能回到35%以下",
+      "Customer E占Q2營收32%、Customer F占12%，少數大客戶延期或砍單會造成季度波動",
+      "Rev8量產、camera擴產、Chronos晶片與software整合的良率、延遲及成本風險",
+      "Stereolabs收購帶來3853萬美元goodwill、2340萬無形資產及整合／留才風險",
+      "lidar ASP長期價格壓力、Hesai等競爭者、客戶自研與camera／radar替代風險",
+      "BlueCity／Gemini尚未披露ARR、續約率或獨立毛利，solution敘事可能先於收入品質",
+      "流通股一年內顯著增加，另有479萬RSUs、127萬options及329萬Amazon warrant等潛在稀釋",
+      "SBC H1達1888萬美元，Adjusted EBITDA改善未必等於每股GAAP或FCF價值改善",
+      "Benchmark、Fabrinet及關鍵元件供應集中，tariff、地緣政治與產品責任可能影響交付"
+    ],
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 320,
+      "baseMultiple": 7.5,
+      "netCash": 360,
+      "dilutedShares": 80
+    },
+    "chart": "/charts/oust-analysis-2026-09-02.png",
+    "sources": [
+      {
+        "label": "Ouster Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1816581/000162828026054467/oust-20260630.htm"
+      },
+      {
+        "label": "Q2 2026 earnings release（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1816581/000162828026054297/exhibit991-6302026.htm"
+      },
+      {
+        "label": "July 2026 common stock offering 8-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1816581/000119312526296151/d115877d8k.htm"
+      },
+      {
+        "label": "Ouster official Q2 2026 earnings event",
+        "url": "https://investors.ouster.com/events/event-details/ouster-q2-2026-earnings-call"
+      },
+      {
+        "label": "Q2 2026 call transcript cross-check",
+        "url": "https://www.fool.com/earnings/call-transcripts/2026/08/13/ouster-oust-q2-2026-earnings-call-transcript/"
+      },
+      {
+        "label": "Yahoo Finance OUST chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/OUST?range=1y&interval=1d"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-09-02 10:21 EDT",
+      "marketState": "regular",
+      "source": "Yahoo Finance chart API（Nasdaq OUST intraday）"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2027營收2.50億 × 5倍EV/Sales＋3.50億情境淨現金÷8200萬未來股數",
+        "value": 19.51,
+        "condition": "Rev8／camera需求降速、正常化毛利停留35%附近、單一客戶縮單，SBC與費用使損益兩平延後"
+      },
+      {
+        "label": "基準",
+        "assumption": "2027營收3.20億 × 7.5倍EV/Sales＋3.60億情境淨現金÷8000萬未來股數",
+        "value": 34.5,
+        "condition": "lidar與Stereolabs維持強成長，BlueCity占比提升，正常化毛利約40%，Adjusted EBITDA與FCF逐步轉正"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2027營收4.20億 × 10倍EV/Sales＋3.30億情境淨現金÷8000萬未來股數",
+        "value": 56.63,
+        "condition": "Rev8、robotics camera與software solution同步放量，10萬顆產能高利用率，毛利及營運槓桿超預期"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Business engines",
+        "title": "lidar仍是高ASP核心，camera帶來更大單機數量，software決定長期倍數",
+        "body": "Q2出貨逾9000顆lidar與8000顆camera。Humanoid通常需要6至12顆camera但只有部分配置lidar，因此Stereolabs能提高單機內容與robotics曝險；BlueCity／Gemini若由硬體部署轉成高附加軟體與solution，才可能把正常化毛利穩定推高。"
+      },
+      {
+        "kicker": "Growth quality",
+        "title": "56%報告成長很強，但Stereolabs併購使基期需改用pro forma",
+        "body": "Q2 GAAP營收5463萬美元、年增56%；若假設Stereolabs自2025年初併入，去年同期pro forma營收3790萬美元，方向性成長仍約44%。因此成長不是全由收購造成，但公開比較必須同時列報告與pro forma。"
+      },
+      {
+        "kicker": "Margin quality",
+        "title": "49%毛利不能直接年化，真正可重複的水準約high-30s",
+        "body": "管理層在Q&A明確指出一次性COGS refund提高約1000bp；沒有該利益，Q2毛利約39%。近中期量產模型仍為35%至40%，只有軟體與BlueCity組合持續提高，才有理由上修。"
+      },
+      {
+        "kicker": "Demand visibility",
+        "title": "有健康backlog與百萬美元級Rev8訂單，但公司拒絕量化總額",
+        "body": "管理層稱Q3可出貨量沒有太多上修空間、Rev8取得多筆million-dollar-plus訂單，顯示短期需求不弱；然而未提供bookings、backlog總額、取消條款或認列時間，不能把敘事當成RPO。"
+      },
+      {
+        "kicker": "Capital and dilution",
+        "title": "高價融資大幅降低生存風險，也讓每股估值必須使用新股數",
+        "body": "H1先透過ATM以平均27.40美元出售364.9萬股、淨得9800萬；7月再以55.22美元出售362.2萬股、淨得1.919億。7月底流通7211萬股，較2025年底6095萬增加約18%；融資價格高於現價有利資本取得，但股東仍承受稀釋。"
+      },
+      {
+        "kicker": "Balance sheet",
+        "title": "post-offering約4.54億美元現金與投資、無債務，現有計畫資金充足",
+        "body": "Q2 H1簡化FCF約負2525萬美元，相對資金庫存不高；CFO表示現行獲利路徑不預期再需增資。真正的下一階段不是runway，而是證明投入Stereolabs、Rev8產能與軟體後能產生正FCF。"
+      },
+      {
+        "kicker": "Market expectations",
+        "title": "現價大致等於基準情境，已要求2027營收達3.2億美元並維持高倍數",
+        "body": "以約8000萬未來股、3.60億情境淨現金與7.5倍2027 EV/Sales得34.50美元。這代表市場已相信Rev8、robotics camera及solution成長能持續，且正常化毛利不會因量產與價格競爭跌破35%至40%框架。"
+      }
+    ],
+    "modelNotes": "單位為百萬美元／百萬股。基準合理價由(320×7.5＋360)÷80＝34.50美元精確重現。2027營收是分析情境、不是公司指引；情境淨現金由post-offering約4.54億美元扣除後續營運、產能及軟體投資。未來股數納入RSU／option緩衝；Amazon warrant為條件式且現價低於strike，列入風險而非全部視為即時稀釋。"
+  },
+  {
     "ticker": "PLTR",
     "company": "Palantir Technologies Inc.",
     "asOf": "2026-08-24",

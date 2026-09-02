@@ -41,10 +41,24 @@ export const glossary: Record<string, string> = {
   IDIQ: '不定數量、分批下單的政府合約。合約最高額只是上限，只有實際delivery order與驗收後才接近可認列收入。',
   推定資源: '依有限地質證據估出的礦量，信心低於measured／indicated resource，也不是可直接開採獲利的mineral reserve。',
   品位: '每噸礦石含多少目標金屬。高品位通常較有利，但仍要扣除回收率、採礦、加工與運輸成本。',
-  庫存: '已買入或已生產、尚未售出的原料與成品；能支援交付，也可能因商品跌價而減記。'
+  庫存: '已買入或已生產、尚未售出的原料與成品；能支援交付，也可能因商品跌價而減記。',
+  LiDAR: '用雷射脈衝測量距離並建立3D環境圖；實際價值取決於性能、可靠度、成本、軟體整合與量產採用。',
+  ASP: '平均售價。出貨量增加但ASP降得更快時，營收與毛利未必改善。',
+  design_win: '客戶選定某零件進入產品設計；仍需通過驗證並真正量產，不能直接當成收入。'
 };
 
 export const beginnerGuides: Record<string, BeginnerGuide> = {
+  OUST: {
+    industry:'數位LiDAR＋3D camera＋Physical AI感知軟體', earns:'銷售LiDAR、立體／單目camera與AI compute硬體，並透過BlueCity、Gemini、專利royalty及感知軟體增加每個部署的收入與黏著度。', keyQuestion:'Rev8與Stereolabs的高出貨成長能否在正常化35%至40%毛利下帶來正FCF，並讓軟體收入真正快過SBC與股數增長？',
+    watch:[
+      {name:'Rev8 LiDAR',why:'高ASP LiDAR仍是Ouster核心產品與技術差異來源。',good:'單位量、量產良率、ASP與正常化毛利同步改善。',warning:'只有prototype訂單，量產延遲或價格競爭使毛利回落。'},
+      {name:'Stereolabs camera／robotics',why:'robot通常需要多顆camera，能擴大單機內容與humanoid市場曝險。',good:'camera出貨、毛利、產能與lidar交叉銷售共同成長。',warning:'收購帶來的成長被誤認為純有機，整合、留才或需求熱度降溫。'},
+      {name:'BlueCity／Gemini軟體與solution',why:'軟體附加率決定公司能否從感測器供應商升級成高毛利平台。',good:'部署擴至citywide／statewide，ARR、續約與solution占比提高。',warning:'只披露案例與總銷售占比，沒有ARR、續約率或獨立毛利。'},
+      {name:'毛利品質',why:'一次性refund、SBC與收購項目會讓報告毛利高於可重複水準。',good:'排除特殊項目後仍高於40%，量產成本持續下降。',warning:'把Q2 49%永久年化，實際正常化回到35%以下。'},
+      {name:'現金、SBC與稀釋',why:'高價融資增加runway，但每位股東持分仍會被新股與員工股權稀釋。',good:'FCF轉正後停止依賴發股，每股收入與FCF快於股數。',warning:'只看4.5億現金而忽略RSU、Amazon warrant與持續SBC。'},
+      {name:'客戶與供應鏈',why:'少數大客戶及Benchmark／Fabrinet會影響季度收入與交付。',good:'客戶集中下降、應收回收健康且產能利用率提升。',warning:'單一客戶縮單、元件短缺、tariff或庫存減記。'}
+    ],terms:['GAAP','LiDAR','ASP','design_win','毛利率','OCF','CapEx','FCF','SBC','稀釋股數','EV/Sales']
+  },
   UAMY: {
     industry:'銻加工＋國內礦源開發＋工業沸石', earns:'向第三方或自有礦取得含銻原料，在Montana與Mexico加工成金屬錠、氧化物與三硫化銻，賣給國防庫存與工業客戶；Idaho業務另採礦並銷售沸石。', keyQuestion:'DLA訂單與國內原料能否按期轉成有毛利的交付，讓產能與庫存不再靠發股及政府補助支撐？',
     watch:[
