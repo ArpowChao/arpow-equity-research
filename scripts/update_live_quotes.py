@@ -7,6 +7,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -26,7 +27,7 @@ HEADERS = {
 
 def fetch_json(url: str) -> dict:
     request = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(request, timeout=30) as response:
+    with urllib.request.urlopen(request, timeout=10) as response:
         return json.load(response)
 
 
@@ -93,14 +94,19 @@ def main() -> None:
     tickers = sorted({str(report["ticker"]).upper() for report in reports})
     quotes: dict[str, dict] = {}
     failures: dict[str, str] = {}
-    for ticker in tickers:
-        try:
-            quotes[ticker] = collect_quote(ticker)
-            print(f"updated {ticker}")
-        except RuntimeError as exc:
-            failures[ticker] = str(exc)
-            print(f"failed {ticker}: {exc}")
-        time.sleep(0.2)
+    # Quote providers can throttle or stall individual symbols. A bounded pool
+    # keeps the scheduled Pages build below its 15-minute cadence without
+    # creating an unbounded burst of requests.
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        futures = {pool.submit(collect_quote, ticker): ticker for ticker in tickers}
+        for future in as_completed(futures):
+            ticker = futures[future]
+            try:
+                quotes[ticker] = future.result()
+                print(f"updated {ticker}")
+            except RuntimeError as exc:
+                failures[ticker] = str(exc)
+                print(f"failed {ticker}: {exc}")
     if not quotes:
         raise SystemExit("no quotes collected")
     payload = {
