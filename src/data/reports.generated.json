@@ -1362,6 +1362,193 @@
     "modelNotes": "使用復甦正常化 EPS，不把 Q2 的 escrow shares 市值損失視為核心，也不把 Q3 單季指引直接年化。"
   },
   {
+    "ticker": "IONQ",
+    "company": "IonQ, Inc.",
+    "asOf": "2026-09-09",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 38.2,
+      "baseFairValue": 36.34,
+      "fairRange": [
+        25.0,
+        50.0
+      ],
+      "marginOfSafety": [
+        27.25,
+        29.07
+      ],
+      "bear": 5.0,
+      "base": 36.34,
+      "bull": 95.0
+    },
+    "thesis": "IonQ 已由單一離子阱量子電腦公司擴張為涵蓋運算、網路、感測、安全、衛星與SkyWater晶圓代工的平台。Q2營收8,005萬美元、年增287%，RPO達4.85億美元，但H1 SBC為2.70億美元、TTM FCF約負4.84億美元，SkyWater又消耗約10.56億美元現金。盤中38.20美元對2026合併營收指引中點仍約31.7倍EV/Sales；現價需要量子與foundry合併年化收入至2030年前維持約43%成長並保有高終值倍數，基準價值約36美元，風險報酬高度二元。",
+    "metrics": [
+      {
+        "label": "Q2營收／年增",
+        "value": "8,005萬美元／+287%",
+        "note": "量子硬體4,647萬、平台與顧問支援3,358萬美元；約50%國際、60%商業、25%多產品"
+      },
+      {
+        "label": "Q2／H1毛利率",
+        "value": "24.9%／24.4%",
+        "note": "Q2去年同期約59.8%；更多硬體與併購業務使收入成長未轉成軟體型毛利"
+      },
+      {
+        "label": "Q2調整後EBITDA",
+        "value": "-1.203億美元",
+        "note": "剔除SkyWater合作支出後仍約負9,560萬美元；GAAP淨損受16.49億美元認股權證公允價值損失扭曲"
+      },
+      {
+        "label": "TTM OCF／CapEx／FCF",
+        "value": "-4.524／0.315／-4.839億美元",
+        "note": "TTM=FY2025+H1 2026−H1 2025；尚未完整包含SkyWater合併後現金流"
+      },
+      {
+        "label": "H1營收／SBC",
+        "value": "1.447／2.704億美元",
+        "note": "SBC約為H1營收187%；即使非現金，仍透過RSU與PSU稀釋每股價值"
+      },
+      {
+        "label": "6月底現金投資／併購後pro forma",
+        "value": "29.59／約20億美元",
+        "note": "SkyWater交易使用約10.564億美元現金，含7.413億對價與約3.151億還債及交易成本"
+      },
+      {
+        "label": "RPO／十二月內預計認列",
+        "value": "4.85／約2.43億美元",
+        "note": "RPO年增297%，但包含已撥款與尚未撥款firm orders；不是同額現金或無條件收入"
+      },
+      {
+        "label": "2026原量子／合併營收指引",
+        "value": "2.80–2.90／4.50–4.60億美元",
+        "note": "9月新指引包含7月31日起的SkyWater收入並扣除公司間交易，不能全部視為量子自然成長"
+      }
+    ],
+    "drivers": [
+      "不含SkyWater的IonQ原有業務能否實現2026約100%有機成長，而非只靠併購擴大報告營收",
+      "4.85億美元RPO能否依時程轉成收入與現金，且新訂單持續補充而非集中少數政府或大型客戶",
+      "Tempo、Oxford Ionics EQC、Lightsynq光子互連及SkyWater製造能否交付可重現的邏輯qubit與應用級效用",
+      "合併毛利率能否由H1約24.4%提高，而不是foundry與硬體收入稀釋平台毛利",
+      "調整後EBITDA、OCF與FCF消耗能否逐季收斂，SkyWater整合後現金餘額是否維持足夠緩衝",
+      "SBC、RSU、PSU、收購對價與新募資造成的完全稀釋股數能否明顯慢於每股收入成長",
+      "量子網路、安全、感測與衛星產品能否形成重複性收入，而不是持續收購不同業務卻沒有整合經濟"
+    ],
+    "risks": [
+      "尚未實現廣泛商業量子優勢，技術里程碑可能延遲、無法擴展或被其他qubit架構超越",
+      "現價約31.7倍2026合併EV/Sales，估值已需要2030前維持極高成長與高終值倍數",
+      "SkyWater、Oxford Ionics及大量收購增加整合、文化、資本支出、商譽減損與收入品質混淆",
+      "H1 SBC高於營收、未歸屬RSU與PSU龐大，收購與未來募資持續稀釋每股價值",
+      "RPO含尚未撥款firm orders，政府預算、驗收進度及少數客戶會造成收入時點波動",
+      "foundry與硬體收入毛利低於軟體平台，營收快速成長仍可能伴隨長期負EBITDA及負FCF",
+      "雲端合作夥伴同時發展自家量子技術，並面對離子阱、超導、neutral atom及photonic多路線競爭"
+    ],
+    "valuation": {
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 3000,
+      "bearMultiple": 1.2,
+      "baseMultiple": 4.996,
+      "bullMultiple": 13.0,
+      "netCash": 1000,
+      "dilutedShares": 440
+    },
+    "chart": "/charts/ionq-analysis-2026-09-09.png",
+    "sources": [
+      {
+        "label": "IonQ Q2 2026 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526341001/ionq-20260630.htm"
+      },
+      {
+        "label": "IonQ Q2 2026 earnings release（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526335040/ionq-ex99_1.htm"
+      },
+      {
+        "label": "IonQ 2026 updated outlook after SkyWater（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526384388/ionq-ex99_1.htm"
+      },
+      {
+        "label": "IonQ completes SkyWater acquisition（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526327127/ionq-ex99_1.htm"
+      },
+      {
+        "label": "IonQ FY2025 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526071562/ionq-20251231.htm"
+      },
+      {
+        "label": "Yahoo Finance IONQ chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/IONQ?range=1y&interval=1d&includePrePost=true"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-09-09 11:38 EDT",
+      "marketState": "regular-market",
+      "source": "Yahoo Finance chart API"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "2030量子收入6億×4倍＋foundry 6億×1.5倍，15%折現、剩餘淨現金5億、4.70億股",
+        "value": 5.0,
+        "condition": "離子阱與EQC擴展延後、量子優勢未落地，併購整合和SBC持續消耗現金，終值企業價值僅33億美元"
+      },
+      {
+        "label": "基準",
+        "assumption": "2030量子收入22億×10倍＋foundry 8億×3倍，12%折現、剩餘淨現金10億、4.40億股",
+        "value": 36.34,
+        "condition": "量子加foundry收入2030達30億美元，RPO持續轉收入、毛利改善，年燒錢收斂且股數增長趨緩"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "2030量子收入40億×14倍＋foundry 10億×4倍，10%折現、剩餘淨現金15億、4.35億股",
+        "value": 95.0,
+        "condition": "Tempo及後續模組化系統實現可驗證量子效用，SkyWater量產EQC與光子元件，網路、感測與安全形成重複收入"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "公司怎麼賺錢",
+        "title": "IonQ已不是純量子電腦公司，而是一組仍待整合的量子平台與foundry資產",
+        "body": "核心離子阱業務銷售整機、雲端QCaaS、演算法顧問與支援；收購ID Quantique、Qubitekk、Lightsynq、Capella、Vector Atomic、Oxford Ionics、Skyloom、Nexus與Seed後，又涵蓋量子網路、安全、感測與衛星資料。2026-07-31完成SkyWater收購後，還加入美國半導體foundry與先進封裝收入。收入規模變大，但不同業務的毛利、資本需求和技術風險差異很大，不能再只用量子軟體倍數估整家公司。"
+      },
+      {
+        "kicker": "最重要的改變",
+        "title": "新營收指引大幅上調，主要原因是SkyWater併表，不是量子業務突然再加速",
+        "body": "Q2後公司把不含SkyWater的2026營收指引提高到2.80至2.90億美元，並仍預期原有業務約100%有機成長；9月8日再把合併指引提高至4.50至4.60億美元，加入7月31日至年底的SkyWater貢獻並消除公司間收入。因此約1.65至1.70億美元增量主要是收購口徑改變，不能全部當成量子電腦需求。"
+      },
+      {
+        "kicker": "收入品質",
+        "title": "287%成長很強，但Q2毛利率約24.9%，還不是高毛利平台模型",
+        "body": "Q2量子硬體收入4,647萬美元、平台與顧問支援3,358萬，總營收8,005萬；成本6,011萬，毛利約1,994萬。去年同期毛利率約59.8%，本季降至24.9%。硬體部署、收購業務和SkyWater foundry會提高收入，但也帶來材料、製造、折舊及人力成本；未來應追蹤合併毛利和分部組合，而不是只看營收增速。"
+      },
+      {
+        "kicker": "訂單與客戶",
+        "title": "RPO比一般bookings可靠，但仍含尚未撥款部分且客戶集中",
+        "body": "6月底RPO為4.85億美元、年增297%，公司預計約50%在未來12個月認列；RPO包含已撥款與尚未撥款的firm orders，不含未行使選擇權。Q2兩名重大客戶合占33%營收，H1兩名客戶合占27%，雖較去年同期65%與73%改善，專案驗收與政府預算仍會造成季度波動。"
+      },
+      {
+        "kicker": "技術路線",
+        "title": "離子阱的高保真與全連接是優點，但99.99%保真不等於已達商業量子優勢",
+        "body": "離子阱使用天然原子作qubit，具長相干、全連接及較低錯誤更正開銷的潛力；Oxford Ionics的電子qubit控制、Lightsynq光子互連與SkyWater製造可望提高模組化擴展能力。公司宣稱2025年達99.99%雙qubit gate fidelity，但投資人仍需看到第三方可重現基準、邏輯qubit錯誤率、系統可用率、每次有效運算成本以及客戶實際工作負載，不宜只用物理qubit數或單一保真紀錄估值。"
+      },
+      {
+        "kicker": "現金與併購",
+        "title": "29.6億美元流動性看似充足，但SkyWater已一次消耗約10.56億美元",
+        "body": "6月底現金、短期及長期投資合計29.59億美元；SkyWater完成後公司提供的pro forma餘額約20億。TTM OCF約負4.52億、CapEx約3,150萬、FCF約負4.84億美元，而且尚未完整反映SkyWater的foundry資本需求。6月底商譽與無形資產已約29.65億美元，SkyWater併購後還會增加；若商業化不如預期，減損與整合成本會放大。"
+      },
+      {
+        "kicker": "稀釋與GAAP雜訊",
+        "title": "Q2每股虧損被認股權證重估放大，但SBC與股數增加是真實股東成本",
+        "body": "Q2 GAAP淨損18.68億美元，其中約16.49億來自認股權證負債公允價值變動，並非同額現金流出；調整後EBITDA負1.203億更適合看本業。但H1 SBC達2.704億、約為同期營收187%，6月底另有約1,820萬未歸屬RSU及406萬PSU。7月底SkyWater又以每股15美元現金加0.4883股IONQ完成交易；基準估值使用約4.40億股，而不是只用10-Q前收購的3.81億股。"
+      },
+      {
+        "kicker": "競爭與估值",
+        "title": "38美元不是便宜的早期科技股價格，而是已預付大規模成功",
+        "body": "IonQ不只面對Quantinuum等離子阱路線，也面對IBM、Google等超導、neutral atom、photonic及其他架構；AWS、Microsoft和Google既是雲端通路，也有自家量子布局。以約4.30億完全稀釋股、20億pro forma現金估算，盤中38.20美元約對應144億企業價值，是2026合併營收指引中點的31.7倍。若以12%折現與8倍2030混合EV/Sales反推，現價要求2030收入約31億美元，從約6.8億合併年化基礎仍需約43%年複合成長。"
+      }
+    ],
+    "modelNotes": "單位為百萬美元／百萬股。這不是把2026營收直接乘倍數，而是2030分部終值折現模型。悲觀：量子收入600×4倍＋foundry 600×1.5倍=33億終值EV，以15%折現4.3年，加5億剩餘淨現金，除4.70億股≈4.91美元，取整5美元。基準：量子2,200×10＋foundry 800×3=244億終值EV，以12%折現4.3年得149.88億，加10億剩餘淨現金，除4.40億股≈36.34美元；在互動試算中等效為2030收入30億×4.996倍折現後倍數。樂觀：量子4,000×14＋foundry 1,000×4=600億終值EV，以10%折現4.3年，加15億剩餘淨現金，除4.35億股≈95美元。安全邊際為基準價折讓20%至25%，約27.25至29.07美元。完全稀釋股數為分析估計，納入3.81億收購前普通股、SkyWater股權對價、未歸屬RSU／PSU與價內公眾認股權證；不把99.88及155美元履約價的7,905萬價外私募認股權證全部計入基準股數，但在樂觀股價接近履約區時仍須重新評估。"
+  },
+  {
     "ticker": "LAES",
     "company": "SEALSQ Corp",
     "asOf": "2026-08-20",

@@ -56,10 +56,26 @@ export const glossary: Record<string, string> = {
   營運資金: '公司日常營運卡在應收、庫存與應付帳款中的資金。營收成長很快但庫存與應收長得更快時，帳面獲利可能伴隨現金流出。',
   強制可轉換優先股: '先享有股息與清算優先權、到期後按條款轉成普通股的證券；估值時不能只看現有普通股數，還要算股息與未來稀釋。',
   不可取消採購承諾: '公司已向供應商承諾、通常不能任意取消的採購金額。若客戶訂單可取消而採購不能取消，需求下修會變成過量庫存與減記風險。',
-  ITGC: '資訊科技一般控制，涵蓋財務系統存取、權限、變更與資料完整性。重大缺失不代表財報已錯，但表示錯誤可能無法被及時防止或發現。'
+  ITGC: '資訊科技一般控制，涵蓋財務系統存取、權限、變更與資料完整性。重大缺失不代表財報已錯，但表示錯誤可能無法被及時防止或發現。',
+  QCaaS: 'Quantum Computing as a Service，客戶透過雲端按使用量或合約存取量子電腦，不必自己購買整套設備。',
+  gate_fidelity: '量子閘正確執行操作的比例；99.99%代表單次操作錯誤率低，但不等於整個長演算法、邏輯qubit或商業工作負載已成功。',
+  logical_qubit: '由多個容易出錯的物理qubit配合錯誤更正形成的可靠qubit。真正可擴展運算更在意邏輯錯誤率，而不只物理qubit數。',
+  quantum_advantage: '量子電腦在有實際價值的工作上，成本、速度或品質明顯優於最佳傳統方法；實驗紀錄不必然等於廣泛商業優勢。',
+  foundry: '晶圓代工與先進製造服務。收入較可見，但通常有材料、設備、折舊及產能利用率成本，估值倍數不能直接比照高毛利軟體。'
 };
 
 export const beginnerGuides: Record<string, BeginnerGuide> = {
+  IONQ: {
+    industry:'離子阱量子運算＋量子網路／感測／安全＋美國半導體foundry', earns:'銷售量子電腦與相關硬體、透過AWS／Azure／Google Cloud及自有平台提供QCaaS、收取顧問與支援費；併購後另有量子網路、安全、衛星資料、感測及SkyWater晶圓代工與先進封裝收入。', keyQuestion:'不含SkyWater的量子業務能否把RPO轉成高毛利、可重複收入，並在技術與併購整合成功的同時讓SBC、現金消耗及完全稀釋股數明顯慢於每股收入？',
+    watch:[
+      {name:'有機量子收入與SkyWater收入',why:'2026合併指引大增主要含SkyWater併表，不能全部視為量子自然成長。',good:'公司持續分開披露原有量子、收購及公司間沖銷，量子業務約100%有機成長落地。',warning:'只強調4.5億總收入，卻不再揭露量子業務自身成長與毛利。'},
+      {name:'RPO、bookings與客戶集中',why:'早期量子專案受政府撥款、驗收與少數大客戶影響。',good:'4.85億RPO按期轉收入與現金，新訂單持續補充且客戶集中下降。',warning:'RPO增加但尚未撥款部分上升、認列延後或前兩大客戶重新集中。'},
+      {name:'技術效用與錯誤更正',why:'單一gate fidelity或物理qubit數不代表可解決商業問題。',good:'第三方可重現的logical qubit錯誤率、系統可用率與真實工作負載優勢持續改善。',warning:'只發表實驗紀錄與roadmap，沒有可驗證應用、成本或客戶付費擴張。'},
+      {name:'毛利與收入組合',why:'H1毛利率約24.4%，foundry與硬體收入會稀釋平台型毛利。',good:'量子平台、QCaaS及服務快於低毛利硬體，合併毛利逐季改善。',warning:'營收高速成長但成本同步上升，長期仍無法覆蓋研發與管理費。'},
+      {name:'現金消耗與併購整合',why:'SkyWater使用約10.56億美元現金，且大量商譽與不同業務需要整合。',good:'pro forma約20億流動性維持、TTM FCF虧損收斂，SkyWater里程碑按期交付。',warning:'繼續大型收購、商譽減損或foundry CapEx使現金runway快速縮短。'},
+      {name:'SBC、RSU與完全稀釋股數',why:'H1 SBC約為同期營收187%，收購對價也包含股票。',good:'每股收入快於股數，SBC占營收持續下降，停止依賴高價發股。',warning:'只看調整後EBITDA而忽略SBC、RSU、PSU、認股權證與收購新股。'}
+    ],terms:['GAAP','QCaaS','RPO','bookings','gate_fidelity','logical_qubit','quantum_advantage','foundry','毛利率','OCF','CapEx','FCF','SBC','稀釋股數','EV/Sales']
+  },
   SMCI: {
     industry:'AI伺服器、rack-scale整合、液冷與資料中心基礎設施', earns:'採購GPU、CPU、記憶體、網路、電源與其他元件，利用模組化Building Block架構設計並組裝成伺服器、整櫃及液冷AI工廠，再向雲端、企業、OEM與通路客戶收取硬體、整合、軟體和服務收入。', keyQuestion:'FY2027的650至720億美元營收能否在毛利率穩於10%、庫存與應收增速低於營收、OCF轉正且完全稀釋股數受控的情況下實現？',
     watch:[
