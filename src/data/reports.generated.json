@@ -3073,6 +3073,210 @@
     "modelNotes": "FY2026 與 FQ1 指引反映高峰；基準採中週期 EPS，並對 NAND 較高供給彈性保留折價。"
   },
   {
+    "ticker": "SNPS",
+    "company": "Synopsys, Inc.",
+    "asOf": "2026-09-15",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 369.54,
+      "baseFairValue": 351.0,
+      "fairRange": [
+        320.0,
+        390.0
+      ],
+      "marginOfSafety": [
+        263.25,
+        280.8
+      ],
+      "bear": 231.0,
+      "base": 351.0,
+      "bull": 496.0
+    },
+    "thesis": "Synopsys擁有EDA寡占、兩至三年TSL合約、silicon-proven Design IP與Ansys多物理模擬形成的高轉換成本護城河。Q3營收24.77億美元、年增42%，粗略扣除Ansys併表貢獻後原有業務仍約增12%，Design IP也恢復11%成長；但348.6億美元Ansys收購使2026-07-31淨負債達106.8億美元，另有382.9億美元商譽與無形資產，FY2026 GAAP與non-GAAP營益率相差逾30個百分點。盤中369.54美元約為FY2026 non-GAAP EPS指引的24.5倍，但扣除SBC經濟成本後接近33.5倍；基準合理價351美元，屬好公司但尚未形成明顯安全邊際。",
+    "metrics": [
+      {
+        "label": "Q3營收／年增",
+        "value": "24.77億美元／+42%",
+        "note": "Ansys同比增加約6.22億美元；粗略扣除兩期Ansys貢獻後，原有業務約增12%"
+      },
+      {
+        "label": "Q3產品組合",
+        "value": "EDA 51.8%／Design IP 19.1%／Ansys 28.7%",
+        "note": "Design Automation分部含EDA、Ansys與其他；不能把分部53%成長全部解讀為EDA自然成長"
+      },
+      {
+        "label": "Q3 GAAP／non-GAAP營益率",
+        "value": "14.4%／41.6%",
+        "note": "差距主要來自4.02億收購無形攤銷、2.32億SBC及其他調整"
+      },
+      {
+        "label": "FY2026 GAAP／non-GAAP EPS指引中點",
+        "value": "3.96／15.07美元",
+        "note": "全年預計無形攤銷約16.1億、SBC約9.5億及重整約3.95億美元；不可只看調整後EPS"
+      },
+      {
+        "label": "TTM OCF／CapEx／FCF",
+        "value": "29.38／1.91／27.48億美元",
+        "note": "TTM=FY2025＋9M FY2026−9M FY2025；FCF margin約29.2%"
+      },
+      {
+        "label": "TTM SBC／FCF−SBC",
+        "value": "9.50／17.98億美元",
+        "note": "SBC約占營收10.1%、FCF的34.6%；FCF扣SBC只是股東經濟現金流代理，不是GAAP指標"
+      },
+      {
+        "label": "7月底現金短投／債務／淨負債",
+        "value": "36.08／142.83／106.75億美元",
+        "note": "均為2026-07-31同時點；8月8日以現金還清42.84億term loan後，債務降至約100億，但還款後現金未揭露，不能混用前後時點低估淨負債"
+      },
+      {
+        "label": "Backlog／FSA／十二月內認列",
+        "value": "109／19／約44.1億美元",
+        "note": "49%是針對扣除19億non-cancellable FSA後的90億backlog；royalty未包含，backlog也不等於現金"
+      },
+      {
+        "label": "商譽＋無形資產",
+        "value": "382.94億美元",
+        "note": "約為股東權益的123%；Ansys協同與收入若不達標，減損風險不可忽略"
+      },
+      {
+        "label": "中國營收占比",
+        "value": "Q3 10.3%／9M 9.9%",
+        "note": "2025-07-02的臨時BIS限制已撤銷，但先進IC、chiplet、Entity List與未來規則仍會限制可服務範圍"
+      }
+    ],
+    "drivers": [
+      "EDA在不含Ansys併表與divestiture後仍維持雙位數附近成長，AI與先進製程需求可轉為續約、用量和價格",
+      "Design IP由九個月年減1%改善為單季年增11%，HBM、UCIe、CXL、PCIe與安全IP持續放量",
+      "Ansys約29億美元年度收入可透過半導體、汽車、航太與工業客戶交叉銷售並提高長期margin",
+      "109億backlog按期認列且新簽約補充速度不低於收入，FSA drawdown與royalty維持品質",
+      "FY2026約28億OCF、26億FCF指引落地，淨負債與約5億年利息快速下降",
+      "SBC占營收與FCF比例逐年下降，股數成長顯著慢於每股正常化盈餘與FCF",
+      "NVIDIA CUDA、Omniverse與agentic AI合作由roadmap轉成可驗證產品、採用與收入，而非只停留在合作公告"
+    ],
+    "risks": [
+      "Ansys收購價格高、商譽與無形資產龐大，交叉銷售、成本協同或客戶保留若不達標可能減損",
+      "100億美元senior notes及約5億年化利息降低財務彈性，利潤成長必須同時支援去槓桿",
+      "GAAP與non-GAAP差距過大；SBC、重整及反覆整合費用若長期存在，調整後EPS會高估股東收益",
+      "Design IP曾受中國限制、主要foundry客戶需求及roadmap決策影響，單季回升不保證已完成修復",
+      "中國約占一成收入，先進IC、chiplet、Entity List及未來出口規則可能縮小可服務市場並扶植本土EDA",
+      "Cadence、Siemens EDA、其他模擬供應商及客戶內製工具可能削弱定價、產品領先或跨平台整合",
+      "upfront IP、硬體與Ansys license及FSA drawdown增加季度波動，109億backlog不能當成無條件短期收入",
+      "AI既增加工具需求，也可能促使大型客戶開發內部自動化；NVIDIA合作非獨家且未發布功能仍可能延後"
+    ],
+    "valuation": {
+      "type": "forward-pe",
+      "earnings": 13.0,
+      "bearMultiple": 22.0,
+      "baseMultiple": 27.0,
+      "bullMultiple": 32.0
+    },
+    "chart": "/charts/snps-analysis-2026-09-15.png",
+    "sources": [
+      {
+        "label": "Synopsys FY2026 Q3 Form 10-Q",
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000088324126000025/snps-20260731.htm"
+      },
+      {
+        "label": "Synopsys FY2026 Q3 earnings release（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312526368620/d157153dex991.htm"
+      },
+      {
+        "label": "Synopsys FY2025 Form 10-K",
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000088324125000028/snps-20251031.htm"
+      },
+      {
+        "label": "Synopsys completes Ansys acquisition（SEC Form 8-K）",
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000114036125026139/ef20051970_8k.htm"
+      },
+      {
+        "label": "Synopsys repays $4.3 billion term loan（SEC Form 8-K）",
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312526345878/d148701d8k.htm"
+      },
+      {
+        "label": "Synopsys and NVIDIA strategic partnership（SEC Exhibit 99.1）",
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525303209/d36680dex991.htm"
+      },
+      {
+        "label": "BIS rescinds temporary China export restrictions（SEC Form 8-K）",
+        "url": "https://www.sec.gov/Archives/edgar/data/883241/000119312525155294/d80081d8k.htm"
+      },
+      {
+        "label": "Yahoo Finance SNPS chart snapshot",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/SNPS?range=1y&interval=1d&includePrePost=true"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-09-15 11:23 EDT",
+      "marketState": "regular-market",
+      "source": "Yahoo Finance chart API"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "FY2027股東正常化EPS 10.50美元 × 22倍",
+        "value": 231.0,
+        "condition": "Ansys協同延後、Design IP再度轉弱、出口限制收緊、FCF停滯且高SBC與利息維持"
+      },
+      {
+        "label": "基準",
+        "assumption": "FY2027股東正常化EPS 13.00美元 × 27倍",
+        "value": 351.0,
+        "condition": "EDA維持雙位數附近成長、Ansys交叉銷售與成本協同落地、Design IP續增、FCF達30億以上並去槓桿"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "FY2027股東正常化EPS 15.50美元 × 32倍",
+        "value": 496.0,
+        "condition": "AI設計複雜度與multi-die推動全棧採用，EDA、IP與S&A同步高成長，SBC占比下降且市場維持寡占溢價"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "公司怎麼賺錢",
+        "title": "客戶付錢降低一次流片失敗的巨大成本，Synopsys賣的是設計成功率與研發時間",
+        "body": "EDA軟體涵蓋RTL、驗證、synthesis、place-and-route、signoff、製造與硬體emulation，TSL通常為兩至三年並按期認列；Design IP提供UCIe、HBM、CXL、PCIe、DDR等可直接整合的silicon-proven元件，另收客製與royalty；Ansys提供結構、熱、電磁與CFD等多物理模擬。工具一旦嵌入設計流程、foundry PDK與工程師方法學，更換可能增加重新驗證及流片風險，形成高轉換成本。"
+      },
+      {
+        "kicker": "最重要的改變",
+        "title": "Ansys讓SNPS由晶片設計擴張至整個物理系統，但同時把低負債軟體公司變成大型併購整合案",
+        "body": "2025-07-17完成Ansys收購，總對價348.6億美元，包括176.1億現金與171.1億股票，新增約3,000萬股。Ansys把TAM擴至管理層估計的310億美元，並提供晶片、封裝、散熱、機械與系統級數位孿生的交叉銷售機會；但也新增234.6億商譽、129.9億可辨認無形資產及100億senior notes。交易是否創值取決於未來現金協同，而非non-GAAP加回攤銷後看起來很漂亮。"
+      },
+      {
+        "kicker": "成長品質",
+        "title": "Q3的42%並非純有機，但原有業務仍有約12%成長，Design IP終於回到正成長",
+        "body": "Q3總營收24.77億美元；公司指出Ansys同比增加約6.22億。以兩期產品占比估算並剔除Ansys後，原有業務約年增12%，方向上證明本業並未停滯。Design Automation分部收入20.03億、年增53%，但其中包含Ansys；Design IP為4.74億、年增11%，九個月仍年減1%，需要再兩季確認不是低基期與訂單時點反彈。"
+      },
+      {
+        "kicker": "Backlog與收入認列",
+        "title": "109億美元backlog提供可見度，但其中19億FSA尚待客戶選產品，且總額較FY2025末下降",
+        "body": "7月底backlog為109億美元，低於2025年10月底的114億；其中19億是non-cancellable FSA，客戶承諾金額但具體產品與數量後定。扣除FSA的90億中約49%預計十二個月內認列，約44.1億；其餘多數在後續三年。未來royalty未列入backlog，反過來backlog也不等於立即營收或現金，應追蹤認列速度與新簽約補充率。"
+      },
+      {
+        "kicker": "GAAP與non-GAAP",
+        "title": "收購攤銷可以視為非現金，但SBC、重整與整合不能全部永久消失",
+        "body": "Q3 GAAP營益率14.4%、non-GAAP為41.6%；FY2026中點則約10.4%與41.5%。全年調整含約16.1億無形攤銷、9.5億SBC、3.95億重整與其他併購項目。無形攤銷不代表當期現金流出，但反映公司曾支付高額對價；SBC則直接稀釋股東。估值以公司15.07美元non-GAAP EPS為起點，再扣除約4美元稅後SBC成本，得到約11美元FY2026股東正常化EPS。"
+      },
+      {
+        "kicker": "現金流與資本報酬",
+        "title": "現金流很強、去槓桿進度快，但收購後投入資本回報尚未證明高於資金成本",
+        "body": "TTM OCF約29.38億、CapEx約1.91億、FCF約27.48億美元；2026-07-31現金與短投36.08億、債務142.83億，淨負債106.75億。8月8日以現金還清42.84億浮息term loan，顯示去槓桿執行力，但不會單獨降低同額淨負債；還款後現金餘額要等後續財報確認。以7月底約418.3億投入資本估算，FY2026 non-GAAP NOPAT ROIC約7.9%，再扣SBC的股東經濟ROIC約6.0%，仍需協同與成長提高才足以證明348.6億交易創值。"
+      },
+      {
+        "kicker": "AI與競爭",
+        "title": "AI增加設計複雜度，也可能改寫工具使用方式；NVIDIA合作是加分但不是收入保證",
+        "body": "先進製程、HBM、chiplet、UCIe、熱與電磁耦合使EDA與多物理模擬更不可或缺，Synopsys可把AI用於設計空間探索、驗證與agentic工程。NVIDIA以414.79美元投資20億並合作CUDA、Omniverse與AgentEngineer，有助GPU加速與共同銷售，但合作非獨家，許多功能仍是when-and-if-available。主要競爭來自Cadence、Siemens EDA、各類S&A廠商及客戶內製工具，中國也在政策支持下建立本土EDA。"
+      },
+      {
+        "kicker": "中國與估值",
+        "title": "臨時全面限制已撤銷，但結構性出口風險仍在；369美元只算合理，不算便宜",
+        "body": "2025-05-29通知造成的臨時中國限制已在2025-07-02被BIS撤銷，但針對先進IC、advanced packaging、chiplet與Entity List公司的規則仍存在。Q3中國收入約2.55億、占10.3%，不是可忽略曝險。以1.93億完全稀釋股與7月底同時點淨負債估算，現價市值713億、企業價值約820億，約8.7倍TTM營收、26倍TTM FCF；扣除SBC後的股東現金流倍數約40倍。基準合理價351美元，需回到約263至281美元才形成20%至25%安全邊際。"
+      }
+    ],
+    "modelNotes": "估值使用FY2027股東正常化EPS，而非直接採公司non-GAAP EPS。FY2026 non-GAAP EPS指引中點15.07美元，減去FY2026預估SBC約9.50億×(1−18%稅率)÷1.93億股≈4.04美元，得到約11.03美元FY2026股東正常化EPS。悲觀假設FY2027為10.50美元×22倍=231美元；基準為13.00×27倍=351美元；樂觀為15.50×32倍=496美元。TTM交叉檢查：市值約713.2億美元，TTM FCF約27.48億，P/FCF約26倍；若以FCF減SBC作股東經濟現金流代理約17.98億，倍數約39.7倍。安全邊際為基準價折讓20%至25%，約263.25至280.80美元。收購無形攤銷不等同當期現金支出，但反映歷史高額資本配置；重整與併購成本若反覆出現，基準情境不得永久歸零。"
+  },
+  {
     "ticker": "SPCX",
     "company": "Space Exploration Technologies Corp.",
     "asOf": "2026-08-27",

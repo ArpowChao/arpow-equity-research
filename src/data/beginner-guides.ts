@@ -61,10 +61,26 @@ export const glossary: Record<string, string> = {
   gate_fidelity: '量子閘正確執行操作的比例；99.99%代表單次操作錯誤率低，但不等於整個長演算法、邏輯qubit或商業工作負載已成功。',
   logical_qubit: '由多個容易出錯的物理qubit配合錯誤更正形成的可靠qubit。真正可擴展運算更在意邏輯錯誤率，而不只物理qubit數。',
   quantum_advantage: '量子電腦在有實際價值的工作上，成本、速度或品質明顯優於最佳傳統方法；實驗紀錄不必然等於廣泛商業優勢。',
-  foundry: '晶圓代工與先進製造服務。收入較可見，但通常有材料、設備、折舊及產能利用率成本，估值倍數不能直接比照高毛利軟體。'
+  foundry: '晶圓代工與先進製造服務。收入較可見，但通常有材料、設備、折舊及產能利用率成本，估值倍數不能直接比照高毛利軟體。',
+  TSL: 'Time-Based License，通常為兩至三年的軟體授權。收入多在合約期間按期認列，提供可見度，但續約價格、產品組合及客戶預算仍會改變。',
+  FSA: 'Flexible Spending Account，客戶先承諾一筆不可取消的採購額度，之後才指定產品與數量；可列入backlog，但尚未等同具體產品訂單或當期收入。',
+  signoff: '晶片送交製造前的最終設計驗證流程，確認時序、功耗、訊號完整性與製程規則等關鍵條件；錯誤可能造成昂貴的重新流片。',
+  S_and_A: 'Simulation and Analysis，利用結構、熱、流體、電磁等多物理模擬，在製造實體產品前預測其表現。',
+  收購無形資產攤銷: '收購時把部分價款分配給技術、客戶關係與商標，再依年限逐期認列費用。它不是當期現金流出，但提醒投資人公司曾支付真實收購對價。'
 };
 
 export const beginnerGuides: Record<string, BeginnerGuide> = {
+  SNPS: {
+    industry:'EDA晶片設計自動化＋Design IP＋Ansys多物理模擬與分析', earns:'以兩至三年TSL授權EDA與部分Ansys軟體、永久授權及維護、驗證硬體、專業服務，以及按設計收費與royalty的silicon-proven IP賺錢；工具越深度嵌入foundry製程與客戶設計流程，續約黏著度通常越高。', keyQuestion:'Ansys能否在不依賴長期排除SBC、重整與攤銷的情況下，讓EDA、Design IP與S&A交叉銷售產生每股FCF並把7月底106.8億美元淨負債快速降下來？',
+    watch:[
+      {name:'原有EDA與Ansys分開成長',why:'Design Automation分部把EDA、Ansys與其他業務放在一起，併表會放大表面成長。',good:'剔除Ansys與divestiture後的EDA仍維持雙位數附近成長，整合產品帶來可量化新收入。',warning:'只強調分部53%成長，卻不再提供Ansys貢獻或原有EDA趨勢。'},
+      {name:'Design IP修復',why:'Q3雖年增11%，九個月仍年減1%，先前受中國、foundry需求與roadmap決策拖累。',good:'HBM、UCIe、CXL與PCIe等IP連續數季成長，adjusted margin同步回升。',warning:'單季因認列時點反彈後又轉負，或主要foundry客戶持續縮單。'},
+      {name:'backlog、FSA與續約',why:'109億backlog含19億FSA，且較FY2025末114億下降；不能全部當短期營收。',good:'認列後新簽約充分補充backlog，約44億十二月內義務按期轉為收入與現金。',warning:'FSA占比上升、認列延後，或backlog持續下降但管理層只談總額。'},
+      {name:'GAAP、SBC與整合費用',why:'Q3 GAAP與non-GAAP營益率相差27個百分點，全年調整項目很大。',good:'SBC、重整與整合成本占營收逐年下降，GAAP margin向non-GAAP收斂。',warning:'每年都把重整與併購費用稱為一次性，股數與現金薪酬仍上升。'},
+      {name:'FCF、債務與ROIC',why:'2026-07-31 Ansys收購後淨負債約106.8億，另有383億商譽加無形資產。',good:'FCF超過30億、利息下降、淨負債快速減少，扣SBC後ROIC超過資金成本。',warning:'把還款後債務與還款前現金混算、用回購延後去槓桿，或協同不足導致減損。'},
+      {name:'中國、競爭與AI產品化',why:'中國約占一成收入，出口管制與本土EDA扶植並存；AI合作也未必自動變現。',good:'受控產品範圍穩定、核心工具保持領先，NVIDIA合作轉成可驗證產品採用與收入。',warning:'先進IC／chiplet限制擴大、Cadence或Siemens奪取關鍵流程，AI只剩合作新聞。'}
+    ],terms:['GAAP','TSL','FSA','backlog','signoff','S_and_A','毛利率','營業利益率','OCF','CapEx','FCF','SBC','收購無形資產攤銷','正常化盈餘','稀釋股數','P/E']
+  },
   IONQ: {
     industry:'離子阱量子運算＋量子網路／感測／安全＋美國半導體foundry', earns:'銷售量子電腦與相關硬體、透過AWS／Azure／Google Cloud及自有平台提供QCaaS、收取顧問與支援費；併購後另有量子網路、安全、衛星資料、感測及SkyWater晶圓代工與先進封裝收入。', keyQuestion:'不含SkyWater的量子業務能否把RPO轉成高毛利、可重複收入，並在技術與併購整合成功的同時讓SBC、現金消耗及完全稀釋股數明顯慢於每股收入？',
     watch:[
