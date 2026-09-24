@@ -39,6 +39,24 @@ for ticker in (x.lower() for x in expected):
     assert "本篇分析快照" in html
     assert "data-live-quote" in html
 index_html = (ROOT / "dist/index.html").read_text(encoding="utf-8")
+fundamentals = json.loads((ROOT / "src/data/fundamentals.generated.json").read_text(encoding="utf-8"))
+items = fundamentals["items"]
+assert len(items) == len(reports)
+assert {item["ticker"] for item in items} == {report["ticker"] for report in reports}
+assert len({item["ticker"] for item in items}) == len(items)
+fundamentals_html = (ROOT / "dist/fundamentals/index.html").read_text(encoding="utf-8")
+for item in items:
+    assert item["statement"]["url"].startswith("https://www.sec.gov/Archives/")
+    assert item["latestFiling"]["url"].startswith("https://www.sec.gov/Archives/")
+    assert item["ticker"] in fundamentals_html
+    assert (ROOT / f'dist/research/{item["ticker"].lower()}/index.html').is_file()
+    assert item["analysisAsOf"] <= fundamentals["checkedAtUtc"][:10]
+    for field in item["fields"].values():
+        if field:
+            assert field["end"] <= item["statement"]["periodEnd"]
+            assert field["unit"] in {"USD", "shares"}
+            assert field["accession"].replace('-', '') in item["statement"]["url"]
+assert "全站基本面核對" in index_html
 assert len(re.findall(r'<a[^>]+data-live-card', index_html)) == len(reports)
 for marker in ("最新行情", "分析快照", "基準合理價", "data-live-grid", "約每15分鐘更新"):
     assert marker in index_html

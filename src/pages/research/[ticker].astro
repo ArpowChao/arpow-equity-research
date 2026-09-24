@@ -58,6 +58,8 @@ const priceVerdict = report.snapshot.price < mosLow
     <div class="ranges"><div><span>一般合理區間</span><b>${report.snapshot.fairRange[0]}–${report.snapshot.fairRange[1]}</b></div><div><span>安全邊際區</span><b>${report.snapshot.marginOfSafety[0]}–${report.snapshot.marginOfSafety[1]}</b></div></div>
   </section>
 
+  <div class="shell"><p style="margin:17px 0 0;padding:11px 15px;background:#edf4ff;border-left:4px solid #2762be;line-height:1.6">這份估值與投資判斷固定於 {report.asOf}；<a href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>查看最新 SEC 基本面核對 ↗</a>。新文件與行情不會自動重算合理價。</p></div>
+
   {guide && <section class="shell beginner-section" aria-labelledby="beginner-title">
     <div class="beginner-head">
       <div><div class="eyebrow">Start here</div><h2 id="beginner-title">第一次看這家公司，先看這裡</h2></div>

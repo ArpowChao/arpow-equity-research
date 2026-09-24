@@ -20,6 +20,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
   </section>
 
   <section class="shell section">
+    <p style="background:#edf4ff;border-left:4px solid #2762be;padding:14px 20px;line-height:1.65"><strong>基本面新證據已核對：</strong>全站個股的最新 SEC 申報與標準化財務欄位，請看 <a href={`${base}fundamentals/`}>全站基本面核對 ↗</a>。原研究估值仍屬各自標示日期的快照，未因新行情自動重算。</p>
     <div class="section-head"><div><div class="eyebrow">Research archive</div><h2>最新個股研究</h2></div><p>最新行情約每15分鐘更新；分析快照與合理價固定保存，不會隨行情自動改寫。</p></div>
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
