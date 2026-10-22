@@ -1231,135 +1231,238 @@
   },
   {
     "ticker": "INTC",
-    "company": "Intel Corporation",
-    "asOf": "2026-08-24",
+    "company": "Intel Corporation（英特爾）",
+    "asOf": "2026-10-23",
     "status": "current",
     "currency": "USD",
     "snapshot": {
-      "price": 88.8629,
-      "baseFairValue": 83.6,
+      "price": 85.49,
+      "baseFairValue": 38.6,
       "fairRange": [
-        65,
-        90
+        32,
+        46
       ],
       "marginOfSafety": [
-        66.88,
-        71.06
+        27.02,
+        28.95
       ],
-      "bear": 40,
-      "base": 83.6,
-      "bull": 125
+      "bear": 14.41,
+      "base": 38.6,
+      "bull": 88.39
     },
-    "thesis": "產品需求與 18A 執行正在改善，但 Foundry 仍重資本、債務高，且政府 escrow shares 的市值重估使 GAAP EPS 嚴重失真；現價已要求復甦大致成功。",
+    "thesis": "CPU本業與18A量產已出現實質修復，但外部代工仍小、2027投資將加重，85.49美元股價已預支大量翻身；10/29財報前重點是現金與每股回報，不是只看AI合作新聞。",
     "metrics": [
       {
-        "label": "Q2 2026 營收",
-        "value": "161.28 億美元",
-        "note": "年增 25%；公司稱為逾 15 年最快增速"
+        "label": "Q2營收／GAAP毛利率",
+        "value": "161.28億／40.4%",
+        "note": "年增25%；毛利率年增12.9個百分點。[1]"
       },
       {
-        "label": "Q2 GAAP／非 GAAP EPS",
-        "value": "−2.16／0.42 美元",
-        "note": "GAAP 含約 136.19 億美元 escrow shares 市值損失"
+        "label": "DCAI營收／營業利益",
+        "value": "62.62億／24.74億",
+        "note": "營收年增59%，是最重要的本業亮點。[1]"
       },
       {
-        "label": "Q3 公司指引",
-        "value": "158–168 億美元",
-        "note": "非 GAAP 毛利率 42%、EPS 0.38（中點）"
+        "label": "Foundry外部收入／分部虧損",
+        "value": "2.93億／20.89億",
+        "note": "分部總收入57.65億主要為內部，不能當全部外部需求。[1][3]"
       },
       {
-        "label": "H1 OCF／CapEx／FCF",
-        "value": "81.02／61.92／19.10 億美元",
-        "note": "公司同時表示將增加設備、clean room 與 substrate 投資"
+        "label": "Q2 GAAP／非GAAP EPS",
+        "value": "-2.16／0.42美元",
+        "note": "差異主因保管股評價損失，另有SBC及重整。[1]"
       },
       {
-        "label": "現金／長債",
-        "value": "128.74／485.49 億美元",
-        "note": "未含短債與其他投資；資產負債表仍重"
+        "label": "H1 OCF／投資類PP&E",
+        "value": "81.02億／61.92億",
+        "note": "再扣融資類PP&E14.23億及租賃8.32億，現金代理值-3.45億。[1][2]"
       },
       {
-        "label": "期末普通股",
-        "value": "50.43 億股",
-        "note": "政府 escrow shares 與股權工具需續追蹤"
+        "label": "6/27淨負債／NCI",
+        "value": "208.10億／156.01億",
+        "note": "同日口徑；不是8月增資後或10月即時餘額。[2]"
+      },
+      {
+        "label": "8月增資／預估淨資金",
+        "value": "約2.421億新股／226.2億",
+        "note": "追加認購全額行使；淨資金為公開說明書估計。[4][5]"
+      },
+      {
+        "label": "下一次財報",
+        "value": "10/29美股盤後",
+        "note": "Q3指引收入158–168億、non-GAAP EPS 0.38。[1][6]"
       }
     ],
     "drivers": [
-      "Intel 18A／18A-P 良率、cycle time 與外部客戶",
-      "CCPG、DCAI 與 ASIC 收入／毛利",
-      "Foundry 內外部收入、利用率與營業虧損",
-      "CapEx、政府資金、債務與每股稀釋"
+      "DCAI CPU的收入、ASP、產品競爭力與分部利潤",
+      "18A／18A-P良率、晶圓成本及外部量產現金收入",
+      "14A與EMIB-T進度能否轉成客戶付款，而非只有遠期機會",
+      "OCF能否覆蓋完整PP&E、融資租賃、少數股東分配及SBC稀釋"
     ],
     "risks": [
-      "Foundry 巨額投入回報低於 WACC",
-      "政府 escrow shares 市值與稀釋造成會計／供給波動",
-      "先進製程與 AI 加速器競爭落後",
-      "債務、庫存與再投資需求壓縮 FCF"
+      "當前股價預支復甦，財報即使變好仍可能不夠市場期待",
+      "外部Foundry收入僅2.93億、分部仍虧20.89億",
+      "2026 CapEx逾200億、2027預期顯著更高，回報與利用率未確定",
+      "AMD／Arm與客戶自研晶片競爭；AI CPU需求不能直接等同Intel市占提升",
+      "政府協議、NCI、保管股、條件式權證及增資讓每股分析複雜",
+      "PC終端需求、記憶體價格與零件供應限制；單季供不應求不保證長期超額報酬"
     ],
     "valuation": {
-      "type": "forward-pe",
-      "earnings": 3.8,
-      "bearMultiple": 16,
-      "baseMultiple": 22,
-      "bullMultiple": 25
+      "type": "ev-sales-diluted",
+      "forwardRevenue": 70000,
+      "bearMultiple": 2,
+      "baseMultiple": 3.5,
+      "bullMultiple": 6,
+      "netCash": -25000,
+      "dilutedShares": 5700
     },
-    "chart": "/charts/intc-analysis-2026-08-24.png",
+    "chart": "/charts/intc-analysis-2026-10-23.svg",
     "sources": [
       {
-        "label": "Intel Q2 2026 earnings release（SEC exhibit）",
-        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm"
+        "label": "[1] Intel Q2 2026原始財報及GAAP／非GAAP對帳（7/23）",
+        "url": "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results"
       },
       {
-        "label": "Intel Q2 2026 Form 10-Q",
-        "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm"
+        "label": "[2] Intel Q2 2026 Form 10-Q（6/27報告日；7/24申報）",
+        "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0000050863-26-000157/intc-20260627.htm"
       },
       {
-        "label": "Yahoo Finance INTC chart snapshot",
+        "label": "[3] Q2官方準備講稿：製程、外部代工、CapEx與指引",
+        "url": "https://d1io3yog0oux5.cloudfront.net/_55d7c77db61d0836bb9bcea650fc712a/intel/db/887/9266/prepared_remarks/Q2+2026+Prepared+Remarks.pdf"
+      },
+      {
+        "label": "[4] 8月增資公開說明書：95美元發行價與稀釋",
+        "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0001193125-26-345221/d98483d424b5.htm"
+      },
+      {
+        "label": "[5] 8/12 Form 8-K：承銷商8/11全額行使追加認購",
+        "url": "https://www.intc.com/filings-reports/all-sec-filings/content/0001193125-26-346806/d117670d8k.htm"
+      },
+      {
+        "label": "[6] 官方公告：Q3財報10/29美股盤後公布",
+        "url": "https://www.intc.com/news-events/press-releases/detail/1782/intel-to-report-third-quarter-2026-financial-results"
+      },
+      {
+        "label": "[7] Yahoo Finance INTC一年日線與收盤metadata",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/INTC?range=1y&interval=1d"
+      },
+      {
+        "label": "[8] SEC公司申報索引：INTEL CORP／CIK 50863",
+        "url": "https://data.sec.gov/submissions/CIK0000050863.json"
+      },
+      {
+        "label": "[9] 10/20官方：AMD與Intel整合PyTorch的x86最佳化",
+        "url": "https://www.intel.com/content/www/us/en/newsroom/news/data-center/amd-intel-simplify-x86-ai-development-with-pytorch.html"
+      },
+      {
+        "label": "[10] 10/21官方：Fab 62設備安裝展開、預計2028年底營運",
+        "url": "https://www.intel.com/content/www/us/en/newsroom/opinion/building-america-capacity-to-innovate.html"
       }
     ],
     "priceMeta": {
-      "asOf": "2026-08-24 07:38 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
+      "asOf": "2026-10-22 16:00 EDT 正規盤收盤；台灣10/23研究",
+      "marketState": "closed",
+      "source": "Yahoo Finance日線與regularMarketPrice交叉核對"
     },
     "scenarios": [
       {
         "label": "悲觀",
-        "assumption": "復甦正常化 EPS 2.50 × 16 倍",
-        "value": 40,
-        "condition": "18A 外部客戶不足、Foundry 利用率低且 CapEx 再升"
+        "assumption": "營收600億 × 2.0倍；調整淨資產-350億；59億股",
+        "value": 14.41,
+        "condition": "伺服器成長降速、18A成本改善停滯、外部代工未放量；資本缺口及潛在權證推高稀釋。"
       },
       {
         "label": "基準",
-        "assumption": "復甦正常化 EPS 3.80 × 22 倍",
-        "value": 83.6,
-        "condition": "產品毛利改善、18A 良率／週期按計畫且 FCF 維持正值"
+        "assumption": "營收700億 × 3.5倍；調整淨資產-250億；57億股",
+        "value": 38.6,
+        "condition": "CPU復甦延續、製程良率改善，但代工仍需投資且外部收入爬坡緩慢；不假設立即成為台積電級平台。"
       },
       {
         "label": "樂觀",
-        "assumption": "復甦正常化 EPS 5.00 × 25 倍",
-        "value": 125,
-        "condition": "DCAI、ASIC、先進封裝與外部 Foundry 共同放量"
+        "assumption": "營收850億 × 6.0倍；調整淨資產-150億；56億股",
+        "value": 88.39,
+        "condition": "伺服器高成長延續、18A／先進封裝與外部客戶快速放量，現金轉換改善且市場仍給高溢價。"
       }
     ],
     "analysis": [
       {
-        "kicker": "Accounting bridge",
-        "title": "Q2 巨額 GAAP 淨損主要不是核心營運崩潰",
-        "body": "Q2 營業利益為 17.96 億美元，但 interest and other 淨額約負 125.76 億；公司非 GAAP 對帳列出約 136.19 億美元政府 escrow shares 市值損失。核心評估應保留 GAAP，再另看非 GAAP EPS 0.42 與現金流。"
+        "kicker": "最近一週的新消息",
+        "title": "Fab 62與x86軟體合作是進展，但不是當季新增巨額訂單",
+        "body": "10/21 Intel Foundry官方文章表示Arizona Fab 62建設及設備安裝已全面展開，預期2028年底開始營運。這增強產能執行證據，也提醒資本支出先於遠期收入，不能當成2026已新增的獲利。10/20 Intel與AMD宣布將PyTorch的x86最佳化整合至oneDNN，目標降低開發碎片化；這是軟體生態合作，不代表AMD已簽晶圓代工量產採購。兩頁發布日期已依官方metadata核對。[9][10]"
       },
       {
-        "kicker": "Capital intensity",
-        "title": "18A 執行改善，但資本報酬仍是關鍵",
-        "body": "H1 OCF 81.02 億、CapEx 61.92 億，簡化 FCF 19.10 億。管理層同時要增加設備、無塵室與基板投資；若外部 Foundry 收入不夠快，增量 ROIC 仍可能低於資金成本。"
+        "kicker": "最重要的改變",
+        "title": "從純粹救火，走到CPU帶動的營運修復；還不是代工翻身已完成",
+        "body": "Q2營收161.28億美元、年增25%，DCAI營收62.62億、年增59%；CCPG營收88.77億、年增13%。DCAI分部營業利益24.74億，是目前最有力的改善訊號。GAAP毛利率40.4%與營益率11.1%也改善；但同比包含2025低基期與Altera出表，不能把所有增幅都解讀成市占提升。[1][2]"
       },
       {
-        "kicker": "Valuation",
-        "title": "基準價已假設多年復甦，而不是拿 Q3 EPS 年化",
-        "body": "Q3 非 GAAP EPS 指引 0.38 不適合直接年化成長期能力。模型改用復甦後正常化 EPS 2.5／3.8／5.0，並因執行與資本強度給 16～25 倍。"
+        "kicker": "公司如何賺錢",
+        "title": "CPU先賺錢，晶圓廠與先進封裝仍在證明回報",
+        "body": "Intel向PC／邊緣裝置與雲端／企業銷售處理器，同時經營自有製造及外部晶圓代工／封裝。產品部門向Foundry採購會產生內部營收，因此不能把Intel Products 151.39億與Foundry 57.65億直接相加；公司間沖銷約54.77億後，才回到合併營收。[1]"
+      },
+      {
+        "kicker": "代工營收品質",
+        "title": "57.65億代工營收，不是57.65億外部訂單",
+        "body": "官方講稿披露Q2外部Foundry營收只有2.93億美元，約占Foundry分部5.1%；分部營業虧損20.89億。外部收入含不同製程／服務，不能直接稱為先進18A外部晶圓收入，更不能拿內部轉單當新客戶成功。應追蹤外部量產、認列收入、毛利與客戶付款，而不只合作公告。[1][3]"
+      },
+      {
+        "kicker": "18A／14A里程碑",
+        "title": "量產證據變強，14A的遠期承諾仍要驗證",
+        "body": "官方7月講稿稱18A產出季增逾50%、高於內部目標約25%，主要Panther Lake SKU成本年初以來約降50%；這些是公司口徑，沒有公開足夠良率分母可獨立重建。18A-P已進風險生產；14A的PDK 0.9原訂10月，2027下半年內部風險生產、2028大量爬坡是管理層計畫，不是截至本篇已實現，也不是外部客戶保證採購。[3]"
+      },
+      {
+        "kicker": "一次性與非營運損益",
+        "title": "GAAP虧110億，不等於本業燒掉110億；0.42美元也不是免費獲利",
+        "body": "Q2歸屬Intel淨損110.33億美元、GAAP EPS -2.16；其中保管股衍生負債評價損失125.29億、約每股2.45美元，是與美國政府協議有關的非營運評價項，不是同額現金營業流出。官方完整對帳後non-GAAP EPS 0.42，但仍排除SBC、收購攤銷及重整等；這些可能持續發生，不能全部視為沒有股東成本。[1][2]"
+      },
+      {
+        "kicker": "現金流逐項橋接",
+        "title": "表面正FCF與公司負調整FCF，都不能只挑一個看",
+        "body": "H1 OCF為81.02億；只扣投資現金流中的PP&E 61.92億，簡化FCF為+19.10億。但再扣融資分類PP&E 14.23億與融資租賃付款8.32億，較完整的現金支出代理值為-3.45億。這不是公司定義FCF。Q2 OCF 70.06億，扣公司gross CapEx 26.52億與租賃6.17億為+37.37億；加政府補助0.60億、扣SCIP淨夥伴流出122.16億，公司adjusted FCF為-84.19億。後者受4月142億美元買回Ireland SCIP少數股權影響，不能當成每季重複營運燒錢。[1][2]"
+      },
+      {
+        "kicker": "資本回報與資產負債表",
+        "title": "融資改善生存能力，不自動代表投資回報超過資金成本",
+        "body": "6/27現金加短投297.27億、債務505.37億，同日淨負債208.10億；少數股權156.01億另列。8月新股資金不能直接與6月舊現金相加後冒稱10月實際淨現金。7月管理層將2026 CapEx上調至逾200億，並預期2027顯著更高；應驗證增量營業利益、折舊、NCI分配與每股FCF能否覆蓋資本成本。精確當期ROIC、WACC未在此聲稱已核定。[2][3]"
+      },
+      {
+        "kicker": "8月增資與每股價值",
+        "title": "股數不能沿用2025，更不能只看季度加權平均",
+        "body": "8/10增資定價95美元：基本2.10526315億股，8/11承銷商全額行使0.31578947億股追加認購，合計約2.42105262億新股；公開說明書列全額行使後基本股數約52.8507億，預估淨募資226.2億美元。另有1.19億RSU／PSU、0.04億期權、1.43億保管股，及在喪失至少51%Foundry持股條件下才可行使的約2.41億政府權證。未授予的計畫額度不直接算已發行股。最新10月實際股數仍待Q3申報；模型用56／57／59億未來股數，非宣稱全已發行。[4][5]"
+      },
+      {
+        "kicker": "循環位置與見頂訊號",
+        "title": "這更像產品修復加產能投資期，不是已證實的成熟獲利高峰",
+        "body": "目前不能從毛利率回升就推定幾季後見頂。較值得注意的是管理層7月預期2026 PC終端消費全年低雙位數下滑，而伺服器需求較強；記憶體價格及零件限制可能壓抑PC。若DCAI連續降速、ASP與良率紅利消失、庫存及應收快於收入、CapEx卻上修，會比單看股價更早警示循環轉折。沒有足夠可核實數據，不能給確定見頂月份。[2][3]"
+      },
+      {
+        "kicker": "財報前觀察清單",
+        "title": "10/29真正要看的六件事",
+        "body": "截至台灣10/23早晨，最新完整財報仍為Q2；官方下一次公告為美東10/29盤後（電話會議14:00 PDT）。Q3指引收入158–168億美元、中點163億；GAAP／非GAAP毛利率41%／42%，EPS 0.31／0.38。要看是否超標、DCAI是否延續、外部Foundry收入是否放大、虧損是否收斂、CapEx與現金消耗、增資後股數與現金。官方公告與部分第三方10/22預估日衝突時，以官方為準。[1][6]"
+      },
+      {
+        "kicker": "合約與RPO限制",
+        "title": "沒有可核實的合併RPO，不能替代工預填收入",
+        "body": "此版未取得可與軟體公司RPO直接比較的合併指標，亦未取得足以支持遠期外部先進代工全部收入的不可取消合約明細。EMIB-T成長backlog與客戶興趣是管理層敘述；不能把backlog、design win、策略合作、股權投資及已認列收入混為一談。[2][3]"
+      },
+      {
+        "kicker": "估值不是股價預測",
+        "title": "基準已給予復甦溢價，但85美元仍要求更多成功",
+        "body": "使用未來12個月年營收能力600／700／850億、EV/Sales 2／3.5／6倍，扣經少數股權調整的情境淨資產負項350／250／150億，再除未來59／57／56億股，得到14.41／38.6／88.39美元。全部是分析者假設，不是公司指引或共識。以基準其他輸入倒推，現價要求約7.32倍EV/Sales，或在3.5倍下約146.4十億美元年收入能力。這指出預期門檻高，不代表股價必然立即回落。"
+      },
+      {
+        "kicker": "模型資產調整與限制",
+        "title": "淨資產調整不是把未知的10月現金當已知",
+        "body": "試算的「情境淨現金」欄實際採經少數股權調整值：可用現金與短投－債務－NCI估計經濟權益。6/27該橋接值為-364.11億；僅假設8月預估淨募資226.2億全部保留，靜態橋接約-137.91億，但這不是8月或10月實際報表。三情境另假設後續資金使用、NCI與融資變動，設為-350／-250／-150億。NCI估計值及EV/Sales均有高度不確定性，帳面NCI不必然等於市值；不把募資全額永久加回，也不另外重複扣已在橋接內的Ireland買回。"
+      },
+      {
+        "kicker": "價格結構",
+        "title": "跌8%不是自動變便宜，財報前仍是高波動",
+        "body": "10/22正規盤收85.49美元，較10/21的92.96美元下跌8.04%；日內低84.645、高89.185。這些是已收盤資料，不混用搜尋頁較舊的盤後價。觀察84.65附近是否守住、89–93區間是否收復；只是短線價格結構，不是估值底線。未有足夠已核對資料將單日下跌歸因某一新聞，本文不捏造催化因素。[7]"
       }
     ],
-    "modelNotes": "使用復甦正常化 EPS，不把 Q2 的 escrow shares 市值損失視為核心，也不把 Q3 單季指引直接年化。"
+    "modelNotes": "金額輸入皆百萬美元；股數為百萬股。情境淨現金為經NCI經濟權益調整的模型負項，非當前已披露淨負債。公式：(前瞻營收×EV/Sales＋調整淨現金)÷未來稀釋股數。NTM營收與倍數皆分析假設，不是管理層2027指引；不是2028終值DCF。一般區間32–46美元是基準700億營收下約3.0–4.1倍敏感度；安全邊際為基準折讓25–30%，不是止跌保證。",
+    "updatedFrom": "2026-08-24公開版本；保留歷史快照，不把10/16批次未發布草稿當正式前版。"
   },
   {
     "ticker": "IONQ",
