@@ -14,6 +14,12 @@ export type BeginnerGuide = {
 };
 
 export const glossary: Record<string, string> = {
+  royalty: '權利金：客戶使用Arm技術做成晶片後，按合約及出貨、技術內容支付費用；認列與現金收款可能不同期。',
+  license: '授權：讓客戶取得架構、核心或子系統的使用權，也可能包含訂閱與服務；大單交付與認列時點使季度波動。',
+  ACV: '活躍授權合約的年化價值指標，依公司定義計算且排除未來權利金；不是當季收入，也不是全部訂單餘額。',
+  CSS: 'Compute Subsystems，預先整合及驗證的CPU運算子系統，讓客戶更快做晶片，也可能提高Arm每顆晶片的價值捕捉。',
+  ADS: '美國存託股份。Arm每ADS代表1股普通股；整家公司市值要用全部具經濟權益股數，不能只乘公開流通盤。',
+  AGI_CPU: 'Arm直接提供的資料中心CPU產品，不是宣稱已達人工通用智慧；會帶來不同於純IP授權的供應、成本與營運資金風險。',
   GAAP: '依法規會計準則呈現的原始成績，不能因為難看就跳過。',
   核心口徑: '公司自行排除某些項目後的成績。適合看營運趨勢，但被排除的股權薪酬、重整或權證仍可能是股東成本。',
   營收: '公司賣出產品或服務收到的收入；成長不代表一定賺錢。',
@@ -234,13 +240,15 @@ export const beginnerGuides: Record<string, BeginnerGuide> = {
     ],terms:['GAAP','核心口徑','毛利率','FCF','SBC','P/E']
   },
   ARM: {
-    industry:'半導體 IP 授權', earns:'先收架構／核心設計授權費，再依客戶晶片出貨收 royalty；不直接製造多數晶片。', keyQuestion:'v9 與高價值資料中心／AI 晶片能否提高每顆 royalty，同時控制 SBC 與直接做晶片的資本風險？',
+    industry:'半導體IP授權／權利金＋CSS運算子系統＋直接CPU產品', earns:'先授權架構、CPU核心與運算子系統，再依客戶晶片出貨及技術內容收取royalty；也開始向客戶直接供應AGI CPU。授權、權利金與直接矽產品的收入時點、毛利與資金需求不同。', keyQuestion:'資料中心權利金與AGI CPU機會，能否在持續SBC、薪酬稅、供應鏈成本及稀釋後，創造足以支撐212.03美元盤中快照的每股經濟獲利？',
     watch:[
-      {name:'Royalty revenue',why:'跟客戶實際晶片出貨連動，是長期複利核心。',good:'v9 占比與每顆費率提高。',warning:'手機出貨疲弱或客戶自研替代。'},
-      {name:'License revenue',why:'大單波動較大，但預示未來 royalty。',good:'新客戶、CSS／資料中心授權增加。',warning:'單季大單被誤當持續收入。'},
-      {name:'ACV／RPO／pipeline',why:'代表不同程度的未來機會，不能互相替代。',good:'已簽合約與實際認列共同成長。',warning:'只有 pipeline 宣傳，沒有收入。'},
-      {name:'SBC 與稀釋',why:'GAAP 與非 GAAP 差異的重要來源。',good:'SBC 占營收下降。',warning:'股數持續上升侵蝕每股價值。'}
-    ],terms:['核心口徑','RPO','SBC','稀釋股數','P/E']
+      {name:'Armv9／CSS與權利金',why:'Q1 royalty7.15億、年增22%；每顆晶片的技術內容與費率比單純出貨更重要。',good:'客戶出貨、v9／CSS產品組合與每顆royalty共同成長。',warning:'手機／PC疲弱，只有高費率抵銷出貨減少，或客戶重新議價。'},
+      {name:'Neoverse與資料中心',why:'資料中心royalty超過翻倍，是最清楚的結構成長訊號。',good:'大型雲端、NVIDIA與其他客戶部署轉成royalty及現金。',warning:'把全球AI CapEx、客戶GPU收入或所有Arm伺服器收入都當Arm自身收入。'},
+      {name:'授權收入與ACV',why:'Q1 license增23%，ACV只增13%；大單時點可能讓單季偏強。',good:'ACV、收入及收款共同成長，新合約補充已認列收入。',warning:'只看單季license或沿用已停止在股東信披露的RPO／授權數。'},
+      {name:'AGI CPU由需求到現金',why:'已初期交付；20億需求與10億機會的產能仍不等於已實現營收。',good:'量產交付、獨立收入／毛利、客戶付款與容量擴充同步兌現。',warning:'只有pipeline、軟體合作或特定benchmark，供應、庫存與毛利卻未改善。'},
+      {name:'SBC、薪酬稅與每股獲利',why:'Q1 GAAP營益年減20%；SBC3.43億加相關雇主稅淨額0.90億使口徑差很大。',good:'GAAP margin、正常化經濟EPS與每股FCF成長快於股數。',warning:'以97%毛利或0.45美元調整EPS掩蓋股東薪酬成本。'},
+      {name:'FCF、治理與資本配置',why:'TTM官方FCF13.97億，仍需對照SBC、供應鏈資金與關係人收入。',good:'收款正常化、投資回報可量化，控制股東與關係人交易透明。',warning:'只年化收款旺季FCF，或直接CPU投資上升而每股現金回報下降。'}
+    ],terms:['royalty','license','ACV','CSS','ADS','AGI_CPU','GAAP','核心口徑','毛利率','營業利益率','OCF','CapEx','FCF','SBC','稀釋股數','正常化盈餘','P/E']
   },
   PLTR: {
     industry:'AI 軟體平台', earns:'向政府與企業收取長期軟體平台及部署服務費，AIP 是目前主要成長引擎。', keyQuestion:'美國商業高速成長能否維持，並足以支撐極高估值與股權薪酬？',

@@ -284,146 +284,241 @@
   },
   {
     "ticker": "ARM",
-    "company": "Arm Holdings plc",
-    "asOf": "2026-08-24",
+    "company": "Arm Holdings plc（安謀）",
+    "asOf": "2026-10-23",
     "status": "current",
     "currency": "USD",
     "snapshot": {
-      "price": 238.57,
-      "baseFairValue": 168,
+      "price": 212.03,
+      "baseFairValue": 111.43,
+      "bear": 31.59,
+      "base": 111.43,
+      "bull": 233.01,
       "fairRange": [
-        145,
-        190
+        95,
+        130
       ],
       "marginOfSafety": [
-        134.4,
-        142.8
-      ],
-      "bear": 81,
-      "base": 168,
-      "bull": 288
+        78.0,
+        83.57
+      ]
     },
-    "thesis": "Arm 的架構、CSS 與資料中心 royalty 正從行動裝置護城河擴張到 AI 基礎設施，AGI CPU 又增加直接矽產品選擇權；但現價已要求高成長、高 royalty rate 與矽產品成功同時成立，且 GAAP 利潤仍被巨額股權薪酬壓低。",
+    "thesis": "資料中心權利金與Armv9／CSS成長真實，AGI CPU擴大可服務市場；但GAAP營益下滑、SBC與供應鏈經濟成本不可忽略，盤中212.03美元已要求接近樂觀情境的成功。",
     "metrics": [
       {
-        "label": "Q1 FY2027 營收",
-        "value": "12.89 億美元",
-        "note": "年增 22%；再創第一季紀錄"
+        "label": "Q1 FY2027營收",
+        "value": "12.89億／年增22%",
+        "note": "截至2026/6/30；下一份Q2尚未公布。[1][10]"
       },
       {
-        "label": "Royalty／License",
-        "value": "7.15／5.74 億美元",
-        "note": "分別年增 22%／23%；資料中心 royalty 超過翻倍"
+        "label": "Royalty／License與其他",
+        "value": "7.15億／5.74億",
+        "note": "年增22%／23%；資料中心royalty超過翻倍。[1]"
       },
       {
-        "label": "GAAP／非 GAAP EPS",
-        "value": "0.25／0.45 美元",
-        "note": "Q2 非 GAAP EPS 指引 0.47±0.04"
+        "label": "GAAP／non-GAAP營業利益",
+        "value": "0.91億／5.31億",
+        "note": "GAAP年減20%；利潤率7.1%／41.2%。[1][10]"
       },
       {
-        "label": "GAAP／非 GAAP 營益",
-        "value": "0.91／5.31 億美元",
-        "note": "Q1 股權薪酬 3.43 億美元，是口徑差異核心"
+        "label": "SBC／相關雇主稅淨額",
+        "value": "3.43億／0.90億",
+        "note": "SBC占營收26.6%；非GAAP排除不代表沒有股東成本。[1]"
       },
       {
-        "label": "OCF／調整後 FCF",
-        "value": "9.02／6.65 億美元",
-        "note": "受應收收款與稅款時點有利影響，不宜直接年化"
+        "label": "Q1／TTM官方FCF",
+        "value": "6.65億／13.97億",
+        "note": "Q1受收款與稅時點有利影響；TTM營收51.56億。[1][10]"
       },
       {
-        "label": "現金＋短投／稀釋股",
-        "value": "38.88 億／10.78 億股",
-        "note": "每一 ADS 代表一股普通股；SoftBank 為控制股東"
+        "label": "ACV／股東信RPO",
+        "value": "17.32億／停止披露",
+        "note": "ACV年增13%；不等於當期營收或royalty。[1]"
+      },
+      {
+        "label": "6/30流動性／期末普通股",
+        "value": "38.88億／10.68億股",
+        "note": "現金＋短投；季度加權稀釋股10.78億，非10月期末股數。[1][10]"
+      },
+      {
+        "label": "下一次財報",
+        "value": "11/4美股盤後",
+        "note": "Q2收入指引13.8億±0.5億，non-GAAP EPS0.47±0.04。[1][4]"
       }
     ],
     "drivers": [
-      "Armv9／CSS 的 royalty rate 與晶片滲透率",
-      "Neoverse 在 AWS、Google、Microsoft、NVIDIA 與 Meta 基礎設施的部署",
-      "AGI CPU 超過 20 億美元需求 pipeline 的收入、毛利與供應轉換",
-      "ACV、license 合約時點與中國相關收入／收款",
-      "股權薪酬、稀釋股數與 SoftBank 控制股東治理"
+      "Armv9、CSS與Neoverse的出貨、每顆權利金與客戶部署",
+      "授權ACV及大單轉收入的節奏，而非只看季度license增幅",
+      "AGI CPU由初期交付、需求與產能，轉成可量化收入、毛利及現金",
+      "SBC、相關雇主稅與未來股數能否慢於每股經濟獲利成長",
+      "供應鏈、營運資金與增量資本回報是否仍符合高倍數平台經濟"
     ],
     "risks": [
-      "高估值對任何成長或指引失誤極度敏感",
-      "AGI CPU 使低資本 IP 模式增加製造與供應風險",
-      "RISC-V、x86、自研 IP 與客戶議價競爭",
-      "Arm China、出口限制與地緣政治",
-      "高額股權薪酬及控制股東利益衝突"
+      "高估值對成長降速與倍數壓縮同時敏感",
+      "直接做CPU增加供應、庫存、較低毛利與既有客戶競合風險",
+      "手機／PC循環、x86與RISC-V替代、主要客戶議價",
+      "SoftBank控制權、關係人收入與Arm China收款及地緣政治",
+      "高額股權薪酬、股票歸屬代扣稅與稀釋",
+      "公司停止披露部分RPO與授權數，外部追蹤能見度降低"
     ],
     "valuation": {
       "type": "forward-pe",
-      "earnings": 2.4,
+      "earnings": 1.5918,
       "bearMultiple": 45,
       "baseMultiple": 70,
       "bullMultiple": 90
     },
-    "chart": "/charts/arm-analysis-2026-08-24.png",
+    "chart": "/charts/arm-analysis-2026-10-23.svg",
     "sources": [
       {
-        "label": "Arm Q1 FY2027 shareholder letter（SEC exhibit 99.2）",
+        "label": "[1] Q1 FY2027官方股東信／SEC附件99.2（7/29；全文既存快照重讀）",
         "url": "https://www.sec.gov/Archives/edgar/data/1973239/000197323926000113/exhibit992fye27q130-junx26.htm"
       },
       {
-        "label": "Arm Q1 FY2027 interim report Form 6-K",
-        "url": "https://www.sec.gov/Archives/edgar/data/1973239/000197323926000114/arm-20260630.htm"
+        "label": "[4] 官方：Q2 FY2027於11/4盤後公布（10/5）",
+        "url": "https://newsroom.arm.com/news/arm-announces-earnings-release-date-for-second-quarter-fiscal-year-ending-2027"
       },
       {
-        "label": "Arm FY2026 Form 20-F",
-        "url": "https://www.sec.gov/Archives/edgar/data/1973239/000197323926000097/arm-20260331.htm"
+        "label": "[5] 官方：3/24推出Arm AGI CPU與客戶角色",
+        "url": "https://newsroom.arm.com/blog/introducing-arm-agi-cpu"
       },
       {
-        "label": "Yahoo Finance ARM chart snapshot",
+        "label": "[6] 官方：10/21 AGI CPU軟體生態與測試口徑",
+        "url": "https://newsroom.arm.com/blog/how-to-build-the-agentic-ai-software-stack-on-arm-agi-cpu"
+      },
+      {
+        "label": "[7] Yahoo一年日線與盤中報價metadata",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/ARM?range=1y&interval=1d"
+      },
+      {
+        "label": "[8] SEC最新公司申報索引：ARM／CIK1973239",
+        "url": "https://data.sec.gov/submissions/CIK0001973239.json"
+      },
+      {
+        "label": "[9] SEC交易代號與發行人身分",
+        "url": "https://www.sec.gov/files/company_tickers.json"
+      },
+      {
+        "label": "[10] SEC companyfacts原始XBRL：本次重新擷取核對",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001973239.json"
+      },
+      {
+        "label": "[11] 官方7/29 Q1財報發布公告",
+        "url": "https://newsroom.arm.com/news/arm-holdings-plc-reports-results-for-the-first-quarter-of-the-fiscal-year-ending-2027"
+      },
+      {
+        "label": "[12] SEC Form4 ADS換算註腳（本次搜尋摘錄）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1973239/000162828026036538/0001628280-26-036538.txt"
+      },
+      {
+        "label": "[13] 9/18提交英國年報之控股段落（本次搜尋摘錄）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1973239/000197323926000135/armukconsolidatedannualr.htm"
       }
     ],
     "priceMeta": {
-      "asOf": "2026-08-24 15:17 EDT",
+      "asOf": "2026-10-23 11:49:46 EDT盤中；含當日未收盤日線",
       "marketState": "regular-market",
-      "source": "Yahoo Finance chart API（NASDAQ ADS）"
+      "source": "Yahoo Finance chart日線與regularMarketPrice交叉核對；固定分析快照"
     },
     "scenarios": [
       {
         "label": "悲觀",
-        "assumption": "NTM 正常化 EPS 1.80 × 45 倍",
-        "value": 81,
-        "condition": "license 時點轉弱、智慧型手機停滯、AGI CPU 毛利與供應不及預期"
+        "assumption": "NTM營收55億、經濟營益率15%；EPS 0.7020 × 45倍",
+        "value": 31.59,
+        "condition": "手機與授權降速、AGI CPU轉換延遲，SBC與研發費用率居高，估值倍數同步壓縮。"
       },
       {
         "label": "基準",
-        "assumption": "NTM 正常化 EPS 2.40 × 70 倍",
-        "value": 168,
-        "condition": "Armv9／CSS 提升 royalty rate、資料中心維持高成長且費用率受控"
+        "assumption": "NTM營收65億、經濟營益率30%；EPS 1.5918 × 70倍",
+        "value": 111.43,
+        "condition": "權利金與CSS擴張、AGI CPU有序爬坡，含持續薪酬成本的營益率升至30%，股數增長受控。"
       },
       {
         "label": "樂觀",
-        "assumption": "NTM 正常化 EPS 3.20 × 90 倍",
-        "value": 288,
-        "condition": "AGI CPU 超越 10 億美元機會、資料中心與 edge AI 同時放量且高倍數延續"
+        "assumption": "NTM營收80億、經濟營益率40%；EPS 2.5890 × 90倍",
+        "value": 233.01,
+        "condition": "資料中心與直接CPU同步放量，扣SBC後仍能達40%營益率，且市場維持90倍的高度溢價。"
       }
     ],
     "analysis": [
       {
-        "kicker": "Business quality",
-        "title": "IP royalty 模式仍是核心，資料中心提高每顆晶片價值",
-        "body": "Q1 royalty 7.15 億美元、年增 22%，資料中心 royalty 超過翻倍；Armv9、CSS 與 Neoverse 提高每顆晶片 royalty rate。高毛利 IP 模式具強大營運槓桿，但 license 收入會受大型合約簽署時點影響而波動。"
+        "kicker": "最重要的變化",
+        "title": "成長沒消失，但「高毛利IP」正加入直接賣CPU的新風險",
+        "body": "Q1 FY2027截至6/30營收12.89億美元、年增22%，權利金7.15億、年增22%，資料中心權利金超過翻倍。這支持Neoverse、Armv9與CSS滲透，不只是AI口號。然而3/24推出自有AGI CPU後，Arm開始同時承擔直接矽產品的供應、庫存、客戶競合與資本配置風險，不能把純IP的97%毛利率永久套到未來混合業務。[1][5]"
       },
       {
-        "kicker": "New silicon option",
-        "title": "AGI CPU 把 Arm 從 IP 授權推向直接矽產品",
-        "body": "公司稱 FY2027～FY2028 的 AGI CPU 客戶需求已超過 20 億美元，並已取得支援原先 10 億美元機會的製造產能。這是 pipeline 與管理層前瞻聲明，不是已實現收入；直接矽產品也會帶來供應、存貨與毛利風險。"
+        "kicker": "怎麼賺錢",
+        "title": "授權先收錢，權利金隨客戶晶片出貨；直接CPU另算",
+        "body": "License及其他收入5.74億、年增23%，包含IP交付、訂閱、服務及部分固定承諾，會隨大單與認列時點波動。Royalty按客戶出貨及技術內容估列，後續可依實際報告調整；不是所有收入都當季收現。CSS與較高價值架構提高每顆晶片的價值捕捉；採用Arm不代表每一家客戶都直接向Arm購買AGI CPU。[1]"
       },
       {
-        "kicker": "Accounting quality",
-        "title": "98% 毛利率不等於 98% 股東經濟利潤",
-        "body": "Q1 GAAP 毛利率 97.2%，但 GAAP 營業利益只有 9,100 萬美元，非 GAAP 為 5.31 億；3.43 億美元股權薪酬是主要差異。估值不能只使用 0.45 美元非 GAAP EPS 而忽略持續稀釋。"
+        "kicker": "營收與利潤的落差",
+        "title": "營收成長22%，GAAP營業利益反而下滑20%",
+        "body": "Q1 GAAP營業利益0.91億，低於去年1.14億，營益率由10.8%降至7.1%；公司non-GAAP營業利益5.31億、營益率41.2%。兩者差額4.40億主要是SBC3.43億、與股權薪酬相關的雇主稅淨額0.90億及其他項目0.07億。雇主稅也有現金經濟成本，不能把全部差異都稱為無害的非現金一次性費用。[1][10]"
       },
       {
-        "kicker": "Valuation and control",
-        "title": "現價在基準與樂觀之間，且 SoftBank 控制提高治理折價",
-        "body": "238.57 美元乘 10.68 億期末股數，近似市值約 2,548 億美元；即使以 Q1 調整後 FCF 年化，P/FCF 仍接近百倍。每一 ADS 代表一股普通股，但 SoftBank 是控制股東，少數股東對重大決策影響有限。"
+        "kicker": "EPS不能只挑漂亮的",
+        "title": "GAAP淨利還有投資利益與稅項墊高",
+        "body": "GAAP EPS0.25、non-GAAP EPS0.45，但Q1淨利2.70億含股權投資利益1.28億與所得稅利益0.17億。本文不把它們永久年化；若只用營業利益0.91億加淨利息0.31億、乘假設85%稅後率，再除10.78億稀釋股，單季核心代理EPS約0.10。這是分析估算，不是公司提供的正常化EPS，也不是直接預測下季。[1]"
+      },
+      {
+        "kicker": "AGI CPU證據分級",
+        "title": "已有初期交付，但20億需求仍不等於20億已鎖定營收",
+        "body": "7/29股東信稱初期產品已交付多家客戶、已取得支撐FY2027與FY2028合計10億美元機會的製造產能，管理層需求／pipeline超過20億。不能把機會、需求、產能、不可取消訂單、量產認列與現金收款混成同一件事；公司尚未在此信獨立量化AGI CPU營收與毛利。Meta是公司3/24公告的主要合作夥伴及客戶，但不把全部AI資本支出都當Arm可取得的收入。[1][5]"
+      },
+      {
+        "kicker": "最近一週",
+        "title": "10/21軟體與測試進展，能降低導入摩擦但不是財報",
+        "body": "官方10/21說明LangGraph、LangChain、Firecracker、Redis與vLLM等Arm64軟體生態，並引用OCP的新CPU評估方法及特定機櫃／sandbox工作負載結果。這是採用與效能證據；不等於所有應用都快兩倍、不是已新增訂單，也不能直接推出每股獲利增加多少。本文沒有聲稱自行重跑效能測試。[6]"
+      },
+      {
+        "kicker": "領先指標",
+        "title": "ACV增13%，公司已停止在股東信披露RPO與授權數",
+        "body": "Q1 ACV為17.32億美元、年增13%，低於當季license收入23%的成長速度；這不直接代表衰退，但要防大單時點使單季看起來過強。ACV是年化活躍授權承諾，排除未來royalty，不等於GAAP營收或全部backlog。因延伸至production silicon，公司自Q1 FY2027起不再於股東信披露RPO、Total Access及Flexible Access現存授權數；不能沿用舊數字冒充最新。[1]"
+      },
+      {
+        "kicker": "現金流品質",
+        "title": "FCF是真現金，但單季收款紅利不能無限外推",
+        "body": "Q1 OCF9.02億，扣PP&E1.97億、無形資產0.11億及無形資產義務付款0.29億，官方FCF為6.65億；公司明確提到應收收款與稅款時點有利。TTM官方FCF13.97億，比單季乘四更合適。另有2.78億股票歸屬代扣稅付款列融資活動，未扣在官方FCF中；扣後季度現金代理值3.87億不是另一項公司FCF，也不再把代扣稅與同筆SBC機械重複扣除。[1][10]"
+      },
+      {
+        "kicker": "SBC與股數",
+        "title": "不要把可加回現金流的項目，當作沒有股東成本",
+        "body": "Q1 SBC占營收26.6%；TTM SBC約11.54億，約為官方TTM FCF的82.6%。SBC不等於同額當期現金支出，但會影響股數與員工薪酬經濟。6/30期末普通股10.68億，季度加權稀釋股10.78億；每ADS代表1股普通股，不能只用市場流通盤估整家公司。10月精確期末股數尚待新季披露，模型另用10.9–11.2億未來股數。[1][10][12]"
+      },
+      {
+        "kicker": "資產負債表與治理",
+        "title": "現金提供緩衝，不是永久加回的免費資產",
+        "body": "6/30現金與短投38.88億美元，其他日期的借款、投資與支出不能與此餘額混算。用6/30期末股數乘盤中快照，近似市值2264.5億美元；這不是10月精確市值。SoftBank的控制權、關係人收入及Arm China收款值得另查；Q1關係人收入3.88億、占營收30.1%，但不等於全為SoftBank、虛假收入或不當交易。9月英國年報控股段落本次只取得搜尋摘錄，不能冒稱已全讀其IFRS報表或所有條款。[1][10][13]"
+      },
+      {
+        "kicker": "資本回報與循環",
+        "title": "結構成長仍在，但不能給確定見頂月份",
+        "body": "TTM營收51.56億、GAAP營業利益8.77億，營益率約17.0%。IP業務的輕資產優勢來自授權、軟體生態與轉換成本；直接CPU則需要重新驗證產能、營運資金及增量ROIC。本文未核定精確ROIC或WACC。若royalty、ACV、毛利與每股FCF連續降速，且應收／供應承諾升高，會比單看股價更值得警惕；目前沒有足夠資料指定哪一季見頂。[1][10]"
+      },
+      {
+        "kicker": "估值怎麼算",
+        "title": "已給高成長溢價，但要用扣薪酬成本的經濟盈餘",
+        "body": "採未來12個月情境，不是公司全年指引：悲觀收入55億／營益率15%、基準65億／30%、樂觀80億／40%；營益率已包含持續SBC與相關薪酬成本。再加淨利息1.0／1.1／1.2億，假設稅率15%、未來股數11.2／11.0／10.9億，得EPS約0.7020／1.5918／2.5890；乘45／70／90倍，價值31.59／111.43／233.01美元。基準已要求收入較TTM增約26%、利潤率顯著改善與70倍高估值，並不保守。"
+      },
+      {
+        "kicker": "市場要求多少成功",
+        "title": "212.03美元接近樂觀，而非普通程度的成長已足夠",
+        "body": "快照約為TTM營收43.9倍、官方TTM FCF收益率僅0.62%，且這個FCF未扣SBC股東成本。以基準EPS看，股價約133.2倍；若固定70倍、30%經濟營益率與其餘基準輸入，需約127.0億年收入能力，遠高於TTM51.56億。市場可能定價更遠期選擇權，本模型不保證捕捉全部成功，但那也表示期待落空時對倍數敏感。"
+      },
+      {
+        "kicker": "11/4財報前觀察",
+        "title": "不是把尚未公布的Q2當成已實現",
+        "body": "最新已公布完整季度仍為截至6/30的Q1 FY2027；公司10/5公告Q2於美東11/4盤後公布，會議17:00 ET。Q2收入指引13.8億±0.5億、non-GAAP EPS0.47±0.04、non-GAAP費用約7.8億。優先看royalty與ACV是否延續、GAAP利潤／SBC、AGI CPU產能轉收入及毛利、現金流、稀釋與供應義務；財報頁預先出現的11/4連結不可當作已公布資料。[1][4]"
+      },
+      {
+        "kicker": "與舊版的差異與來源限制",
+        "title": "本次合理價降低，主要是模型更明確，不是公司突然下修",
+        "body": "8/24舊版基準EPS2.40×70倍＝168美元，只泛稱對SBC保留折價；本次改由營收、含薪酬成本的營益率、稅與未來股數推得EPS1.5918，基準111.43。差異主要是估值方法更審慎，不代表期間新增一份公司下修財報。本次SEC／IR HTML多處403，使用8/24保存的7/29原始股東信全文重讀，並以此次重新取得的SEC companyfacts核對；後續部分6-K只確認申報存在，未逐件讀全文，且沒有聲稱聽完整場Q&A。"
       }
     ],
-    "modelNotes": "正常化 EPS 位於 GAAP 與公司非 GAAP 口徑之間，並對持續股權薪酬與稀釋保留折價。"
+    "modelNotes": "NTM經濟EPS＝（營收×含持續SBC及薪酬成本的營益率＋淨利息）×（1−假設稅率）÷未來稀釋股數。基準EPS1.5918×70＝111.43；不是公司non-GAAP指引。EPS已含現金利息，不再重複加回整筆現金。",
+    "updatedFrom": "2026-08-24"
   },
   {
     "ticker": "CBRS",

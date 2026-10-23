@@ -14,7 +14,7 @@ type ExtendedReport = Omit<(typeof reports)[number], 'valuation'> & {
 };
 const report = Astro.props.report as ExtendedReport;
 const upside = ((report.snapshot.baseFairValue/report.snapshot.price)-1)*100;
-const methodFor = report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
+const methodFor = report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const chartUrl = `${base}${report.chart.replace(/^\//, '')}`;
 const priceMeta = report.priceMeta;
