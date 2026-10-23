@@ -13,8 +13,9 @@ type ExtendedReport = Omit<(typeof reports)[number], 'valuation'> & {
   modelNotes?: string;
 };
 const report = Astro.props.report as ExtendedReport;
+const intcAudit = report.ticker === 'INTC' && report.asOf >= '2026-10-24';
 const upside = ((report.snapshot.baseFairValue/report.snapshot.price)-1)*100;
-const methodFor = report.ticker === 'NVDA' && report.asOf >= '2026-10-24' ? 'nvidia-economic-ntm' : report.ticker === 'MU' && report.asOf >= '2026-10-24' ? 'memory-dual-horizon' : report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
+const methodFor = intcAudit ? 'intel-model-audit' : report.ticker === 'NVDA' && report.asOf >= '2026-10-24' ? 'nvidia-economic-ntm' : report.ticker === 'MU' && report.asOf >= '2026-10-24' ? 'memory-dual-horizon' : report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const chartUrl = `${base}${report.chart.replace(/^\//, '')}`;
 const priceMeta = report.priceMeta;
@@ -22,7 +23,7 @@ const scenarios = report.scenarios ?? [];
 const analysis = report.analysis ?? [];
 const guide = beginnerGuides[report.ticker];
 const [mosLow, mosHigh] = report.snapshot.marginOfSafety;
-const priceVerdict = report.snapshot.price < mosLow
+const priceVerdict = intcAudit ? '38.60美元只是保留的保守模型錨點，不是已驗證的唯一公平價。原32–46區間只是倍數敏感度；請把近端獲利與較遠期復甦／代工選擇權分開，不憑兩個數字的差距直接判定市場錯價。' : report.snapshot.price < mosLow
   ? `目前價格低於本模型安全邊際區下緣（$${mosLow}–$${mosHigh}）；估值折價已足，但要先確認市場是否正在反映基本面惡化。`
   : report.snapshot.price <= mosHigh
     ? `目前價格位於本模型的安全邊際區（$${mosLow}–$${mosHigh}），但仍要確認基本面沒有惡化。`
@@ -44,8 +45,8 @@ const priceVerdict = report.snapshot.price < mosLow
         <small class="quote-disclaimer">約每15分鐘更新 · 非交易所即時報價</small>
       </div>
       <div class="snapshot-quote card">
-        <span>本篇分析快照</span><strong>${report.snapshot.price.toFixed(2)}</strong>
-        <small>基準合理價 ${report.snapshot.baseFairValue.toFixed(2)} · <b class={upside>=0?'positive':'negative'}>{upside>=0?'+':''}{upside.toFixed(1)}%</b></small>
+        <span>{intcAudit ? '本篇分析快照（原模型；稽核保留）' : '本篇分析快照'}</span><strong>${report.snapshot.price.toFixed(2)}</strong>
+        <small>{intcAudit ? '保守模型錨點' : '基準合理價'} ${report.snapshot.baseFairValue.toFixed(2)} · <b class={upside>=0?'positive':'negative'}>{upside>=0?'+':''}{upside.toFixed(1)}%</b></small>
         {priceMeta && <small>{priceMeta.asOf} · 固定不變</small>}
       </div>
     </div>
@@ -53,9 +54,9 @@ const priceVerdict = report.snapshot.price < mosLow
 
   <section class="shell scenario-strip">
     <div class="scenario bear"><span>悲觀</span><strong>${report.snapshot.bear.toFixed(2)}</strong></div>
-    <div class="scenario base"><span>基準</span><strong>${report.snapshot.base.toFixed(2)}</strong></div>
+    <div class="scenario base"><span>{intcAudit ? '保守基準（非唯一公平價）' : '基準'}</span><strong>${report.snapshot.base.toFixed(2)}</strong></div>
     <div class="scenario bull"><span>樂觀</span><strong>${report.snapshot.bull.toFixed(2)}</strong></div>
-    <div class="ranges"><div><span>一般合理區間</span><b>${report.snapshot.fairRange[0]}–${report.snapshot.fairRange[1]}</b></div><div><span>安全邊際區</span><b>${report.snapshot.marginOfSafety[0]}–${report.snapshot.marginOfSafety[1]}</b></div></div>
+    <div class="ranges"><div><span>{intcAudit ? '原模型倍數敏感度' : '一般合理區間'}</span><b>${report.snapshot.fairRange[0]}–${report.snapshot.fairRange[1]}</b></div><div><span>{intcAudit ? '原模型折讓區（非買點）' : '安全邊際區'}</span><b>${report.snapshot.marginOfSafety[0]}–${report.snapshot.marginOfSafety[1]}</b></div></div>
   </section>
 
   <div class="shell"><p style="margin:17px 0 0;padding:11px 15px;background:#edf4ff;border-left:4px solid #2762be;line-height:1.6">這份估值與投資判斷固定於 {report.asOf}；<a href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>查看最新 SEC 基本面核對 ↗</a>。新文件與行情不會自動重算合理價。</p></div>
