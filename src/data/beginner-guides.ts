@@ -14,6 +14,10 @@ export type BeginnerGuide = {
 };
 
 export const glossary: Record<string, string> = {
+  SCA: 'Micron的Strategic Customer Agreement，多年take-or-pay合約；承諾量、價格上下限、存款與返還條件各有定義，不等於全部營收或利潤保證。',
+  DSO: '應收帳款周轉天數：賣出產品後平均多久收到錢。天數上升不自動代表壞帳，但可能占用更多現金。',
+  DIO: '庫存天數：庫存相對銷貨成本可支撐多久。漲價、產品切換、在製品與成本資本化都會改變此指標。',
+  客戶存款: '客戶為確保長約履行提供的現金擔保；Micron將此列融資活動，達最低採購條件後通常需返還，不能當FCF或免費股東現金。',
   royalty: '權利金：客戶使用Arm技術做成晶片後，按合約及出貨、技術內容支付費用；認列與現金收款可能不同期。',
   license: '授權：讓客戶取得架構、核心或子系統的使用權，也可能包含訂閱與服務；大單交付與認列時點使季度波動。',
   ACV: '活躍授權合約的年化價值指標，依公司定義計算且排除未來權利金；不是當季收入，也不是全部訂單餘額。',
@@ -214,13 +218,14 @@ export const beginnerGuides: Record<string, BeginnerGuide> = {
     ],terms:['GAAP','核心口徑','foundry','毛利率','營業利益率','OCF','CapEx','FCF','SBC','稀釋股數','EV/Sales','正常化盈餘']
   },
   MU: {
-    industry:'DRAM／NAND 記憶體', earns:'靠 DRAM、HBM 與 NAND 的價格、出貨量及產品組合賺錢，屬強週期產業。', keyQuestion:'HBM 的結構成長能否抵銷傳統記憶體價格循環，且新增供給不會再次壓垮毛利？',
+    industry:'DRAM／HBM＋NAND／資料中心SSD＋多年SCA供應合約', earns:'價格、bit出貨及產品組合決定晶片收入與毛利；26份多年SCA提高供應規劃與部分價格底部能見度，但不是全部收入都受保護。', keyQuestion:'最新長約與供需證據，是否已讓舊EPS60過度保守？近端強景氣與可持續年獲利，應分開估值而非只挑一個價格。',
     watch:[
-      {name:'DRAM／NAND 售價',why:'價格小幅變動就會大幅影響利潤。',good:'平均售價上升且庫存天數下降。',warning:'供給成長快於需求、價格轉跌。'},
-      {name:'HBM',why:'AI 伺服器的高價高階記憶體。',good:'認證、出貨與長約增加，產品組合提高毛利。',warning:'良率／認證延誤或競爭者擴產。'},
-      {name:'CapEx 與供給',why:'景氣好時過度擴產常造成下一輪下跌。',good:'投資紀律、供給成長貼近需求。',warning:'同業同步大幅擴產。'},
-      {name:'週期正常化 EPS',why:'高峰 EPS 不能永久年化。',good:'下行底部獲利與 FCF 高於前一循環。',warning:'只用單季高峰 P/E 判斷便宜。'}
-    ],terms:['毛利率','CapEx','FCF','P/E']
+      {name:'DRAM價格與出貨',why:'Q4價格增高十幾%、bit增中個位數，不能把全部成長當成數量。',good:'價格、出貨及高價值組合共同改善，漲價有合約與需求支持。',warning:'價格動能變弱、供給提前或終端因高價減量。'},
+      {name:'HBM與資料中心SSD',why:'HBM及SSD擴大結構市場，Q4資料中心SSD近100億美元。',good:'HBM2027協議轉成出貨、良率與現金，高容量SSD持續採用。',warning:'新產品認證延後、客戶平台減量、競爭者供給超預期。'},
+      {name:'SCAs與RPO',why:'26份合約及約1500億RPO提供更多能見度，但價格框架不覆蓋全部預期收入。',good:'最低量與價格框架履行、更多合約與實際收款同步增加。',warning:'把RPO當一年收入，或把所有客戶、價格及利潤都說成保證。'},
+      {name:'CapEx與現金存款',why:'FY27上半年淨CapEx約250億、下半年更高；客戶存款未來可能返還。',good:'新增產能的收入、利用率與資本回報高於投入，現金足以履約。',warning:'把融資分類存款當FCF，或只看補助後支出忽略原始支出。'},
+      {name:'近端與耐久EPS',why:'公司指引Q1毛利是FY27低點，不能無證據立刻預測崩跌，也不能永久年化峰值。',good:'近端獲利兌現、耐久底部提高，分期限模型都能交代輸入。',warning:'直接用舊EPS60，或將單季37.84乘四當永續EPS。'}
+    ],terms:['SCA','RPO','客戶存款','毛利率','DIO','CapEx','FCF','SBC','P/E','正常化盈餘']
   },
   SNDK: {
     industry:'NAND 快閃記憶體', earns:'靠 NAND 晶片與企業級／消費級 SSD，獲利受價格、bit 出貨與合資產能影響。', keyQuestion:'企業 SSD 成長能否提高產品組合，抵銷 NAND 供過於求的週期風險？',
@@ -231,13 +236,14 @@ export const beginnerGuides: Record<string, BeginnerGuide> = {
     ],terms:['毛利率','CapEx','FCF','P/E']
   },
   NVDA: {
-    industry:'AI 加速運算＋全棧資料中心', earns:'主要銷售資料中心 GPU／整機、NVLink／InfiniBand／Ethernet 網路與 CUDA 軟體生態；遊戲、工作站、車用與機器人歸入 Edge Computing。', keyQuestion:'Hyperscaler 與企業 AI 支出能否長期成長，讓 Blackwell／Rubin 的收入與現金流跑贏供應承諾、客戶自研晶片與出口限制？',
+    industry:'AI加速運算＋全棧資料中心與軟體生態', earns:'銷售GPU、CPU、整櫃、NVLink及網路產品，搭配CUDA與軟體工具形成平台價值；市場平台與財務分部是不同分類。', keyQuestion:'含SBC的核心獲利能否持續兌現，且現金回收能跟上收入？估值不能重扣SBC或把分期供應承諾全當立即損失。',
     watch:[
-      {name:'Data Center：Hyperscale／ACIE',why:'占營收絕大多數；前者是大型雲端與網路公司，後者含 AI cloud、企業、工業與主權 AI。',good:'兩類客戶同步成長，單一客戶集中下降。',warning:'CSP CapEx 降速、專案延後或中國收入受限。'},
-      {name:'Compute＋Networking 全棧',why:'GPU 之外，NVLink、InfiniBand、Spectrum-X 與軟體共同形成平台護城河。',good:'運算與網路收入同步成長，Blackwell／Rubin 轉換順利。',warning:'新平台延期、良率問題或客戶改用自研 ASIC。'},
-      {name:'Edge Computing',why:'包含遊戲、工作站、汽車、機器人與邊緣 AI，可降低只依賴大型資料中心的風險。',good:'RTX、車用與機器人收入多元成長。',warning:'PC／遊戲週期疲弱，邊緣 AI 仍只有展示沒有量產。'},
-      {name:'毛利、庫存與資本承諾',why:'高毛利來自稀缺與平台定價，但公司也提前鎖定大量供應、雲端與資料中心容量。',good:'毛利約75%、庫存周轉健康且 FCF 快速成長。',warning:'供給承諾、庫存或擔保增加，終端需求與現金回收跟不上。'}
-    ],terms:['GAAP','核心口徑','毛利率','FCF','SBC','P/E']
+      {name:'Hyperscale與ACIE',why:'Q2資料中心890.23億美元，ACIE季增25%；有一家公司重分類且比較期已重編。',good:'客戶部署、收入與收款一起成長，需求不只依賴單一雲端。',warning:'只看分類增速、全球AI CapEx，卻忽略客戶ROI或付款能力。'},
+      {name:'Blackwell／Rubin與網路',why:'全棧系統提高平台價值，也受HBM、機房與電力限制。',good:'出貨、軟體部署、網路與整櫃收入提高且成本可控。',warning:'平台轉換延後、成本上升或自研ASIC侵蝕份額。'},
+      {name:'含SBC的核心EPS',why:'FY27起公司非GAAP已含SBC；Q2 2.22美元比含投資利益的GAAP2.46更適合估值。',good:'正常化EPS與每股現金流成長，不靠投資評價墊高。',warning:'把2.46直接年化，或從2.22再次扣同一筆SBC。'},
+      {name:'DSO、庫存與FCF',why:'Q2 DSO升至60天，FCF213.41億低於Q1。',good:'延長付款後正常收現，Rubin庫存順利轉銷售。',warning:'應收與庫存持續快於收入，現金稅或壞帳使FCF落後。'},
+      {name:'分期承諾與收購',why:'供應、雲端、租約、投資及保證風險不同，另有未完成HF交易。',good:'收入及增量資本回報足以支應合約，客戶信用與收購條件透明。',warning:'保證被觸發、融資循環依賴加深，或把所有承諾當零風險。'}
+    ],terms:['GAAP','核心口徑','毛利率','DSO','OCF','FCF','SBC','稀釋股數','P/E','正常化盈餘']
   },
   ARM: {
     industry:'半導體IP授權／權利金＋CSS運算子系統＋直接CPU產品', earns:'先授權架構、CPU核心與運算子系統，再依客戶晶片出貨及技術內容收取royalty；也開始向客戶直接供應AGI CPU。授權、權利金與直接矽產品的收入時點、毛利與資金需求不同。', keyQuestion:'資料中心權利金與AGI CPU機會，能否在持續SBC、薪酬稅、供應鏈成本及稀釋後，創造足以支撐212.03美元盤中快照的每股經濟獲利？',
