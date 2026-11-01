@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-01",
+  "quoteDate": "2026-10-30",
+  "title": "美股資安與AI安全：大中小盤觀察名單",
+  "counts": {
+    "大型": 6,
+    "中型": 3,
+    "小型": 2
+  },
+  "scope": "美股上市、企業資安與AI應用／Agent防護；不是AGI對齊研究公司名單。",
+  "marketCapMethod": "以產業榜單近似市值分層，榜單價格與本次Yahoo 10/30正規盤快照交叉核對；股數可能滯後，市值只作分類，不用於估值或報酬排名。",
+  "limitations": "本次為產業觀察名單，不是買入清單。部分原站全文受限，依官方發布的可讀取檢索內容核對，逐股列明；尚未完成逐家10-Q、完整法說、淨負債與稀釋估值。產品存在不代表AI收入已實現或已獨立揭露。",
+  "thesis": "優先找既有企業客戶、能把AI安全接入既有流程、且能用ARR與每股現金流驗證的公司；不只看AI關鍵字或市值大小。",
+  "companies": [
+    {
+      "ticker": "PANW",
+      "company": "Palo Alto Networks",
+      "lane": "資安平台／AI模型與Agent防護／身分安全",
+      "priority": "核心研究",
+      "period": "FY2026 Q4（截至2026-07-31；2026-09-01公布）",
+      "growth": "營收年增34%；NGS ARR年增63%",
+      "quality": "全年公司調整後FCF率38.4%；併購整合與SBC需另看",
+      "thesis": "既有網路、雲端與SOC客戶可交叉採用Prisma AIRS與CyberArk身分安全，較有機會整合企業AI安全預算。",
+      "risk": "成長含CyberArk等併購貢獻；不能把報告成長全當有機成長。商譽、整合費用與稀釋需要檢查。",
+      "watch": "有機NGS ARR、AI安全付費採用、CyberArk交叉銷售與每股FCF。",
+      "ai": "直接保護AI與Agent，也用AI做資安",
+      "financialSource": 55,
+      "productSource": 31,
+      "marketCapUsdApprox": 299440000000.0,
+      "marketCapYiUsdApprox": 2994.4,
+      "size": "大型",
+      "marketCapSource": 39,
+      "marketCapNote": "分類用近似值：榜單股價與本次Yahoo 2026-10-30正規盤快照吻合，股數仍可能滯後；非估值輸入。",
+      "priceSnapshotUsd": 365.87,
+      "priceSnapshotTime": "2026-10-30T16:00:01-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/PANW?range=5d&interval=1d",
+      "financialAccess": "已取得官方正文／PDF",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": null
+    },
+    {
+      "ticker": "CRWD",
+      "company": "CrowdStrike",
+      "lane": "端點／雲端／SOC自動化",
+      "priority": "核心研究",
+      "period": "FY2027 Q2（截至2026-07-31；2026-08-26公布）",
+      "growth": "營收年增26%；ARR年增25%",
+      "quality": "季度FCF 3.774億美元，但GAAP營業虧損3,320萬美元",
+      "thesis": "Falcon平台擴模組與Charlotte AI可將端點資料轉為安全營運自動化服務，觀察客戶是否願意增加模組採購。",
+      "risk": "必須辨別自由現金流與高額SBC；產品可靠性與成長預期落差也是風險。",
+      "watch": "淨新增ARR、Falcon Flex轉換與用量、SBC／營收、GAAP營益。",
+      "ai": "以AI做資安並擴展Agent安全",
+      "financialSource": 18,
+      "productSource": 52,
+      "marketCapUsdApprox": 256420000000.00003,
+      "marketCapYiUsdApprox": 2564.2,
+      "size": "大型",
+      "marketCapSource": 39,
+      "marketCapNote": "分類用近似值：榜單股價與本次Yahoo 2026-10-30正規盤快照吻合，股數仍可能滯後；非估值輸入。",
+      "priceSnapshotUsd": 250.43,
+      "priceSnapshotTime": "2026-10-30T16:00:01-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/CRWD?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": null
+    },
+    {
+      "ticker": "FTNT",
+      "company": "Fortinet",
+      "lane": "網路防護／SASE／AI基礎設施防護",
+      "priority": "核心研究",
+      "period": "2026 Q3（截至2026-09-30；2026-10-28公布）",
+      "growth": "營收年增20%；產品年增37%；billings年增29%",
+      "quality": "GAAP營業利益率34%；季度FCF 8.65億美元",
+      "thesis": "以FortiOS、ASIC與既有防火牆客戶導入SASE及新AI檢查服務，財務獲利品質較容易直接觀察。",
+      "risk": "產品換機與大單循環可能讓成長波動；高成長產品不保證服務收入同步加速。",
+      "watch": "服務收入成長、SASE付費採用、續約與遞延收入；AI服務收入是否可量化。",
+      "ai": "AI網路基礎設施與直接AI檢查",
+      "financialSource": 43,
+      "productSource": 46,
+      "marketCapUsdApprox": 99980000000.0,
+      "marketCapYiUsdApprox": 999.8,
+      "size": "大型",
+      "marketCapSource": 39,
+      "marketCapNote": "分類用近似值：榜單股價與本次Yahoo 2026-10-30正規盤快照吻合，股數仍可能滯後；非估值輸入。",
+      "priceSnapshotUsd": 136.08,
+      "priceSnapshotTime": "2026-10-30T16:00:01-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/FTNT?range=5d&interval=1d",
+      "financialAccess": "已取得官方正文／PDF",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": null
+    },
+    {
+      "ticker": "ZS",
+      "company": "Zscaler",
+      "lane": "零信任／資料防外洩／AI存取控管",
+      "priority": "核心研究",
+      "period": "FY2026 Q4（截至2026-07-31；2026-09-03公布）",
+      "growth": "營收與ARR年增25%；排除Red Canary後全年營收及期末ARR皆年增20%",
+      "quality": "全年FCF 7.791億美元；GAAP全年營業虧損1.333億美元",
+      "thesis": "員工使用外部AI、Agent連接工具與資料時，零信任與DLP可變成必要的存取控制層。",
+      "risk": "Red Canary收購讓報告成長高於有機成長；Microsoft、PANW與Netskope競爭也要追蹤。",
+      "watch": "排除併購ARR／收入成長、AI Guard付費採用與GAAP獲利改善。",
+      "ai": "直接保護AI使用、應用與資料",
+      "financialSource": 14,
+      "productSource": 5,
+      "marketCapUsdApprox": 38780000000.0,
+      "marketCapYiUsdApprox": 387.8,
+      "size": "大型",
+      "marketCapSource": 39,
+      "marketCapNote": "分類用近似值：榜單股價與本次Yahoo 2026-10-30正規盤快照吻合，股數仍可能滯後；非估值輸入。",
+      "priceSnapshotUsd": 237.83,
+      "priceSnapshotTime": "2026-10-30T16:00:00-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/ZS?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": null
+    },
+    {
+      "ticker": "NET",
+      "company": "Cloudflare",
+      "lane": "邊緣網路／WAF與API／AI應用防護",
+      "priority": "高成長觀察",
+      "period": "2026 Q2（截至2026-06-30；2026-08-06公布；Q3預定11/05公布）",
+      "growth": "營收年增36%；金額淨留存率120%",
+      "quality": "季度FCF率8%；GAAP營業虧損2.057億美元",
+      "thesis": "在企業對外連線與應用入口提供AI請求檢查，兼具安全與開發者平台分發能力。",
+      "risk": "不是純資安公司；網路資本支出、SBC、重整費用與高估值敏感度需一起看。",
+      "watch": "大型客戶擴張、付費AI安全採用、毛利與每股FCF，而不只開發者或請求量。",
+      "ai": "直接AI應用防護，兼AI基礎設施",
+      "financialSource": 7,
+      "productSource": 49,
+      "marketCapUsdApprox": 99950000000.0,
+      "marketCapYiUsdApprox": 999.5,
+      "size": "大型",
+      "marketCapSource": 39,
+      "marketCapNote": "分類用近似值：榜單股價與本次Yahoo 2026-10-30正規盤快照吻合，股數仍可能滯後；非估值輸入。",
+      "priceSnapshotUsd": 280.7,
+      "priceSnapshotTime": "2026-10-30T16:02:57-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/NET?range=5d&interval=1d",
+      "financialAccess": "已取得官方正文／PDF",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": 32
+    },
+    {
+      "ticker": "RBRK",
+      "company": "Rubrik",
+      "lane": "資料安全／勒索復原／AI Agent韌性",
+      "priority": "高成長研究",
+      "period": "FY2027 Q2（截至2026-07-31；2026-08-27公布）",
+      "growth": "營收年增38%；訂閱ARR年增33%",
+      "quality": "季度FCF率15%；GAAP每股仍虧損0.30美元",
+      "thesis": "企業需要的不只阻擋攻擊，也要在資料或Agent出錯後復原；Agent Cloud是待驗證的新成長引擎。",
+      "risk": "Agent產品公告不能直接當營收；需檢查SBC稀釋、與既有備份業者競爭及估值。",
+      "watch": "訂閱ARR、新增雲端ARR、Agent產品付費客戶與每股FCF。",
+      "ai": "資料／身分復原並直接保護AI Agent",
+      "financialSource": 25,
+      "productSource": 25,
+      "marketCapUsdApprox": 25550000000.0,
+      "marketCapYiUsdApprox": 255.5,
+      "size": "大型",
+      "marketCapSource": 39,
+      "marketCapNote": "分類用近似值：榜單股價與本次Yahoo 2026-10-30正規盤快照吻合，股數仍可能滯後；非估值輸入。",
+      "priceSnapshotUsd": 124.15,
+      "priceSnapshotTime": "2026-10-30T16:00:02-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/RBRK?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": null
+    },
+    {
+      "ticker": "S",
+      "company": "SentinelOne",
+      "lane": "端點／SOC自動化／AI執行期防護",
+      "priority": "高成長研究",
+      "period": "FY2027 Q2（截至2026-07-31；2026-08-27公布）",
+      "growth": "營收年增21%；ARR年增22%",
+      "quality": "非GAAP營益率10%，但GAAP營益率仍為-31%",
+      "thesis": "Singularity既有端點與雲端客戶，加上Prompt Security，提供AI使用與Agent防護的交叉銷售機會。",
+      "risk": "規模小於CRWD與PANW；GAAP虧損、毛利下降及SBC稀釋不能被非GAAP獲利掩蓋。",
+      "watch": "大型客戶擴張、AI安全產品付費採用、GAAP營業虧損與每股現金流。",
+      "ai": "直接保護AI，同時以AI做資安",
+      "financialSource": 103,
+      "productSource": 102,
+      "marketCapUsdApprox": 8750000000.0,
+      "marketCapYiUsdApprox": 87.5,
+      "size": "中型",
+      "marketCapSource": 39,
+      "marketCapNote": "僅供規模分層的近似值；非估值輸入。",
+      "priceSnapshotUsd": 25.15,
+      "priceSnapshotTime": "2026-10-30T16:00:02-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/S?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": null
+    },
+    {
+      "ticker": "QLYS",
+      "company": "Qualys",
+      "lane": "弱點／風險修補／AI治理",
+      "priority": "獲利品質觀察",
+      "period": "2026 Q2（截至2026-06-30；2026-08-04公布；Q3預定11/09公布）",
+      "growth": "營收年增11%",
+      "quality": "GAAP營業利益率34%；GAAP淨利5,240萬美元",
+      "thesis": "成熟弱點管理客戶可向TruRisk與TotalAI擴張，適合研究獲利品質而非追逐最快成長。",
+      "risk": "成長較慢；AI產品若無法帶動新客與每客收入，不能只憑AI治理題材給高成長估值。",
+      "watch": "收入是否重新加速、TotalAI付費採用、續約與回購後每股現金流。",
+      "ai": "既有風險管理加AI資產與治理",
+      "financialSource": 94,
+      "productSource": 88,
+      "marketCapUsdApprox": 7890000000.0,
+      "marketCapYiUsdApprox": 78.9,
+      "size": "中型",
+      "marketCapSource": 39,
+      "marketCapNote": "僅供規模分層的近似值；非估值輸入。",
+      "priceSnapshotUsd": 224.12,
+      "priceSnapshotTime": "2026-10-30T16:00:00-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/QLYS?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": 93
+    },
+    {
+      "ticker": "TENB",
+      "company": "Tenable",
+      "lane": "曝險管理／弱點與雲端身分／AI資產治理",
+      "priority": "平台擴張觀察",
+      "period": "2026 Q3（截至2026-09-30；2026-10-28公布）",
+      "growth": "營收約年增9.5%（由官方表格計算）",
+      "quality": "GAAP營業利益約1,671萬美元；營益率約6.0%",
+      "thesis": "將弱點、雲端、身分與AI使用風險納入Tenable One，研究其從單點工具擴大平台客單價的能力。",
+      "risk": "目前成長不是高速AI軟體等級；須確認平台擴張能否抵銷競爭與單點工具價格壓力。",
+      "watch": "平台客戶與續約、AI Exposure付費採用、營收加速及每股現金流。",
+      "ai": "直接管理企業AI使用與曝險",
+      "financialSource": 111,
+      "productSource": 110,
+      "marketCapUsdApprox": 5320000000.0,
+      "marketCapYiUsdApprox": 53.2,
+      "size": "中型",
+      "marketCapSource": 39,
+      "marketCapNote": "僅供規模分層的近似值；非估值輸入。",
+      "priceSnapshotUsd": 50.75,
+      "priceSnapshotTime": "2026-10-30T16:00:00-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/TENB?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": null
+    },
+    {
+      "ticker": "ATEN",
+      "company": "A10 Networks",
+      "lane": "DDoS／API與應用防護／網路基礎設施",
+      "priority": "小型優先研究",
+      "period": "2026 Q2（截至2026-06-30；2026-08-05公布；Q3預定11/05公布）",
+      "growth": "營收年增15.5%；上半年年增14.5%",
+      "quality": "GAAP季度淨利890萬美元；6/30現金及有價證券3.573億美元",
+      "thesis": "較小的規模結合DDoS、API防護與ThreatX擴張，可研究AI應用增加網路與API保護需求的間接受益。",
+      "risk": "不是純模型安全公司；電信與大型訂單可能波動，AI相關需求不能直接當成AI產品收入。",
+      "watch": "企業／服務商訂單組合、ThreatX交叉銷售、營收與GAAP獲利同步成長。",
+      "ai": "主要為AI網路／API防護的間接受益",
+      "financialSource": 62,
+      "productSource": 57,
+      "marketCapUsdApprox": 1780000000.0,
+      "marketCapYiUsdApprox": 17.8,
+      "size": "小型",
+      "marketCapSource": 39,
+      "marketCapNote": "僅供規模分層的近似值；非估值輸入。",
+      "priceSnapshotUsd": 24.48,
+      "priceSnapshotTime": "2026-10-30T16:00:03-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/ATEN?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": 60
+    },
+    {
+      "ticker": "RPD",
+      "company": "Rapid7",
+      "lane": "弱點管理／託管偵測與回應／安全營運",
+      "priority": "高風險轉機；非核心成長",
+      "period": "2026 Q2（截至2026-06-30；2026-08-10公布；Q3預定11/04公布）",
+      "growth": "營收年減1.5%；ARR為8.24億美元",
+      "quality": "季度FCF 3,190萬美元；GAAP淨利610萬美元",
+      "thesis": "若新管理層與重整能讓留存及ARR止跌，較小市值可能對復甦反應敏感；這是有條件的轉機觀察。",
+      "risk": "營收仍衰退，且有可轉債與再融資風險。不能把裁員後的正FCF直接視為成長已恢復。",
+      "watch": "ARR與續約是否止跌、重整後產品競爭力、同時點淨負債與現金到期覆蓋。",
+      "ai": "AI協助安全營運；非純AI安全成長股",
+      "financialSource": 98,
+      "productSource": 98,
+      "marketCapUsdApprox": 1120000000.0,
+      "marketCapYiUsdApprox": 11.2,
+      "size": "小型",
+      "marketCapSource": 39,
+      "marketCapNote": "僅供規模分層的近似值；非估值輸入。",
+      "priceSnapshotUsd": 16.56,
+      "priceSnapshotTime": "2026-10-30T16:00:00-04:00",
+      "quoteSource": "https://query1.finance.yahoo.com/v8/finance/chart/RPD?range=5d&interval=1d",
+      "financialAccess": "官方發布檢索內容；原站全文存取受限",
+      "valuationStatus": "產業初篩；尚未建立合理價模型",
+      "scheduleSource": 99
+    }
+  ],
+  "sources": [
+    {
+      "id": 5,
+      "url": "https://www.zscaler.com/blogs/product-insights/accelerating-ai-initiatives-zero-trust",
+      "title": "Zscaler AI Security: Secure GenAI, Agentic AI with Zero Trust",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 7,
+      "url": "https://www.cloudflare.net/files/doc_financials/2026/q2/Q2-26-Exhibit-99-1.pdf",
+      "title": "Q2'26 Exhibit 99.1",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 10,
+      "url": "https://paloaltonetworks.com/company/press/2026/palo-alto-networks-completes-acquisition-of-cyberark-to-secure-the-ai-era.html",
+      "title": "Palo Alto Networks Completes Acquisition of CyberArk to Secure the AI Era",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 14,
+      "url": "https://ir.zscaler.com/news-releases/news-release-details/zscaler-announces-strong-fourth-quarter-and-fiscal-2026",
+      "title": "Zscaler Announces Strong Fourth Quarter and Fiscal 2026 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 18,
+      "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-second-quarter-fiscal-year-2027-financial",
+      "title": "CrowdStrike Reports Second Quarter Fiscal Year 2027 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 25,
+      "url": "https://ir.rubrik.com/news-events/press-releases/news-details/2026/Rubrik-Reports-Second-Quarter-Fiscal-Year-2027-Financial-Results/default.aspx",
+      "title": "Rubrik - Rubrik Reports Second Quarter Fiscal Year 2027 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 31,
+      "url": "https://docs.paloaltonetworks.com/prisma-airs/new-features/by-date/prisma-airs/october-2026",
+      "title": "New Features - Prisma AIRS",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 32,
+      "url": "https://cloudflare.net/news/news-details/2026/Cloudflare-Announces-Date-of-Third-Quarter-2026-Financial-Results/default.aspx",
+      "title": "Cloudflare Announces Date of Third Quarter 2026 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 39,
+      "url": "https://largestcapcompanies.com/leading-cybersecurity-companies-by-market-capitalization",
+      "title": "Leading Cybersecurity Companies by Market Capitalization",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 43,
+      "url": "https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2026/fortinet-reports-third-quarter-2026-financial-results",
+      "title": "Fortinet Reports Strong Third Quarter 2026 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 46,
+      "url": "https://www.fortinet.com/corporate/about-us/newsroom/press-releases/2026/fortinet-expands-ai-security-with-the-fortiguard-inline-ai-security-service",
+      "title": "Fortinet Expands AI Security with the FortiGuard Inline AI Security Service | Fortinet Press Release",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 49,
+      "url": "https://developers.cloudflare.com/waf/detections/ai-security-for-apps",
+      "title": "AI Security for Apps - WAF",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 52,
+      "url": "https://www.crowdstrike.com/en-us/platform/charlotte-ai",
+      "title": "Charlotte AI: Agentic Analyst for Cybersecurity - CrowdStrike.com",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 55,
+      "url": "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-reports-fiscal-fourth-quarter-and-fiscal-year-2026-financial-results",
+      "title": "Palo Alto Networks Reports Fiscal Fourth Quarter and Fiscal Year 2026 Financial Results - Palo Alto Networks",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 57,
+      "url": "https://www.a10networks.com/products/threatx-cloud-web-app-and-api-protection",
+      "title": "Web Application & API Security Platform | ThreatX by A10",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 60,
+      "url": "https://investors.a10networks.com/news-events/news/news-details/2026/A10-Networks-to-Announce-Third-Quarter-2026-Financial-Results-on-November-5-2026/default.aspx",
+      "title": "A10 Networks to Announce Third Quarter 2026 Financial ...",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 62,
+      "url": "https://investors.a10networks.com/news-events/news/news-details/2026/A10-Networks-Reports-Financial-Results-for-the-Second-Quarter-of-2026/default.aspx",
+      "title": "A10 Networks, Inc. - A10 Networks Reports Financial Results for the Second Quarter of 2026",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 88,
+      "url": "https://www.qualys.com/apps/totalai",
+      "title": "Qualys TotalAI | AI Governance & Risk Management",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 93,
+      "url": "https://investor.qualys.com/news-releases/news-release-details/qualys-report-third-quarter-2026-financial-results-november-9",
+      "title": "Qualys to Report Third Quarter 2026 Financial Results on November 9, 2026",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 94,
+      "url": "https://investor.qualys.com/news-releases/news-release-details/qualys-announces-second-quarter-2026-financial-results",
+      "title": "Qualys Announces Second Quarter 2026 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 98,
+      "url": "https://investors.rapid7.com/news/news-details/2026/Rapid7-Announces-Second-Quarter-2026-Financial-Results/default.aspx",
+      "title": "\n\tRapid7 - Rapid7 Announces Second Quarter 2026 Financial Results\n",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 99,
+      "url": "https://investors.rapid7.com/overview/default.aspx",
+      "title": "\n\tRapid7 - Investor Relations\n",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 102,
+      "url": "https://www.sentinelone.com/press/sentinelone-named-a-leader-in-the-gartner-magic-quadrant-for-endpoint-protection-platforms-for-6th-consecutive-year",
+      "title": "SentinelOne® Named a Leader in the Gartner® Magic Quadrant™ for Endpoint Protection Platforms for 6th Consecutive Year | SentinelOne",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 103,
+      "url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Second-Quarter-Fiscal-Year-2027-Financial-Results/default.aspx",
+      "title": "SentinelOne, Inc. - SentinelOne Announces Second Quarter Fiscal Year 2027 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 110,
+      "url": "https://www.tenable.com/products/ai-exposure",
+      "title": "Tenable One AI Exposure | Tenable®",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 111,
+      "url": "https://investors.tenable.com/news-releases/news-release-details/tenable-announces-third-quarter-2026-financial-results",
+      "title": "Tenable Announces Third Quarter 2026 Financial Results",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": 120,
+      "url": "https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-acquire-varonis-creating-global-leader-data-and-ai-security",
+      "title": "Proofpoint to Acquire Varonis in a $6.3 Billion Transaction",
+      "accessed": "2026-11-01"
+    }
+  ],
+  "corporateActions": [
+    {
+      "ticker": "CYBR",
+      "status": "已完成收購；不列獨立成長股",
+      "detail": "Palo Alto Networks於2026-02-11完成收購CyberArk。",
+      "source": 10
+    },
+    {
+      "ticker": "VRNS",
+      "status": "已宣布現金收購；不列一般長期成長候選",
+      "detail": "Proofpoint於2026-10-15宣布以每股49.75美元現金收購Varonis，預計2027上半年交割，仍須股東與監管等條件。不能保證成交；此後股票風險偏向併購事件，而不是無上限的AI成長。",
+      "source": 120
+    }
+  ],
+  "glossary": [
+    [
+      "ARR",
+      "年度經常性收入指標，反映訂閱業務規模，不等於當期已認列營收。"
+    ],
+    [
+      "SOC",
+      "安全營運中心，負責監控、調查與回應攻擊。"
+    ],
+    [
+      "SASE",
+      "將網路連線與安全服務整合提供的架構。"
+    ],
+    [
+      "DLP",
+      "防止敏感資料在不應離開的情境外洩。"
+    ],
+    [
+      "SBC",
+      "股票薪酬；可能稀釋股東，不能因現金流為正就忽略。"
+    ],
+    [
+      "FCF",
+      "自由現金流；各公司計算與調整項不同，不宜不加對帳直接比較。"
+    ],
+    [
+      "GAAP／非GAAP",
+      "正式會計口徑與公司調整後口徑；兩者需並列，不能只挑較好看的數字。"
+    ]
+  ]
+}
