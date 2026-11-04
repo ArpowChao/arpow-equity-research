@@ -2801,159 +2801,207 @@
   {
     "ticker": "PLTR",
     "company": "Palantir Technologies Inc.",
-    "asOf": "2026-08-24",
+    "asOf": "2026-11-04",
     "status": "current",
     "currency": "USD",
     "snapshot": {
-      "price": 175.89,
-      "baseFairValue": 116.6666666667,
+      "price": 175.4,
+      "baseFairValue": 137.5733082706767,
       "fairRange": [
-        100,
-        135
+        111.11,
+        164.04
       ],
       "marginOfSafety": [
-        93.33,
-        99.17
+        110.06,
+        116.94
       ],
-      "bear": 60.55,
-      "base": 116.6666666667,
-      "bull": 202.64
+      "bear": 74.98897058823529,
+      "base": 137.5733082706767,
+      "bull": 211.26564885496182
     },
-    "thesis": "Palantir 已把 AIP 從 AI 敘事轉成高速成長、GAAP 高獲利與強現金流，Q2 的美國商業與政府收入同時加速，基本面品質極高；但現價以未來稀釋市值計算約 54 倍 2026 EV/Sales、調整後 FCF 殖利率僅約 1%，已要求超高速成長維持多年。",
+    "thesis": "Q3營收年增96%，美國商業首次超過美國政府，GAAP營益率47%、實際FCF仍強，並非只有AI故事。但175.40美元收盤快照約對應52倍2026 EV/Sales、調整後FCF收益率1.09%；TCV僅增6%、RPO季比持平。好公司與好價格仍須分開。",
     "metrics": [
       {
-        "label": "Q2 2026 營收",
-        "value": "19.35 億美元",
-        "note": "年增 93%、季增 19%；全年指引 81.50～81.58 億"
+        "label": "Q3營收／年增／季增",
+        "value": "23.13億／96%／20%",
+        "note": "11/02公布，9/30止；FY2026營收指引85.30～85.34億美元"
       },
       {
         "label": "美國商業／政府收入",
-        "value": "7.64／8.09 億美元",
-        "note": "分別年增 149%／90%，兩個引擎同步加速"
+        "value": "9.84／9.53億美元",
+        "note": "年增148%／96%；美國商業首次超過美國政府"
       },
       {
-        "label": "GAAP／調整後營業利益",
-        "value": "9.12／11.94 億美元",
-        "note": "營益率 47%／62%；Rule of 40 為 155%"
+        "label": "GAAP毛利／營益率",
+        "value": "83.4%／46.9%",
+        "note": "調整後營益率61.7%；不能把SBC永久忽略"
       },
       {
-        "label": "Q2 GAAP／調整後 EPS",
-        "value": "0.41／0.41 美元",
-        "note": "GAAP 淨利 10.62 億；現金利息收入亦推升淨利率"
+        "label": "Q3 OCF／簡化FCF",
+        "value": "12.05／11.97億美元",
+        "note": "CapEx0.08億；公司adjusted FCF12.16億，另加回雇主薪資稅"
       },
       {
-        "label": "Q2 OCF／調整後 FCF",
-        "value": "12.16／12.20 億美元",
-        "note": "全年調整後 FCF 指引 45～47 億"
+        "label": "SBC／營收占比",
+        "value": "3.19億／13.8%",
+        "note": "Q3 diluted加權25.739億股；10/26實際A+B+F約24.095億股"
       },
       {
-        "label": "RPO／美國商業 RDV",
-        "value": "49.0／62.38 億美元",
-        "note": "RPO 43%預計一年內認列；RDV 包含選擇權及可便利終止合約"
+        "label": "TCV／RPO",
+        "value": "29.18／約49億美元",
+        "note": "TCV年增6%；RPO約44%一年內認列，不能與RDV混用"
       },
       {
-        "label": "現金＋短期美債",
-        "value": "約 92 億美元",
-        "note": "無重大淨負債，資產負債表非常強"
+        "label": "現金＋美債／有息債",
+        "value": "103.76億／零",
+        "note": "9/30同時點；排除上市股權證券1.85億與受限現金"
       },
       {
-        "label": "基本／Q2 稀釋股數",
-        "value": "24.03／25.69 億股",
-        "note": "Q2 SBC 2.65 億美元，約占營收 13.7%"
+        "label": "調整後FCF收益率",
+        "value": "約1.09%",
+        "note": "全年指引中點49億÷Q3 diluted股數市值代理；不是保證股東回報"
       }
     ],
     "drivers": [
-      "AIP bootcamp 轉成長期 production 合約的速度與客戶擴張",
-      "美國商業收入、TCV、RDV 與真正不可取消 RPO 的轉換",
-      "美國政府／國防預算、主權 AI 與大型合約認列時點",
-      "GAAP 營益率、OCF、調整後 FCF 及利息收入占比",
-      "SBC、基本股數、稀釋股數與多重股權治理"
+      "美國商業AIP與Ontology能否從試點變成持續擴張的生產環境",
+      "美國政府與國防合約、預算續約及收入認列",
+      "NRR165%、686家美國商業客戶與大單是否持續",
+      "短合約能否續約擴大，而非只增加提前認列",
+      "GAAP利潤、正常化稅率、實際FCF與每股稀釋"
     ],
     "risks": [
-      "約 54 倍 2026 EV/Sales 對成長降速極度敏感",
-      "大型政府與商業合約造成季度波動及客戶集中",
-      "TCV／RDV 含選擇權與便利終止條款，未必全數成為收入",
-      "SBC 與未來稀釋降低每股價值",
-      "創辦人集中投票控制與治理風險",
-      "AI 競爭、資料隱私、國防倫理、採購與預算監管"
+      "現價仍要求多年高速成長與高估值倍數，營收成長不等於股票報酬",
+      "TCV/RDV含選擇權與便利終止；RPO也不是未來一年全部收入",
+      "TCV年增僅6%、RPO季比持平；短約解釋仍要後續驗證",
+      "SBC、RSU及期權稀釋、低有效稅率不能永續外推",
+      "美國營收集中、政府預算與政治／隱私／採購風險",
+      "Class A/B/F多重股權使創辦人投票控制強於經濟持分"
     ],
     "valuation": {
       "type": "ev-sales-diluted",
-      "forwardRevenue": 12200,
-      "bearMultiple": 15,
+      "forwardRevenue": 14077.8,
       "baseMultiple": 25,
+      "bearMultiple": 15,
       "bullMultiple": 35,
-      "netCash": 10000,
-      "dilutedShares": 2700
+      "netCash": 14000,
+      "dilutedShares": 2660
     },
-    "chart": "/charts/pltr-analysis-2026-08-24.png",
+    "chart": "/charts/pltr-analysis-2026-11-04.png",
     "sources": [
       {
-        "label": "Palantir Q2 2026 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm"
+        "label": "SEC Q3 2026 earnings release（11/02）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000045/a2026q3ex991pressrelease.htm"
       },
       {
-        "label": "Palantir Q2 2026 Form 10-Q",
+        "label": "SEC Q3 2026 10-Q（11/03提交）",
+        "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000048/pltr-20260930.htm"
+      },
+      {
+        "label": "官方Q3 2026 Business Update（NRR與客戶數）",
+        "url": "https://investors.palantir.com/files/Palantir%20-%20Q3%202026%20Business%20Update.pdf"
+      },
+      {
+        "label": "SEC Q2 2026 10-Q（季度比較）",
         "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm"
       },
       {
-        "label": "Yahoo Finance PLTR chart snapshot",
+        "label": "Q3法說逐字稿（第三方；未聽完整官方音訊）",
+        "url": "https://www.fool.com/earnings/call-transcripts/2026/11/02/palantir-pltr-q3-2026-earnings-call-transcript/"
+      },
+      {
+        "label": "官方Q3 webcast／replay入口",
+        "url": "https://palantir.events/palantirearnings-q32026"
+      },
+      {
+        "label": "Yahoo日線行情（固定11/03正規盤收盤）",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1y&interval=1d"
       }
     ],
     "priceMeta": {
-      "asOf": "2026-08-24 16:00 EDT",
+      "asOf": "2026-11-03 16:00 EST（正規盤收盤；非即時價）",
       "marketState": "regular-close",
-      "source": "Yahoo Finance chart API（NASDAQ PLTR regular close）"
+      "observedAtUtc": "2026-11-03T21:00:00Z",
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/PLTR?range=1y&interval=1d"
     },
     "scenarios": [
       {
         "label": "悲觀",
-        "assumption": "2027 營收 105 億 × 15 倍 EV/Sales＋90 億淨現金÷27.5 億股",
-        "value": 60.55,
-        "condition": "成長迅速降至約 30%、政府大單時點反轉、倍數向成熟軟體收斂"
+        "assumption": "2027營收127.980億×15倍＋淨現金120億，再除27.2億股",
+        "value": 74.98897058823529,
+        "condition": "2027仍增50%，但估值收斂至15倍、稀釋較高，不能當最壞底價"
       },
       {
         "label": "基準",
-        "assumption": "2027 營收 122 億 × 25 倍 EV/Sales＋100 億淨現金÷27.0 億股",
-        "value": 116.67,
-        "condition": "2027 維持約 50%成長、高營益率與強 FCF，但估值倍數正常化"
+        "assumption": "2027營收140.778億×25倍＋淨現金140億，再除26.6億股",
+        "value": 137.5733082706767,
+        "condition": "2027增65%，US商業持續擴張、毛利與現金流維持，倍數正常化至25倍"
       },
       {
         "label": "樂觀",
-        "assumption": "2027 營收 150 億 × 35 倍 EV/Sales＋120 億淨現金÷26.5 億股",
-        "value": 202.64,
-        "condition": "美國商業與政府收入維持近 70%～80%成長，AIP 成為標準作業層且稀釋受控"
+        "assumption": "2027營收153.576億×35倍＋淨現金160億，再除26.2億股",
+        "value": 211.26564885496182,
+        "condition": "2027增80%、短約擴大續約、NRR與現金流維持，市場仍給35倍"
       }
     ],
     "analysis": [
       {
-        "kicker": "Operating evidence",
-        "title": "這已不是只有故事的 AI 公司",
-        "body": "Q2 營收年增 93%至 19.35 億美元，GAAP 營業利益率達 47%、OCF margin 63%。美國商業收入年增 149%，美國政府收入亦年增 90%，顯示 AIP、國防與主權 AI 需求均已轉成實際收入及現金流。"
+        "kicker": "Business model",
+        "title": "不是賣聊天機器人，而是把資料、決策與執行接在一起",
+        "body": "Foundry整合企業資料與工作流程，Ontology把資料映射成人、資產、訂單等實體及可執行動作；AIP把模型接進具權限控制的流程，Gotham服務政府／國防，Apollo負責部署與更新。客戶支付軟體及服務費。真正護城河要看production採用與擴約，而不是模型榜單。"
       },
       {
-        "kicker": "Bookings quality",
-        "title": "TCV、RDV 與 RPO 必須分開解讀",
-        "body": "Q2 TCV 33.73 億美元、美國商業 RDV 62.38 億，但 TCV／RDV 多數假設客戶行使選擇權且不便利終止；真正不可取消的 RPO 為 49 億，其中約 43%預計十二個月內認列。合約動能很強，但不能把全部 RDV 當作已鎖定收入。"
+        "kicker": "What changed",
+        "title": "美國商業首次超越政府，營收增速仍加快",
+        "body": "Q3營收23.134億美元、年增96%、季增20%；美國商業9.84億、年增148%、季增29%，首次高於美國政府9.53億。Q2營收年增約93%，Q3再加速，不能把本季財報說成成長已經放緩。國際商業僅年增21%，美國是主要動能；地區差異不能忽略。"
       },
       {
-        "kicker": "Dilution",
-        "title": "GAAP 已獲利，但股權薪酬仍是股東成本",
-        "body": "Q2 SBC 為 2.65 億美元、約占營收 13.7%；基本期末股數 24.03 億，而 Q2 稀釋加權股數 25.69 億，差約 6.9%。本模型使用 26.5～27.5 億未來稀釋股，避免只以基本股數低估估值。"
+        "kicker": "Cash and earnings",
+        "title": "真實現金流很強，但調整後數字不等於股東免費現金",
+        "body": "Q3 OCF12.0457億減PP&E0.08014億＝簡化FCF11.96556億；另加回SBC相關雇主薪資稅0.19521億，得到公司adjusted FCF12.16077億。9M簡化FCF32.89933億。Q3 SBC3.18889億、約營收13.8%；以FCF再減SBC作非GAAP機會成本敏感度約8.77667億，不能稱公司FCF或再與稀釋機械重複扣減。"
       },
       {
-        "kicker": "Market expectations",
-        "title": "完美基本面仍可能不是好價格",
-        "body": "175.89 美元對應基本市值約 4,226 億、以 Q2 稀釋股估算約 4,518 億美元；扣除 92 億現金後約為 2026 指引營收的 54 倍，全年調整後 FCF 殖利率約 1%。現價已接近本模型樂觀情境，任何成長降速都可能造成營運與估值倍數雙重壓縮。"
+        "kicker": "Tax quality",
+        "title": "GAAP與adjusted EPS同為0.44，不代表沒有調整",
+        "body": "Q3 GAAP淨利歸屬普通股11.28012億；調整加回SBC3.18889億與薪資稅0.23106億，再扣所得稅影響與調整3.27660億，得到11.42347億，EPS四捨五入同為0.44。原始有效稅率僅約1.18%，不能視作永續。僅示意把稅前11.48001億按23%稅率正常化，再扣NCI，EPS約0.341；不是公司新指引，也未排除全部非營運收益。"
       },
       {
-        "kicker": "Governance",
-        "title": "多重股權結構使創辦人保有集中控制",
-        "body": "Class A 是公開交易類別；Class B 與 Class F 形成強化投票控制。這有助長期策略一致，但一般股東對董事會與重大事項的影響有限，估值需保留治理折價。"
+        "kicker": "Bookings warning",
+        "title": "營收近倍增，TCV卻只增6%：先黃燈，不直接判崩壞",
+        "body": "Q3 TCV29.18億年增6%，美國商業TCV14.63億年增11%；美國商業RDV65.17億季增4%，真正不可取消RPO約49億、較Q2約持平，44%預計未來十二個月內認列。管理層稱新Sovereign AI合約較短、部署更快；這可降低TCV的年限價值，但不是問題已解決的證明。要追蹤短約續約、ACV、RPO及收款。TCV/RDV不可相加或當作保證營收。"
+      },
+      {
+        "kicker": "Retention",
+        "title": "老客戶擴張很強，還要驗證新客戶與續約",
+        "body": "官方簡報顯示NRR165%，較Q2高8個百分點，代表上一組客戶的TTM收入擴張，不是165%的客戶續約率。美國商業客戶686家、年增29%、季增5%；總客戶1,090家。NRR與現金流一起支持實際產品價值，但不保證往後維持同樣增速。"
+      },
+      {
+        "kicker": "Balance sheet and dilution",
+        "title": "現金很充足，卻不足以替高估值提供硬底",
+        "body": "9/30現金36.19414億＋美債67.56734億＝103.76148億，無有息債；marketable securities另含上市股權1.85383億，並非全部國庫券。10/26 A+B+F實際股數24.09497474億；Q3稀釋加權25.73926億只是市值代理，不是精確當日完全稀釋股數。未歸屬RSU約3,550.3萬與P-RSU14萬股、期權等仍須考慮，不能再把這些無差別加到已稀釋EPS分母。"
+      },
+      {
+        "kicker": "Price expectations",
+        "title": "175.40美元要求很長的高速複利",
+        "body": "11/03收盤175.40美元，按10/26實際總股數近似市值4,226億；以Q3稀釋股數作代理約4,515億。扣同時點現金美債後，約51.7倍2026營收指引中點；全年adjusted FCF中點49億的收益率約1.09%。這是前瞻指引／不同日股數的近似，不是TTM收益率。股價還可能上漲，但容錯空間低。"
+      },
+      {
+        "kicker": "Scenario assumptions",
+        "title": "137.57只是2027營收倍數模型基準，不是精準公平價",
+        "body": "假設2027營收較2026指引中點再增50%／65%／80%，配15／25／35倍EV/Sales、情境淨現金120／140／160億、未來稀釋27.2／26.6／26.2億股。這些全是分析假設，未指定成功機率，不是公司2027指引或未折現一年後保證目標價。基準25倍仍屬高估值，需要高毛利、強收現與多年成長。"
+      },
+      {
+        "kicker": "Multiple sensitivity",
+        "title": "公司繼續成長，股票仍可能因倍數下降而下跌",
+        "body": "固定基準收入140.778億、淨現金140億與26.6億股，20～30倍對應111.11～164.04美元。反推175.40需約32.15倍相同2027收入。基準按含SBC營益率45%、正常化稅23%且不含現金利息，稅後營業利益約48.78億、EPS代理1.834；137.57約75倍此代理盈餘，已非便宜成熟軟體倍數。此交叉檢查不是GAAP EPS預測。"
+      },
+      {
+        "kicker": "Call review and gaps",
+        "title": "法說支持部署加速，但沒有量化所有轉換率",
+        "body": "已核對SEC 10-Q、新聞稿、官方簡報，並閱讀第三方法說相關準備講稿段落與三組Q&A，開場季度、人名與營收對上官方文件；未播放完整官方音訊。管理層談短約、IP主權與工作流程價值，但沒有給完整bootcamp→production cohort轉換率、客戶回收期或維持高成長的成功機率。未完成長期DCF／精準ROIC-WACC，故呈現條件式敏感度而非唯一公平價。"
       }
     ],
-    "modelNotes": "估值採 2027 前瞻營收與未來稀釋股數；單位為百萬美元／百萬股。基準價由 (12,200×25＋10,000)÷2,700 精確重現。"
+    "modelNotes": "分析日2026-11-04（台灣）；行情2026-11-03美東正規盤收盤。單位百萬美元／百萬股。基準(14077.8×25＋14000)÷2660＝137.5733。使用2027前瞻營收倍數評價目前條件，不是宣稱2027年底終值；非DCF。淨現金12000／14000／16000為未來保留現金假設，非最新報表；不是把預期FCF全部無條件加回。折讓區僅模型風控、非買點。",
+    "updatedFrom": "2026-08-24"
   },
   {
     "ticker": "QBTS",
