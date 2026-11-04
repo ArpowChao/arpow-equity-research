@@ -14,6 +14,7 @@ export type BeginnerGuide = {
 };
 
 export const glossary: Record<string, string> = {
+  客戶權證:'給客戶在條件達成後取得股票的權利，可能涉及營收對價扣減、負債評價與未來稀釋；非現金評價不等於沒有股東成本，最大上限也不等於目前已發行。',
   SCA: 'Micron的Strategic Customer Agreement，多年take-or-pay合約；承諾量、價格上下限、存款與返還條件各有定義，不等於全部營收或利潤保證。',
   DSO: '應收帳款周轉天數：賣出產品後平均多久收到錢。天數上升不自動代表壞帳，但可能占用更多現金。',
   DIO: '庫存天數：庫存相對銷貨成本可支撐多久。漲價、產品切換、在製品與成本資本化都會改變此指標。',
@@ -199,12 +200,15 @@ export const beginnerGuides: Record<string, BeginnerGuide> = {
     ], terms:['營業利益率','ARPU','CapEx','FCF','P/E']
   },
   AMD: {
-    industry: '無晶圓廠半導體', earns:'設計資料中心 GPU／CPU、PC 處理器與遊戲晶片，由外部晶圓廠製造。', keyQuestion:'AI GPU 成長能否快過傳統業務波動，並在 NVIDIA 生態系壓力下守住毛利？',
+    industry:'資料中心CPU／AI GPU與系統＋PC／遊戲＋Embedded', earns:'設計EPYC伺服器CPU、Instinct AI GPU與Helios系統、Ryzen電腦處理器、Radeon與遊戲機晶片，以及嵌入式／自適應產品；委外晶圓與封裝製造，再向雲端、企業與OEM客戶銷售。', keyQuestion:'MI450與EPYC的大幅放量，能否在存貨與應收轉成現金、SBC與客戶權證稀釋受控之後，仍帶來足夠的每股經濟獲利？',
     watch:[
-      {name:'資料中心',why:'AI GPU 與 EPYC CPU 是成長及估值核心。',good:'營收、客戶數與毛利同步上升。',warning:'產品延遲、供應受限或價格競爭。'},
-      {name:'Client PC',why:'PC 週期影響出貨、平均售價與庫存。',good:'市占提升且通路庫存正常。',warning:'需求下滑或降價清庫存。'},
-      {name:'毛利率與產品組合',why:'高階資料中心產品占比提高才會真正創造利潤。',good:'非 GAAP 與 GAAP 毛利率共同改善。',warning:'營收增長但毛利率停滯。'}
-    ],terms:['GAAP','核心口徑','毛利率','SBC','P/E']
+      {name:'EPYC伺服器CPU',why:'AI代理與雲端服務也需要CPU，不能把全部資料中心營收都算成GPU。',good:'新平台量產、雲端與企業採用、單價及市占同步改善。',warning:'把需求意向當已實現營收，或平台轉換與供應限制拖慢交付。'},
+      {name:'Instinct／Helios／ROCm',why:'GPU、整櫃系統與軟體採用共同決定AI訂單能否持續。',good:'出貨驗收、客戶擴大部署與工作負載效益可驗證，庫存按期消化。',warning:'只看合作名單或GW上限，忽略驗收、價格、HBM與軟體競爭。'},
+      {name:'毛利金額與營業槓桿',why:'產品組合可能使毛利率下降，但更大收入仍可增加毛利與營業利益。',good:'毛利金額增長快於含SBC費用，GAAP與經濟獲利一起改善。',warning:'毛利金額停滯、費用與現金消耗繼續升高；不能把55%當永久底部。'},
+      {name:'存貨／應收與現金流',why:'新品放量先備料會占用現金，也可能掩蓋交付或收款延遲。',good:'營收與驗收增加，存貨與應收增速下降，FCF重新跟上獲利。',warning:'庫存與應收持續快於營收，仍需發債或供應商信用支撐。'},
+      {name:'客戶權證／SBC／併購',why:'合作帶來收入，也可能用股東持分換取客戶承諾；股票收購另增分母。',good:'權證歸屬與行使條件透明，每股現金回報快於稀釋。',warning:'把非現金費用當零成本、把條件式上限全當已發行，或將併購股重加兩次。'},
+      {name:'PC／Gaming與Embedded',why:'傳統市場的波動會抵銷一部分資料中心成長。',good:'商用PC市占、通路健康與Embedded復甦能支撐獲利。',warning:'記憶體成本壓抑PC、遊戲機週期轉弱，或嵌入式只靠短期補庫存。'}
+    ],terms:['GAAP','核心口徑','毛利率','營業利益率','OCF','CapEx','FCF','SBC','稀釋股數','客戶權證','P/E']
   },
   INTC: {
     industry:'CPU產品修復＋自有製造／外部晶圓代工＋先進封裝', earns:'以PC／邊緣裝置及伺服器CPU賺產品利潤，同時經營Intel Foundry。代工分部大部分收入仍來自Intel內部，須沖銷，不能與產品營收直接相加。', keyQuestion:'CPU與18A的修復，能否轉成外部代工量產及每股現金回報，足以支撐85.49美元價格與2027更高CapEx？下一個驗證點是10/29財報。',

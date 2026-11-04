@@ -2,134 +2,223 @@
   {
     "ticker": "AMD",
     "company": "Advanced Micro Devices, Inc.",
-    "asOf": "2026-08-24",
+    "asOf": "2026-11-04",
     "status": "current",
     "currency": "USD",
     "snapshot": {
-      "price": 466.61,
-      "baseFairValue": 450,
+      "price": 508.2,
+      "baseFairValue": 459.34000000000015,
       "fairRange": [
-        390,
-        490
+        408.3,
+        510.38
       ],
       "marginOfSafety": [
-        360,
-        382.5
+        367.47,
+        390.44
       ],
-      "bear": 266,
-      "base": 450,
-      "bull": 672
+      "bear": 253.61325581395346,
+      "base": 459.34000000000015,
+      "bull": 707.0109375
     },
-    "thesis": "EPYC 與 Instinct 推動資料中心高速成長，資產負債表與 FCF 品質優於重資本晶圓廠；但接近 4.7 百美元的股價已要求 AI 銷售、毛利與生態系持續高速兌現。",
+    "thesis": "Q3資料中心營收年增97%，Q4總營收指引170億美元，AI與EPYC正在實際放量；但Q3自由現金流只有5.54億、存貨季增35%、客戶權證成本開始進入報表。更新後含SBC與條件式稀釋的NTM經濟模型基準459.34美元，低於財報後508.20盤後快照；不是便宜到可忽略風險。",
     "metrics": [
       {
-        "label": "Q2 2026 營收",
-        "value": "115.36 億美元",
-        "note": "年增 50%；Data Center 占 58%"
+        "label": "Q3總營收／資料中心",
+        "value": "133.77／85.46億美元",
+        "note": "年增45%／97%；資料中心占比63.9%，包含CPU與GPU，不全是Instinct"
       },
       {
-        "label": "Data Center 營收",
-        "value": "67 億美元",
-        "note": "年增 107%；EPYC 與 Instinct 共同驅動"
+        "label": "Q4公司營收／毛利指引",
+        "value": "170億±3%／約55%",
+        "note": "年增約66%、季增約27%；56%→55%是non-GAAP毛利率，非GAAP"
       },
       {
-        "label": "GAAP／非 GAAP EPS",
-        "value": "1.38／1.66 美元",
-        "note": "非 GAAP 排除收購、股權薪酬等項目"
+        "label": "Q3 GAAP／non-GAAP EPS",
+        "value": "1.46／2.09美元",
+        "note": "含10.97億權證負債評價損失與5.55億GAAP稅益，不能只用單季EPS年化"
       },
       {
-        "label": "Q3 公司指引",
-        "value": "130±3 億美元",
-        "note": "中點年增約 41%；非 GAAP 毛利率約 56%"
+        "label": "Q3 OCF／CapEx／FCF",
+        "value": "12.02／6.48／5.54億",
+        "note": "持續營運口徑；FCF去年同期15.30億，上季15.58億"
       },
       {
-        "label": "H1 OCF／CapEx／FCF",
-        "value": "53.21／11.97／41.24 億美元",
-        "note": "簡化 FCF；AI 成長同時推高存貨與應收"
+        "label": "應收／存貨季增",
+        "value": "＋26.5%／＋35.4%",
+        "note": "分別92.09／114.63億美元；快於營收季增16%"
       },
       {
-        "label": "存貨／應收",
-        "value": "84.68／72.81 億美元",
-        "note": "較 2025 年底分別上升 5.48／9.66 億"
+        "label": "現金短投／債務／淨現金",
+        "value": "157.76／70.79／86.97億",
+        "note": "9/26同時點；Q2淨現金98.85億，不能只看現金增加"
+      },
+      {
+        "label": "Q3 SBC／稀釋加權股數",
+        "value": "5.23億／16.61億股",
+        "note": "Q4預估16.68億已含預期併購；官方稱Q4不預計含客戶權證稀釋"
+      },
+      {
+        "label": "客戶權證上限",
+        "value": "OpenAI／Meta各1.6億股",
+        "note": "Q2 10-Q所載條件式上限，非目前全部已發行；2027確切生效時點待核實"
       }
     ],
     "drivers": [
-      "Instinct 出貨、供應與軟體生態系採用",
-      "EPYC 伺服器 CPU 市占與平台週期",
-      "Data Center 毛利率與 FCF 轉換",
-      "Client／Gaming／Embedded 是否形成第二成長腿"
+      "EPYC伺服器CPU與Instinct GPU分開放量，MI450／Helios的交付、驗收及ROCm生態",
+      "資料中心GPU與CPU組合如何影響毛利金額、毛利率及營業槓桿",
+      "存貨與應收能否按期轉成銷售與現金，而非持續靠供應商信用及發債",
+      "客戶權證淨營收扣減、評價損益與實際稀釋時序",
+      "Client／Gaming走弱與Embedded復甦、併購後整合及每股回報"
     ],
     "risks": [
-      "AI GPU 競爭與大型客戶自研 ASIC",
-      "高估值對成長或毛利失誤敏感",
-      "出口限制、先進封裝與晶圓供應",
-      "收購調整、股權薪酬、應收與存貨累積"
+      "營收大增但現金流與營運資金轉弱，需求延後可能產生庫存風險",
+      "客戶權證與股票支付併購擴大股數；非現金不等於免費",
+      "NVIDIA、自研ASIC及軟體生態系競爭，先進封裝／HBM供應與成本",
+      "PC／遊戲機週期下行、記憶體成本壓抑終端需求",
+      "出口管制、客戶集中、供應及合作／擔保安排",
+      "Q3完整10-Q及最新權證明細尚未取得，模型不是精準DCF或價格底部"
     ],
     "valuation": {
-      "type": "forward-pe",
-      "earnings": 12.5,
+      "type": "economic-pe",
+      "earnings": 12.759444444444448,
       "bearMultiple": 28,
       "baseMultiple": 36,
       "bullMultiple": 42
     },
-    "chart": "/charts/amd-analysis-2026-08-24.png",
+    "chart": "/charts/amd-analysis-2026-11-04.png",
     "sources": [
       {
-        "label": "AMD Q2 2026 earnings release（SEC exhibit 99.1）",
-        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000121/q22026991.htm"
+        "label": "官方Q3 2026財報（11/03公布）",
+        "url": "https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results"
       },
       {
-        "label": "AMD Q2 2026 Form 10-Q",
+        "label": "SEC Q3財報exhibit 99.1（財務表及對帳）",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000188/q32026991.htm"
+      },
+      {
+        "label": "SEC官方Q3簡報（Q4毛利／費用／股數）",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000188/amdq32026earningsslidesf.htm"
+      },
+      {
+        "label": "最新已取得完整10-Q：Q2 2026（不是Q3）",
         "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
       },
       {
-        "label": "Yahoo Finance AMD chart snapshot",
+        "label": "9/28 8-K：World Labs約82億美元股票收購",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000182/amd-20260926.htm"
+      },
+      {
+        "label": "官方季度結果／最新webcast入口",
+        "url": "https://ir.amd.com/financial-information/financial-results"
+      },
+      {
+        "label": "第三方Q3法說逐字稿（未聽完整官方音訊）",
+        "url": "https://singjupost.com/amd-advanced-micro-devices-q3-2026-earnings-call-transcript/"
+      },
+      {
+        "label": "Yahoo盤後時間戳快照（非即時價）",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m&includePrePost=true"
+      },
+      {
+        "label": "Yahoo一年日線（截至11/03正規盤）",
         "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1y&interval=1d"
       }
     ],
     "priceMeta": {
-      "asOf": "2026-08-24 07:38 EDT",
-      "marketState": "pre-market",
-      "source": "Yahoo Finance chart API"
+      "asOf": "2026-11-03 19:59:58 EST（財報後盤後；非即時價）",
+      "marketState": "post-market",
+      "observedAtUtc": "2026-11-04T00:59:58+00:00",
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/AMD?range=1d&interval=1m&includePrePost=true"
     },
     "scenarios": [
       {
         "label": "悲觀",
-        "assumption": "NTM 正常化 EPS 9.50 × 28 倍",
-        "value": 266,
-        "condition": "AI GPU 競爭、出口限制或客戶集中壓低成長與毛利"
+        "assumption": "NTM營收680億；毛利54%；含SBC費用180億；稅17%；股數17.20億；EPS9.0576×28倍",
+        "value": 253.61325581395346,
+        "condition": "MI450放量延後、2027未達管理層高成長展望，估值收斂；並非最壞底價"
       },
       {
         "label": "基準",
-        "assumption": "NTM 正常化 EPS 12.50 × 36 倍",
-        "value": 450,
-        "condition": "Q3 指引兌現、Data Center 成長延續且 FCF 跟上營收"
+        "assumption": "NTM營收820億；毛利56%；含SBC費用190億；稅15%；股數18.00億；EPS12.7594×36倍",
+        "value": 459.34000000000015,
+        "condition": "Q4指引落地，2027放量與收現改善、平均56%毛利及SBC／稀釋受控"
       },
       {
         "label": "樂觀",
-        "assumption": "NTM 正常化 EPS 16.00 × 42 倍",
-        "value": 672,
-        "condition": "Instinct 平台、生態系與 EPYC 市占超預期，毛利率持續擴張"
+        "assumption": "NTM營收1000億；毛利59%；含SBC費用220億；稅13%；股數19.20億；EPS16.8336×42倍",
+        "value": 707.0109375,
+        "condition": "MI450與EPYC超預期、59%平均毛利、營運槓桿強，且較多出貨觸發較多權證"
       }
     ],
     "analysis": [
       {
-        "kicker": "Value creation",
-        "title": "無晶圓廠模式讓高成長更容易轉成現金",
-        "body": "Q2 Data Center 營收 67 億美元、年增 107%；H1 簡化 FCF 約 41.24 億美元。相較自行建廠，AMD 把製造資本密集度外包，但仍承擔先進封裝、供應配置與客戶集中風險。"
+        "kicker": "What changed",
+        "title": "AI從期待轉成放量，CPU與GPU不能混成同一個數字",
+        "body": "Q3總營收133.77億、資料中心85.46億美元，年增45%／97%，較Q2資料中心67.18億再增27%。資料中心營業利益28.82億、分部營益率約33.7%，但此分部口徑不是含全部SBC與企業費用的公司GAAP margin。AMD沒有在新聞稿分開披露Instinct與EPYC精確營收，不把85.46億全當GPU銷售。"
       },
       {
-        "kicker": "Quality of growth",
-        "title": "應收與存貨上升需要與營收一起檢查",
-        "body": "截至 Q2，應收 72.81 億、存貨 84.68 億美元，均高於 2025 年底。這與高速擴張一致，但若 OCF 開始落後收入，就不能只用非 GAAP EPS 為高倍數辯護。"
+        "kicker": "Margins and Q4",
+        "title": "毛利率56%降至55%，不代表毛利金額或獲利下降",
+        "body": "Q4官方營收中點170億、non-GAAP毛利率55%，費用37.5億、淨其他收益0.04億、稅13%、預估稀釋16.68億股。按此自行推算毛利93.5億，較Q3 non-GAAP毛利74.83億增加約25%；EPS約2.923，這是推算而非公司另給EPS指引。法說逐字稿稱GPU營收快速增加、GPU相對CPU的組合壓低整體毛利率，但費用增速較慢仍可改善營業利益。不能把55%當永久毛利底部。"
       },
       {
-        "kicker": "Expectations",
-        "title": "現價接近基準合理價，容錯率有限",
-        "body": "基準 36 倍正常化 EPS 已承認資料中心成長與較長利潤持續期；若把樂觀 42 倍當基準，等於忽略 NVIDIA、自研 ASIC、出口限制與軟體生態系競爭。"
+        "kicker": "Cash quality",
+        "title": "本季最大黃燈：出貨成長快，現金流卻沒跟上",
+        "body": "Q3持續營運OCF12.02億減CapEx6.48億＝FCF5.54億，低於去年持續營運FCF15.30億與Q2的15.58億。應收季增26.5%、存貨季增35.4%，均快於營收約16%。這可能是新品放量前備料，但還需要驗收、收款與庫存周轉驗證；不直接斷言需求崩壞，也不假設所有庫存都能順利賣掉。9M FCF仍有46.78億；不能只挑好或壞的單季外推。"
+      },
+      {
+        "kicker": "Funding",
+        "title": "現金增加部分來自發債，不是全部來自本業",
+        "body": "9/26現金短投157.76億減債70.79億＝淨現金86.97億，低於Q2同口徑98.85億。Q3發債與商業本票淨流入47.26億、償還8.75億。員工股權計畫稅款扣股另有14.95億現金流出列融資活動，不是一般公開市場回購，也不在簡化FCF內；不與SBC及股數機械重複扣同一成本。"
+      },
+      {
+        "kicker": "GAAP reconciliation",
+        "title": "權證評價與稅益讓GAAP EPS變得難讀",
+        "body": "Q3 GAAP EPS1.46、non-GAAP2.09。公司對帳加回SBC5.23億、收購無形攤銷5.34億、權證負債評價損失10.97億等，再扣投資利益與稅務調整；GAAP另有5.55億所得稅利益，不能把1.46直接乘四。權證評價屬非現金，可能隨股價與條件達成機率變化；不能因為非現金就忽略最終給股的經濟成本。"
+      },
+      {
+        "kicker": "Three warrant channels",
+        "title": "把權證的營收扣減、評價與稀釋分成三件事",
+        "body": "依已核對的法說相關Q&A：Q3營收與Q4指引是已扣權證對價的淨營收，不能再把它當隱藏收入加回。10.97億負債重估損失影響GAAP、排除於non-GAAP，與立即發股不同。Q4官方股數預估不含客戶權證影響，2027時序要等條件與新指引。Q2 10-Q所列OpenAI與Meta各最多1.6億股，合計3.2億是條件式上限，不是現在全部流通。"
+      },
+      {
+        "kicker": "Future share bridge",
+        "title": "NTM股數透明保留條件式稀釋，不假裝精確預知行使時間",
+        "body": "從Q4官方稀釋預估16.68億股出發：悲觀加0.52億員工／其他緩衝、零客戶權證＝17.20億；基準加0.25億及1.07億＝18.00億；樂觀加0.30億及2.22億＝19.20億。這是估值用未來平均稀釋情境，不是公司加權EPS指引或已歸屬股數。樂觀出貨較多反而假設較多權證稀釋，並非所有樂觀條件都免費。不能將完整3.2億上限與上述部分權證再疊加。"
+      },
+      {
+        "kicker": "Acquisitions",
+        "title": "股票收購會增加能力，也會改變每股分母",
+        "body": "9/28 8-K披露World Labs總對價約82億美元、以股票支付，最終股數依交割前指定期間VWAP計算，不能用新聞日股價當已確定股數。Q4官方稀釋預估已考慮Taalas與World Labs預期交割，不再把整筆收購新股加第二次。是否提升AI軟硬體能力，最後要靠收入、利潤與資本回報驗證。"
+      },
+      {
+        "kicker": "2027 versus NTM",
+        "title": "2027全年展望與未來十二個月不可混用",
+        "body": "第三方法說正文與其他報導交叉確認管理層展望2027全公司成長超過80%、伺服器收入翻倍；這不是新聞稿中的量化全年指引表，也不是已實現收入。9M營收加Q4中點形成2026收入代理521.66億，成長80%對應2027約938.99億。基準另假設2027全年960億，但本模型只取Q4'26 170億＋Q1/Q2/Q3'27 190／210／250億＝NTM820億；剩餘2027Q4假設310億不塞進NTM獲利。"
+      },
+      {
+        "kicker": "Economic earnings",
+        "title": "基準EPS12.759包含持續股權薪酬成本",
+        "body": "基準NTM收入820億×56%毛利−含SBC營業費用190億＋淨其他收益1億，再乘85%正常化稅後比例，除18億未來稀釋股，得到12.7594美元。模型毛利排除收購無形攤銷與SBC，全部SBC於費用中保留，含原列銷貨成本部分，屬模型重分類，故不是GAAP EPS；費用已保留持續SBC，不能再扣同一薪酬。權證營收折讓已在淨收入假設內，不另外虛增收入。36倍反映高速成長與CPU／GPU平台地位，但仍要求多年執行成功。"
+      },
+      {
+        "kicker": "Version bridge",
+        "title": "舊450到新459.34，不能只說目標價上修",
+        "body": "舊版12.50×36＝450，未提供完整收入、費用與股數橋接；本次12.7594×36＝459.34，倍數未變。新財報／Q4展望改善支持更大收入，但新模型更明確納入SBC、營運資金、權證與收購後稀釋。這是資料與方法共同更新，不把分析者方法變動誤稱公司新增下修或保證上漲。"
+      },
+      {
+        "kicker": "Valuation and limits",
+        "title": "三情境是含條件的獲利敏感度，不是價格上下限",
+        "body": "悲觀253.61、基準459.34、樂觀707.01美元，分別用NTM680／820／1000億收入、54%／56%／59%毛利與不同費用、稅、股數及28／36／42倍。固定基準EPS，32～40倍是408.30～510.38；基準折讓15%～20%為367.47～390.44，只是模型風控，非買點或保證底價。未完成完整DCF、精準ROIC-WACC或所有客戶協議核讀。"
+      },
+      {
+        "kicker": "Evidence boundary",
+        "title": "資料缺口與行情衝突公開列明",
+        "body": "截至本次SEC submissions及官方季度頁核對，最新完整已取得10-Q仍是Q2，Q3以8-K財報及簡報為主；不把7/29實際股數當9/26或今日股數。已讀第三方Q3法說相關準備講稿與主要Q&A，季度、人名與財務數字對上官方，未聽完整官方音訊。行情選11/03 19:59:58 EST最後盤後一分鐘bar的508.20；同回應metadata fulldayPrice502.60與之不一致，兩者保留，不混稱即時價。正規盤收483.90在財報公布之前。"
       }
     ],
-    "modelNotes": "正常化 EPS 不是 Q2 單季年化；同列 FCF 與營運資金以檢查非 GAAP 盈餘品質。"
+    "modelNotes": "估值期限為近似Q4 2026至Q3 2027，並非2027全年或多年後終值。百萬美元／百萬股：基準[(82000×56%−19000＋100)×85%]÷1800×36＝459.34。費用含持續SBC；排除無形攤銷／權證重估，非公司non-GAAP或GAAP EPS指引。所有收入、毛利、費用、稅、股數、權證生效與倍數都是明示分析假設；不再另加全部現金（EPS已含淨其他收益）。",
+    "updatedFrom": "2026-08-24"
   },
   {
     "ticker": "AMZN",
