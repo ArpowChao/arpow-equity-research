@@ -50,7 +50,7 @@ for item in items:
     assert item["latestFiling"]["url"].startswith("https://www.sec.gov/Archives/")
     assert item["ticker"] in fundamentals_html
     assert (ROOT / f'dist/research/{item["ticker"].lower()}/index.html').is_file()
-    assert item["analysisAsOf"] <= fundamentals["checkedAtUtc"][:10]
+    assert item["analysisAsOf"] <= item.get("checkedAtUtc", fundamentals["checkedAtUtc"])[:10]
     for field in item["fields"].values():
         if field:
             assert field["end"] <= item["statement"]["periodEnd"]

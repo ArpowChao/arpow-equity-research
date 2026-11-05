@@ -169,6 +169,95 @@
       }
     },
     {
+      "ticker": "APP",
+      "company": "AppLovin Corporation",
+      "analysisAsOf": "2026-11-05",
+      "checkedAtUtc": "2026-11-05T15:33:52.248032+00:00",
+      "sourceMethod": "SEC 10-Q complete mirror; official submissions accession verified",
+      "statement": {
+        "form": "10-Q",
+        "filed": "2026-11-04",
+        "periodEnd": "2026-09-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1751008/000175100826000069/app-20260930.htm"
+      },
+      "latestFiling": {
+        "form": "10-Q",
+        "filed": "2026-11-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1751008/000175100826000069/app-20260930.htm"
+      },
+      "newerFilingNeedsReview": false,
+      "fields": {
+        "revenue": {
+          "value": 2184815000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001751008-26-000069",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD"
+        },
+        "operatingIncome": {
+          "value": 1708968000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001751008-26-000069",
+          "concept": "OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        "netIncome": {
+          "value": 1438902000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001751008-26-000069",
+          "concept": "NetIncomeLoss",
+          "unit": "USD"
+        },
+        "operatingCashFlow": {
+          "value": 3589275000,
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001751008-26-000069",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        "capitalExpenditure": {
+          "value": 9316000,
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001751008-26-000069",
+          "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
+          "unit": "USD"
+        },
+        "cash": {
+          "value": 3173731000,
+          "start": null,
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001751008-26-000069",
+          "concept": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        "shares": {
+          "value": 331322000,
+          "start": null,
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001751008-26-000069",
+          "concept": "CommonStockSharesOutstanding",
+          "unit": "shares"
+        }
+      },
+      "market": {
+        "observedAtUtc": "2026-11-05T15:20:55+00:00",
+        "price": 360.72,
+        "currency": "USD"
+      }
+    },
+    {
       "ticker": "ARM",
       "company": "Arm Holdings plc",
       "analysisAsOf": "2026-08-24",

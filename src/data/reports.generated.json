@@ -372,6 +372,250 @@
     "modelNotes": "採FY2027正常化EPS，不把Anthropic未實現評價利益當作可重複盈餘。基準為9.25美元×31倍＝286.75美元；2200億美元AI CapEx及負FCF用較保守EPS與安全邊際反映。"
   },
   {
+    "ticker": "APP",
+    "company": "AppLovin Corporation",
+    "asOf": "2026-11-05",
+    "status": "current",
+    "currency": "USD",
+    "snapshot": {
+      "price": 360.72,
+      "baseFairValue": 476.8872727272728,
+      "fairRange": [
+        403.52,
+        550.25
+      ],
+      "marginOfSafety": [
+        381.51,
+        405.35
+      ],
+      "bear": 226.32352941176472,
+      "base": 476.8872727272728,
+      "bull": 803.446153846154
+    },
+    "thesis": "APP是AI廣告成效平台，不是晶片公司。Q3淨營收年增55%、GAAP營益率78.2%、FCF14.18億美元，成長已轉成現金；但淨額營收使利潤率不可直接跨業比較。360.72美元盤中快照約24倍TTM稀釋股數代理盈餘、約4.08%公司FCF收益率；含SBC、正常化稅與未來股數的NTM模型基準476.89，折價有條件成立，仍須承擔平台／合規、模型及廣告增量成效風險。",
+    "metrics": [
+      {
+        "label": "Q3淨營收／年增",
+        "value": "21.848億美元／55.5%",
+        "note": "季增13.6%；已扣出版商款項，非廣告主總投放額"
+      },
+      {
+        "label": "GAAP營業利益／營益率",
+        "value": "17.090億／78.2%",
+        "note": "公司Adjusted EBITDA18.422億、84.3%；不是同一口徑"
+      },
+      {
+        "label": "GAAP淨利／稀釋EPS",
+        "value": "14.389億／4.30美元",
+        "note": "稅率約17.5%，業外含NAV投資評價利益0.469億，不能全部永久年化"
+      },
+      {
+        "label": "Q3 OCF／PPE／租賃本金",
+        "value": "14.288／0.075／0.029億",
+        "note": "公司FCF＝OCF−PPE−融資租賃本金＝14.184億；未加回SBC"
+      },
+      {
+        "label": "TTM公司FCF／收益率",
+        "value": "48.777億／約4.08%",
+        "note": "FY2025＋9M2026−9M2025；分母用10/31基本股數×盤中固定價，為近似值"
+      },
+      {
+        "label": "現金／帳面債務／淨債",
+        "value": "31.737／35.161／3.424億",
+        "note": "9/30同時點帳面口徑；未把投資基金或未動用信用額度算現金"
+      },
+      {
+        "label": "Q3 SBC／稀釋加權股數",
+        "value": "0.842億／3.34769億股",
+        "note": "SBC占營收3.85%；10/31實際A＋B基本股數3.31322億，兩者不同"
+      },
+      {
+        "label": "Q4公司指引",
+        "value": "營收23.65～23.95億",
+        "note": "年增約43%～44%；Adjusted EBITDA19.95～20.25億、margin84%～85%"
+      }
+    ],
+    "drivers": [
+      "Axon模型精度及廣告主ROAS能否持續改善，並通過增量成效驗證",
+      "核心遊戲廣告與consumer／電商投放共同參與競價，不把公司退出的自營Apps遊戲業務混回來",
+      "新廣告主導入、像素／回傳資料密度、創意工具與CTV擴張",
+      "雲端訓練與投放成本、研發及SBC投入能否創造增量現金回報",
+      "收款、現金稅、股票回購價格與未來稀釋股數"
+    ],
+    "risks": [
+      "Apple／Google平台與隱私政策、資料權限及合作關係改變",
+      "廣告歸因不等於新增訂單；增量測試與長期ROAS若不佳，預算可取消",
+      "模型進步不按季度固定發生；Q2曾低於自身指引，Q3反彈不是永久加速保證",
+      "淨額收入、高利潤及黑盒投放需核實，股東訴訟與具體監管進度不可當作零風險",
+      "宏觀廣告預算循環、同業／大型平台競爭與客戶導入放慢",
+      "投資評價、低稅與回購會改變每股盈餘；授權不等於已執行、跌幅不等於安全",
+      "控制股東約67%投票權已書面同意Nevada轉籍；核准不等於完成，普通股東對重大治理決策影響有限"
+    ],
+    "valuation": {
+      "type": "economic-pe",
+      "earnings": 18.341818181818184,
+      "bearMultiple": 18,
+      "baseMultiple": 26,
+      "bullMultiple": 34
+    },
+    "chart": "/charts/app-analysis-2026-11-05.png",
+    "sources": [
+      {
+        "label": "公司Q3 2026財報（官方原網址，可能有防機器人限制）",
+        "url": "https://investors.applovin.com/news/news-details/2026/AppLovin-Announces-Third-Quarter-2026-Financial-Results/default.aspx"
+      },
+      {
+        "label": "Q3 10-Q：SEC原申報，11/04提交",
+        "url": "https://www.sec.gov/Archives/edgar/data/1751008/000175100826000069/app-20260930.htm"
+      },
+      {
+        "label": "實際核讀Q3 10-Q完整鏡像（SEC2PDF Markdown）",
+        "url": "https://files.sec2pdf.com/AppLovin%20Corp%20(APP)/SEC_Filings_MD/10-Q/20261104-10-Q-AppLovin%20Corp-0001751008-26-000069.md"
+      },
+      {
+        "label": "FY2025 10-K完整鏡像：TTM現金流橋接",
+        "url": "https://files.sec2pdf.com/AppLovin%20Corp%20(APP)/SEC_Filings_MD/10-K/20260219-10-K-AppLovin%20Corp-0001751008-26-000010.md"
+      },
+      {
+        "label": "Q3公司財報轉載原文（6ix，下方非AI摘要部分）",
+        "url": "https://6ix.com/news/applovin-announces-third-quarter-2026-financial-results"
+      },
+      {
+        "label": "公司Q3 Financial Update轉載（歷季與GAAP對帳）",
+        "url": "https://6ix.com/news/applovin-third-quarter-2026-financial-update"
+      },
+      {
+        "label": "第三方自動法說文字：已核對相關段落，非完整官方錄音",
+        "url": "https://6ix.com/event/applovin-corporation-app-q3-2026-earnings-call"
+      },
+      {
+        "label": "官方法說日程／重播說明入口",
+        "url": "https://investors.applovin.com/news/news-details/2026/AppLovin-to-Announce-Third-Quarter-2026-Results/default.aspx"
+      },
+      {
+        "label": "Yahoo盤中固定快照",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/APP?range=1d&interval=1m&includePrePost=true"
+      },
+      {
+        "label": "Yahoo一年日線（最後可能含未收盤資料）",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/APP?range=1y&interval=1d"
+      },
+      {
+        "label": "11/04 8-K完整鏡像：控制權與Nevada轉籍核准",
+        "url": "https://files.sec2pdf.com/AppLovin%20Corp%20(APP)/SEC_Filings_MD/8-K/20261104-8-K-AppLovin%20Corp-0001751008-26-000068.md"
+      }
+    ],
+    "priceMeta": {
+      "asOf": "2026-11-05 10:20:55 EST（正規盤盤中，未收盤；非即時價）",
+      "marketState": "regular",
+      "observedAtUtc": "2026-11-05T15:20:55+00:00",
+      "source": "https://query1.finance.yahoo.com/v8/finance/chart/APP?range=1d&interval=1m&includePrePost=true"
+    },
+    "scenarios": [
+      {
+        "label": "悲觀",
+        "assumption": "NTM收入90.0億；含SBC營益率65%；稅25%；股數3.40億；EPS12.5735×18倍",
+        "value": 226.32352941176472,
+        "condition": "廣告增量驗證不佳、成長大幅降速、營益率降65%、股數340m且倍數收斂；不是最壞底部"
+      },
+      {
+        "label": "基準",
+        "assumption": "NTM收入104.8億；含SBC營益率75%；稅22%；股數3.30億；EPS18.3418×26倍",
+        "value": 476.8872727272728,
+        "condition": "模型改善延續、consumer放量與收款正常，含SBC營益率75%、稅22%、股數330m"
+      },
+      {
+        "label": "樂觀",
+        "assumption": "NTM收入120.0億；含SBC營益率80%；稅20%；股數3.25億；EPS23.6308×34倍",
+        "value": 803.446153846154,
+        "condition": "模型／consumer／CTV超預期，營益率80%、稅20%、股數325m且高倍數延續"
+      }
+    ],
+    "analysis": [
+      {
+        "kicker": "Business model",
+        "title": "白話：替廣告主找到更可能買單的人，從投放差額賺錢",
+        "body": "AppLovin Ads／Axon協助廣告主依目標ROAS投放；MAX幫App開發商競價出售廣告版位，Adjust做衡量歸因，Wurl提供CTV相關服務。10-Q稱AppLovin Ads占絕大部分收入。公司不控制版位、屬代理安排，所以收入已扣付給出版商的成本；84%調整後EBITDA率不是每100美元廣告預算就賺84美元。也不是靠賣聊天機器人訂閱或GPU賺錢。"
+      },
+      {
+        "kicker": "What improved",
+        "title": "Q3不是只靠EPS包裝，現金與GAAP本業也強",
+        "body": "Q3收入21.848億、GAAP營業利益17.090億、淨利14.389億美元，收入年增55.5%、營益率78.2%。Q2收入19.237億，Q3再增13.6%。10-Q將改善主要歸於每次安裝淨收入提高55%、安裝量增2%；不能將兩個指標直接相乘來精準重建全公司收入，更不能把它解讀成新使用者多了55%。"
+      },
+      {
+        "kicker": "Model transition",
+        "title": "模型升級確有成效，但不把「尚未全面推出」當永續加速保證",
+        "body": "第三方自動法說文字1:30～3:55稱新一代模型只部分推出，遊戲廣告年增近50%、consumer廣告投放年增三位數；這是管理層口徑，不是公司分部收入表。9:30起被問完整推出日期，CEO未承諾固定時間；Q2曾低於自身指引，足以提醒模型研發不按季度直線成長。不能把遊戲廣告與2025已出售的自營Apps業務混淆。"
+      },
+      {
+        "kicker": "Ad incrementality",
+        "title": "最大的商業驗證：廣告真的創造新訂單，還是只分走歸因？",
+        "body": "法說11:24與27:47附近承認consumer客戶需要增量測試，客戶要先驗證成效才大幅放量；像素或新客戶數不能直接當收入。47:02起沒有提供公司平均take rate量化數字，管理層解釋其由模型預測與競價事後形成。50分鐘附近稱MAX不給自家投放神奇的特殊資料權限，這是管理層說法，不等於第三方獨立審計。"
+      },
+      {
+        "kicker": "Cash bridge",
+        "title": "FCF品質好，但先把租賃與算力成本說清楚",
+        "body": "Q3 OCF1428.842m−PPE7.476m−融資租賃本金2.923m＝公司FCF1418.443m，約占收入64.9%、Adjusted EBITDA77.0%。9M為3589.275−9.316−11.451＝3568.508m。9M另有軟體等淨投資現金流25.375m；若保守扣全部淨投資與租賃本金，剩3552.449m，不把公司FCF當所有投資後現金。低PPE CapEx不代表雲端算力免費，相關費用進營運成本。"
+      },
+      {
+        "kicker": "TTM and tax timing",
+        "title": "不是拿本季最好現金流直接乘四",
+        "body": "公司TTM FCF＝FY2025 3951.952＋9M2026 3568.508−9M2025 2642.793＝4877.667m；舊年已出售Apps業務在前九月的現金流於此橋接中抵銷，保留Q4 2025及2026前三季。以360.72乘10/31 A＋B基本股數331.322m，近似市值119514.472m，FCF收益率約4.08%。法說6:13稱Q2較弱轉換與現金稅時點有關，全年FCF／Adjusted EBITDA展望70%～75%，不是保證每季65%營收都能轉現金。"
+      },
+      {
+        "kicker": "Quality of EPS",
+        "title": "SBC已在GAAP成本內；投資利益與低稅不能永續年化",
+        "body": "Q3 SBC84.165m，占收入3.85%，高於去年33.767m，並非零成本；Adjusted EBITDA有加回，GAAP營業利益則已扣。Q3其他收益86.032m，其中NAV基金未實現收益46.9m，稅305.032m／稅前1743.934m約17.5%。本模型不將投資評價當反覆本業，基準以22%稅、含SBC營益率75%、年度淨其他費用100m計算，不能再從模型EPS扣一次SBC。"
+      },
+      {
+        "kicker": "Shares and buybacks",
+        "title": "回購確實縮股，但「現金流÷股數」不是正確成交均價",
+        "body": "10/31實際Class A301.258m＋B30.064m＝331.322m；Q3稀釋加權334.769m，低於去年340.974m。9M已回購並註銷7.32945m股；按權益變動表三季成本合計2920.719m，近似含會計成本均價398.49美元，非精準成交均價。現金流回購2811.222m受結算時差影響，不用它除註銷股數宣稱均價383.55。10月新增後可用授權36億，不等於已執行。"
+      },
+      {
+        "kicker": "Balance and commitments",
+        "title": "資產負債表可控，但雲端承諾不是全部尚待支付",
+        "body": "9/30現金3173.731m減帳面長債3516.136m＝帳面淨債342.405m，與公司淨槓桿低於0.1倍說法方向一致。債務以帳面口徑標示，不冒稱市場價或本金面額。2024年修訂的三年雲端最低採購13億，至9/30已支付約11億，不能把13億全加成新增欠款；新模型訓練與未來供應承諾仍需後續追蹤。"
+      },
+      {
+        "kicker": "Growth versus valuation",
+        "title": "Q4仍強，但年增55%將降至約43%～44%",
+        "body": "公司Q4收入23.65～23.95億、Adjusted EBITDA19.95～20.25億；收入中點23.8億相對Q4 2025的16.579億，年增約43.6%、季增約8.9%。降速不是衰退，但估值不能永遠用55%成長。管理層法說提長期約30%複合成長是展望，不是逐年承諾或2027正式指引。"
+      },
+      {
+        "kicker": "NTM quarters",
+        "title": "近似NTM收入104.8億，不把2027全年113億直接塞入",
+        "body": "近似Q4 2026～Q3 2027基準收入＝23.8＋25＋27＋29＝104.8億美元，部分Q4已過，並非精確逐日十二個月。另假設Q4 2027為32億，形成2027全年113億、較2026代理83.3095億再增約35.6%；該32億不混進NTM。悲觀／樂觀NTM分別90／120億，全為分析假設。"
+      },
+      {
+        "kicker": "Valuation",
+        "title": "不是只因跌很多才看便宜：把獲利、股數與倍數都攤開",
+        "body": "基準[(10480×75%−100)×78%]÷330＝EPS18.3418，乘26＝476.89美元。360.72相對該獲利假設約19.67倍；TTM淨利5013.309m以最新Q3稀釋股數重分攤的P/E代理約24.09倍，非行情網站精確TTM EPS。18／26／34倍分別反映大幅降速及平台風險、約30%長期成長仍可維持、與更強consumer／模型延續性；不是已驗證市場共識。"
+      },
+      {
+        "kicker": "Sensitivity and downside",
+        "title": "模型有折價，但不要把476.89當市場欠你的錢",
+        "body": "悲觀226.32、基準476.89、樂觀803.45美元，皆是含SBC、正常化稅與不同未來股數的情境。固定基準EPS，22～30倍是403.52～550.25；基準折讓15%～20%為381.51～405.35。低於折讓區只能說模型條件成立時價格較有容錯，不是已證實錯殺；若平台／資料使用或營收品質出現根本破壞，實際下行可遠超悲觀。"
+      },
+      {
+        "kicker": "Legal and platform risk",
+        "title": "不把做空指控當定罪，也不把沒有定罪當零風險",
+        "body": "Q3 10-Q列有證券集體訴訟與衍生訴訟，公司認為指控無根據並抗辯；本研究沒有獨立鑑識投放資料，也未確認所有監管個案最新進度。多數客戶合約可隨時取消，沒有把廣告預算當多年保證RPO。Apple／Google分發、資料與隱私規則變動，可能改變模型效率及客戶回報。這些非線性風險是低倍數可能合理的原因。"
+      },
+      {
+        "kicker": "Governance",
+        "title": "67%投票權已書面同意Nevada轉籍，核准不等於已完成",
+        "body": "11/04 8-K披露，10/29持有約67%投票權的控制股東以書面同意，核准由Delaware轉籍Nevada；不是全體股東各自投票通過。當時文件仍列後續Schedule 14C資訊聲明寄送與最早於寄送起算20個日曆日後生效的程序，本研究不把核准寫成已完成。這顯示控制權集中，是治理風險與估值折價的考量；未據此推定違法、動機或個別法律效果。"
+      },
+      {
+        "kicker": "Evidence boundary",
+        "title": "原站受限、鏡像核讀與音訊限制都公開",
+        "body": "官方IR與SEC HTML此次直接讀取受限；SEC submissions已核實主體CIK1751008及11/04 10-Q accession0001751008-26-000069。實讀SEC2PDF完整Q3／Q2 10-Q與FY2025 10-K鏡像，並以公司Financial Update及財報轉載的原文部分交叉核對，不只採6ix AI摘要。第三方自動逐字稿已核對季度、人物與財務數字及相關Q&A，開頭部分介紹缺漏，未登入觀看重播、未聽完整官方音訊。未完成完整DCF、精準ROIC-WACC或獨立合規／資料稽核。"
+      }
+    ],
+    "modelNotes": "金額／股數：百萬美元／百萬股。基準NTM10480收入×75%含SBC營益率−100淨其他費用，稅22%，除330未來平均稀釋股，乘26＝476.8873。不是公司EPS指引；26倍是假設，非市場保證。未來股數悲觀340／基準330／樂觀325已綜合SBC及淨回購，不把36億授權自動全數執行。模型EPS包含淨其他費用，不再另加現金或重扣淨債。三情境無機率、非價格上下限。"
+  },
+  {
     "ticker": "ARM",
     "company": "Arm Holdings plc（安謀）",
     "asOf": "2026-10-23",
