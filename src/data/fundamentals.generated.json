@@ -990,7 +990,9 @@
     {
       "ticker": "LULU",
       "company": "lululemon athletica inc.",
-      "analysisAsOf": "2026-09-03",
+      "analysisAsOf": "2026-11-09",
+      "checkedAtUtc": "2026-11-09T07:16:05.347628+00:00",
+      "sourceMethod": "Company-IR-linked full SEC PDF, cross-checked with complete mirror and official submissions",
       "statement": {
         "form": "10-Q",
         "filed": "2026-09-03",
@@ -999,10 +1001,10 @@
       },
       "latestFiling": {
         "form": "8-K",
-        "filed": "2026-09-14",
-        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000129/lulu-20260908.htm"
+        "filed": "2026-10-22",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000135/lulu-20261019.htm"
       },
-      "newerFilingNeedsReview": true,
+      "newerFilingNeedsReview": false,
       "fields": {
         "revenue": {
           "value": 2415631000,
@@ -1049,20 +1051,28 @@
           "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
           "unit": "USD"
         },
-        "cash": null,
-        "shares": {
-          "value": 106566000,
+        "cash": {
+          "value": 1389737000,
           "start": null,
           "end": "2026-08-02",
           "filed": "2026-09-03",
           "accession": "0001397187-26-000127",
-          "concept": "CommonStockSharesOutstanding",
+          "concept": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        "shares": {
+          "value": 112919000,
+          "start": "2026-05-04",
+          "end": "2026-08-02",
+          "filed": "2026-09-03",
+          "accession": "0001397187-26-000127",
+          "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
           "unit": "shares"
         }
       },
       "market": {
-        "observedAtUtc": "2026-09-24T12:53:19+00:00",
-        "price": 101.6,
+        "observedAtUtc": "2026-11-06T21:00:01+00:00",
+        "price": 110.79,
         "currency": "USD"
       }
     },
