@@ -13,14 +13,15 @@ type ExtendedReport = Omit<(typeof reports)[number], 'valuation'> & {
   modelNotes?: string;
 };
 const report = Astro.props.report as ExtendedReport;
+const rpdEconomic = report.ticker==='RPD' && report.asOf>='2026-11-11';
 const luluEconomic = report.ticker==='LULU' && report.asOf>='2026-11-09';
 const appEconomic = report.ticker==='APP' && report.asOf>='2026-11-05';
 const amdEconomic = report.ticker==='AMD' && report.asOf>='2026-11-04';
 const pltrSensitivity = report.ticker === 'PLTR' && report.asOf >= '2026-11-04';
-const conditionalModel = appEconomic || amdEconomic || luluEconomic || pltrSensitivity;
+const conditionalModel = rpdEconomic || appEconomic || amdEconomic || luluEconomic || pltrSensitivity;
 const intcAudit = report.ticker === 'INTC' && report.asOf >= '2026-10-24';
 const upside = ((report.snapshot.baseFairValue/report.snapshot.price)-1)*100;
-const methodFor = luluEconomic ? 'lululemon-normalized-ntm' : appEconomic ? 'applovin-economic-ntm' : amdEconomic ? 'amd-economic-ntm' : pltrSensitivity ? 'palantir-growth-valuation' : intcAudit ? 'intel-model-audit' : report.ticker === 'NVDA' && report.asOf >= '2026-10-24' ? 'nvidia-economic-ntm' : report.ticker === 'MU' && report.asOf >= '2026-10-24' ? 'memory-dual-horizon' : report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
+const methodFor = rpdEconomic ? 'rapid7-economic-ntm' : luluEconomic ? 'lululemon-normalized-ntm' : appEconomic ? 'applovin-economic-ntm' : amdEconomic ? 'amd-economic-ntm' : pltrSensitivity ? 'palantir-growth-valuation' : intcAudit ? 'intel-model-audit' : report.ticker === 'NVDA' && report.asOf >= '2026-10-24' ? 'nvidia-economic-ntm' : report.ticker === 'MU' && report.asOf >= '2026-10-24' ? 'memory-dual-horizon' : report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 const chartUrl = `${base}${report.chart.replace(/^\//, '')}`;
 const priceMeta = report.priceMeta;
@@ -28,7 +29,7 @@ const scenarios = report.scenarios ?? [];
 const analysis = report.analysis ?? [];
 const guide = beginnerGuides[report.ticker];
 const [mosLow, mosHigh] = report.snapshot.marginOfSafety;
-const priceVerdict = luluEconomic ? '110.79美元快照低於121.07條件式基準，但不在90.81～102.91模型折讓區。這不是已確認谷底；必須驗證固定匯率同店、剔除退款毛利與可持續現金。悲觀52.74不是股價下限，12～16倍僅倍數敏感度，不是公平價信賴區間。' : appEconomic ? '360.72美元低於本篇含SBC與正常化稅的NTM基準476.89，也低於模型折讓區381.51～405.35；這只代表假設成立時有價格容錯，不代表已證實錯殺。廣告增量驗證、平台／資料合規與模型執行若出問題，可能跌破悲觀226.32。不是買入指令。' : amdEconomic ? '這是含SBC與條件式權證稀釋的NTM經濟模型，不是公司EPS指引或唯一公平價。508.20美元盤後快照高於459.34基準；408.30～510.38只是基準倍數敏感度。需要資料中心放量、收現與稀釋條件同時驗證，不能把折讓區當保證買點。' : pltrSensitivity ? '這是2027營收倍數的條件式敏感度，不是完整DCF或唯一公平價。175.40美元高於137.57基準，但低於樂觀211.27；要讓高估值成立，收入、收現與稀釋都須持續達標。折讓區不是保證底價或買入指令。' : intcAudit ? '38.60美元只是保留的保守模型錨點，不是已驗證的唯一公平價。原32–46區間只是倍數敏感度；請把近端獲利與較遠期復甦／代工選擇權分開，不憑兩個數字的差距直接判定市場錯價。' : report.snapshot.price < mosLow
+const priceVerdict = rpdEconomic ? '14.49美元快照略高於13.64條件式NTM經濟基準；11.94～15.35只是固定EPS的倍數敏感度，10.23～11.60是模型折讓區而非買點。核心ARR尚未恢復成長，7.43倍公司調整EPS不等於股東經濟收益只有7倍。' : luluEconomic ? '110.79美元快照低於121.07條件式基準，但不在90.81～102.91模型折讓區。這不是已確認谷底；必須驗證固定匯率同店、剔除退款毛利與可持續現金。悲觀52.74不是股價下限，12～16倍僅倍數敏感度，不是公平價信賴區間。' : appEconomic ? '360.72美元低於本篇含SBC與正常化稅的NTM基準476.89，也低於模型折讓區381.51～405.35；這只代表假設成立時有價格容錯，不代表已證實錯殺。廣告增量驗證、平台／資料合規與模型執行若出問題，可能跌破悲觀226.32。不是買入指令。' : amdEconomic ? '這是含SBC與條件式權證稀釋的NTM經濟模型，不是公司EPS指引或唯一公平價。508.20美元盤後快照高於459.34基準；408.30～510.38只是基準倍數敏感度。需要資料中心放量、收現與稀釋條件同時驗證，不能把折讓區當保證買點。' : pltrSensitivity ? '這是2027營收倍數的條件式敏感度，不是完整DCF或唯一公平價。175.40美元高於137.57基準，但低於樂觀211.27；要讓高估值成立，收入、收現與稀釋都須持續達標。折讓區不是保證底價或買入指令。' : intcAudit ? '38.60美元只是保留的保守模型錨點，不是已驗證的唯一公平價。原32–46區間只是倍數敏感度；請把近端獲利與較遠期復甦／代工選擇權分開，不憑兩個數字的差距直接判定市場錯價。' : report.snapshot.price < mosLow
   ? `目前價格低於本模型安全邊際區下緣（$${mosLow}–$${mosHigh}）；估值折價已足，但要先確認市場是否正在反映基本面惡化。`
   : report.snapshot.price <= mosHigh
     ? `目前價格位於本模型的安全邊際區（$${mosLow}–$${mosHigh}），但仍要確認基本面沒有惡化。`
@@ -51,7 +52,7 @@ const priceVerdict = luluEconomic ? '110.79美元快照低於121.07條件式基�
       </div>
       <div class="snapshot-quote card">
         <span>{intcAudit ? '本篇分析快照（原模型；稽核保留）' : '本篇分析快照'}</span><strong>${report.snapshot.price.toFixed(2)}</strong>
-        <small>{appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守模型錨點' : '基準合理價'} ${report.snapshot.baseFairValue.toFixed(2)} · <b class={upside>=0?'positive':'negative'}>{upside>=0?'+':''}{upside.toFixed(1)}%</b></small>
+        <small>{rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守模型錨點' : '基準合理價'} ${report.snapshot.baseFairValue.toFixed(2)} · <b class={upside>=0?'positive':'negative'}>{upside>=0?'+':''}{upside.toFixed(1)}%</b></small>
         {priceMeta && <small>{priceMeta.asOf} · 固定不變</small>}
       </div>
     </div>
@@ -59,7 +60,7 @@ const priceVerdict = luluEconomic ? '110.79美元快照低於121.07條件式基�
 
   <section class="shell scenario-strip">
     <div class="scenario bear"><span>悲觀</span><strong>${report.snapshot.bear.toFixed(2)}</strong></div>
-    <div class="scenario base"><span>{appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守基準（非唯一公平價）' : '基準'}</span><strong>${report.snapshot.base.toFixed(2)}</strong></div>
+    <div class="scenario base"><span>{rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守基準（非唯一公平價）' : '基準'}</span><strong>${report.snapshot.base.toFixed(2)}</strong></div>
     <div class="scenario bull"><span>樂觀</span><strong>${report.snapshot.bull.toFixed(2)}</strong></div>
     <div class="ranges"><div><span>{conditionalModel ? '基準倍數敏感度' : intcAudit ? '原模型倍數敏感度' : '一般合理區間'}</span><b>${report.snapshot.fairRange[0]}–${report.snapshot.fairRange[1]}</b></div><div><span>{conditionalModel ? '模型折讓區（非買點）' : intcAudit ? '原模型折讓區（非買點）' : '安全邊際區'}</span><b>${report.snapshot.marginOfSafety[0]}–${report.snapshot.marginOfSafety[1]}</b></div></div>
   </section>
@@ -86,7 +87,7 @@ const priceVerdict = luluEconomic ? '110.79美元快照低於121.07條件式基�
   </section>}
 
   <section class="shell content-grid section">
-    <article class={luluEconomic ? 'lulu-research' : undefined}>
+    <article class={luluEconomic || rpdEconomic ? 'lulu-research' : undefined}>
       <div class="section-head"><div><div class="eyebrow">Operating evidence</div><h2>關鍵營運證據</h2></div></div>
       <div class="metric-grid grid">{report.metrics.map(m=><div class="metric-card card"><span>{m.label}</span><strong>{m.value}</strong><small>{m.note}</small></div>)}</div>
       <div class="chart card"><img src={chartUrl} alt={`${report.ticker} 於 ${report.asOf} 的一年價格結構圖`} loading="lazy" /></div>
@@ -97,7 +98,7 @@ const priceVerdict = luluEconomic ? '110.79美元快照低於121.07條件式基�
     <aside>
       <div class="calc card">
         <div class="eyebrow">Model explorer</div><h2>估值試算</h2>
-        {report.valuation.type === 'future-ev-ebitda' ? <div data-calculator="future-ebitda"><label>遠期 EBITDA（百萬）<input id="ebitda" type="number" step="10" value={report.valuation.forwardEbitda}/></label><label>EV/EBITDA<input id="multiple" type="number" step="0.5" value={report.valuation.baseMultiple}/></label><label>遠期淨現金（百萬；淨負債填負值）<input id="cash" type="number" step="10" value={report.valuation.netCash}/></label><label>折現因子<input id="discount" type="number" step="0.01" value={report.valuation.discountFactor}/></label><label>未來稀釋股數（百萬）<input id="shares" type="number" step="1" value={report.valuation.dilutedShares}/></label><div class="result"><span>試算現值</span><strong id="result">—</strong></div></div> : report.valuation.type !== 'ev-sales-diluted' ? <div data-calculator="pe"><label>{appEconomic || amdEconomic || luluEconomic ? '含SBC的NTM經濟EPS' : report.valuation.type === 'cycle-pe' ? '週期正常化 EPS' : '正常化 EPS'}<input id="earnings" type="number" step="0.01" value={report.valuation.earnings}/></label><label>{appEconomic || amdEconomic || luluEconomic ? '條件式P/E' : '合理 P/E'}<input id="multiple" type="number" step="0.01" value={report.valuation.baseMultiple}/></label><div class="result"><span>{conditionalModel ? '試算條件式價值' : '試算合理價'}</span><strong id="result">—</strong></div></div> : <div data-calculator="ev"><label>前瞻營收（百萬）<input id="revenue" type="number" step="1" value={report.valuation.forwardRevenue}/></label><label>EV/Sales<input id="multiple" type="number" step="0.1" value={report.valuation.baseMultiple}/></label><label>{report.ticker === 'INTC' ? '情境淨資產調整（百萬；含NCI）' : '情境淨現金（百萬）'}<input id="cash" type="number" step="1" value={report.valuation.netCash}/></label><label>完全稀釋股數（百萬）<input id="shares" type="number" step="0.1" value={report.valuation.dilutedShares}/></label><div class="result"><span>{conditionalModel ? '試算條件式價值' : '試算合理價'}</span><strong id="result">—</strong></div></div>}
+        {report.valuation.type === 'future-ev-ebitda' ? <div data-calculator="future-ebitda"><label>遠期 EBITDA（百萬）<input id="ebitda" type="number" step="10" value={report.valuation.forwardEbitda}/></label><label>EV/EBITDA<input id="multiple" type="number" step="0.5" value={report.valuation.baseMultiple}/></label><label>遠期淨現金（百萬；淨負債填負值）<input id="cash" type="number" step="10" value={report.valuation.netCash}/></label><label>折現因子<input id="discount" type="number" step="0.01" value={report.valuation.discountFactor}/></label><label>未來稀釋股數（百萬）<input id="shares" type="number" step="1" value={report.valuation.dilutedShares}/></label><div class="result"><span>試算現值</span><strong id="result">—</strong></div></div> : report.valuation.type !== 'ev-sales-diluted' ? <div data-calculator="pe"><label>{rpdEconomic || appEconomic || amdEconomic || luluEconomic ? '含SBC的NTM經濟EPS' : report.valuation.type === 'cycle-pe' ? '週期正常化 EPS' : '正常化 EPS'}<input id="earnings" type="number" step="0.01" value={report.valuation.earnings}/></label><label>{rpdEconomic || appEconomic || amdEconomic || luluEconomic ? '條件式P/E' : '合理 P/E'}<input id="multiple" type="number" step="0.01" value={report.valuation.baseMultiple}/></label><div class="result"><span>{conditionalModel ? '試算條件式價值' : '試算合理價'}</span><strong id="result">—</strong></div></div> : <div data-calculator="ev"><label>前瞻營收（百萬）<input id="revenue" type="number" step="1" value={report.valuation.forwardRevenue}/></label><label>EV/Sales<input id="multiple" type="number" step="0.1" value={report.valuation.baseMultiple}/></label><label>{report.ticker === 'INTC' ? '情境淨資產調整（百萬；含NCI）' : '情境淨現金（百萬）'}<input id="cash" type="number" step="1" value={report.valuation.netCash}/></label><label>完全稀釋股數（百萬）<input id="shares" type="number" step="0.1" value={report.valuation.dilutedShares}/></label><div class="result"><span>{conditionalModel ? '試算條件式價值' : '試算合理價'}</span><strong id="result">—</strong></div></div>}
         {report.modelNotes && <p class="model-note">{report.modelNotes}</p>}
         <a class="method-link" href={`${base}methodology/${methodFor}`}>查看公式、理論與限制 →</a>
       </div>

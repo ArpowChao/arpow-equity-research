@@ -1583,6 +1583,95 @@
       }
     },
     {
+      "ticker": "RPD",
+      "company": "Rapid7, Inc.",
+      "analysisAsOf": "2026-11-11",
+      "checkedAtUtc": "2026-11-11T13:48:06.796156+00:00",
+      "sourceMethod": "Official SEC full 10-Q and 10-K, cross-checked with company release and official XLSX",
+      "statement": {
+        "form": "10-Q",
+        "filed": "2026-11-04",
+        "periodEnd": "2026-09-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1560327/000156032726000050/rp-20260930.htm"
+      },
+      "latestFiling": {
+        "form": "10-Q",
+        "filed": "2026-11-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1560327/000156032726000050/rp-20260930.htm"
+      },
+      "newerFilingNeedsReview": false,
+      "fields": {
+        "revenue": {
+          "value": 212404000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001560327-26-000050",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD"
+        },
+        "operatingIncome": {
+          "value": 8950000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001560327-26-000050",
+          "concept": "OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        "netIncome": {
+          "value": 3511000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001560327-26-000050",
+          "concept": "NetIncomeLoss",
+          "unit": "USD"
+        },
+        "operatingCashFlow": {
+          "value": 106926000,
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001560327-26-000050",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        "capitalExpenditure": {
+          "value": 15115000,
+          "start": "2026-01-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001560327-26-000050",
+          "concept": "PaymentsToAcquirePropertyPlantAndEquipment + PaymentsToDevelopSoftware",
+          "unit": "USD"
+        },
+        "cash": {
+          "value": 335714000,
+          "start": null,
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001560327-26-000050",
+          "concept": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        "shares": {
+          "value": 70172655,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0001560327-26-000050",
+          "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
+      },
+      "market": {
+        "observedAtUtc": "2026-11-10T21:00:01+00:00",
+        "price": 14.49,
+        "currency": "USD"
+      }
+    },
+    {
       "ticker": "SMCI",
       "company": "Super Micro Computer, Inc.",
       "analysisAsOf": "2026-09-06",
