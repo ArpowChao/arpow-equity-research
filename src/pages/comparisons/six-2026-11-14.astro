@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import data from '../../data/six-2026-11-14.json';
+const base=`${import.meta.env.BASE_URL.replace(/\/$/,'')}/`;
+---
+<Base title="六股雙軌比較｜MU FISV AMD NVDA MSFT AMZN">
+  <article class="shell comparison">
+    <div class="eyebrow">2026-11-14 · Six-company research</div>
+    <h1>成長值得多少？<br/>價值股又剩多少？</h1>
+    <p class="lead">統一採2026/11/13美東正規盤收盤。先看未來一年正常營運，再獨立檢驗四年低成長與倍數壓縮；不同期限不混成一個目標價。</p>
+    <div class="notice"><b>先讀這個：</b>NTM與壓力測試均為分析假設，不是公司指引或股價下限。四年統一對照從最新TTM收入立即降速至年增10%，不是先實現NTM高成長後再降速；採末期10～15倍P/E、要求報酬10%；毛利、費用、稅與稀釋依公司設定。末期價值與今日現值分開，不含中間股利。個股頁另有零成長及公司特性壓力。</div>
+    <img class="overview" src={`${base}charts/six-analysis-2026-11-14.png`} alt="六股共同收盤、NTM與價值股壓力比較"/>
+    <section class="comparison-grid">
+      {data.results.map(({report:r,calculations:c})=><article class="company-card card" data-comparison-company={r.ticker}>
+        <div class="card-top"><b>{r.ticker}</b><span>11/13收盤 ${r.snapshot.price.toFixed(2)}</span></div>
+        <h2>{r.company}</h2><p>{r.thesis}</p>
+        <div class="numbers"><div><small>NTM悲觀</small><strong>${r.snapshot.bear.toFixed(2)}</strong></div><div><small>NTM基準</small><strong>${r.snapshot.base.toFixed(2)}</strong></div><div><small>NTM樂觀</small><strong>${r.snapshot.bull.toFixed(2)}</strong></div></div>
+        <div class="stress-summary"><h3>統一10%收入成長 × 10～15倍末期P/E</h3><p>四年後末期：<b>${c.uniform10x.terminalValue.toFixed(2)}～${c.uniform15x.terminalValue.toFixed(2)}</b><br/>折回今日：<b>${c.uniform10x.presentValue.toFixed(2)}～${c.uniform15x.presentValue.toFixed(2)}</b><br/>不含股利的年化價差：<b>{(c.uniform10x.annualReturn!*100).toFixed(1)}%～{(c.uniform15x.annualReturn!*100).toFixed(1)}%</b></p>
+          <small>壓力毛利 {(c.tailored.inputs.grossMargin*100).toFixed(0)}%／費用率 {(c.tailored.inputs.opexRatio*100).toFixed(0)}%／稅 {(c.tailored.inputs.taxRate*100).toFixed(0)}%／年稀釋 {(c.tailored.inputs.annualDilution*100).toFixed(1)}%。成本差異會影響結果，非同風險排序。</small>
+        </div>
+        <p><b>TTM FCF收益率：</b>{c.fcfYield===null?'未取得':`${(c.fcfYield*100).toFixed(2)}%`}。CapEx與資本化支出口徑見個股附註，不能不加調整直接排名。</p>
+        <a class="detail" href={`${base}research/${r.ticker.toLowerCase()}/`}>完整財報、業務引擎、互動試算與來源 →</a>
+      </article>)}
+    </section>
+    <section class="notice"><h2>怎麼使用這張比較？</h2><p>正常情境有空間、價值股壓力卻不支持現價，代表投資仍需要較強成長或較高倍數，不等於便宜無風險。反過來，壓力模型很低也不能單獨證明高品質成長股不值得買；須檢驗成長持續期、FCF與資本回報。</p><p>MU不能永久年化峰值毛利；FISV要看減損之外的持續成本；AMD要看收現、權證與承諾；NVDA另有11/12公告的接班及11/17財報事件；MSFT與AMZN要看AI投資回收。這不是投資組合配置或買賣指令。</p></section>
+  </article>
+  <style>.comparison{padding-top:60px;min-width:0;overflow-wrap:anywhere}.comparison h1{font-size:clamp(34px,5vw,58px);line-height:1.2;margin:18px 0}.lead{max-width:850px;font-size:19px;color:var(--muted)}.notice{padding:22px;border-left:4px solid var(--blue);background:#edf4ff;line-height:1.8;margin:24px 0}.overview{width:100%;height:auto;border:1px solid var(--line);border-radius:16px;margin:16px 0 28px}.comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.company-card{padding:24px;min-width:0}.card-top{display:flex;justify-content:space-between;gap:14px;align-items:center}.card-top b{font-size:28px;color:var(--blue)}.card-top span{font-size:13px;color:var(--muted)}.company-card h2{font-size:23px}.company-card p{color:var(--muted);line-height:1.8}.numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:22px 0;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.numbers small{display:block;font-size:11px;color:var(--muted)}.numbers strong{display:block;font-size:22px;color:var(--blue);margin-top:7px}.stress-summary{padding:18px;background:#f4f7fc;border-radius:12px}.stress-summary h3{font-size:16px;margin:0}.stress-summary small{color:var(--muted);font-size:12px}.detail{display:block;margin-top:20px;color:var(--blue);font-weight:700}@media(max-width:760px){.comparison-grid{grid-template-columns:1fr}.company-card{padding:20px}.card-top{align-items:start}.numbers strong{font-size:19px}}
+  </style>
+</Base>

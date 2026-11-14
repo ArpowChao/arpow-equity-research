@@ -5,166 +5,170 @@
     {
       "ticker": "AMD",
       "company": "Advanced Micro Devices, Inc.",
-      "analysisAsOf": "2026-08-24",
+      "analysisAsOf": "2026-11-14",
+      "checkedAtUtc": "2026-11-14T12:22:52.448673+00:00",
+      "sourceMethod": "SEC full statement and company release; exact accession XBRL fields",
       "statement": {
         "form": "10-Q",
-        "filed": "2026-08-05",
-        "periodEnd": "2026-06-27",
-        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000123/amd-20260627.htm"
+        "filed": "2026-11-04",
+        "periodEnd": "2026-09-26",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000191/amd-20260926.htm"
       },
       "latestFiling": {
-        "form": "8-K",
-        "filed": "2026-08-19",
-        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000163/amd-20260817.htm"
+        "form": "4",
+        "filed": "2026-11-13",
+        "url": "https://www.sec.gov/Archives/edgar/data/2488/000000248826000195/xslF345X06/wk-form4_1794604681.xml"
       },
       "newerFilingNeedsReview": true,
       "fields": {
         "revenue": {
-          "value": 11536000000,
-          "start": "2026-03-29",
-          "end": "2026-06-27",
-          "filed": "2026-08-05",
-          "accession": "0000002488-26-000123",
+          "value": 13377000000,
+          "start": "2026-06-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-04",
+          "accession": "0000002488-26-000191",
           "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
           "unit": "USD"
         },
         "operatingIncome": {
-          "value": 1990000000,
-          "start": "2026-03-29",
-          "end": "2026-06-27",
-          "filed": "2026-08-05",
-          "accession": "0000002488-26-000123",
+          "value": 2832000000,
+          "start": "2026-06-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-04",
+          "accession": "0000002488-26-000191",
           "concept": "OperatingIncomeLoss",
           "unit": "USD"
         },
         "netIncome": {
-          "value": 2297000000,
-          "start": "2026-03-29",
-          "end": "2026-06-27",
-          "filed": "2026-08-05",
-          "accession": "0000002488-26-000123",
+          "value": 2428000000,
+          "start": "2026-06-28",
+          "end": "2026-09-26",
+          "filed": "2026-11-04",
+          "accession": "0000002488-26-000191",
           "concept": "NetIncomeLoss",
           "unit": "USD"
         },
         "operatingCashFlow": {
-          "value": 5321000000,
+          "value": 6523000000,
           "start": "2025-12-28",
-          "end": "2026-06-27",
-          "filed": "2026-08-05",
-          "accession": "0000002488-26-000123",
+          "end": "2026-09-26",
+          "filed": "2026-11-04",
+          "accession": "0000002488-26-000191",
           "concept": "NetCashProvidedByUsedInOperatingActivities",
           "unit": "USD"
         },
         "capitalExpenditure": {
-          "value": 1197000000,
+          "value": 1845000000,
           "start": "2025-12-28",
-          "end": "2026-06-27",
-          "filed": "2026-08-05",
-          "accession": "0000002488-26-000123",
+          "end": "2026-09-26",
+          "filed": "2026-11-04",
+          "accession": "0000002488-26-000191",
           "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
           "unit": "USD"
         },
         "cash": {
-          "value": 5086000000,
+          "value": 7404000000,
           "start": null,
-          "end": "2026-06-27",
-          "filed": "2026-08-05",
-          "accession": "0000002488-26-000123",
+          "end": "2026-09-26",
+          "filed": "2026-11-04",
+          "accession": "0000002488-26-000191",
           "concept": "CashAndCashEquivalentsAtCarryingValue",
           "unit": "USD"
         },
         "shares": {
-          "value": 1632000000,
+          "value": 1640000000,
           "start": null,
-          "end": "2026-06-27",
-          "filed": "2026-08-05",
-          "accession": "0000002488-26-000123",
+          "end": "2026-09-26",
+          "filed": "2026-11-04",
+          "accession": "0000002488-26-000191",
           "concept": "CommonStockSharesOutstanding",
           "unit": "shares"
         }
       },
       "market": {
-        "observedAtUtc": "2026-09-24T12:53:44+00:00",
-        "price": 598.3,
+        "observedAtUtc": "2026-11-13T21:00:01+00:00",
+        "price": 534.06,
         "currency": "USD"
       }
     },
     {
       "ticker": "AMZN",
       "company": "Amazon.com, Inc.",
-      "analysisAsOf": "2026-08-27",
+      "analysisAsOf": "2026-11-14",
+      "checkedAtUtc": "2026-11-14T12:22:52.448673+00:00",
+      "sourceMethod": "SEC full statement and company release; exact accession XBRL fields",
       "statement": {
         "form": "10-Q",
-        "filed": "2026-07-31",
-        "periodEnd": "2026-06-30",
-        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+        "filed": "2026-10-30",
+        "periodEnd": "2026-09-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000040/amzn-20260930.htm"
       },
       "latestFiling": {
-        "form": "8-K",
-        "filed": "2026-09-14",
-        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926107526/tm2624614d5_8k.htm"
+        "form": "4",
+        "filed": "2026-11-12",
+        "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000042/xslF345X06/wk-form4_1794526071.xml"
       },
       "newerFilingNeedsReview": true,
       "fields": {
         "revenue": {
-          "value": 200606000000,
-          "start": "2026-04-01",
-          "end": "2026-06-30",
-          "filed": "2026-07-31",
-          "accession": "0001018724-26-000026",
+          "value": 201944000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-30",
+          "accession": "0001018724-26-000040",
           "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
           "unit": "USD"
         },
         "operatingIncome": {
-          "value": 27461000000,
-          "start": "2026-04-01",
-          "end": "2026-06-30",
-          "filed": "2026-07-31",
-          "accession": "0001018724-26-000026",
+          "value": 28076000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-30",
+          "accession": "0001018724-26-000040",
           "concept": "OperatingIncomeLoss",
           "unit": "USD"
         },
         "netIncome": {
-          "value": 62647000000,
-          "start": "2026-04-01",
-          "end": "2026-06-30",
-          "filed": "2026-07-31",
-          "accession": "0001018724-26-000026",
+          "value": 20685000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-30",
+          "accession": "0001018724-26-000040",
           "concept": "NetIncomeLoss",
           "unit": "USD"
         },
         "operatingCashFlow": {
-          "value": 161403000000,
-          "start": "2025-07-01",
-          "end": "2026-06-30",
-          "filed": "2026-07-31",
-          "accession": "0001018724-26-000026",
+          "value": 168300000000,
+          "start": "2025-10-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-30",
+          "accession": "0001018724-26-000040",
           "concept": "NetCashProvidedByUsedInOperatingActivities",
           "unit": "USD"
         },
         "capitalExpenditure": null,
         "cash": {
-          "value": 78213000000,
+          "value": 55783000000,
           "start": null,
-          "end": "2026-06-30",
-          "filed": "2026-07-31",
-          "accession": "0001018724-26-000026",
+          "end": "2026-09-30",
+          "filed": "2026-10-30",
+          "accession": "0001018724-26-000040",
           "concept": "CashAndCashEquivalentsAtCarryingValue",
           "unit": "USD"
         },
         "shares": {
-          "value": 10783000000,
+          "value": 10811000000,
           "start": null,
-          "end": "2026-06-30",
-          "filed": "2026-07-31",
-          "accession": "0001018724-26-000026",
+          "end": "2026-09-30",
+          "filed": "2026-10-30",
+          "accession": "0001018724-26-000040",
           "concept": "CommonStockSharesOutstanding",
           "unit": "shares"
         }
       },
       "market": {
-        "observedAtUtc": "2026-09-24T12:54:01+00:00",
-        "price": 246.16,
+        "observedAtUtc": "2026-11-13T21:00:00+00:00",
+        "price": 266.66,
         "currency": "USD"
       }
     },
@@ -505,79 +509,89 @@
     {
       "ticker": "FISV",
       "company": "Fiserv, Inc.",
-      "analysisAsOf": "2026-08-24",
+      "analysisAsOf": "2026-11-14",
+      "checkedAtUtc": "2026-11-14T12:22:52.448673+00:00",
+      "sourceMethod": "SEC full statement and company release; exact accession XBRL fields",
       "statement": {
         "form": "10-Q",
-        "filed": "2026-08-07",
-        "periodEnd": "2026-06-30",
-        "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000031/fisv-20260630.htm"
+        "filed": "2026-11-04",
+        "periodEnd": "2026-09-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000042/fisv-20260930.htm"
       },
       "latestFiling": {
-        "form": "8-K",
-        "filed": "2026-09-22",
-        "url": "https://www.sec.gov/Archives/edgar/data/798354/000119312526397250/d215103d8k.htm"
+        "form": "10-Q",
+        "filed": "2026-11-04",
+        "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000042/fisv-20260930.htm"
       },
-      "newerFilingNeedsReview": true,
+      "newerFilingNeedsReview": false,
       "fields": {
         "revenue": {
-          "value": 5292000000,
-          "start": "2026-04-01",
-          "end": "2026-06-30",
-          "filed": "2026-08-07",
-          "accession": "0000798354-26-000031",
+          "value": 5196000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0000798354-26-000042",
           "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
           "unit": "USD"
         },
         "operatingIncome": {
-          "value": 1015000000,
-          "start": "2026-04-01",
-          "end": "2026-06-30",
-          "filed": "2026-08-07",
-          "accession": "0000798354-26-000031",
+          "value": -5494000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0000798354-26-000042",
           "concept": "OperatingIncomeLoss",
           "unit": "USD"
         },
         "netIncome": {
-          "value": 627000000,
-          "start": "2026-04-01",
-          "end": "2026-06-30",
-          "filed": "2026-08-07",
-          "accession": "0000798354-26-000031",
+          "value": -5941000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0000798354-26-000042",
           "concept": "NetIncomeLoss",
           "unit": "USD"
         },
         "operatingCashFlow": {
-          "value": 2082000000,
+          "value": 3094000000,
           "start": "2026-01-01",
-          "end": "2026-06-30",
-          "filed": "2026-08-07",
-          "accession": "0000798354-26-000031",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0000798354-26-000042",
           "concept": "NetCashProvidedByUsedInOperatingActivities",
           "unit": "USD"
         },
         "capitalExpenditure": {
-          "value": 956000000,
+          "value": 1438000000,
           "start": "2026-01-01",
-          "end": "2026-06-30",
-          "filed": "2026-08-07",
-          "accession": "0000798354-26-000031",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0000798354-26-000042",
           "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
           "unit": "USD"
         },
         "cash": {
-          "value": 627000000,
+          "value": 545000000,
           "start": null,
-          "end": "2026-06-30",
-          "filed": "2026-08-07",
-          "accession": "0000798354-26-000031",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0000798354-26-000042",
           "concept": "CashAndCashEquivalentsAtCarryingValue",
           "unit": "USD"
         },
-        "shares": null
+        "shares": {
+          "value": 531800000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-11-04",
+          "accession": "0000798354-26-000042",
+          "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
       },
       "market": {
-        "observedAtUtc": "2026-09-24T12:52:10+00:00",
-        "price": 46.05,
+        "observedAtUtc": "2026-11-13T21:00:00+00:00",
+        "price": 63.78,
         "currency": "USD"
       }
     },
@@ -1164,96 +1178,189 @@
       }
     },
     {
-      "ticker": "MU",
-      "company": "Micron Technology, Inc.",
-      "analysisAsOf": "2026-08-24",
+      "ticker": "MSFT",
+      "company": "Microsoft Corporation",
+      "analysisAsOf": "2026-11-14",
+      "checkedAtUtc": "2026-11-14T12:22:52.448673+00:00",
+      "sourceMethod": "SEC full statement and company release; exact accession XBRL fields",
       "statement": {
         "form": "10-Q",
-        "filed": "2026-06-25",
-        "periodEnd": "2026-05-28",
-        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000015/mu-20260528.htm"
+        "filed": "2026-10-28",
+        "periodEnd": "2026-09-30",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm"
       },
       "latestFiling": {
-        "form": "8-K",
-        "filed": "2026-08-26",
-        "url": "https://www.sec.gov/Archives/edgar/data/723125/000110465926101067/tm2624017d1_8k.htm"
+        "form": "4",
+        "filed": "2026-11-12",
+        "url": "https://www.sec.gov/Archives/edgar/data/789019/000078901926000234/xslF345X06/form4.xml"
       },
       "newerFilingNeedsReview": true,
       "fields": {
         "revenue": {
-          "value": 41456000000,
-          "start": "2026-02-27",
-          "end": "2026-05-28",
-          "filed": "2026-06-25",
-          "accession": "0000723125-26-000015",
+          "value": 92279000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
+          "accession": "0001193125-26-436133",
           "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
           "unit": "USD"
         },
         "operatingIncome": {
-          "value": 33318000000,
-          "start": "2026-02-27",
-          "end": "2026-05-28",
-          "filed": "2026-06-25",
-          "accession": "0000723125-26-000015",
+          "value": 45915000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
+          "accession": "0001193125-26-436133",
           "concept": "OperatingIncomeLoss",
           "unit": "USD"
         },
         "netIncome": {
-          "value": 28243000000,
-          "start": "2026-02-27",
-          "end": "2026-05-28",
-          "filed": "2026-06-25",
-          "accession": "0000723125-26-000015",
+          "value": 36629000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
+          "accession": "0001193125-26-436133",
           "concept": "NetIncomeLoss",
           "unit": "USD"
         },
         "operatingCashFlow": {
-          "value": 45702000000,
-          "start": "2025-08-29",
-          "end": "2026-05-28",
-          "filed": "2026-06-25",
-          "accession": "0000723125-26-000015",
+          "value": 58000000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
+          "accession": "0001193125-26-436133",
           "concept": "NetCashProvidedByUsedInOperatingActivities",
           "unit": "USD"
         },
         "capitalExpenditure": {
-          "value": 19602000000,
-          "start": "2025-08-29",
-          "end": "2026-05-28",
-          "filed": "2026-06-25",
-          "accession": "0000723125-26-000015",
+          "value": 39367000000,
+          "start": "2026-07-01",
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
+          "accession": "0001193125-26-436133",
           "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
           "unit": "USD"
         },
         "cash": {
-          "value": 24995000000,
+          "value": 20281000000,
           "start": null,
-          "end": "2026-05-28",
-          "filed": "2026-06-25",
-          "accession": "0000723125-26-000015",
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
+          "accession": "0001193125-26-436133",
           "concept": "CashAndCashEquivalentsAtCarryingValue",
           "unit": "USD"
         },
         "shares": {
-          "value": 1129000000,
+          "value": 7427000000,
           "start": null,
-          "end": "2026-05-28",
-          "filed": "2026-06-25",
-          "accession": "0000723125-26-000015",
+          "end": "2026-09-30",
+          "filed": "2026-10-28",
+          "accession": "0001193125-26-436133",
           "concept": "CommonStockSharesOutstanding",
           "unit": "shares"
         }
       },
       "market": {
-        "observedAtUtc": "2026-09-24T12:53:47+00:00",
-        "price": 1048.1176,
+        "observedAtUtc": "2026-11-13T21:00:01+00:00",
+        "price": 523.88,
+        "currency": "USD"
+      }
+    },
+    {
+      "ticker": "MU",
+      "company": "Micron Technology, Inc.",
+      "analysisAsOf": "2026-11-14",
+      "checkedAtUtc": "2026-11-14T12:22:52.448673+00:00",
+      "sourceMethod": "SEC full statement and company release; exact accession XBRL fields",
+      "statement": {
+        "form": "10-K",
+        "filed": "2026-10-09",
+        "periodEnd": "2026-09-03",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000023/mu-20260903.htm"
+      },
+      "latestFiling": {
+        "form": "144",
+        "filed": "2026-11-12",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000195004726011002/xsl144X01/primary_doc.xml"
+      },
+      "newerFilingNeedsReview": true,
+      "fields": {
+        "revenue": {
+          "value": 133188000000,
+          "start": "2025-08-29",
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "accession": "0000723125-26-000023",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD"
+        },
+        "operatingIncome": {
+          "value": 99340000000,
+          "start": "2025-08-29",
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "accession": "0000723125-26-000023",
+          "concept": "OperatingIncomeLoss",
+          "unit": "USD"
+        },
+        "netIncome": {
+          "value": 84969000000,
+          "start": "2025-08-29",
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "accession": "0000723125-26-000023",
+          "concept": "NetIncomeLoss",
+          "unit": "USD"
+        },
+        "operatingCashFlow": {
+          "value": 89675000000,
+          "start": "2025-08-29",
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "accession": "0000723125-26-000023",
+          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD"
+        },
+        "capitalExpenditure": {
+          "value": 30712000000,
+          "start": "2025-08-29",
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "accession": "0000723125-26-000023",
+          "concept": "PaymentsToAcquirePropertyPlantAndEquipment",
+          "unit": "USD"
+        },
+        "cash": {
+          "value": 38364000000,
+          "start": null,
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "accession": "0000723125-26-000023",
+          "concept": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD"
+        },
+        "shares": {
+          "value": 1131000000,
+          "start": null,
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "accession": "0000723125-26-000023",
+          "concept": "CommonStockSharesOutstanding",
+          "unit": "shares"
+        }
+      },
+      "market": {
+        "observedAtUtc": "2026-11-13T21:00:01+00:00",
+        "price": 778.31,
         "currency": "USD"
       }
     },
     {
       "ticker": "NVDA",
       "company": "NVIDIA Corporation",
-      "analysisAsOf": "2026-08-26",
+      "analysisAsOf": "2026-11-14",
+      "checkedAtUtc": "2026-11-14T12:22:52.448673+00:00",
+      "sourceMethod": "SEC full statement and company release; exact accession XBRL fields",
       "statement": {
         "form": "10-Q",
         "filed": "2026-08-26",
@@ -1262,8 +1369,8 @@
       },
       "latestFiling": {
         "form": "8-K",
-        "filed": "2026-09-03",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm"
+        "filed": "2026-11-12",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
       },
       "newerFilingNeedsReview": true,
       "fields": {
@@ -1313,11 +1420,19 @@
           "concept": "CashAndCashEquivalentsAtCarryingValue",
           "unit": "USD"
         },
-        "shares": null
+        "shares": {
+          "value": 24285000000,
+          "start": "2026-04-27",
+          "end": "2026-07-26",
+          "filed": "2026-08-26",
+          "accession": "0001045810-26-000075",
+          "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
+          "unit": "shares"
+        }
       },
       "market": {
-        "observedAtUtc": "2026-09-24T12:54:00+00:00",
-        "price": 223.1562,
+        "observedAtUtc": "2026-11-13T21:00:01+00:00",
+        "price": 162.85,
         "currency": "USD"
       }
     },

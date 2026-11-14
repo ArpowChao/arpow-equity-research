@@ -22,10 +22,12 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
   <section class="shell section">
     <p style="background:#edf4ff;border-left:4px solid #2762be;padding:14px 20px;line-height:1.65"><strong>基本面新證據已核對：</strong>全站個股的最新 SEC 申報與標準化財務欄位，請看 <a href={`${base}fundamentals/`}>全站基本面核對 ↗</a>。原研究估值仍屬各自標示日期的快照，未因新行情自動重算。</p>
     <p class="card" style="padding:18px 22px"><strong>新產業觀察｜資安與AI安全：</strong><a class="link" href={`${base}sectors/cybersecurity-2026-11-01/`}>大、中、小盤候選與併購排除名單 ↗</a>。2026-11-01產業初篩，非合理價或買入清單。</p>
+    <p class="card" style="padding:18px 22px"><strong>11/14六股雙軌研究：</strong><a class="link" href={`${base}comparisons/six-2026-11-14/`}>MU／FISV／AMD／NVDA／MSFT／AMZN：正常成長與價值股壓力比較 ↗</a>。統一11/13正規盤收盤；遠期價值與今日現值分開。</p>
     <div class="section-head"><div><div class="eyebrow">Research archive</div><h2>最新個股研究</h2></div><p>最新行情約每15分鐘更新；分析快照與合理價固定保存，不會隨行情自動改寫。</p></div>
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
         const upside = ((r.snapshot.baseFairValue / r.snapshot.price - 1) * 100);
+        const dual = 'dualTrack' in r && Boolean(r.dualTrack);
         const rpd = r.ticker==='RPD' && r.asOf>='2026-11-11';
         const lulu = r.ticker==='LULU' && r.asOf>='2026-11-09';
         const app = r.ticker==='APP' && r.asOf>='2026-11-05';
@@ -33,12 +35,12 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         const pltr = r.ticker==='PLTR' && r.asOf>='2026-11-04';
         const audit = r.ticker === 'INTC' && r.asOf >= '2026-10-24';
         return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue}>
-          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{rpd || app || amd || lulu ? 'NTM經濟模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '最新研究' : '封存快照'} · {r.asOf}</span></div>
+          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{dual ? '雙軌估值' : rpd || app || amd || lulu ? 'NTM經濟模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '最新研究' : '封存快照'} · {r.asOf}</span></div>
           <h3>{r.company}</h3><p>{r.thesis}</p>
           <div class="report-numbers">
             <div class="live-cell"><small>最新行情 <b data-card-status>讀取中</b></small><strong data-card-live-price>—</strong><em data-card-live-gap>正在取得行情…</em></div>
-            <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05盤中10:20 EST' : amd ? '11/03盤後19:59 EST' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
-            <div><small>{rpd || app || amd || lulu ? 'NTM經濟基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
+            <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05盤中10:20 EST' : amd ? '11/03盤後19:59 EST' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
+            <div><small>{dual || rpd || app || amd || lulu ? 'NTM經濟基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
           </div>
           <span class="open">開啟完整研究 →</span>
         </a>

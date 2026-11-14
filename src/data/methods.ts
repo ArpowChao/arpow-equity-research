@@ -1,4 +1,6 @@
+import { batchMethods } from './methods.batch.generated';
 export const methods = [
+  ...batchMethods,
   {
     slug:'rapid7-economic-ntm', title:'Rapid7：核心ARR修復、SBC與還債後經濟盈餘',
     summary:'先分清核心與非核心ARR，再保留股票／現金薪酬、重整與還債後利息，不以7倍調整EPS直接宣稱便宜。',
