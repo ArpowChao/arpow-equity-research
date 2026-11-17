@@ -39,7 +39,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           <h3>{r.company}</h3><p>{r.thesis}</p>
           <div class="report-numbers">
             <div class="live-cell"><small>最新行情 <b data-card-status>讀取中</b></small><strong data-card-live-price>—</strong><em data-card-live-gap>正在取得行情…</em></div>
-            <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05盤中10:20 EST' : amd ? '11/03盤後19:59 EST' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
+            <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{r.ticker==='NVDA' && r.asOf==='2026-11-18' ? '11/17正規盤收盤' : dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05盤中10:20 EST' : amd ? '11/03盤後19:59 EST' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
             <div><small>{dual || rpd || app || amd || lulu ? 'NTM經濟基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
           </div>
           <span class="open">開啟完整研究 →</span>

@@ -1,0 +1,956 @@
+{
+  "asOf": "2026-11-18",
+  "priceDate": "2026-11-17",
+  "results": [
+    {
+      "report": {
+        "ticker": "NVDA",
+        "company": "NVIDIA",
+        "asOf": "2026-11-18",
+        "status": "current",
+        "currency": "USD",
+        "priceMeta": {
+          "asOf": "2026-11-17美東正規盤收盤；11/18共同研究快照，非即時",
+          "marketState": "closed",
+          "observedAtUtc": "2026-11-17T21:00:00+00:00",
+          "source": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1y&interval=1d"
+        },
+        "snapshot": {
+          "price": 155.46,
+          "baseFairValue": 245.40702479338844,
+          "bear": 118.4,
+          "base": 245.40702479338844,
+          "bull": 381.71354166666663,
+          "fairRange": [
+            220.87,
+            269.95
+          ],
+          "marginOfSafety": [
+            184.06,
+            208.6
+          ]
+        },
+        "valuation": {
+          "type": "economic-pe",
+          "earnings": 12.270351239669422,
+          "baseMultiple": 20,
+          "bearMultiple": 14,
+          "bullMultiple": 25
+        },
+        "chart": "/charts/nvda-analysis-2026-11-18.png",
+        "thesis": "營收超標，但Q4毛利下修，信用支持與供應承諾擴大 以11/17正規收盤155.46美元作估值快照；盤後162.74美元為18:20:40美東另一快照。5750億美元收入、71.5%毛利與20倍條件基準約245.41美元，表面有折讓，但不是已證實公平價。四年低成長壓力不支持現價，須追毛利、收現、信用與治理。",
+        "metrics": [
+          {
+            "label": "FY2027 Q3（8-K財報後暫定版；完整10-Q尚未發布）營收／年增",
+            "value": "115.84十億美元／103.2%",
+            "note": "財季截至2026-10-25；不是所有公司同一財季"
+          },
+          {
+            "label": "GAAP營業利益／淨利",
+            "value": "77.52十億美元／65.29十億美元",
+            "note": "原始報告數字；減損、投資利益與正常化調整另述"
+          },
+          {
+            "label": "GAAP／公司調整EPS",
+            "value": "2.70／2.68",
+            "note": "美元／股；無公司調整口徑時不自行補造"
+          },
+          {
+            "label": "TTM營收",
+            "value": "361.81十億美元",
+            "note": "壓力測試收入起點；不把峰值單季乘四當成TTM"
+          },
+          {
+            "label": "TTM OCF／CapEx／FCF",
+            "value": "158.86十億美元／10.29十億美元／148.57十億美元",
+            "note": "財務附註說明毛額／淨額及資本化軟體；不是所有公司同一定義"
+          },
+          {
+            "label": "TTM FCF收益率／SBC",
+            "value": "3.97%／7.67十億美元",
+            "note": "市值代理＝收盤價×最新實際股數；SBC不在此機械扣一次"
+          },
+          {
+            "label": "現金短投／有息債務",
+            "value": "53.51十億美元／32.37十億美元",
+            "note": "同一資產負債表日；結算現金、客戶存款及租賃另拆"
+          },
+          {
+            "label": "實際／季度稀釋股數",
+            "value": "24,100.00／24,186.00百萬股",
+            "note": "實際基本股供市值代理；加權稀釋股不是當日已發股"
+          }
+        ],
+        "drivers": [
+          "Q3營收超過先前1080億美元±2%展望上緣，需求並未由本季數字證實崩落。",
+          "Rubin、Vera CPU與Blackwell Ultra共同擴展部署。",
+          "Q4未納入中國資料中心運算收入，部分政策上行未預放入財測。",
+          "Q3 OCF與FCF較Q2改善，仍有資金自籌能力。"
+        ],
+        "risks": [
+          "毛利71–72%指引低於Q3約74.8%，新增收入的獲利率不能永久固定。",
+          "供應承諾擴大、長約價格與記憶體成本有時間不對稱。",
+          "DSO64天、應收集中與客戶信用支持使會計盈餘不等於現金。",
+          "5180億美元跨期承諾、320億條件協議與1180億擔保性質不同，但都增加資本配置複雜度。",
+          "CEO接班、獨立調查及出口政策可能同時影響需求與估值倍數。",
+          "完整Q3 10-Q與完整法說問答未在本稿初始階段確認；後續可能新增重要細節。"
+        ],
+        "sources": [
+          {
+            "label": "11/17官方Q3業績及Q4指引",
+            "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
+          },
+          {
+            "label": "SEC 8-K附件99.2：CFO評論、毛利與承諾",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm"
+          },
+          {
+            "label": "SEC 8-K附件99.3：未經審計補充財務表",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/supplementalfinancialinfor.htm"
+          },
+          {
+            "label": "FY2026完整10-K：TTM重建年度基數",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+          },
+          {
+            "label": "最新8-K本體與附件目錄",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm"
+          },
+          {
+            "label": "11/17董事會國安與出口管制監督委員會",
+            "url": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee"
+          },
+          {
+            "label": "11/12官方CEO交接",
+            "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition"
+          },
+          {
+            "label": "11/8獨立調查聲明：不等於已確認違規",
+            "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors"
+          },
+          {
+            "label": "Yahoo日線：11/17正規收盤155.46",
+            "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1y&interval=1d"
+          },
+          {
+            "label": "Yahoo分鐘線：盤後162.74、18:20:40美東快照",
+            "url": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1d&interval=1m&includePrePost=true"
+          },
+          {
+            "label": "FY27Q2完整10-Q封面：8/21基本股數代理",
+            "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+          },
+          {
+            "label": "公開法說短片／現場報導，非完整官方問答",
+            "url": "https://finance.yahoo.com/video/nvidia-interim-ceo-colette-kress-speaks-on-quarterly-revenue-hitting-116b-224125904.html"
+          },
+          {
+            "label": "公開法說短片／現場報導，非完整官方問答",
+            "url": "https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html"
+          }
+        ],
+        "scenarios": [
+          {
+            "label": "悲觀",
+            "assumption": "收入480,000m × 毛利65.0% − 費用53,000m；淨其他0m；稅20.0%；股數24,500.0m；EPS8.4571 × 14倍",
+            "value": 118.4,
+            "condition": "Rubin爬坡後毛利未恢復、客戶延後接收、收入降速，治理與信用成本壓低倍數；不含極端全面禁售或無限法律損失。"
+          },
+          {
+            "label": "基準",
+            "assumption": "收入575,000m × 毛利71.5% − 費用50,000m；淨其他1,000m；稅18.0%；股數24,200.0m；EPS12.2704 × 20倍",
+            "value": 245.40702479338844,
+            "condition": "未來四季收入由Q4約1300億美元往後增長，全年毛利停在低70%而非恢復75%，保留SBC及基建研發成本；未另加全部投資市值。"
+          },
+          {
+            "label": "樂觀",
+            "assumption": "收入660,000m × 毛利75.0% − 費用55,000m；淨其他1,500m；稅17.0%；股數24,000.0m；EPS15.2685 × 25倍",
+            "value": 381.71354166666663,
+            "condition": "Rubin與Vera放量、良率及組合帶動毛利回75%、DSO改善、信用損失未顯著發生，治理不確定性下降。"
+          }
+        ],
+        "analysis": [
+          {
+            "kicker": "Business",
+            "title": "公司怎麼賺錢",
+            "body": "NVIDIA以AI運算晶片、Vera CPU、網路與系統平台，結合CUDA及開發生態賺錢。Q3資料中心約1076億美元，Edge約82億美元；這是市場平台分類，不能與法定Compute & Networking／Graphics分部交叉加總。"
+          },
+          {
+            "kicker": "Change",
+            "title": "營收超標，但Q4毛利下修，信用支持與供應承諾擴大",
+            "body": "需求仍強，真正要問的是：Rubin放量能否在較低毛利下轉成現金，而不是由延長付款、採購承諾與客戶融資支持撐起成長？Q4多一週，收入指引季增12.2%，換算每週約增4.2%，不是相同週數的加速度。"
+          },
+          {
+            "kicker": "Financial quality",
+            "title": "報告盈餘、現金流與資本結構要分開",
+            "body": "除另標示，財務金額百萬美元、股數百萬股；Q3截至2026/10/25，原始8-K附件為未經審計資料。完整Q3 10-Q尚未發布，不能因此斷言已逾期或需要重編。；Q3收入115844，毛利86676，費用9156，營業利益77520，淨其他1497，稅前79017，所得稅13730，GAAP淨利65287、稀釋EPS2.70。公司non-GAAP淨利64870、EPS2.68；2027財年non-GAAP已保留SBC，不能再加回一次。；Q3 GAAP→non-GAAP：65287−881稅前調整＋464稅影響＝64870；投資評價利益1767及衍生／股權法等項目不永久年化。本業EPS季增約21%，GAAP季增約10%，因前季投資利益較高。；Q3 OCF48253，購置設備及無形資產4422、相關本金54，依公司定義FCF43777。OCF／GAAP淨利約73.9%，較Q2改善，但公司指出現金稅支付時序影響，不能單季視為永久改善。；TTM＝FY26＋FY27九月累計−FY26九月累計：營收215938＋293681−147811＝361808；OCF102718＋122675−66530＝158863；設備／無形10140＋本金151＝10291；公司口徑FCF148572。完整FY原始表重建，不沿用前版小額彙總差異。；TTM SBC6386＋6042−4753＝7675，未機械從FCF再扣，因主盈餘模型保留SBC且未來股數另外假設。FCF也不是全部可分配現金：九月累計購買股權證券58100不列在公司FCF扣項，需評估其資本配置回報。；10/25現金29089＋可交易債券24423＝53512；有息債務32371，同日狹義淨現金21141。上市與非上市股權投資不可全當可自由動用現金，部分有出售限制；租賃另列。；應收81033、DSO64天（Q2 60天），公司解釋為Rubin出貨時點與部分投資等級客戶長約延長付款；不等於已確定壞帳。存貨39724，Q2約31600。兩大直接客戶占應收18%、17%；直接／間接集中不可重複相加。；未來供應及產能承諾390000，Q2為279000，增加主要是多年記憶體採購；FY28供應及產能承諾203000。不是全部當期成本或有息負債。；基礎承諾表：供應390000＋雲端服務28000＋未開始資料中心租賃74000＋股權投資20000＋CapEx6000＝518000，跨多年度；租賃最長20年，部分可能轉讓。；另有neocloud條件式協議32000，須融資、部署及驗收等條件；擔保最大毛額118000屬對方違約才可能付款，並非已支出。其中SB Energy上限105000按建物啟用分階段，首批預期FY29，公司表示迄今未支付擔保款。不能把這些名目額全當當期債務。；已公布／未認列的產品RPO本季補充資料未單獨量化；供應採購承諾、管理層需求敘事與RPO不是同一件事，不自行補訂單總額。；股數：市值與FCF收益率暫用最近完整10-Q封面8/21的24100基本股代理，不是11/17即時股數；Q3稀釋加權24186是另一口徑；NTM基準24200。；11/8董事會啟動獨立調查，11/12公布黃仁勳11/11辭任；11/17成立國安與出口管制監督委員會。董事會聲明不是已查證違法、技術外洩或財報錯誤的結論。；Q4收入130000±3%且多一週，GAAP／non-GAAP毛利71–72%、費用11000／10700；不預設中國資料中心運算收入。全年稅率16–18%，不含離散項目。；公開法說片段將FY28營收成長預期由70%上修約75%，為不同期間的前瞻管理層目標。本基準未全數採信；客戶資金與基建到位仍須驗證。若示意FY28各季均同比75%，NTM收入130000＋293681×1.75＝643941.75；毛利71.5%、費用52000、淨其他1000、稅18%、24200百萬股，EPS13.872853×20倍＝277.457064美元。這是額外路徑敏感度，不是公司公布的NTM收入或本稿基準。"
+          },
+          {
+            "kicker": "Model assumptions",
+            "title": "正常情境是含成本的分析假設，不是公司指引",
+            "body": "由收入、毛利、費用、淨其他、稅與未來稀釋股數重建。基準收入5750億美元、毛利71.5%、費用500億、正常淨其他10億、稅18%、242億股、20倍。保留SBC，不永久年化投資評價利益；倍數因治理、信用與週期風險較舊版22倍保守。未做精算信用損失或完整SOTP/DCF，不把此值當已驗證公平值。 公開法說片段將FY28營收成長預期由70%上修約75%，為不同期間的前瞻管理層目標。本基準未全數採信；客戶資金與基建到位仍須驗證。若示意FY28各季均同比75%，NTM收入130000＋293681×1.75＝643941.75；毛利71.5%、費用52000、淨其他1000、稅18%、24200百萬股，EPS13.872853×20倍＝277.457064美元。這是額外路徑敏感度，不是公司公布的NTM收入或本稿基準。"
+          },
+          {
+            "kicker": "Version bridge",
+            "title": "與舊版的差異，不等於公司剛下修財測",
+            "body": "上一版2026-11-14快照162.85美元、基準231.33；本次統一11/17收盤155.46、基準245.41。本次重新由營收、毛利、持續費用、稅、股數與倍數推導，正常化口徑及假設也可能不同，不把模型方法造成的調整誤稱公司新增上修／下修。舊EPS／倍數：10.514897119341565／22；新：12.270351／20。前版採Q2資料；本版更新11/17公布Q3與Q4指引，完整Q3 10-Q仍待發布。基準收入4800→5750億美元、毛利73.5%→71.5%、費用420→500億、P/E22→20；價值變化不能只歸因營收。"
+          },
+          {
+            "kicker": "Value-stock stress",
+            "title": "如果最後只剩低成長價值股，現在還值得嗎？",
+            "body": "從最新TTM立即降為收入年增10%，毛利壓至60%、費用率12%、正常稅22%、年稀釋0.5%；四年後15倍P/E，要求報酬10%。不是先兌現高速成長再降速，不是最壞底，不含中途股利。另列零成長與10倍對照。"
+          },
+          {
+            "kicker": "Next checks",
+            "title": "什麼證據會改變判斷",
+            "body": "下一至兩季先看毛利是否在低70%止穩；這是觀察窗口，不是已知見頂日期。；接下來兩至四季看收入、OCF、DSO與客戶付款是否同步改善。；追完整10-Q的承諾、信用損失、客戶集中、後續事件與控制披露。；董事會調查／接班與出口政策須逐份官方更新；不以傳聞推定違法。；觀察下一正規交易能否維持財報後反應，不把盤後一筆價格當已修復長期趨勢。"
+          },
+          {
+            "kicker": "Call coverage",
+            "title": "法說與資料取得層級",
+            "body": "已讀官方CFO財務評論與完整補充表；核對公開法說片段文字及現場報導，未取得官方完整Q&A／音訊。影音片段00:48稱Rubin首季近200億美元；01:18將FY28營收成長預期由70%上修約75%，仍是管理層前瞻目標。 未核對項目不代表管理層沒有回答；未取得完整官方Q&A／音訊。。未解問題：完整毛利回復時程與成本轉嫁；延長付款與信用支持的損失／風險回報；治理調查結果與長期CEO安排"
+          },
+          {
+            "kicker": "Limits",
+            "title": "本次沒有證明的事",
+            "body": "最新已公布為FY27Q3，與11/14仍Q2的舊版不同；舊版沒有預知本季數字。；完整Q3 10-Q尚未在本次SEC submissions出現，本次用8-K三份附件與FY26 10-K重建，來源層級已明示。；行情來自Yahoo單一資料供應商，正規155.46與盤後162.74分時點；fulldayChangePercent未沿用，因比較基準不同。；市值與FCF收益率使用8/21封面基本股代理，非11/17即時股數；未將季度加權稀釋誤作實際。；供應、雲端、租賃、投資及擔保不能相加成當期債務；未精算不同違約情境的法律與信用損失。；本次是營運情境與四年壓力，不是已完成長期SOTP或全現金流DCF，合理區間只是基準附近倍數敏感度。；不能從單季毛利下修推定需求已見頂，亦不能以會計毛利高就否認供應鏈資本風險。；本次未取得完整官方法說音訊與全部問答；財務數字以公司與SEC為準，不以媒體的單位誤植覆蓋原始表。"
+          }
+        ],
+        "modelNotes": "未來12個月近似營運情境（從FY27Q4起）；暫定模型，不是公司全年指引；由收入、毛利、費用、淨其他、稅與未來稀釋股數重建。基準收入5750億美元、毛利71.5%、費用500億、正常淨其他10億、稅18%、242億股、20倍。保留SBC，不永久年化投資評價利益；倍數因治理、信用與週期風險較舊版22倍保守。未做精算信用損失或完整SOTP/DCF，不把此值當已驗證公平值。 公開法說片段將FY28營收成長預期由70%上修約75%，為不同期間的前瞻管理層目標。本基準未全數採信；客戶資金與基建到位仍須驗證。若示意FY28各季均同比75%，NTM收入130000＋293681×1.75＝643941.75；毛利71.5%、費用52000、淨其他1000、稅18%、24200百萬股，EPS13.872853×20倍＝277.457064美元。這是額外路徑敏感度，不是公司公布的NTM收入或本稿基準。。百萬美元／百萬股：EPS＝(收入×毛利率−費用＋淨其他)×(1−稅)÷股數；×P/E。基準(575000×0.715−50000＋1000)×0.8200000000000001÷24200×20＝245.40702479。倍數與折讓為條件假設，非保證買點。",
+        "beginner": {
+          "industry": "FY2027 Q3（8-K財報後暫定版；完整10-Q尚未發布）｜雙軌估值",
+          "earns": "NVIDIA以AI運算晶片、Vera CPU、網路與系統平台，結合CUDA及開發生態賺錢。Q3資料中心約1076億美元，Edge約82億美元；這是市場平台分類，不能與法定Compute & Networking／Graphics分部交叉加總。",
+          "keyQuestion": "需求仍強，真正要問的是：Rubin放量能否在較低毛利下轉成現金，而不是由延長付款、採購承諾與客戶融資支持撐起成長？Q4多一週，收入指引季增12.2%，換算每週約增4.2%，不是相同週數的加速度。",
+          "watch": [
+            {
+              "name": "Hyperscale資料中心",
+              "why": "Q3約601億美元，是大客戶AI算力擴建主引擎。",
+              "good": "平台部署轉成驗收、收入與現金，客戶AI付費收入追上CapEx。",
+              "warning": "驗收延後、付款拉長，或客戶自研晶片壓低增量需求。"
+            },
+            {
+              "name": "AI Clouds、工業與企業",
+              "why": "Q3約475億美元，年增195%；含不同信用條件的客群，不能全視為neocloud。",
+              "good": "更多終端客戶付費、較少依賴NVIDIA提供信用支持。",
+              "warning": "融資到位但終端使用或付費不足，擔保、資金承諾與回款風險上升。"
+            },
+            {
+              "name": "Rubin／Vera產品切換",
+              "why": "新平台最快放量，同時帶來記憶體、系統與良率成本。",
+              "good": "放量後毛利止穩、存貨周轉改善、供應承諾由實際銷售消化。",
+              "warning": "收入增長但毛利持續下修，或以延長客戶付款換取交付。"
+            },
+            {
+              "name": "CUDA、網路與完整平台",
+              "why": "軟硬整合提高客戶轉換成本，不能只把公司當單顆GPU供應商。",
+              "good": "跨架構部署、推論效率與客戶投入回報持續領先。",
+              "warning": "競爭者、自研ASIC或開放軟體降低平台議價力；未披露獨立CUDA收入不自行估造。"
+            },
+            {
+              "name": "Edge Computing",
+              "why": "Q3約82億美元、年增42%，涵蓋工作站與邊緣應用，但規模仍小於資料中心。",
+              "good": "實際企業／物理AI採用與產品銷售提升。",
+              "warning": "記憶體與系統價格上升抑制消費PC需求，不能把展示當大額獲利。"
+            }
+          ],
+          "terms": [
+            "GAAP",
+            "營收",
+            "毛利率",
+            "營業利益率",
+            "SBC",
+            "OCF",
+            "CapEx",
+            "FCF",
+            "稀釋股數",
+            "正常化盈餘",
+            "P/E"
+          ]
+        },
+        "dualTrack": {
+          "method": "nvda-dual-track-20261118",
+          "verdict": "以11/17正規收盤155.46美元作估值快照；盤後162.74美元為18:20:40美東另一快照。5750億美元收入、71.5%毛利與20倍條件基準約245.41美元，表面有折讓，但不是已證實公平價。四年低成長壓力不支持現價，須追毛利、收現、信用與治理。",
+          "period": "未來12個月近似營運情境（從FY27Q4起）；暫定模型，不是公司全年指引",
+          "tailored": {
+            "inputs": {
+              "seedRevenueM": 361808.0,
+              "years": 4,
+              "annualRevenueGrowth": 0.1,
+              "grossMargin": 0.6,
+              "opexRatio": 0.12,
+              "netOtherM": 0,
+              "taxRate": 0.22,
+              "initialSharesM": 24200,
+              "annualDilution": 0.005,
+              "terminalPe": 15,
+              "discountRate": 0.1,
+              "reason": "從最新TTM立即降為收入年增10%，毛利壓至60%、費用率12%、正常稅22%、年稀釋0.5%；四年後15倍P/E，要求報酬10%。不是先兌現高速成長再降速，不是最壞底，不含中途股利。另列零成長與10倍對照。"
+            },
+            "years": [
+              {
+                "year": 1,
+                "revenueM": 397988.80000000005,
+                "grossProfitM": 238793.28000000003,
+                "opexM": 47758.656,
+                "operatingIncomeM": 191034.624,
+                "netIncomeM": 149007.00672,
+                "sharesM": 24320.999999999996,
+                "eps": 6.126680922659431
+              },
+              {
+                "year": 2,
+                "revenueM": 437787.68000000005,
+                "grossProfitM": 262672.608,
+                "opexM": 52534.52160000001,
+                "operatingIncomeM": 210138.0864,
+                "netIncomeM": 163907.707392,
+                "sharesM": 24442.604999999992,
+                "eps": 6.705819915348632
+              },
+              {
+                "year": 3,
+                "revenueM": 481566.44800000015,
+                "grossProfitM": 288939.86880000005,
+                "opexM": 57787.973760000015,
+                "operatingIncomeM": 231151.89504000003,
+                "netIncomeM": 180298.47813120004,
+                "sharesM": 24564.81802499999,
+                "eps": 7.339703389933828
+              },
+              {
+                "year": 4,
+                "revenueM": 529723.0928000001,
+                "grossProfitM": 317833.85568000004,
+                "opexM": 63566.77113600001,
+                "operatingIncomeM": 254267.08454400004,
+                "netIncomeM": 198328.32594432004,
+                "sharesM": 24687.64211512499,
+                "eps": 8.033506197937523
+              }
+            ],
+            "terminalValue": 120.50259296906285,
+            "presentValue": 82.30489240425027,
+            "annualReturn": -0.06169413230920662,
+            "totalReturn": -0.22486431899483572
+          },
+          "common10": {
+            "inputs": {
+              "seedRevenueM": 361808.0,
+              "years": 4,
+              "annualRevenueGrowth": 0.1,
+              "grossMargin": 0.6,
+              "opexRatio": 0.12,
+              "netOtherM": 0,
+              "taxRate": 0.22,
+              "initialSharesM": 24200,
+              "annualDilution": 0.005,
+              "terminalPe": 15,
+              "discountRate": 0.1,
+              "reason": "收入年增改為10.0%、末期P/E改採15倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+            },
+            "years": [
+              {
+                "year": 1,
+                "revenueM": 397988.80000000005,
+                "grossProfitM": 238793.28000000003,
+                "opexM": 47758.656,
+                "operatingIncomeM": 191034.624,
+                "netIncomeM": 149007.00672,
+                "sharesM": 24320.999999999996,
+                "eps": 6.126680922659431
+              },
+              {
+                "year": 2,
+                "revenueM": 437787.68000000005,
+                "grossProfitM": 262672.608,
+                "opexM": 52534.52160000001,
+                "operatingIncomeM": 210138.0864,
+                "netIncomeM": 163907.707392,
+                "sharesM": 24442.604999999992,
+                "eps": 6.705819915348632
+              },
+              {
+                "year": 3,
+                "revenueM": 481566.44800000015,
+                "grossProfitM": 288939.86880000005,
+                "opexM": 57787.973760000015,
+                "operatingIncomeM": 231151.89504000003,
+                "netIncomeM": 180298.47813120004,
+                "sharesM": 24564.81802499999,
+                "eps": 7.339703389933828
+              },
+              {
+                "year": 4,
+                "revenueM": 529723.0928000001,
+                "grossProfitM": 317833.85568000004,
+                "opexM": 63566.77113600001,
+                "operatingIncomeM": 254267.08454400004,
+                "netIncomeM": 198328.32594432004,
+                "sharesM": 24687.64211512499,
+                "eps": 8.033506197937523
+              }
+            ],
+            "terminalValue": 120.50259296906285,
+            "presentValue": 82.30489240425027,
+            "annualReturn": -0.06169413230920662,
+            "totalReturn": -0.22486431899483572
+          },
+          "zeroGrowth": {
+            "inputs": {
+              "seedRevenueM": 361808.0,
+              "years": 4,
+              "annualRevenueGrowth": 0,
+              "grossMargin": 0.6,
+              "opexRatio": 0.12,
+              "netOtherM": 0,
+              "taxRate": 0.22,
+              "initialSharesM": 24200,
+              "annualDilution": 0.005,
+              "terminalPe": 15,
+              "discountRate": 0.1,
+              "reason": "收入年增改為0.0%、末期P/E改採15倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+            },
+            "years": [
+              {
+                "year": 1,
+                "revenueM": 361808.0,
+                "grossProfitM": 217084.8,
+                "opexM": 43416.96,
+                "operatingIncomeM": 173667.84,
+                "netIncomeM": 135460.9152,
+                "sharesM": 24320.999999999996,
+                "eps": 5.569709929690392
+              },
+              {
+                "year": 2,
+                "revenueM": 361808.0,
+                "grossProfitM": 217084.8,
+                "opexM": 43416.96,
+                "operatingIncomeM": 173667.84,
+                "netIncomeM": 135460.9152,
+                "sharesM": 24442.604999999992,
+                "eps": 5.541999930040191
+              },
+              {
+                "year": 3,
+                "revenueM": 361808.0,
+                "grossProfitM": 217084.8,
+                "opexM": 43416.96,
+                "operatingIncomeM": 173667.84,
+                "netIncomeM": 135460.9152,
+                "sharesM": 24564.81802499999,
+                "eps": 5.514427791084768
+              },
+              {
+                "year": 4,
+                "revenueM": 361808.0,
+                "grossProfitM": 217084.8,
+                "opexM": 43416.96,
+                "operatingIncomeM": 173667.84,
+                "netIncomeM": 135460.9152,
+                "sharesM": 24687.64211512499,
+                "eps": 5.4869928269500186
+              }
+            ],
+            "terminalValue": 82.30489240425028,
+            "presentValue": 56.21534895447733,
+            "annualReturn": -0.14699466573564235,
+            "totalReturn": -0.4705719001399056
+          },
+          "uniform10x": {
+            "inputs": {
+              "seedRevenueM": 361808.0,
+              "years": 4,
+              "annualRevenueGrowth": 0.1,
+              "grossMargin": 0.6,
+              "opexRatio": 0.12,
+              "netOtherM": 0,
+              "taxRate": 0.22,
+              "initialSharesM": 24200,
+              "annualDilution": 0.005,
+              "terminalPe": 10,
+              "discountRate": 0.1,
+              "reason": "收入年增改為10.0%、末期P/E改採10倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+            },
+            "years": [
+              {
+                "year": 1,
+                "revenueM": 397988.80000000005,
+                "grossProfitM": 238793.28000000003,
+                "opexM": 47758.656,
+                "operatingIncomeM": 191034.624,
+                "netIncomeM": 149007.00672,
+                "sharesM": 24320.999999999996,
+                "eps": 6.126680922659431
+              },
+              {
+                "year": 2,
+                "revenueM": 437787.68000000005,
+                "grossProfitM": 262672.608,
+                "opexM": 52534.52160000001,
+                "operatingIncomeM": 210138.0864,
+                "netIncomeM": 163907.707392,
+                "sharesM": 24442.604999999992,
+                "eps": 6.705819915348632
+              },
+              {
+                "year": 3,
+                "revenueM": 481566.44800000015,
+                "grossProfitM": 288939.86880000005,
+                "opexM": 57787.973760000015,
+                "operatingIncomeM": 231151.89504000003,
+                "netIncomeM": 180298.47813120004,
+                "sharesM": 24564.81802499999,
+                "eps": 7.339703389933828
+              },
+              {
+                "year": 4,
+                "revenueM": 529723.0928000001,
+                "grossProfitM": 317833.85568000004,
+                "opexM": 63566.77113600001,
+                "operatingIncomeM": 254267.08454400004,
+                "netIncomeM": 198328.32594432004,
+                "sharesM": 24687.64211512499,
+                "eps": 8.033506197937523
+              }
+            ],
+            "terminalValue": 80.33506197937524,
+            "presentValue": 54.869928269500186,
+            "annualReturn": -0.15214493795572515,
+            "totalReturn": -0.4832428793298904
+          },
+          "uniform15x": {
+            "inputs": {
+              "seedRevenueM": 361808.0,
+              "years": 4,
+              "annualRevenueGrowth": 0.1,
+              "grossMargin": 0.6,
+              "opexRatio": 0.12,
+              "netOtherM": 0,
+              "taxRate": 0.22,
+              "initialSharesM": 24200,
+              "annualDilution": 0.005,
+              "terminalPe": 15,
+              "discountRate": 0.1,
+              "reason": "收入年增改為10.0%、末期P/E改採15倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+            },
+            "years": [
+              {
+                "year": 1,
+                "revenueM": 397988.80000000005,
+                "grossProfitM": 238793.28000000003,
+                "opexM": 47758.656,
+                "operatingIncomeM": 191034.624,
+                "netIncomeM": 149007.00672,
+                "sharesM": 24320.999999999996,
+                "eps": 6.126680922659431
+              },
+              {
+                "year": 2,
+                "revenueM": 437787.68000000005,
+                "grossProfitM": 262672.608,
+                "opexM": 52534.52160000001,
+                "operatingIncomeM": 210138.0864,
+                "netIncomeM": 163907.707392,
+                "sharesM": 24442.604999999992,
+                "eps": 6.705819915348632
+              },
+              {
+                "year": 3,
+                "revenueM": 481566.44800000015,
+                "grossProfitM": 288939.86880000005,
+                "opexM": 57787.973760000015,
+                "operatingIncomeM": 231151.89504000003,
+                "netIncomeM": 180298.47813120004,
+                "sharesM": 24564.81802499999,
+                "eps": 7.339703389933828
+              },
+              {
+                "year": 4,
+                "revenueM": 529723.0928000001,
+                "grossProfitM": 317833.85568000004,
+                "opexM": 63566.77113600001,
+                "operatingIncomeM": 254267.08454400004,
+                "netIncomeM": 198328.32594432004,
+                "sharesM": 24687.64211512499,
+                "eps": 8.033506197937523
+              }
+            ],
+            "terminalValue": 120.50259296906285,
+            "presentValue": 82.30489240425027,
+            "annualReturn": -0.06169413230920662,
+            "totalReturn": -0.22486431899483572
+          }
+        }
+      },
+      "calculations": {
+        "ticker": "NVDA",
+        "price": 155.46,
+        "scenarios": [
+          {
+            "key": "bear",
+            "label": "悲觀",
+            "revenueM": 480000,
+            "grossMargin": 0.65,
+            "opexM": 53000,
+            "netOtherM": 0,
+            "taxRate": 0.2,
+            "sharesM": 24500,
+            "pe": 14,
+            "condition": "Rubin爬坡後毛利未恢復、客戶延後接收、收入降速，治理與信用成本壓低倍數；不含極端全面禁售或無限法律損失。",
+            "grossProfitM": 312000.0,
+            "operatingIncomeM": 259000.0,
+            "netIncomeM": 207200.0,
+            "eps": 8.457142857142857,
+            "value": 118.4
+          },
+          {
+            "key": "base",
+            "label": "基準",
+            "revenueM": 575000,
+            "grossMargin": 0.715,
+            "opexM": 50000,
+            "netOtherM": 1000,
+            "taxRate": 0.18,
+            "sharesM": 24200,
+            "pe": 20,
+            "condition": "未來四季收入由Q4約1300億美元往後增長，全年毛利停在低70%而非恢復75%，保留SBC及基建研發成本；未另加全部投資市值。",
+            "grossProfitM": 411125.0,
+            "operatingIncomeM": 361125.0,
+            "netIncomeM": 296942.5,
+            "eps": 12.270351239669422,
+            "value": 245.40702479338844
+          },
+          {
+            "key": "bull",
+            "label": "樂觀",
+            "revenueM": 660000,
+            "grossMargin": 0.75,
+            "opexM": 55000,
+            "netOtherM": 1500,
+            "taxRate": 0.17,
+            "sharesM": 24000,
+            "pe": 25,
+            "condition": "Rubin與Vera放量、良率及組合帶動毛利回75%、DSO改善、信用損失未顯著發生，治理不確定性下降。",
+            "grossProfitM": 495000.0,
+            "operatingIncomeM": 440000.0,
+            "netIncomeM": 366445.0,
+            "eps": 15.268541666666666,
+            "value": 381.71354166666663
+          }
+        ],
+        "tailored": {
+          "inputs": {
+            "seedRevenueM": 361808.0,
+            "years": 4,
+            "annualRevenueGrowth": 0.1,
+            "grossMargin": 0.6,
+            "opexRatio": 0.12,
+            "netOtherM": 0,
+            "taxRate": 0.22,
+            "initialSharesM": 24200,
+            "annualDilution": 0.005,
+            "terminalPe": 15,
+            "discountRate": 0.1,
+            "reason": "從最新TTM立即降為收入年增10%，毛利壓至60%、費用率12%、正常稅22%、年稀釋0.5%；四年後15倍P/E，要求報酬10%。不是先兌現高速成長再降速，不是最壞底，不含中途股利。另列零成長與10倍對照。"
+          },
+          "years": [
+            {
+              "year": 1,
+              "revenueM": 397988.80000000005,
+              "grossProfitM": 238793.28000000003,
+              "opexM": 47758.656,
+              "operatingIncomeM": 191034.624,
+              "netIncomeM": 149007.00672,
+              "sharesM": 24320.999999999996,
+              "eps": 6.126680922659431
+            },
+            {
+              "year": 2,
+              "revenueM": 437787.68000000005,
+              "grossProfitM": 262672.608,
+              "opexM": 52534.52160000001,
+              "operatingIncomeM": 210138.0864,
+              "netIncomeM": 163907.707392,
+              "sharesM": 24442.604999999992,
+              "eps": 6.705819915348632
+            },
+            {
+              "year": 3,
+              "revenueM": 481566.44800000015,
+              "grossProfitM": 288939.86880000005,
+              "opexM": 57787.973760000015,
+              "operatingIncomeM": 231151.89504000003,
+              "netIncomeM": 180298.47813120004,
+              "sharesM": 24564.81802499999,
+              "eps": 7.339703389933828
+            },
+            {
+              "year": 4,
+              "revenueM": 529723.0928000001,
+              "grossProfitM": 317833.85568000004,
+              "opexM": 63566.77113600001,
+              "operatingIncomeM": 254267.08454400004,
+              "netIncomeM": 198328.32594432004,
+              "sharesM": 24687.64211512499,
+              "eps": 8.033506197937523
+            }
+          ],
+          "terminalValue": 120.50259296906285,
+          "presentValue": 82.30489240425027,
+          "annualReturn": -0.06169413230920662,
+          "totalReturn": -0.22486431899483572
+        },
+        "common10": {
+          "inputs": {
+            "seedRevenueM": 361808.0,
+            "years": 4,
+            "annualRevenueGrowth": 0.1,
+            "grossMargin": 0.6,
+            "opexRatio": 0.12,
+            "netOtherM": 0,
+            "taxRate": 0.22,
+            "initialSharesM": 24200,
+            "annualDilution": 0.005,
+            "terminalPe": 15,
+            "discountRate": 0.1,
+            "reason": "收入年增改為10.0%、末期P/E改採15倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+          },
+          "years": [
+            {
+              "year": 1,
+              "revenueM": 397988.80000000005,
+              "grossProfitM": 238793.28000000003,
+              "opexM": 47758.656,
+              "operatingIncomeM": 191034.624,
+              "netIncomeM": 149007.00672,
+              "sharesM": 24320.999999999996,
+              "eps": 6.126680922659431
+            },
+            {
+              "year": 2,
+              "revenueM": 437787.68000000005,
+              "grossProfitM": 262672.608,
+              "opexM": 52534.52160000001,
+              "operatingIncomeM": 210138.0864,
+              "netIncomeM": 163907.707392,
+              "sharesM": 24442.604999999992,
+              "eps": 6.705819915348632
+            },
+            {
+              "year": 3,
+              "revenueM": 481566.44800000015,
+              "grossProfitM": 288939.86880000005,
+              "opexM": 57787.973760000015,
+              "operatingIncomeM": 231151.89504000003,
+              "netIncomeM": 180298.47813120004,
+              "sharesM": 24564.81802499999,
+              "eps": 7.339703389933828
+            },
+            {
+              "year": 4,
+              "revenueM": 529723.0928000001,
+              "grossProfitM": 317833.85568000004,
+              "opexM": 63566.77113600001,
+              "operatingIncomeM": 254267.08454400004,
+              "netIncomeM": 198328.32594432004,
+              "sharesM": 24687.64211512499,
+              "eps": 8.033506197937523
+            }
+          ],
+          "terminalValue": 120.50259296906285,
+          "presentValue": 82.30489240425027,
+          "annualReturn": -0.06169413230920662,
+          "totalReturn": -0.22486431899483572
+        },
+        "zeroGrowth": {
+          "inputs": {
+            "seedRevenueM": 361808.0,
+            "years": 4,
+            "annualRevenueGrowth": 0,
+            "grossMargin": 0.6,
+            "opexRatio": 0.12,
+            "netOtherM": 0,
+            "taxRate": 0.22,
+            "initialSharesM": 24200,
+            "annualDilution": 0.005,
+            "terminalPe": 15,
+            "discountRate": 0.1,
+            "reason": "收入年增改為0.0%、末期P/E改採15倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+          },
+          "years": [
+            {
+              "year": 1,
+              "revenueM": 361808.0,
+              "grossProfitM": 217084.8,
+              "opexM": 43416.96,
+              "operatingIncomeM": 173667.84,
+              "netIncomeM": 135460.9152,
+              "sharesM": 24320.999999999996,
+              "eps": 5.569709929690392
+            },
+            {
+              "year": 2,
+              "revenueM": 361808.0,
+              "grossProfitM": 217084.8,
+              "opexM": 43416.96,
+              "operatingIncomeM": 173667.84,
+              "netIncomeM": 135460.9152,
+              "sharesM": 24442.604999999992,
+              "eps": 5.541999930040191
+            },
+            {
+              "year": 3,
+              "revenueM": 361808.0,
+              "grossProfitM": 217084.8,
+              "opexM": 43416.96,
+              "operatingIncomeM": 173667.84,
+              "netIncomeM": 135460.9152,
+              "sharesM": 24564.81802499999,
+              "eps": 5.514427791084768
+            },
+            {
+              "year": 4,
+              "revenueM": 361808.0,
+              "grossProfitM": 217084.8,
+              "opexM": 43416.96,
+              "operatingIncomeM": 173667.84,
+              "netIncomeM": 135460.9152,
+              "sharesM": 24687.64211512499,
+              "eps": 5.4869928269500186
+            }
+          ],
+          "terminalValue": 82.30489240425028,
+          "presentValue": 56.21534895447733,
+          "annualReturn": -0.14699466573564235,
+          "totalReturn": -0.4705719001399056
+        },
+        "uniform10x": {
+          "inputs": {
+            "seedRevenueM": 361808.0,
+            "years": 4,
+            "annualRevenueGrowth": 0.1,
+            "grossMargin": 0.6,
+            "opexRatio": 0.12,
+            "netOtherM": 0,
+            "taxRate": 0.22,
+            "initialSharesM": 24200,
+            "annualDilution": 0.005,
+            "terminalPe": 10,
+            "discountRate": 0.1,
+            "reason": "收入年增改為10.0%、末期P/E改採10倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+          },
+          "years": [
+            {
+              "year": 1,
+              "revenueM": 397988.80000000005,
+              "grossProfitM": 238793.28000000003,
+              "opexM": 47758.656,
+              "operatingIncomeM": 191034.624,
+              "netIncomeM": 149007.00672,
+              "sharesM": 24320.999999999996,
+              "eps": 6.126680922659431
+            },
+            {
+              "year": 2,
+              "revenueM": 437787.68000000005,
+              "grossProfitM": 262672.608,
+              "opexM": 52534.52160000001,
+              "operatingIncomeM": 210138.0864,
+              "netIncomeM": 163907.707392,
+              "sharesM": 24442.604999999992,
+              "eps": 6.705819915348632
+            },
+            {
+              "year": 3,
+              "revenueM": 481566.44800000015,
+              "grossProfitM": 288939.86880000005,
+              "opexM": 57787.973760000015,
+              "operatingIncomeM": 231151.89504000003,
+              "netIncomeM": 180298.47813120004,
+              "sharesM": 24564.81802499999,
+              "eps": 7.339703389933828
+            },
+            {
+              "year": 4,
+              "revenueM": 529723.0928000001,
+              "grossProfitM": 317833.85568000004,
+              "opexM": 63566.77113600001,
+              "operatingIncomeM": 254267.08454400004,
+              "netIncomeM": 198328.32594432004,
+              "sharesM": 24687.64211512499,
+              "eps": 8.033506197937523
+            }
+          ],
+          "terminalValue": 80.33506197937524,
+          "presentValue": 54.869928269500186,
+          "annualReturn": -0.15214493795572515,
+          "totalReturn": -0.4832428793298904
+        },
+        "uniform15x": {
+          "inputs": {
+            "seedRevenueM": 361808.0,
+            "years": 4,
+            "annualRevenueGrowth": 0.1,
+            "grossMargin": 0.6,
+            "opexRatio": 0.12,
+            "netOtherM": 0,
+            "taxRate": 0.22,
+            "initialSharesM": 24200,
+            "annualDilution": 0.005,
+            "terminalPe": 15,
+            "discountRate": 0.1,
+            "reason": "收入年增改為10.0%、末期P/E改採15倍的條件式敏感度；其餘毛利、費用率、稅、淨其他與股數假設沿用公司特性壓力。不是最壞底價，也不含中途分配現金流。"
+          },
+          "years": [
+            {
+              "year": 1,
+              "revenueM": 397988.80000000005,
+              "grossProfitM": 238793.28000000003,
+              "opexM": 47758.656,
+              "operatingIncomeM": 191034.624,
+              "netIncomeM": 149007.00672,
+              "sharesM": 24320.999999999996,
+              "eps": 6.126680922659431
+            },
+            {
+              "year": 2,
+              "revenueM": 437787.68000000005,
+              "grossProfitM": 262672.608,
+              "opexM": 52534.52160000001,
+              "operatingIncomeM": 210138.0864,
+              "netIncomeM": 163907.707392,
+              "sharesM": 24442.604999999992,
+              "eps": 6.705819915348632
+            },
+            {
+              "year": 3,
+              "revenueM": 481566.44800000015,
+              "grossProfitM": 288939.86880000005,
+              "opexM": 57787.973760000015,
+              "operatingIncomeM": 231151.89504000003,
+              "netIncomeM": 180298.47813120004,
+              "sharesM": 24564.81802499999,
+              "eps": 7.339703389933828
+            },
+            {
+              "year": 4,
+              "revenueM": 529723.0928000001,
+              "grossProfitM": 317833.85568000004,
+              "opexM": 63566.77113600001,
+              "operatingIncomeM": 254267.08454400004,
+              "netIncomeM": 198328.32594432004,
+              "sharesM": 24687.64211512499,
+              "eps": 8.033506197937523
+            }
+          ],
+          "terminalValue": 120.50259296906285,
+          "presentValue": 82.30489240425027,
+          "annualReturn": -0.06169413230920662,
+          "totalReturn": -0.22486431899483572
+        },
+        "fcfYield": 0.03965530218711115
+      }
+    }
+  ]
+}

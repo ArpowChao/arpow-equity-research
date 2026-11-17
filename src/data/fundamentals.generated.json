@@ -1357,82 +1357,83 @@
     },
     {
       "ticker": "NVDA",
-      "company": "NVIDIA Corporation",
-      "analysisAsOf": "2026-11-14",
-      "checkedAtUtc": "2026-11-14T12:22:52.448673+00:00",
-      "sourceMethod": "SEC full statement and company release; exact accession XBRL fields",
+      "company": "NVIDIA",
+      "analysisAsOf": "2026-11-18",
+      "analysisTimeZone": "Asia/Taipei",
+      "checkedAtUtc": "2026-11-17T23:33:59.381180+00:00",
+      "sourceMethod": "Latest unaudited 8-K Exhibits 99.1–99.3, manually matched tables; Q3 10-Q pending. Older share proxy disclosed only in report.",
       "statement": {
-        "form": "10-Q",
-        "filed": "2026-08-26",
-        "periodEnd": "2026-07-26",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+        "form": "8-K Ex99.3 (unaudited)",
+        "filed": "2026-11-17",
+        "periodEnd": "2026-10-25",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/supplementalfinancialinfor.htm"
       },
       "latestFiling": {
         "form": "8-K",
-        "filed": "2026-11-12",
-        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000082/nvda-20261111.htm"
+        "filed": "2026-11-17",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/nvda-20261117.htm"
       },
-      "newerFilingNeedsReview": true,
+      "newerFilingNeedsReview": false,
       "fields": {
         "revenue": {
-          "value": 96221000000,
-          "start": "2026-04-27",
-          "end": "2026-07-26",
-          "filed": "2026-08-26",
-          "accession": "0001045810-26-000075",
-          "concept": "Revenues",
+          "value": 115844000000.0,
+          "start": "2026-07-27",
+          "end": "2026-10-25",
+          "filed": "2026-11-17",
+          "accession": "0001045810-26-000088",
+          "concept": "8-K.Ex99.3:Revenue",
           "unit": "USD"
         },
         "operatingIncome": {
-          "value": 63734000000,
-          "start": "2026-04-27",
-          "end": "2026-07-26",
-          "filed": "2026-08-26",
-          "accession": "0001045810-26-000075",
-          "concept": "OperatingIncomeLoss",
+          "value": 77520000000.0,
+          "start": "2026-07-27",
+          "end": "2026-10-25",
+          "filed": "2026-11-17",
+          "accession": "0001045810-26-000088",
+          "concept": "8-K.Ex99.3:OperatingIncome",
           "unit": "USD"
         },
         "netIncome": {
-          "value": 59688000000,
-          "start": "2026-04-27",
-          "end": "2026-07-26",
-          "filed": "2026-08-26",
-          "accession": "0001045810-26-000075",
-          "concept": "NetIncomeLoss",
+          "value": 65287000000.0,
+          "start": "2026-07-27",
+          "end": "2026-10-25",
+          "filed": "2026-11-17",
+          "accession": "0001045810-26-000088",
+          "concept": "8-K.Ex99.3:NetIncome",
+          "unit": "USD"
+        },
+        "cash": {
+          "value": 29089000000.0,
+          "start": null,
+          "end": "2026-10-25",
+          "filed": "2026-11-17",
+          "accession": "0001045810-26-000088",
+          "concept": "8-K.Ex99.3:CashAndCashEquivalents",
           "unit": "USD"
         },
         "operatingCashFlow": {
-          "value": 74421000000,
+          "value": 122675000000.0,
           "start": "2026-01-26",
-          "end": "2026-07-26",
-          "filed": "2026-08-26",
-          "accession": "0001045810-26-000075",
-          "concept": "NetCashProvidedByUsedInOperatingActivities",
+          "end": "2026-10-25",
+          "filed": "2026-11-17",
+          "accession": "0001045810-26-000088",
+          "concept": "8-K.Ex99.3:NineMonthOCF",
           "unit": "USD"
         },
-        "capitalExpenditure": null,
-        "cash": {
-          "value": 22443000000,
-          "start": null,
-          "end": "2026-07-26",
-          "filed": "2026-08-26",
-          "accession": "0001045810-26-000075",
-          "concept": "CashAndCashEquivalentsAtCarryingValue",
+        "capitalExpenditure": {
+          "value": 8856000000.0,
+          "start": "2026-01-26",
+          "end": "2026-10-25",
+          "filed": "2026-11-17",
+          "accession": "0001045810-26-000088",
+          "concept": "8-K.Ex99.3:NineMonthPPEAndIntangibles",
           "unit": "USD"
         },
-        "shares": {
-          "value": 24285000000,
-          "start": "2026-04-27",
-          "end": "2026-07-26",
-          "filed": "2026-08-26",
-          "accession": "0001045810-26-000075",
-          "concept": "WeightedAverageNumberOfDilutedSharesOutstanding",
-          "unit": "shares"
-        }
+        "shares": null
       },
       "market": {
-        "observedAtUtc": "2026-11-13T21:00:01+00:00",
-        "price": 162.85,
+        "observedAtUtc": "2026-11-17T21:00:00+00:00",
+        "price": 155.46,
         "currency": "USD"
       }
     },

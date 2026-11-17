@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-14T12:42:05.228139Z",
+  "fetchedAt": "2026-11-17T23:20:45.567900Z",
   "updatePolicy": "Scheduled snapshot; normally refreshed about every 15 minutes during U.S. extended trading hours on weekdays.",
   "quotes": {
     "APP": {
@@ -242,17 +242,17 @@
     },
     "NVDA": {
       "ticker": "NVDA",
-      "price": 161.01,
-      "change": -1.84,
-      "changePercent": -1.1299,
+      "price": 162.74,
+      "change": 7.280000000000001,
+      "changePercent": 4.682876624212007,
       "phase": "post-market",
-      "observedAt": "2026-11-14T00:59:56Z",
+      "observedAt": "2026-11-17T23:20:40Z",
       "exchangeTimezone": "America/New_York",
-      "regularMarketPrice": 162.85,
-      "referencePrice": 162.85,
+      "regularMarketPrice": 155.46,
+      "referencePrice": 155.46,
       "currency": "USD",
       "exchange": "NasdaqGS",
-      "source": "Yahoo Finance chart API"
+      "source": "Yahoo Finance chart API; frozen 2026-11-17 18:20:40 EST snapshot"
     },
     "QBTS": {
       "ticker": "QBTS",

@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import re
+from validation_helpers import checked_local_date
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = "/arpow-equity-research/"
@@ -50,7 +51,7 @@ for item in items:
     assert item["latestFiling"]["url"].startswith("https://www.sec.gov/Archives/")
     assert item["ticker"] in fundamentals_html
     assert (ROOT / f'dist/research/{item["ticker"].lower()}/index.html').is_file()
-    assert item["analysisAsOf"] <= item.get("checkedAtUtc", fundamentals["checkedAtUtc"])[:10]
+    assert item["analysisAsOf"] <= checked_local_date(item, fundamentals["checkedAtUtc"])
     for field in item["fields"].values():
         if field:
             assert field["end"] <= item["statement"]["periodEnd"]
