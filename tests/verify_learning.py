@@ -24,7 +24,7 @@ with ThreadPoolExecutor(max_workers=8) as pool:
 for p, text in html.items():
     assert "data-analysis-steps" in text, p
     assert "先讀生意，再算股價" in text, p
-    assert "營運現金流 − 資本支出" in text, p
+    assert "Operating Cash Flow（營運現金流） − Capital Expenditures（資本支出）" in text, p
 
 def value(v):
     return f"${v:.{3 if v < 1 else 2}f}"
@@ -65,3 +65,10 @@ for i in filings:
     assert f'data-filing-evidence="{ticker}"' in html[f"research/{ticker.lower()}/"]
     assert i["statement"]["url"] in html[f"research/{ticker.lower()}/"]
 assert "8.962 億美元" in html["research/ionq/"]
+
+assert html[""].count("data-snapshot-gap") == len(reports)+1
+for ticker,expected in (("IONQ","-27.4%"),("DIS","+3.1%")):
+    card = re.search(rf'<a[^>]*data-ticker="{ticker}".*?</a>', html[""], re.S).group()
+    assert expected in card and 'Revenue（營收）' in card, ticker
+    assert expected in html[f'research/{ticker.lower()}/'], ticker
+assert 'Revenue（營收）' in html['fundamentals/']

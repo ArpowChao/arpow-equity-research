@@ -1,5 +1,5 @@
 ---
-import { steps } from '../data/learning';
+import { steps, bilingual } from '../data/learning';
 const { compact = false } = Astro.props;
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
@@ -7,7 +7,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
   <div class="eyebrow">財報閱讀路線</div>
   <h2>先讀生意，再算股價</h2>
   <p><b>先問三件事：</b>公司靠什麼賺錢？獲利有變成現金嗎？這個股價需要多好的未來才合理？</p>
-  <ol>{steps.map(step => <li><b>{step.title}</b><p>{step.text}</p><small>{step.where}</small></li>)}</ol>
+  <ol>{steps.map(step => <li><b>{step.title}</b><p>{bilingual(step.text)}</p><small>{step.where}</small></li>)}</ol>
   {compact && <a class="link" href={`${base}learn/`}>跟著迪士尼財報，從原始數字算一次 ↗</a>}
 </section>
 <style>

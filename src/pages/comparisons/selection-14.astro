@@ -2,7 +2,7 @@
 import AnalysisSteps from '../../components/AnalysisSteps.astro';
 import Base from '../../layouts/Base.astro';
 import BaseWork from "../../components/BaseWork.astro";
-import { activeModel, chinese } from '../../data/learning';
+import { activeModel, bilingual, gapLabel, snapshotGap } from '../../data/learning';
 import batch from '../../data/selection-14.json';
 const base=`${import.meta.env.BASE_URL.replace(/\/$/,'')}/`;
 const money=(n:number)=>`$${n.toFixed(n<1?3:2)}`;
@@ -15,11 +15,11 @@ const inputs=(m: typeof batch.rows[number],c: typeof batch.rows[number]['cases']
   <AnalysisSteps compact />
 <p><strong>先看現金流，再看價格差。</strong> 折價可能反映現金回收、週期見頂或稀釋，不等於安全。ZS 新增試算；其餘沿用既有快照模型作橫向比較，並非重新逐檔查核後續公告。SNDK、FSLR 另有新財報重估版，首頁與固定個股頁優先顯示該版本。</p>
 <p class="note">比較基準：{batch.marketLabel}。此頁只分析指定資料集，不把快照當即時行情或已獨立驗證的當期財報；SPCX 身分亦依指定資料集。不同模型期間不可直接比較倍數。LAES、UAMY 的現金或股數有缺口，只列條件敏感度。</p>
-<div class="scroll" tabindex="0" aria-label="估值總表，可橫向捲動"><table><thead><tr><th>標的</th><th>快照股價</th><th>悲觀</th><th>基準</th><th>樂觀</th><th>壓力</th><th>基準相對快照</th><th>狀態</th></tr></thead><tbody>{batch.rows.map(m=><tr><th><a href={`#${m.ticker.toLowerCase()}`}>{m.ticker}</a></th><td>{money(m.market)}</td>{m.cases.map(c=><td>{money(c.value)}</td>)}<td>{pct(m.gap)}</td><td>{m.status}</td></tr>)}</tbody></table></div>
+<div class="scroll" tabindex="0" aria-label="估值總表，可橫向捲動"><table><thead><tr><th>標的</th><th>快照股價</th><th>悲觀</th><th>基準</th><th>樂觀</th><th>壓力</th><th>{gapLabel}</th><th>狀態</th></tr></thead><tbody>{batch.rows.map(m=><tr><th><a href={`#${m.ticker.toLowerCase()}`}>{m.ticker}</a></th><td>{money(m.market)}</td>{m.cases.map(c=><td>{money(c.value)}</td>)}<td>{snapshotGap(m.cases[1]!.value,m.market)}</td><td>{m.status}</td></tr>)}</tbody></table></div>
 {batch.rows.map(m=><article class="card stock" id={m.ticker.toLowerCase()}><div class="eyebrow">{m.status} · {m.period}</div><h2>{m.ticker}｜{m.company}</h2><p><b>怎麼賺錢：</b>{m.business}</p><p>{m.summary}</p>{activeModel(m.ticker)?.kind === "revalued" && <p><a class="link" href={`${base}${activeModel(m.ticker)!.url}`}>查看新財報重估版本 ↗</a></p>}<p><b>接下來驗證：</b>{m.watch} {m.risk}</p>
 {m.fcf && <p>資料集簡式自由現金流 <strong>{(m.fcf.value/1e8).toFixed(2)} 億美元</strong>（{m.fcf.start} 至 {m.fcf.end}；營運現金流減資本支出）。</p>}
 {activeModel(m.ticker)?.kind !== "revalued" && <BaseWork ticker={m.ticker} />}
-<details><summary>展開公式、輸入與四組試算</summary><p>{chinese(m.formula)}。金額以十億美元、股數以十億股表示，EPS 與結果為美元／股；企業價值法負值按零列示。低倍數壓力不是股價下限。</p><ul>{m.cases.map(c=><li>{c.label} {money(c.value)}：{inputs(m,c)}</li>)}</ul></details>
+<details><summary>展開公式、輸入與四組試算</summary><p>{bilingual(m.formula)}。金額以十億美元、股數以十億股表示，EPS 與結果為美元／股；企業價值法負值按零列示。低倍數壓力不是股價下限。</p><ul>{m.cases.map(c=><li>{c.label} {money(c.value)}：{bilingual(inputs(m,c))}</li>)}</ul></details>
 {m.discountThreshold!==null && <p>基準上下 10% 示意：{money(m.range[0]!)}–{money(m.range[1]!)}；基準打八折：{money(m.discountThreshold)}。這是機械式敏感度，並非信賴區間或買點。</p>}
 <div class="links"><a href={m.source}>資料集財報來源 ↗</a><a href={m.source2}>相關申報／公告 ↗</a><a href={`${base}research/${m.ticker.toLowerCase()}/`}>固定個股頁 ↗</a>{m.ticker==='ZS' && <a href={m.quoteSource}>價格資料來源 ↗</a>}</div></article>)}
 </main>

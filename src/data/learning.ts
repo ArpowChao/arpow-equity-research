@@ -22,7 +22,7 @@ const terms: Record<string,string> = {
 };
 const termPattern = new RegExp(`(?<![A-Za-z])(?:${Object.keys(terms).sort((a,b)=>b.length-a.length).join('|')})(?![A-Za-z])`, 'g');
 export const chinese = (text:string) => text.replace(termPattern,v=>terms[v]??v);
-export const termLabel = (t:string) => terms[t] ? `${terms[t]}（${t}）` : t;
+export const termLabel = (t:string) => terms[t] ? `${t}（${terms[t]}）` : t;
 const num=(v:number)=>v.toLocaleString('zh-TW',{maximumFractionDigits:8});
 const usd=(v:number)=>`${v.toFixed(2)} 美元／股`;
 export function baseWork(ticker:string, legacy?:{ snapshot:{baseFairValue:number}, valuation:{type:string, earnings?:number, forwardEbitda?:number, forwardRevenue?:number, baseMultiple:number, netCash?:number, discountFactor?:number,dilutedShares?:number} }){
@@ -59,3 +59,33 @@ export function baseWork(ticker:string, legacy?:{ snapshot:{baseFairValue:number
  if(v.earnings!=null) return [`${num(driver)} 美元／股正常化盈餘 × ${num(v.baseMultiple)} 倍本益比 ≈ ${usd(target)}。`];
  return [`${num(driver)} 百萬美元${v.forwardEbitda!=null?'息稅折舊攤銷前盈餘':'營收'} × ${num(v.baseMultiple)} 倍 ＝ ${num(ev)} 百萬美元企業價值。`,`企業價值 ${num(ev)} 百萬美元 ${v.netCash!<0?'−':'＋'} ${num(Math.abs(v.netCash??0))} 百萬美元${v.netCash!<0?'淨負債':'淨現金'} ＝ ${num(equity)} 百萬美元股東權益價值。`,`每股估值：${num(equity)} 百萬美元 ÷ ${num(v.dilutedShares!)} 百萬稀釋股${v.discountFactor!=null && v.discountFactor!==1?` × ${num(v.discountFactor)} 折現係數`:''} ≈ ${usd(target)}。`];
 }
+
+export const gapLabel = '基準相對快照股價';
+export const gapFormula = '（估值基準 ÷ 同版本快照股價 − 1）× 100%';
+export function snapshotGap(benchmark:number, price:number){
+ if(!Number.isFinite(benchmark) || !Number.isFinite(price) || price<=0) return '無可比快照';
+ const change=Number(((benchmark/price-1)*100).toFixed(1));
+ return `${change>0?'+':''}${change.toFixed(1)}%`;
+}
+const displayTerms: Record<string,string> = {
+ '分部營業利益合計':'Total Segment Operating Income（分部營業利益合計）',
+ '營收年增率':'Revenue Growth YoY（營收年增率）', '營收年增':'Revenue Growth YoY（營收年增）',
+ '營收':'Revenue（營收）', '年增率':'YoY Growth（年增率）',
+ '營業利益率':'Operating Margin（營業利益率）', '營益率':'Operating Margin（營益率）',
+ '營業利益':'Operating Income（營業利益）', '營業虧損':'Operating Loss（營業虧損）',
+ '營運現金流':'Operating Cash Flow（營運現金流）', '資本支出':'Capital Expenditures（資本支出）',
+ '簡式自由現金流':'Free Cash Flow（簡式自由現金流）', '自由現金流':'Free Cash Flow（自由現金流）',
+ '現金及約當現金':'Cash and Cash Equivalents（現金及約當現金）', '帳面現金':'Cash and Cash Equivalents（帳面現金）',
+ '正常化每股盈餘':'Normalized EPS（正常化每股盈餘）', '調整後每股盈餘':'Adjusted EPS（調整後每股盈餘）', '稀釋每股盈餘':'Diluted EPS（稀釋每股盈餘）', '每股盈餘':'Earnings per Share（每股盈餘）',
+ '每股估值':'Value per Share（每股估值）', '本益比':'Price-to-Earnings Ratio（本益比）', '倍本益比':'倍 Price-to-Earnings Ratio（本益比）',
+ '企業價值除以營收的倍數':'EV/Revenue（企業價值／營收倍數）', '企業價值':'Enterprise Value（企業價值）',
+ '股東權益價值':'Equity Value（股東權益價值）', '淨現金':'Net Cash（淨現金）', '淨負債':'Net Debt（淨負債）',
+ '完全稀釋股數':'Fully Diluted Shares（完全稀釋股數）', '稀釋股數':'Diluted Shares（稀釋股數）', '稀釋股':'Diluted Shares（稀釋股）',
+ '稅後營業利益':'After-tax Operating Income（稅後營業利益）', '稅後盈餘':'After-tax Earnings（稅後盈餘）',
+ '息稅折舊攤銷前盈餘':'EBITDA（息稅折舊攤銷前盈餘）',
+ '折現除數':'Discounting Denominator（折現除數）', '折現係數':'Discount Factor（折現係數）',
+ '剩餘履約義務':'Remaining Performance Obligations（剩餘履約義務）', '股權薪酬':'Stock-Based Compensation（股權薪酬）',
+ '一般公認會計原則':'GAAP（一般公認會計原則）', '毛利率':'Gross Margin（毛利率）', '毛利':'Gross Profit（毛利）', '淨利':'Net Income（淨利）',
+};
+const displayPattern=new RegExp(Object.keys(displayTerms).sort((a,b)=>b.length-a.length).join('|'),'g');
+export const bilingual=(text:string)=>chinese(text).replace(displayPattern,word=>displayTerms[word]??word);

@@ -1,6 +1,6 @@
 ---
 import data from '../data/fundamentals.generated.json';
-import { activeModel } from '../data/learning';
+import { activeModel, bilingual } from '../data/learning';
 const {ticker, compact=false} = Astro.props;
 const i=data.items.find(x=>x.ticker===ticker);
 const m=activeModel(ticker);
@@ -10,8 +10,8 @@ const modelStatus=m?.kind==='revalued'?'已有另版新財報條件重估':m?'�
 {i && <div class="evidence" data-filing-evidence={ticker}>
   <b>財報資料 · {i.statement.periodEnd} 期末</b>
   <small>{i.statement.filed} 申報 · {i.statement.form}　│　原模型：{i.analysisAsOf}</small>
-  {i.fields.revenue && <div>營收：<b>{amount(i.fields.revenue.value)}</b>（{i.fields.revenue.start} 至 {i.fields.revenue.end}）</div>}
-  {i.simpleFcf && <div>簡式自由現金流：<b>{amount(i.simpleFcf.value)}</b>（{i.simpleFcf.start} 至 {i.simpleFcf.end}）</div>}
+  {i.fields.revenue && <div>{bilingual("營收")}：<b>{amount(i.fields.revenue.value)}</b>（{i.fields.revenue.start} 至 {i.fields.revenue.end}）</div>}
+  {i.simpleFcf && <div>{bilingual("簡式自由現金流")}：<b>{amount(i.simpleFcf.value)}</b>（{i.simpleFcf.start} 至 {i.simpleFcf.end}）</div>}
   {i.preliminary && <div>另有較新初步數字，與上述財報分列。</div>}
   {i.newerFilingNeedsReview && <div>另有 {i.latestFiling.filed} 的 {i.latestFiling.form}；不視為已納入估值。</div>}
   <small data-model-status>{modelStatus}</small>

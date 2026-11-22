@@ -1,4 +1,5 @@
 ---
+import { bilingual, gapLabel, snapshotGap } from "../data/learning";
 import BaseWork from "../components/BaseWork.astro";
 import Base from '../layouts/Base.astro';
 import AnalysisSteps from '../components/AnalysisSteps.astro';
@@ -18,25 +19,25 @@ const capex = dis.fields.capitalExpenditure!.value / 1e8;
   <p class="intro">別先找目標價。照這五步讀，你會知道哪個數字是公司公布的、哪個是自己假設的，以及兩者怎麼算成每股價值。</p>
   <AnalysisSteps />
   <section class="card lab" id="disney-example" aria-labelledby="example-title">
-    <div class="eyebrow">跟著算 · 金額以億美元、每股盈餘以美元／股</div>
+    <div class="eyebrow">跟著算 · 金額以億美元、Earnings per Share（每股盈餘）以美元／股</div>
     <h2 id="example-title">迪士尼：從營收算到每股價值</h2>
     <ol>
       <li><b>先找獲利來源。</b> 2026 財年部門營業利益：體驗 111.91、娛樂 54.43、體育 30.94 億美元。體驗占三部門合計的 111.91 ÷ 197.28 ≈ 56.73%。這是部門營業利益占比，不是全公司營業利益率。<a href={model.source}>年度報告：分部附註 ↗</a></li>
       <li><b>算營收增加多少。</b> 2026 財年 1,023.44 億美元 − 上年 944.25 億美元 ＝ 79.19 億美元；79.19 ÷ 944.25 ＝ 0.08387，再乘 100 得約 8.39%。2026 財年多一週，不能把 8.39% 全當成原有業務自身成長。<a href={model.source}>年度報告：合併損益表 ↗</a></li>
-      <li><b>算扣掉投資後剩多少現金。</b> 同一財年營運現金流 {ocf.toFixed(2)} 億美元 − 資本支出 {capex.toFixed(2)} 億美元 ＝ <strong>{(ocf-capex).toFixed(2)} 億美元</strong>簡式自由現金流。<a href={model.source}>年度報告：現金流量表 ↗</a></li>
+      <li><b>算扣掉投資後剩多少現金。</b> 同一財年 {bilingual("營運現金流")} {ocf.toFixed(2)} 億美元 − {bilingual("資本支出")} {capex.toFixed(2)} 億美元 ＝ <strong>{(ocf-capex).toFixed(2)} 億美元</strong> {bilingual("簡式自由現金流")}。<a href={model.source}>年度報告：現金流量表 ↗</a></li>
       <li><b>找每股盈餘的起點。</b> 依一般公認會計原則計算的稀釋每股盈餘為 5.63 美元；公司調整後為 7.02 美元。本案例採調整後口徑，再減第 53 週估計貢獻。<a href={model.source2}>公司公告：每股盈餘調節表 ↗</a></li>
       <li><b>列出假設再乘倍數。</b> 11% 成長與 16 倍本益比是研究假設，不是財報實值，也不是公司給的精確數字。<a href={`${base}comparisons/selection-14/#dis`}>三情境與壓力測試 ↗</a></li>
     </ol>
     <BaseWork ticker="DIS" />
-    <p><b>把估值與同一比較日股價對照：</b>（{baseCase.value.toFixed(2)} − {model.market.toFixed(2)}）÷ {model.market.toFixed(2)} × 100% ≈ 3.12%。這是模型基準比快照股價高多少，不是保證報酬或安全邊際。</p>
+    <p><b>把估值與同一比較日股價對照：</b>（{baseCase.value.toFixed(2)} − {model.market.toFixed(2)}）÷ {model.market.toFixed(2)} × 100%；全站標成「{gapLabel} {snapshotGap(baseCase.value,model.market)}」。這是模型基準比快照股價高多少，不是保證報酬或安全邊際。</p>
     <p><b>符號怎麼讀：</b>「＋」加、「−」減、「×」乘、「÷」除、「＝」等於、「≈」約等於、「%」百分比；括號內先算。美元／股表示「每一股多少美元」。</p>
     <form id="eps-lab" autocomplete="off">
       <h3>動手改一個假設，看看影響</h3>
       <noscript><p>互動試算需要啟用 網頁指令碼；固定公式與基準值仍可閱讀。</p></noscript>
       <div class="choices">
-        <label>正常化每股盈餘（美元／股）<input name="eps" id="lab-eps" type="number" step="any" min="0.01" required value="6.85"></label>
+        <label>Normalized EPS（正常化每股盈餘，美元／股）<input name="eps" id="lab-eps" type="number" step="any" min="0.01" required value="6.85"></label>
         <label>預估成長率（百分比）<input name="growth" id="lab-growth" type="number" step="any" min="-99" required value="11"></label>
-        <label>假設本益比（倍）<input name="multiple" id="lab-multiple" type="number" step="any" min="0.01" required value="16"></label>
+        <label>Assumed P/E（假設本益比，倍）<input name="multiple" id="lab-multiple" type="number" step="any" min="0.01" required value="16"></label>
       </div>
       <p><output aria-live="polite" for="lab-eps lab-growth lab-multiple" id="lab-result"><strong>121.66 美元／股</strong> · 6.85 × (1 + 11%) × 16</output></p>
       <button type="reset">還原基準</button>
