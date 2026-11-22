@@ -1,4 +1,5 @@
 ---
+import fundamentals from "../../data/fundamentals.generated.json";
 import { splits } from "../../data/splits";
 import Base from '../../layouts/Base.astro';
 import reports from '../../data/reports.generated.json';
@@ -27,6 +28,8 @@ const pltrSensitivity = report.ticker === 'PLTR' && report.asOf >= '2026-11-04';
 const conditionalModel = dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic || pltrSensitivity;
 const intcAudit = report.ticker === 'INTC' && report.asOf >= '2026-10-24';
 const split = splits[report.ticker];
+const latest = fundamentals.items.find(i => i.ticker === report.ticker);
+const olderModel = Boolean(latest && latest.statement.filed > report.asOf);
 const preSplit = split && report.asOf < split.tradingDate;
 const upside = ((report.snapshot.baseFairValue/report.snapshot.price)-1)*100;
 const methodFor = dualEconomic ? dual.method : rpdEconomic ? 'rapid7-economic-ntm' : luluEconomic ? 'lululemon-normalized-ntm' : appEconomic ? 'applovin-economic-ntm' : amdEconomic ? 'amd-economic-ntm' : pltrSensitivity ? 'palantir-growth-valuation' : intcAudit ? 'intel-model-audit' : report.ticker === 'NVDA' && report.asOf >= '2026-10-24' ? 'nvidia-economic-ntm' : report.ticker === 'MU' && report.asOf >= '2026-10-24' ? 'memory-dual-horizon' : report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
@@ -51,6 +54,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
   <section class="shell report-hero">
     <div><div class="eyebrow">{report.ticker} · {report.asOf} 快照</div><h1>{report.company}</h1><p>{report.thesis}</p></div>
     <div class="quote-column">
+      {olderModel && latest && <div class="card" style="padding:16px"><strong>估值尚未納入較新申報</strong><p>財報期末：{latest.statement.periodEnd}。下方保留原估值與分析快照，不代表目前合理價。</p><a href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>查看最新已核對的財報數據 ↗</a></div>}
       {preSplit && <div class="card" style="padding:16px"><strong>舊模型採拆股前口徑</strong><p>{split.tradingDate} 起按 1 股拆為 {split.ratio} 股交易。原基準換算為每股 ${(report.snapshot.baseFairValue / split.ratio).toFixed(2)}，僅換算單位，不是重新估值。舊圖表、快照與試算仍採原口徑。</p><a href={split.source}>SEC 拆股文件 ↗</a></div>}
       <div class="live-quote card" data-live-quote data-min-observed-at={priceMeta?.observedAtUtc} data-ticker={report.ticker} data-endpoint={`${base}data/live-quotes.json`} aria-live="polite">
         <div class="quote-heading"><span>最新可得行情</span><b data-live-status>讀取中</b></div>

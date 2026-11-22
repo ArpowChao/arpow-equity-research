@@ -1,4 +1,5 @@
 ---
+import fundamentals from "../data/fundamentals.generated.json";
 import { splits } from "../data/splits";
 import Base from '../layouts/Base.astro';
 import reports from '../data/reports.generated.json';
@@ -28,6 +29,8 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
         const split = splits[r.ticker];
+        const latest = fundamentals.items.find(i => i.ticker === r.ticker);
+        const olderModel = Boolean(latest && latest.statement.filed > r.asOf);
         const preSplit = Boolean(split && r.asOf < split.tradingDate);
         const upside = ((r.snapshot.baseFairValue / r.snapshot.price - 1) * 100);
         const dual = 'dualTrack' in r && Boolean(r.dualTrack);
@@ -37,7 +40,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         const amd = r.ticker==='AMD' && r.asOf>='2026-11-04';
         const pltr = r.ticker==='PLTR' && r.asOf>='2026-11-04';
         const audit = r.ticker === 'INTC' && r.asOf >= '2026-10-24';
-        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined}>
+        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined} data-older-model={olderModel ? "true" : undefined}>
           <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{dual ? '雙軌估值' : rpd || app || amd || lulu ? 'NTM經濟模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '最新研究' : '封存快照'} · {r.asOf}</span></div>
           <h3>{r.company}</h3><p>{r.thesis}</p>
           <div class="report-numbers">
@@ -45,7 +48,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
             <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{r.ticker==='NVDA' && r.asOf==='2026-11-18' ? '11/17正規盤收盤' : dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05盤中10:20 EST' : amd ? '11/03盤後19:59 EST' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
             <div><small>{dual || rpd || app || amd || lulu ? 'NTM經濟基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
           </div>
-          <span class="open">開啟完整研究 →</span>
+          <span class="open">{olderModel ? "有較新申報，估值仍為舊快照 →" : "開啟完整研究 →"}</span>
         </a>
       })}
     </div>
@@ -76,6 +79,11 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           statusNode.textContent = phaseLabels[quote.phase] ?? '最新';
           if(card.dataset.preSplit === 'true'){
             gapNode.textContent = '拆股後行情 · 不直接比較舊估值';
+            card.dataset.liveState = 'ready';
+            return;
+          }
+          if(card.dataset.olderModel === 'true'){
+            gapNode.textContent = '有較新財報 · 不顯示舊估值差距';
             card.dataset.liveState = 'ready';
             return;
           }
