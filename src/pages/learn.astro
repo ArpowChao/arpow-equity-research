@@ -63,7 +63,11 @@ function recalc(){
 }
 lab?.addEventListener('submit',e=>e.preventDefault());
 lab?.addEventListener('input',recalc);
-lab?.addEventListener('reset',()=>requestAnimationFrame(recalc));
+lab?.addEventListener('reset', event => {
+  event.preventDefault();
+  lab.querySelectorAll<HTMLInputElement>('input').forEach(input => { input.value = input.defaultValue; });
+  recalc();
+});
 </script>
 <style>
 .lesson{max-width:960px}.intro{max-width:650px;font-size:1.1rem}.lab{padding:clamp(16px,4vw,32px);margin:20px 0}.lab h2{margin:.45em 0}.lab ol{padding-left:1.5rem}.lab li{margin:.5rem 0}.lab form{border:1px solid #cdddf0;border-radius:12px;padding:16px;background:#f1f6ff}.lab h3{margin-top:0}.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,185px),1fr));gap:12px}.choices label{display:grid;gap:5px;min-width:0}.choices input{width:100%;min-width:0;border:1px solid #7e96b1;padding:8px;border-radius:6px;background:white}.lab button{border:1px solid #7e96b1;border-radius:6px;background:white;padding:6px 12px;cursor:pointer}.lab output{display:block;font-weight:700;overflow-wrap:anywhere}
