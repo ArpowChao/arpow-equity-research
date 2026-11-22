@@ -1,0 +1,139 @@
+{
+  "pinnedTickers": ["IONQ", "DIS"],
+  "filingCaveats": {
+    "IONQ": {
+      "dataAttr": "data-ionq-review",
+      "operatingIncomeLabel": "−4.331 億美元",
+      "summary": "；歸屬母公司淨利 5.640 億美元，同季有 8.962 億美元的認股權證負債評價利益，不代表本業轉盈。SkyWater 晶圓代工服務部門貢獻 0.83516 億美元營收；營收增長不能全當成量子業務的內生成長。",
+      "detailSuffix": " 2026-11-13 的後續申報披露 3,458 萬餘股的既有股東轉售登記及財務長任命，不是新版財報；不能把轉售股數直接當作新增稀釋。"
+    }
+  },
+  "valuationTypeMethods": {
+    "ev-sales-diluted": "dilution-rpo",
+    "future-ev-ebitda": "project-ramp-valuation",
+    "cycle-pe": "memory-cycle",
+    "default": "scenario-valuation"
+  },
+  "modelOverrides": [
+    {
+      "ticker": "NVDA",
+      "minAsOf": "2026-11-18",
+      "snapshotDateLabel": "11/17正規盤收盤",
+      "snapshotClass": "dual",
+      "conditionalModel": true
+    },
+    {
+      "ticker": "RPD",
+      "minAsOf": "2026-11-11",
+      "methodSlug": "rapid7-economic-ntm",
+      "snapshotClass": "ntm",
+      "conditionalModel": true,
+      "snapshotDateLabel": "11/10正規盤收盤",
+      "baseLabel": "未來十二個月獲利基準",
+      "detailBaseLabel": "NTM經濟基準",
+      "scenarioBaseLabel": "NTM經濟基準",
+      "cardPillPrefix": "未來十二個月獲利模型",
+      "sourceLinkLabel": "查看本篇Q3原始來源 ↗",
+      "priceVerdict": "14.49美元快照略高於13.64條件式NTM經濟基準；11.94～15.35只是固定EPS的倍數敏感度，10.23～11.60是模型折讓區而非買點。核心ARR尚未恢復成長，7.43倍公司調整EPS不等於股東經濟收益只有7倍。"
+    },
+    {
+      "ticker": "LULU",
+      "minAsOf": "2026-11-09",
+      "methodSlug": "lululemon-normalized-ntm",
+      "snapshotClass": "ntm",
+      "conditionalModel": true,
+      "snapshotDateLabel": "11/06正規盤收盤",
+      "baseLabel": "未來十二個月獲利基準",
+      "detailBaseLabel": "NTM經濟基準",
+      "scenarioBaseLabel": "NTM經濟基準",
+      "cardPillPrefix": "未來十二個月獲利模型",
+      "sourceLinkLabel": "查看本篇Q2原始來源 ↗",
+      "priceVerdict": "110.79美元快照低於121.07條件式基準，但不在90.81～102.91模型折讓區。這不是已確認谷底；必須驗證固定匯率同店、剔除退款毛利與可持續現金。悲觀52.74不是股價下限，12～16倍僅倍數敏感度，不是公平價信賴區間。"
+    },
+    {
+      "ticker": "APP",
+      "minAsOf": "2026-11-05",
+      "methodSlug": "applovin-economic-ntm",
+      "snapshotClass": "ntm",
+      "conditionalModel": true,
+      "snapshotDateLabel": "11/05 美東盤中 10:20",
+      "baseLabel": "未來十二個月獲利基準",
+      "detailBaseLabel": "NTM經濟基準",
+      "scenarioBaseLabel": "NTM經濟基準",
+      "cardPillPrefix": "未來十二個月獲利模型",
+      "sourceLinkLabel": "查看本篇Q3原始來源 ↗",
+      "priceVerdict": "360.72美元低於本篇含SBC與正常化稅的NTM基準476.89，也低於模型折讓區381.51～405.35；這只代表假設成立時有價格容錯，不代表已證實錯殺。廣告增量驗證、平台／資料合規與模型執行若出問題，可能跌破悲觀226.32。不是買入指令。"
+    },
+    {
+      "ticker": "AMD",
+      "minAsOf": "2026-11-04",
+      "methodSlug": "amd-economic-ntm",
+      "snapshotClass": "ntm",
+      "conditionalModel": true,
+      "snapshotDateLabel": "11/03 美東盤後 19:59",
+      "baseLabel": "未來十二個月獲利基準",
+      "detailBaseLabel": "NTM經濟基準",
+      "scenarioBaseLabel": "NTM經濟基準",
+      "cardPillPrefix": "未來十二個月獲利模型",
+      "sourceLinkLabel": "查看本篇Q3原始來源 ↗",
+      "priceVerdict": "這是含SBC與條件式權證稀釋的NTM經濟模型，不是公司EPS指引或唯一公平價。508.20美元盤後快照高於459.34基準；408.30～510.38只是基準倍數敏感度。需要資料中心放量、收現與稀釋條件同時驗證，不能把折讓區當保證買點。"
+    },
+    {
+      "ticker": "PLTR",
+      "minAsOf": "2026-11-04",
+      "methodSlug": "palantir-growth-valuation",
+      "snapshotClass": "conditional",
+      "conditionalModel": true,
+      "snapshotDateLabel": "11/03正規盤收盤",
+      "baseLabel": "條件式基準",
+      "detailBaseLabel": "條件式基準",
+      "scenarioBaseLabel": "條件式基準",
+      "cardPillPrefix": "條件式敏感度",
+      "sourceLinkLabel": "查看本篇Q3原始來源 ↗",
+      "priceVerdict": "這是2027營收倍數的條件式敏感度，不是完整DCF或唯一公平價。175.40美元高於137.57基準，但低於樂觀211.27；要讓高估值成立，收入、收現與稀釋都須持續達標。折讓區不是保證底價或買入指令。"
+    },
+    {
+      "ticker": "INTC",
+      "minAsOf": "2026-10-24",
+      "methodSlug": "intel-model-audit",
+      "snapshotClass": "audit",
+      "conditionalModel": false,
+      "snapshotDateLabel": "10/22收盤；10/24稽核",
+      "baseLabel": "保守模型錨點",
+      "detailBaseLabel": "保守模型錨點",
+      "scenarioBaseLabel": "保守基準（非唯一公平價）",
+      "cardPillPrefix": "模型稽核",
+      "fairRangeLabel": "原模型倍數敏感度",
+      "mosLabel": "原模型折讓區（非買點）",
+      "priceVerdict": "38.60美元只是保留的保守模型錨點，不是已驗證的唯一公平價。原32–46區間只是倍數敏感度；請把近端獲利與較遠期復甦／代工選擇權分開，不憑兩個數字的差距直接判定市場錯價。"
+    },
+    {
+      "ticker": "NVDA",
+      "minAsOf": "2026-10-24",
+      "methodSlug": "nvidia-economic-ntm",
+      "snapshotClass": "legacy",
+      "conditionalModel": false
+    },
+    {
+      "ticker": "MU",
+      "minAsOf": "2026-10-24",
+      "methodSlug": "memory-dual-horizon",
+      "snapshotClass": "legacy",
+      "conditionalModel": false
+    },
+    {
+      "ticker": "ARM",
+      "minAsOf": "2026-10-23",
+      "methodSlug": "arm-economic-earnings",
+      "snapshotClass": "legacy",
+      "conditionalModel": false
+    },
+    {
+      "ticker": "INTC",
+      "minAsOf": "2026-10-23",
+      "methodSlug": "intel-turnaround",
+      "snapshotClass": "legacy",
+      "conditionalModel": false
+    }
+  ]
+}

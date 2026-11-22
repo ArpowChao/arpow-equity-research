@@ -1,0 +1,252 @@
+---
+import { getBuySideV2 } from '../lib/report-resolver';
+
+interface Props {
+  ticker: string;
+}
+
+const { ticker } = Astro.props;
+const v2 = getBuySideV2(ticker);
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+
+const usd = (n: number | null | undefined) =>
+  n == null || !Number.isFinite(n) ? '—' : `$${n.toFixed(2)}`;
+const pct = (n: number | null | undefined, digits = 1) =>
+  n == null || !Number.isFinite(n) ? '—' : `${n > 0 ? '+' : ''}${(n * 100).toFixed(digits)}%`;
+const pctRaw = (n: number | null | undefined, digits = 2) =>
+  n == null || !Number.isFinite(n) ? '—' : `${n > 0 ? '+' : ''}${n.toFixed(digits)}%`;
+const billions = (m: number | null | undefined) =>
+  m == null || !Number.isFinite(m) ? '—' : `$${(m / 1000).toFixed(1)}B`;
+
+const tierTone: Record<string, string> = {
+  '高勝率賠率': 'tier-good',
+  '觀察待催化': 'tier-watch',
+  '估值透支迴避': 'tier-risk',
+  '資訊缺口暫緩': 'tier-hold',
+};
+const callLabel: Record<string, string> = {
+  full_qa: '完整法說 Q&A 已查證',
+  partial_clips: '部分公開法說片段＋官方評論',
+  press_release_only: '僅新聞稿與申報附件（缺完整 Q&A）',
+};
+---
+
+{v2 && (
+  <section class="shell v2-brief" data-buyside-brief={v2.ticker} aria-labelledby="v2-brief-title">
+    <header class="v2-header card">
+      <div class="v2-top-row">
+        <div>
+          <div class="eyebrow">BUY-SIDE PLAYBOOK V2 · 買方決策總覽</div>
+          <h2 id="v2-brief-title">{v2.ticker} 五模組核心判斷（{v2.asOf}）</h2>
+        </div>
+        <div class="v2-badges">
+          <span class:list={['v2-tier', tierTone[v2.verdict.tier] ?? 'tier-watch']}>{v2.verdict.tier}</span>
+          <span class="v2-macro-pill">
+            10Y美債 {v2.macroContext.us10yYieldPct.toFixed(2)}% · 實質利率 {v2.macroContext.real10yTipsPct.toFixed(2)}% · HY OAS {v2.macroContext.hyOasPct.toFixed(2)}%
+          </span>
+        </div>
+      </div>
+
+      <p class="v2-oneliner">{v2.verdict.oneLiner}</p>
+      <p class="v2-discipline"><strong>倉位與風控紀律：</strong>{v2.verdict.positionDiscipline}（總經快照：{v2.macroContext.asOf} — {v2.macroContext.marketRegimeNote}）</p>
+
+      <div class="v2-triggers">
+        <div class="trigger-box confirm">
+          <h3>🟢 加速與確認訊號</h3>
+          <ul>{v2.verdict.confirmTriggers.map((t) => <li>{t}</li>)}</ul>
+        </div>
+        <div class="trigger-box invalidate">
+          <h3>🔴 推翻假設與撤退警訊</h3>
+          <ul>{v2.verdict.invalidateTriggers.map((t) => <li>{t}</li>)}</ul>
+        </div>
+      </div>
+    </header>
+
+    <div class="v2-grid">
+      <article class="card v2-panel">
+        <div class="eyebrow">Module 1 · Storyline &amp; Setup</div>
+        <h3>市場故事線與擁擠度審計</h3>
+        <dl class="v2-dl">
+          <div><dt>3–6 個月交易敘事</dt><dd>{v2.storylineSetup.tradingNarrative3to6m}</dd></div>
+          <div><dt>10 年遠期雜訊隔離</dt><dd>{v2.storylineSetup.longTermNoise10y}</dd></div>
+          <div><dt>市場共識與 Setup 位階</dt><dd>{v2.storylineSetup.consensusExpectation} {v2.storylineSetup.setupCrowding}</dd></div>
+          <div><dt>線性外推盲點</dt><dd>{v2.storylineSetup.linearExtrapolationRisk}</dd></div>
+        </dl>
+      </article>
+
+      <article class="card v2-panel">
+        <div class="eyebrow">Module 2 · Quality &amp; Call Audit</div>
+        <h3>獲利品質與分部加減帳</h3>
+        <p class="v2-sub">{v2.earningsQuality.periodLabel} · GAAP 營益 {billions(v2.earningsQuality.gaapOperatingIncomeM)} ｜ TTM OCF {billions(v2.earningsQuality.ttmOcfM)} ｜ TTM FCF {billions(v2.earningsQuality.ttmFcfM)}（當季 OCF/淨利 {v2.earningsQuality.fcfConversionPct.toFixed(1)}%）</p>
+        <p class="v2-note">{v2.earningsQuality.oneOffAdjustments}</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>事業部／客群</th><th>營收規模</th><th>年增率</th><th>方向</th><th>抵銷與關鍵驅動</th></tr>
+            </thead>
+            <tbody>
+              {v2.segmentBridge.map((seg) => (
+                <tr>
+                  <td><b>{seg.segment}</b></td>
+                  <td class="mono">{billions(seg.revenueM)}</td>
+                  <td class="mono">{seg.yoyPct == null ? '—' : `+${seg.yoyPct.toFixed(0)}%`}</td>
+                  <td><span class:list={['seg-dir', seg.direction === '順風' ? 'pos' : seg.direction === '逆風' ? 'neg' : 'neu']}>{seg.direction}</span></td>
+                  <td>{seg.driverAndOffset}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div class="v2-ue-list">
+          {v2.unitEconomics.map((u) => (
+            <div class="ue-item">
+              <b>{u.metric}：{u.value}</b>
+              <p>{u.interpretation}</p>
+            </div>
+          ))}
+        </div>
+        <div class="v2-call-box">
+          <strong>法說追查層級：{callLabel[v2.callCoverage.transcriptStatus] ?? v2.callCoverage.transcriptStatus}</strong>
+          <p>{v2.callCoverage.toneSummary}</p>
+          <ul>{v2.callCoverage.unansweredQuestions.map((q) => <li>待查：{q}</li>)}</ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="v2-grid">
+      <article class="card v2-panel">
+        <div class="eyebrow">Module 3 · Reverse Valuation &amp; Peer Anchors</div>
+        <h3>現價逆推門檻與三把估值尺</h3>
+        <div class="v2-kpi-strip">
+          <div><small>現價隱含 NTM P/E</small><strong class="mono">{v2.reverseValuation.impliedForwardPe.toFixed(2)}x</strong></div>
+          <div><small>盈餘殖利率</small><strong class="mono">{v2.reverseValuation.earningsYieldPct.toFixed(2)}%</strong></div>
+          <div><small>對比 10Y 美債 ERP</small><strong class="mono pos">{pctRaw(v2.reverseValuation.erpVs10yPct)}</strong></div>
+          <div><small>TTM起算 4Y 隱含 CAGR (71.5%/60%毛利)</small><strong class="mono">{pct(v2.reverseValuation.implied4yRevCagrBaseMargin)} / {pct(v2.reverseValuation.implied4yRevCagrStressMargin)}</strong></div>
+        </div>
+        <p class="v2-note">{v2.reverseValuation.verdictNote}</p>
+        <p class="v2-note"><strong>自身歷史估值帶：</strong>{v2.valuationAnchors.historicalPeBand}</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>可比同業</th><th>NTM P/E</th><th>增速背景</th><th>毛利特徵</th><th>相對定位</th></tr>
+            </thead>
+            <tbody>
+              {v2.valuationAnchors.peers.map((p) => (
+                <tr>
+                  <td class="mono"><b>{p.ticker}</b></td>
+                  <td class="mono">{p.fwdPe.toFixed(1)}x</td>
+                  <td>{p.revGrowthNote}</td>
+                  <td>{p.marginNote}</td>
+                  <td>{p.relativeNote}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="v2-sub"><strong>倍數合理性：</strong>{v2.valuationAnchors.multipleJustification}</p>
+      </article>
+
+      <article class="card v2-panel" data-stress-matrix>
+        <div class="eyebrow">Module 4 · FCF-Inclusive 2D Stress Matrix</div>
+        <h3>含 4 年 FCF 現值修正 × 二維雙殺矩陣</h3>
+        <div class="v2-bridge-bar">
+          <div><small>v1 舊算法（僅折現第4年終值）</small><strong class="mono">{usd(v2.stressV2.legacyExFcfPv)}</strong></div>
+          <div><small>＋ 4 年期間 FCF 現值（85%轉化）</small><strong class="mono pos">+{usd(v2.stressV2.fcfPvDelta)}</strong></div>
+          <div><small>＝ v2 含權現值（TTM 起點）</small><strong class="mono">{usd(v2.stressV2.fcfInclusiveResult.presentValue)}</strong></div>
+          {v2.stressV2.altNtmSeedResult && (
+            <div><small>若改採 NTM 5,750億作起點</small><strong class="mono pos">{usd(v2.stressV2.altNtmSeedResult.presentValue)}</strong></div>
+          )}
+        </div>
+        <p class="v2-sub">
+          下表以「TTM 起算 × 末期 {v2.stressV2.inputs.terminalPe} 倍 P/E × 要求報酬 {(v2.stressV2.inputs.discountRate * 100).toFixed(0)}% × 期間 FCF 轉化 {(v2.stressV2.inputs.fcfConversion * 100).toFixed(0)}%」推算，並列每股含權現值與相對 {usd(v2.priceSnapshot.price)} 之空間：
+        </p>
+        <div class="table-scroll">
+          <table class="v2-matrix-table">
+            <thead>
+              <tr>
+                <th>4Y 營收增速 ＼ 毛利率</th>
+                {v2.stressV2.matrix2d.grossMargins.map((gm) => (
+                  <th class="mono">{(gm * 100).toFixed(1)}% 毛利</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {v2.stressV2.matrix2d.cells.map((row, ri) => (
+                <tr>
+                  <th class="mono">年增 {(v2.stressV2.matrix2d.growthRates[ri]! * 100).toFixed(0)}%</th>
+                  {row.map((cell) => {
+                    const gap = cell.gapPct ?? 0;
+                    const cls = gap >= -0.1 ? 'cell-near' : gap >= -0.25 ? 'cell-mid' : 'cell-deep';
+                    return (
+                      <td class:list={['mono', cls]}>
+                        <b>{usd(cell.presentValue)}</b>
+                        <small>{pct(cell.gapPct)}（Y4 EPS {usd(cell.year4Eps)}）</small>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="v2-sub">
+          <a class="link" href={`${base}methodology/buyside-v2-playbook`}>閱讀 v2 買方數學與雙殺矩陣規格 →</a>
+        </p>
+      </article>
+    </div>
+  </section>
+)}
+
+<style>
+  .v2-brief { margin-top: 24px; display: grid; gap: 18px; }
+  .v2-header { padding: 24px; border-left: 5px solid var(--blue); background: linear-gradient(135deg, #ffffff 0%, #f4f8ff 100%); }
+  .v2-top-row { display: flex; justify-content: space-between; align-items: start; gap: 16px; flex-wrap: wrap; }
+  .v2-header h2 { margin: 4px 0 0; font-size: 26px; }
+  .v2-badges { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .v2-tier { padding: 5px 12px; border-radius: 999px; font-weight: 700; font-size: 13px; border: 1px solid; }
+  .tier-good { background: #e8f7ef; color: #0b6949; border-color: #9cd6b8; }
+  .tier-watch { background: #fff7e6; color: #8c5a00; border-color: #f0cf85; }
+  .tier-risk { background: #fff0ee; color: #a12318; border-color: #f0b7b1; }
+  .tier-hold { background: #eef1f5; color: #425061; border-color: #cbd4de; }
+  .v2-macro-pill { padding: 5px 10px; border-radius: 8px; background: #101c2c; color: #dbe7f7; font: 500 12px 'IBM Plex Mono'; }
+  .v2-oneliner { font-size: 17px; font-weight: 600; margin: 14px 0 8px; color: var(--ink); }
+  .v2-discipline { font-size: 14px; color: var(--muted); margin: 0 0 14px; }
+  .v2-triggers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .trigger-box { padding: 14px 16px; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+  .trigger-box.confirm { border-top: 3px solid var(--green); }
+  .trigger-box.invalidate { border-top: 3px solid var(--red); }
+  .trigger-box h3 { margin: 0 0 8px; font-size: 14px; }
+  .trigger-box ul { margin: 0; padding-left: 1.2em; font-size: 13.5px; color: #314152; }
+  .trigger-box li { margin: 5px 0; }
+  .v2-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+  .v2-panel { padding: 22px; min-width: 0; overflow-wrap: anywhere; }
+  .v2-panel h3 { margin: 4px 0 12px; font-size: 21px; }
+  .v2-dl { margin: 0; display: grid; gap: 12px; }
+  .v2-dl dt { font-weight: 700; font-size: 13px; color: var(--blue); margin-bottom: 2px; }
+  .v2-dl dd { margin: 0; font-size: 14px; color: #2b3948; line-height: 1.6; }
+  .v2-sub { font-size: 13.5px; color: var(--muted); margin: 8px 0; }
+  .v2-note { font-size: 13.5px; color: #2b3948; background: #f6f8fb; padding: 10px 12px; border-radius: 8px; margin: 10px 0; line-height: 1.55; }
+  .v2-ue-list { display: grid; gap: 8px; margin: 12px 0; }
+  .ue-item { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; }
+  .ue-item p { margin: 4px 0 0; color: var(--muted); }
+  .v2-call-box { margin-top: 10px; padding: 12px; border-radius: 8px; background: #edf4ff; font-size: 13px; }
+  .v2-call-box p { margin: 4px 0 6px; }
+  .v2-call-box ul { margin: 0; padding-left: 1.2em; color: #2f4256; }
+  .v2-kpi-strip, .v2-bridge-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 10px 0 12px; }
+  .v2-kpi-strip > div, .v2-bridge-bar > div { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: #fafbfd; }
+  .v2-kpi-strip small, .v2-bridge-bar small { display: block; font-size: 11.5px; color: var(--muted); }
+  .v2-kpi-strip strong, .v2-bridge-bar strong { font-size: 16px; }
+  .pos { color: var(--green); }
+  .neg { color: var(--red); }
+  .neu { color: var(--amber); }
+  .seg-dir { font-weight: 700; font-size: 12px; padding: 2px 6px; border-radius: 5px; background: #f1f4f8; }
+  .v2-matrix-table th, .v2-matrix-table td { text-align: right; font-size: 12.5px; padding: 9px 8px; }
+  .v2-matrix-table th:first-child { text-align: left; }
+  .v2-matrix-table td small { display: block; font-size: 11px; color: var(--muted); font-family: 'IBM Plex Sans TC', sans-serif; }
+  .cell-near { background: #eaf7ef; }
+  .cell-mid { background: #fff9ea; }
+  .cell-deep { background: #fff2f0; }
+  @media (max-width: 900px) {
+    .v2-grid, .v2-triggers { grid-template-columns: 1fr; }
+  }
+</style>

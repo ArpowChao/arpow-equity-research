@@ -14,7 +14,46 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / "src" / "data" / "reports.generated.json"
+SELECTION_14 = ROOT / "src" / "data" / "selection-14.json"
+REVALUATION_22 = ROOT / "src" / "data" / "revaluation-2026-11-22.json"
+BUYSIDE_V2 = ROOT / "src" / "data" / "buyside-v2.json"
 OUTPUT = ROOT / "public" / "data" / "live-quotes.json"
+
+
+def discover_tickers(root: Path = ROOT) -> list[str]:
+    """Discover all unique uppercase equity tickers across generated and v2 datasets."""
+    tickers: set[str] = set()
+    reports_path = root / "src" / "data" / "reports.generated.json"
+    if reports_path.exists():
+        for row in json.loads(reports_path.read_text(encoding="utf-8")):
+            if row.get("ticker"):
+                tickers.add(str(row["ticker"]).upper())
+
+    sel_path = root / "src" / "data" / "selection-14.json"
+    if sel_path.exists():
+        sel = json.loads(sel_path.read_text(encoding="utf-8"))
+        for row in sel.get("rows", []):
+            if row.get("ticker"):
+                tickers.add(str(row["ticker"]).upper())
+
+    rev_path = root / "src" / "data" / "revaluation-2026-11-22.json"
+    if rev_path.exists():
+        rev = json.loads(rev_path.read_text(encoding="utf-8"))
+        for tk in rev.get("scope", []):
+            if tk:
+                tickers.add(str(tk).upper())
+        for m in rev.get("models", []):
+            if m.get("ticker"):
+                tickers.add(str(m["ticker"]).upper())
+
+    v2_path = root / "src" / "data" / "buyside-v2.json"
+    if v2_path.exists():
+        v2 = json.loads(v2_path.read_text(encoding="utf-8"))
+        for item in v2.get("items", []):
+            if item.get("ticker"):
+                tickers.add(str(item["ticker"]).upper())
+
+    return sorted(tickers)
 ENDPOINTS = (
     "https://query1.finance.yahoo.com/v8/finance/chart/{ticker}",
     "https://query2.finance.yahoo.com/v8/finance/chart/{ticker}",
@@ -90,8 +129,7 @@ def collect_quote(ticker: str) -> dict:
 
 
 def main() -> None:
-    reports = json.loads(REPORTS.read_text(encoding="utf-8"))
-    tickers = sorted({str(report["ticker"]).upper() for report in reports})
+    tickers = discover_tickers(ROOT)
     quotes: dict[str, dict] = {}
     failures: dict[str, str] = {}
     # Quote providers can throttle or stall individual symbols. A bounded pool
