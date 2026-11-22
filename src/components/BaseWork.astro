@@ -1,0 +1,12 @@
+---
+import { baseWork } from '../data/learning';
+const { ticker, legacy } = Astro.props;
+const lines = baseWork(ticker, legacy);
+---
+{lines.length > 0 && <div class="work" data-base-work={ticker}>
+  <b>基準怎麼算？把數字代進去</b>
+  <ol>{lines.map(line => <li>{line}</li>)}</ol>
+</div>}
+<style>
+.work{font-size:.88rem;background:#eef5fd;border-left:3px solid #426fa5;border-radius:0 8px 8px 0;padding:10px 13px;margin:12px 0;line-height:1.6;overflow-wrap:anywhere}.work ol{padding-left:1.4em;margin:5px 0 0}.work li+li{margin-top:4px}
+</style>

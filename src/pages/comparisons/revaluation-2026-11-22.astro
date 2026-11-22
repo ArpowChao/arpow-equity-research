@@ -1,4 +1,5 @@
 ---
+import BaseWork from "../../components/BaseWork.astro";
 import AnalysisSteps from '../../components/AnalysisSteps.astro';
 import Base from '../../layouts/Base.astro';
 import batch from '../../data/revaluation-2026-11-22.json';
@@ -20,7 +21,8 @@ const pending = batch.scope.filter(t => !batch.models.some(m => m.ticker === t))
     <div class="bridge"><span>收盤 <b>{money(m.market)}</b></span><span>舊基準 <b>{money(m.previous)}</b></span><span>新基準 <b>{money(m.scenarios[1]!.value)}</b> ({pct(m.scenarios[1]!.value/m.previous-1)})</span></div>
     <p>{m.anchors}</p><p>{m.description}</p>
     <p><strong>公式：</strong>{m.formula}；金額與股數輸入均以十億為單位，每股結果為美元。</p>
-    <div class="cases">{m.scenarios.map(v=><section><div>{v.label}</div><strong>{money(v.value)}</strong><p>{'revenue' in v ? `${v.revenue} 營收 × ${(v.margin!*100).toFixed(0)}% 營益率 × (1−${(v.tax!*100).toFixed(0)}%) ÷ ${v.shares} 股數 × ${v.multiple} 倍` : `(${v.ebitda} EBITDA × ${v.multiple} 倍 + ${v.netCash} 淨現金) ÷ ${v.shares} 股數`}</p><small>{v.condition}</small></section>)}</div>
+    <BaseWork ticker={m.ticker} />
+    <div class="cases">{m.scenarios.map(v=><section><div>{v.label}</div><strong>{money(v.value)}</strong><p>{'revenue' in v ? `${v.revenue} 營收 × ${(v.margin!*100).toFixed(0)}% 營益率 × (1−${(v.tax!*100).toFixed(0)}%) ÷ ${v.shares} 股數 × ${v.multiple} 倍` : `(${v.ebitda} 息稅折舊攤銷前盈餘 × ${v.multiple} 倍 + ${v.netCash} 淨現金) ÷ ${v.shares} 股數`}</p><small>{v.condition}</small></section>)}</div>
     <p><strong>低成長／低倍數壓力：{money(m.stress)}。</strong>{m.stressInputs}。這是獨立壓力情境，不是股價下限。</p>
     <div class="links"><a href={m.source}>SEC 原始財報 ↗</a><a href={m.release}>公司財報與指引 ↗</a></div>
   </article>)}

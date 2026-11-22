@@ -1,4 +1,5 @@
 ---
+import BaseWork from "./BaseWork.astro";
 import { activeModel, money } from '../data/learning';
 const { ticker } = Astro.props;
 const m = activeModel(ticker);
@@ -11,6 +12,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
  <dl>{m.cases.map(c => <div><dt>{c.label}</dt><dd>{money(c.value)}</dd></div>)}</dl>
  {m.stress != null && <p>額外壓力測試：{money(m.stress)}，不是股價下限。</p>}
  <p><strong>公式：</strong>{m.formula}。</p>
+ <BaseWork ticker={ticker} />
  <p class="links"><a href={`${base}${m.url}`}>看完整輸入、假設與計算 ↗</a><a href={m.source}>原始財報 ↗</a></p>
 </section>}
 <style>

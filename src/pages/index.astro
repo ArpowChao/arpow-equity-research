@@ -3,19 +3,22 @@ import fundamentals from "../data/fundamentals.generated.json";
 import { splits } from "../data/splits";
 import Base from '../layouts/Base.astro';
 import reports from '../data/reports.generated.json';
-import { activeModel, money } from '../data/learning';
+import BaseWork from "../components/BaseWork.astro";
+import { activeModel, money, chinese } from '../data/learning';
 import AnalysisSteps from '../components/AnalysisSteps.astro';
 import { methods } from '../data/methods';
-const sorted = [...reports].sort((a,b) => b.asOf.localeCompare(a.asOf));
+const pinned = ['IONQ','DIS'];
+const priority = (t:string) => pinned.includes(t) ? pinned.indexOf(t) : pinned.length;
+const sorted = [...reports].sort((a,b) => priority(a.ticker)-priority(b.ticker) || b.asOf.localeCompare(a.asOf));
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <Base title="Arpow 個股研究簿">
   <section class="shell hero">
     <div>
-      <div class="eyebrow">Evidence → Model → Decision</div>
+      <div class="eyebrow">證據 → 試算 → 判斷</div>
       <h1>把每一次分析，<br><span>變成可追溯的研究資產。</span></h1>
       <p>不是把聊天複製成文章。每一個合理價、股數與現金流，都能回到公式、假設和原始來源。</p>
-      <p><a class="link" href={`${base}learn/`}>新手從這裡開始：用一份財報練習 ↗</a></p>
+      <p><a class="link" href={`${base}learn/`}>新手從這裡開始：用一份財報練習 ↗</a>　<a class="link" href="#stock-cards">直接看首頁卡片 ↓</a></p>
     </div>
     <aside class="hero-ledger card" aria-label="研究流程">
       <div class="ledger-row"><span>01</span><b>原始證據</b><small>SEC／公司 IR／行情快照</small></div>
@@ -24,15 +27,8 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     </aside>
   </section>
 
-  <section class="shell section">
-    <p style="background:#edf4ff;border-left:4px solid #2762be;padding:14px 20px;line-height:1.65"><strong>基本面新證據已核對：</strong>全站個股的最新 SEC 申報與標準化財務欄位，請看 <a href={`${base}fundamentals/`}>全站基本面核對 ↗</a>。原研究估值仍屬各自標示日期的快照，未因新行情自動重算。</p>
-    <p class="card" style="padding:18px 22px"><strong>新產業觀察｜資安與AI安全：</strong><a class="link" href={`${base}sectors/cybersecurity-2026-11-01/`}>大、中、小盤候選與併購排除名單 ↗</a>。2026-11-01產業初篩，非合理價或買入清單。</p>
-    <p class="card" style="padding:18px 22px"><strong>11/14六股雙軌研究：</strong><a class="link" href={`${base}comparisons/six-2026-11-14/`}>MU／FISV／AMD／NVDA／MSFT／AMZN：正常成長與價值股壓力比較 ↗</a>。統一11/13正規盤收盤；遠期價值與今日現值分開。</p>
-    <p class="card" style="padding:18px 22px"><strong>11/22 新財報重估：</strong><a class="link" href={`${base}comparisons/revaluation-2026-11-22/`}>看各檔最新三情境與舊基準差異 ↗</a></p>
-    <p class="card" style="padding:18px 22px"><strong>14 檔條件估值：</strong><a class="link" href={`${base}comparisons/selection-14/`}>三情境、壓力測試與財報重點 ↗</a></p>
-    <AnalysisSteps compact />
-    <div class="section-head"><div><div class="eyebrow">Research archive</div><h2>個股研究與估值版本</h2></div><p>最新行情約每15分鐘更新；分析快照與合理價固定保存，不會隨行情自動改寫。</p></div>
-    <p class="card" data-active-model="ZS" style="padding:16px"><b>ZS · 新增條件模型：</b>基準 <b>{money(activeModel("ZS")!.cases[1]!.value)}</b> · {activeModel("ZS")!.date} 美東正規盤比較。<a class="link" href={`${base}research/zs/`}>開啟固定個股頁 ↗</a></p>
+  <section class="shell section" id="stock-cards">
+    <div class="section-head"><div><div class="eyebrow">不必先點進個股頁</div><h2>個股卡片｜先看數字，再看怎麼算</h2></div><p>每張卡直接列基準計算。行情約每15分鐘更新；估值按標示版本固定。符號：× 乘、÷ 除、＋ 加、− 減、＝ 等於、≈ 約等於；$ 表示美元。</p></div>
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
         const model = activeModel(r.ticker);
@@ -49,20 +45,39 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         const amd = r.ticker==='AMD' && r.asOf>='2026-11-04';
         const pltr = r.ticker==='PLTR' && r.asOf>='2026-11-04';
         const audit = r.ticker === 'INTC' && r.asOf >= '2026-10-24';
-        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined} data-older-model={historic ? "true" : undefined}>
-          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{model ? `${model.label} · ${model.date}` : historic ? `歷史模型 · ${r.asOf}` : `${dual ? '雙軌估值' : rpd || app || amd || lulu ? 'NTM經濟模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '研究快照' : '封存快照'} · ${r.asOf}`}</span></div>
-          <h3>{r.company}</h3><p>{r.thesis}</p>
+        return <a class="report card" id={`card-${r.ticker.toLowerCase()}`} href={`${base}research/${r.ticker.toLowerCase()}/`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined} data-older-model={historic ? "true" : undefined}>
+          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{model ? `${model.label} · ${model.date}` : historic ? `歷史模型 · ${r.asOf}` : `${dual ? '雙軌估值' : rpd || app || amd || lulu ? '未來十二個月獲利模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '研究快照' : '封存快照'} · ${r.asOf}`}</span></div>
+          <h3>{r.ticker === "DIS" ? "迪士尼" : r.ticker === "IONQ" ? "IonQ｜量子運算" : r.company}</h3><p>{chinese(r.thesis)}</p>
           <div class="report-numbers">
             <div class="live-cell"><small>最新行情 <b data-card-status>讀取中</b></small><strong data-card-live-price>—</strong><em data-card-live-gap>正在取得行情…</em></div>
-            {model ? <><div><small>正規盤快照</small><strong>{money(model.price)}</strong><em>{model.date}</em></div><div data-active-model={r.ticker}><small>條件基準</small><strong>{money(model.cases[1]!.value)}</strong><em>三情境與公式見個股頁</em></div></> : <>
-            <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{r.ticker==='NVDA' && r.asOf==='2026-11-18' ? '11/17正規盤收盤' : dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05盤中10:20 EST' : amd ? '11/03盤後19:59 EST' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
-            <div><small>{dual || rpd || app || amd || lulu ? 'NTM經濟基準' : historic ? '歷史基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
+            {model ? <><div><small>正規盤快照</small><strong>{money(model.price)}</strong><em>{model.date}</em></div><div data-active-model={r.ticker}><small>條件基準</small><strong>{money(model.cases[1]!.value)}</strong><em>美元／股 · 非即時</em></div></> : <>
+            <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{r.ticker==='NVDA' && r.asOf==='2026-11-18' ? '11/17正規盤收盤' : dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05 美東盤中 10:20' : amd ? '11/03 美東盤後 19:59' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
+            <div><small>{dual || rpd || app || amd || lulu ? '未來十二個月獲利基準' : historic ? '歷史基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
             </>}
           </div>
+          {model && <div class="card-cases" aria-label="情境估值，美元每股">{model.cases.map(c=><span>{c.label} <b>{money(c.value)}</b></span>)}{model.stress!=null && <span>壓力 <b>{money(model.stress)}</b></span>}</div>}
+          <BaseWork ticker={r.ticker} legacy={r} />
           <span class="open">{model ? "開啟三情境、計算步驟與原研究 →" : olderModel ? "有較新申報，估值仍為舊快照 →" : "開啟完整研究 →"}</span>
         </a>
       })}
+      {(() => {
+        const zs = activeModel('ZS')!;
+        return <a class="report card" data-active-model="ZS" href={`${base}research/zs/`}>
+          <div class="report-top"><span class="ticker mono">ZS</span><span class="pill">{zs.label} · {zs.date}</span></div>
+          <h3>Zscaler｜雲端資安</h3><p>以訂閱方式提供雲端安全服務；情境要驗證成長、收現與股權薪酬稀釋。</p>
+          <div class="card-cases" aria-label="情境估值，美元每股"><span>正規盤快照 <b>{money(zs.price)}</b></span>{zs.cases.map(c=><span>{c.label} <b>{money(c.value)}</b></span>)}</div>
+          <BaseWork ticker="ZS" /><span class="open">開啟三情境、輸入來源與風險 →</span>
+        </a>;
+      })()}
     </div>
+  </section>
+  <section class="shell section" aria-label="進階閱讀">
+    <p style="background:#edf4ff;border-left:4px solid #2762be;padding:14px 20px;line-height:1.65"><strong>基本面新證據已核對：</strong>全站個股的最新 SEC 申報與標準化財務欄位，請看 <a href={`${base}fundamentals/`}>全站基本面核對 ↗</a>。原研究估值仍屬各自標示日期的快照，未因新行情自動重算。</p>
+    <p class="card" style="padding:18px 22px"><strong>新產業觀察｜資安與AI安全：</strong><a class="link" href={`${base}sectors/cybersecurity-2026-11-01/`}>大、中、小盤候選與併購排除名單 ↗</a>。2026-11-01產業初篩，非合理價或買入清單。</p>
+    <p class="card" style="padding:18px 22px"><strong>11/14六股雙軌研究：</strong><a class="link" href={`${base}comparisons/six-2026-11-14/`}>MU／FISV／AMD／NVDA／MSFT／AMZN：正常成長與價值股壓力比較 ↗</a>。統一11/13正規盤收盤；遠期價值與今日現值分開。</p>
+    <p class="card" style="padding:18px 22px"><strong>11/22 新財報重估：</strong><a class="link" href={`${base}comparisons/revaluation-2026-11-22/`}>看各檔最新三情境與舊基準差異 ↗</a></p>
+    <p class="card" style="padding:18px 22px"><strong>14 檔條件估值：</strong><a class="link" href={`${base}comparisons/selection-14/`}>三情境、壓力測試與財報重點 ↗</a></p>
+    <AnalysisSteps compact />
   </section>
 
   <script>
@@ -120,11 +135,11 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 
   <section id="methods" class="method-wrap">
     <div class="shell section">
-      <div class="section-head"><div><div class="eyebrow">Open methodology</div><h2>計算不是黑盒子</h2></div><p>報告中的專業計算都連到獨立方法頁；公式、適用條件和模型限制一起公開。</p></div>
+      <div class="section-head"><div><div class="eyebrow">公開計算方法</div><h2>計算不是黑盒子</h2></div><p>報告中的專業計算都連到獨立方法頁；公式、適用條件和模型限制一起公開。</p></div>
       <div class="methods grid">{methods.map((m, i) => <a class="method" href={`${base}methodology/${m.slug}`}><span class="mono">M{String(i+1).padStart(2,'0')}</span><div><h3>{m.title}</h3><p>{m.summary}</p></div><b>↗</b></a>)}</div>
     </div>
   </section>
   <style>
-    .hero{padding-top:78px;padding-bottom:58px;display:grid;grid-template-columns:1.35fr .65fr;align-items:end;gap:70px}.hero h1 span{color:var(--blue)}.hero p{max-width:650px;font-size:19px;color:var(--muted)}.hero-ledger{padding:12px 20px}.ledger-row{display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:17px 0;border-bottom:1px solid var(--line)}.ledger-row:last-child{border:0}.ledger-row span{grid-row:1/3;color:var(--blue);font:600 12px 'IBM Plex Mono'}.ledger-row small{color:var(--muted)}.reports{grid-template-columns:repeat(2,1fr)}.report{padding:24px;text-decoration:none;transition:.2s transform,.2s box-shadow}.report:hover{transform:translateY(-3px);box-shadow:0 20px 45px rgba(20,32,43,.11)}.report-top{display:flex;justify-content:space-between;align-items:center}.ticker{font-size:27px;font-weight:600}.report h3{font-size:23px;margin:18px 0 8px}.report p{color:var(--muted);min-height:76px}.report-numbers{display:grid;grid-template-columns:repeat(3,1fr);padding:17px 0;margin:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.report-numbers div+div{border-left:1px solid var(--line);padding-left:16px}.report-numbers small{display:block;color:var(--muted);font-size:11px}.report-numbers strong{display:block;font:600 18px 'IBM Plex Mono';margin-top:5px}.report-numbers em{display:block;margin-top:3px;color:var(--muted);font:500 10px 'IBM Plex Mono';font-style:normal}.report-numbers .live-cell strong{color:var(--blue)}[data-card-status]{margin-left:4px;padding:2px 5px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font:600 9px 'IBM Plex Mono'}.report[data-live-state='error'] .live-cell strong{color:var(--muted)}.open{color:var(--blue);font-weight:600;font-size:14px}.method-wrap{background:#101b2a;color:#edf4ff;margin-top:30px}.method-wrap .section-head p{color:#9fb0c5}.methods{grid-template-columns:repeat(2,1fr)}.method{display:grid;grid-template-columns:42px 1fr 20px;gap:14px;text-decoration:none;border-top:1px solid #2a3a4d;padding:24px 4px}.method>span,.method>b{color:#6ea2ff}.method h3{margin:0 0 6px}.method p{margin:0;color:#9fb0c5}@media(max-width:800px){.hero{grid-template-columns:1fr;gap:28px;padding-top:48px}.reports,.methods{grid-template-columns:1fr}.report p{min-height:auto}}@media(max-width:480px){.report-numbers{grid-template-columns:1fr}.report-numbers div+div{border-left:0;border-top:1px solid var(--line);padding:10px 0 0;margin-top:10px}}
+    .hero{padding-top:78px;padding-bottom:58px;display:grid;grid-template-columns:1.35fr .65fr;align-items:end;gap:70px}.hero h1 span{color:var(--blue)}.hero p{max-width:650px;font-size:19px;color:var(--muted)}.hero-ledger{padding:12px 20px}.ledger-row{display:grid;grid-template-columns:34px 1fr;gap:2px 10px;padding:17px 0;border-bottom:1px solid var(--line)}.ledger-row:last-child{border:0}.ledger-row span{grid-row:1/3;color:var(--blue);font:600 12px 'IBM Plex Mono'}.ledger-row small{color:var(--muted)}.reports{grid-template-columns:repeat(2,1fr)}.report{padding:24px;text-decoration:none;transition:.2s transform,.2s box-shadow}.report:hover{transform:translateY(-3px);box-shadow:0 20px 45px rgba(20,32,43,.11)}.report-top{display:flex;justify-content:space-between;align-items:center}.ticker{font-size:27px;font-weight:600}.report h3{font-size:23px;margin:18px 0 8px}.report p{color:var(--muted);min-height:76px}.report-numbers{display:grid;grid-template-columns:repeat(3,1fr);padding:17px 0;margin:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.report-numbers div+div{border-left:1px solid var(--line);padding-left:16px}.report-numbers small{display:block;color:var(--muted);font-size:11px}.report-numbers strong{display:block;font:600 18px 'IBM Plex Mono';margin-top:5px}.report-numbers em{display:block;margin-top:3px;color:var(--muted);font:500 10px 'IBM Plex Mono';font-style:normal}.card-cases{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.87rem}.card-cases b{white-space:nowrap}.report{min-width:0}.report-numbers .live-cell strong{color:var(--blue)}[data-card-status]{margin-left:4px;padding:2px 5px;border-radius:999px;background:var(--blue-soft);color:var(--blue);font:600 9px 'IBM Plex Mono'}.report[data-live-state='error'] .live-cell strong{color:var(--muted)}.open{color:var(--blue);font-weight:600;font-size:14px}.method-wrap{background:#101b2a;color:#edf4ff;margin-top:30px}.method-wrap .section-head p{color:#9fb0c5}.methods{grid-template-columns:repeat(2,1fr)}.method{display:grid;grid-template-columns:42px 1fr 20px;gap:14px;text-decoration:none;border-top:1px solid #2a3a4d;padding:24px 4px}.method>span,.method>b{color:#6ea2ff}.method h3{margin:0 0 6px}.method p{margin:0;color:#9fb0c5}@media(max-width:800px){.hero{grid-template-columns:1fr;gap:28px;padding-top:48px}.reports,.methods{grid-template-columns:1fr}.report p{min-height:auto}}@media(max-width:480px){.report-numbers{grid-template-columns:1fr}.report-numbers div+div{border-left:0;border-top:1px solid var(--line);padding:10px 0 0;margin-top:10px}}
   </style>
 </Base>
