@@ -1,0 +1,1051 @@
+{
+  "marketLabel": "資料集標示 2026-11-20 美東正規盤",
+  "rows": [
+    {
+      "ticker": "LAES",
+      "company": "SEALSQ Corp",
+      "business": "安全晶片、數位身分與後量子安全；量產規模仍待驗證。",
+      "watch": "設計導入變量產，並且核對增資後的現金與稀釋。",
+      "model": "sales",
+      "formula": "（營收 × EV／營收 + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "未來12個月",
+      "market": 0.962,
+      "oldBase": 2.23,
+      "range": [
+        null,
+        null
+      ],
+      "discountThreshold": null,
+      "gap": 0.18326182155969395,
+      "status": "資料缺口：僅敏感度",
+      "summary": "半年正式營收1115.1萬、營損3216.2萬；九月營收為初值。淨現金情境扣耗現，未採受限資金，稀釋股數為模型假設。",
+      "risk": "待核對融資、權證及期後現金；此列為條件敏感度，不認定合理價。",
+      "revenueYoy": null,
+      "fcf": {
+        "value": -25249000,
+        "start": "2026-01-01",
+        "end": "2026-06-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1951222/000121390026099476/ea030513901ex99-1.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1951222/000121390026122291/ea0312819-6k_sealsq.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 0.022,
+          "multiple": 2,
+          "netCash": 0.22,
+          "shares": 0.52,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 0.5076923076923077
+        },
+        {
+          "label": "基準",
+          "driver": 0.041,
+          "multiple": 5,
+          "netCash": 0.33,
+          "shares": 0.47,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 1.1382978723404256
+        },
+        {
+          "label": "樂觀",
+          "driver": 0.065,
+          "multiple": 8,
+          "netCash": 0.4,
+          "shares": 0.43,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 2.1395348837209305
+        },
+        {
+          "label": "壓力",
+          "driver": 0.017,
+          "multiple": 1,
+          "netCash": 0.15,
+          "shares": 0.56,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 0.29821428571428565
+        }
+      ]
+    },
+    {
+      "ticker": "SNDK",
+      "company": "Sandisk Corporation",
+      "business": "NAND、企業SSD與消費儲存。",
+      "watch": "看NAND價格、企業SSD產品組合，以及供給上來後的毛利。",
+      "model": "op",
+      "formula": "營收 × 營益率 ×（1－稅率）÷ 稀釋股數 × 本益比",
+      "period": "正常化中週期",
+      "market": 79.24,
+      "oldBase": 159.375,
+      "range": [
+        95.53340322580645,
+        116.76304838709677
+      ],
+      "discountThreshold": 84.91858064516128,
+      "gap": 0.33957882138379114,
+      "status": "既有條件模型複核",
+      "summary": "沿用已發布重估：單季營收110.31億、營益87.80億，以拆股後的股數、價格與舊基準比較；不直接年化短缺期。",
+      "risk": "供給開出後，價格与營益率可能同時下修。",
+      "revenueYoy": 377.946273830156,
+      "fcf": {
+        "value": 6309000000,
+        "start": "2026-07-04",
+        "end": "2026-10-02"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/2023554/000162828026068601/sndk-20261002.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/2023554/000162828026075127/sndk-20261119.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 26,
+          "multiple": 10,
+          "netCash": 0,
+          "shares": 1.24,
+          "discount": 1,
+          "margin": 0.2,
+          "tax": 0.23,
+          "value": 32.29032258064517
+        },
+        {
+          "label": "基準",
+          "driver": 33,
+          "multiple": 14,
+          "netCash": 0,
+          "shares": 1.24,
+          "discount": 1,
+          "margin": 0.37,
+          "tax": 0.23,
+          "value": 106.1482258064516
+        },
+        {
+          "label": "樂觀",
+          "driver": 40,
+          "multiple": 18,
+          "netCash": 0,
+          "shares": 1.24,
+          "discount": 1,
+          "margin": 0.48,
+          "tax": 0.23,
+          "value": 214.60645161290321
+        },
+        {
+          "label": "壓力",
+          "driver": 26,
+          "multiple": 9,
+          "netCash": 0,
+          "shares": 1.24,
+          "discount": 1,
+          "margin": 0.17,
+          "tax": 0.23,
+          "value": 24.70209677419355
+        }
+      ]
+    },
+    {
+      "ticker": "QBTS",
+      "company": "D-Wave Quantum Inc.",
+      "business": "量子退火設備、雲端使用與服務。",
+      "watch": "已簽訂單是否按時確認營收，營運耗現是否縮小。",
+      "model": "sales",
+      "formula": "（營收 × EV／營收 + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "未來12個月",
+      "market": 6.52,
+      "oldBase": 4.02439,
+      "range": [
+        2.571428571428572,
+        3.1428571428571437
+      ],
+      "discountThreshold": 2.285714285714286,
+      "gap": -0.5617879053461874,
+      "status": "既有條件模型複核",
+      "summary": "單季營收451萬、營損5348萬；首九月簡式FCF負1.22億。收入必須依設備交付與服務認列，倍數不因季節性低基期而提高。",
+      "risk": "高倍數需要新合約可轉成收入；備用資金仍會被持續消耗。",
+      "revenueYoy": 20.700722118213434,
+      "fcf": {
+        "value": -121982000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000186/qbts-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000186/qbts-20260930.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 0.024,
+          "multiple": 5,
+          "netCash": 0.46,
+          "shares": 0.44,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 1.3181818181818183
+        },
+        {
+          "label": "基準",
+          "driver": 0.05,
+          "multiple": 13,
+          "netCash": 0.55,
+          "shares": 0.42,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 2.8571428571428577
+        },
+        {
+          "label": "樂觀",
+          "driver": 0.092,
+          "multiple": 23,
+          "netCash": 0.63,
+          "shares": 0.41,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 6.697560975609757
+        },
+        {
+          "label": "壓力",
+          "driver": 0.017,
+          "multiple": 3,
+          "netCash": 0.35,
+          "shares": 0.46,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 0.8717391304347825
+        }
+      ]
+    },
+    {
+      "ticker": "MP",
+      "company": "MP Materials Corp.",
+      "business": "稀土開採、分離與磁材。",
+      "watch": "分離與磁材產能爬坡；承購、價格保護能否轉成收現。",
+      "model": "ebitda",
+      "formula": "（EBITDA × EV／EBITDA + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "2029年終值折現",
+      "market": 33.95,
+      "oldBase": 28.15486,
+      "range": [
+        19.64133651391257,
+        24.0060779614487
+      ],
+      "discountThreshold": 17.458965790144507,
+      "gap": -0.35718093556168984,
+      "status": "既有條件模型複核",
+      "summary": "單季營收1.477億、營損2206萬；首九月簡式FCF負4.28億。2029獲利假設取決於分離、磁材及合約產能，上調產能不等於短期現金回收。",
+      "risk": "政府價格支持與訂單有履約條件；工廠、CapEx與稀釋為關鍵。",
+      "revenueYoy": 175.7175134913077,
+      "fcf": {
+        "value": -428007000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000057/mp-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000057/mp-20260930.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 0.32,
+          "multiple": 8,
+          "netCash": -0.65,
+          "shares": 0.25,
+          "discount": 1.6016129999999997,
+          "margin": 0,
+          "tax": 0,
+          "value": 4.770191051146564
+        },
+        {
+          "label": "基準",
+          "driver": 0.65,
+          "multiple": 12,
+          "netCash": -0.4,
+          "shares": 0.235,
+          "discount": 1.4428969999999997,
+          "margin": 0,
+          "tax": 0,
+          "value": 21.823707237680633
+        },
+        {
+          "label": "樂觀",
+          "driver": 1.04,
+          "multiple": 16,
+          "netCash": -0.05,
+          "shares": 0.222,
+          "discount": 1.3676310000000003,
+          "margin": 0,
+          "tax": 0,
+          "value": 54.64173430532776
+        },
+        {
+          "label": "壓力",
+          "driver": 0.23,
+          "multiple": 7,
+          "netCash": -0.75,
+          "shares": 0.265,
+          "discount": 1.6851589999999999,
+          "margin": 0,
+          "tax": 0,
+          "value": 1.9258022648711042
+        }
+      ]
+    },
+    {
+      "ticker": "ZS",
+      "company": "Zscaler",
+      "business": "雲端零信任安全平台訂閱。",
+      "watch": "追有機ARR、續約以及含股票薪酬的營益率；不能只追調整EPS。",
+      "model": "economic",
+      "formula": "（營收 × 含SBC營益率 ×（1－稅率）× 稅後營益倍數 + 淨現金）÷ 稀釋股數",
+      "period": "FY2027 正常化",
+      "market": 194.82,
+      "oldBase": null,
+      "range": [
+        65.03888571428571,
+        79.49197142857143
+      ],
+      "discountThreshold": 57.81234285714286,
+      "gap": -0.6290656576766832,
+      "status": "新增條件模型",
+      "summary": "零信任平台收訂閱費。資料集：全年營收33.53億美元、有機年增20%；期末ARR有機年增20%。GAAP營損1.33億美元、FCF 7.79億美元、現金流表股權薪酬8.22億美元；兩者不可等同股東可分配現金。FY27營收指引39.08–39.38億美元、公司非GAAP EPS指引4.86–4.90美元，不直接拿該EPS估值。",
+      "risk": "重點是續約與擴張能否轉成含股權薪酬的營業利潤。若成長降速但股票獎酬不回落，即使公司口徑FCF可觀，每股價值也可能被壓低。",
+      "revenueYoy": null,
+      "fcf": null,
+      "source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000157/zs-20260731.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000156/zs-07312026_991.htm",
+      "quoteSource": "https://stockanalysis.com/stocks/zs/history/",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 3.7,
+          "multiple": 25,
+          "netCash": 1.5,
+          "shares": 0.18,
+          "discount": 1,
+          "margin": 0.04,
+          "tax": 0.21,
+          "value": 24.572222222222223
+        },
+        {
+          "label": "基準",
+          "driver": 3.93,
+          "multiple": 35,
+          "netCash": 1.78,
+          "shares": 0.175,
+          "discount": 1,
+          "margin": 0.1,
+          "tax": 0.21,
+          "value": 72.26542857142857
+        },
+        {
+          "label": "樂觀",
+          "driver": 4.25,
+          "multiple": 47,
+          "netCash": 2,
+          "shares": 0.173,
+          "discount": 1,
+          "margin": 0.17,
+          "tax": 0.21,
+          "value": 166.62673410404625
+        },
+        {
+          "label": "壓力",
+          "driver": 3.45,
+          "multiple": 18,
+          "netCash": 1.3,
+          "shares": 0.185,
+          "discount": 1,
+          "margin": 0.02,
+          "tax": 0.21,
+          "value": 12.330702702702704
+        }
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "company": "Alphabet Inc.",
+      "business": "搜尋廣告、YouTube與雲端。",
+      "watch": "雲端與搜尋的增量營業利益，能否追上算力支出和折舊。",
+      "model": "op",
+      "formula": "營收 × 營益率 ×（1－稅率）÷ 稀釋股數 × 本益比",
+      "period": "未來12個月",
+      "market": 265.29,
+      "oldBase": 356.5,
+      "range": [
+        216.89409083665342,
+        265.09277768924306
+      ],
+      "discountThreshold": 192.79474741035858,
+      "gap": -0.09158492870840129,
+      "status": "既有條件模型複核",
+      "summary": "單季營收1275.77億、營益405.76億；首九月簡式FCF負48.04億。從營業利益起算、不納入非核心投資評價；基準營益率低於單季，納入算力折舊壓力。",
+      "risk": "高資本支出、優先股轉換和現金回收可能使盈餘倍數高估每股價值。",
+      "revenueYoy": 24.652648857796102,
+      "fcf": {
+        "value": -4804000000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000084/goog-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526449835/d174184d8k.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 525,
+          "multiple": 18,
+          "netCash": 0,
+          "shares": 12.75,
+          "discount": 1,
+          "margin": 0.275,
+          "tax": 0.22,
+          "value": 158.98235294117646
+        },
+        {
+          "label": "基準",
+          "driver": 565,
+          "multiple": 22,
+          "netCash": 0,
+          "shares": 12.55,
+          "discount": 1,
+          "margin": 0.308,
+          "tax": 0.21,
+          "value": 240.99343426294823
+        },
+        {
+          "label": "樂觀",
+          "driver": 610,
+          "multiple": 26,
+          "netCash": 0,
+          "shares": 12.4,
+          "discount": 1,
+          "margin": 0.33,
+          "tax": 0.2,
+          "value": 337.66451612903234
+        },
+        {
+          "label": "壓力",
+          "driver": 510,
+          "multiple": 15,
+          "netCash": 0,
+          "shares": 12.9,
+          "discount": 1,
+          "margin": 0.245,
+          "tax": 0.22,
+          "value": 113.32674418604651
+        }
+      ]
+    },
+    {
+      "ticker": "DIS",
+      "company": "The Walt Disney Company",
+      "business": "樂園與遊輪、串流和體育媒體。",
+      "watch": "樂園人流與客單價、串流利潤和內容／體育支出的現金效率。",
+      "model": "pe",
+      "formula": "每股盈餘 × 本益比",
+      "period": "FY2027",
+      "market": 117.98,
+      "oldBase": 136.8,
+      "range": [
+        109.49040000000001,
+        133.82160000000002
+      ],
+      "discountThreshold": 97.32480000000001,
+      "gap": 0.03115782335989148,
+      "status": "既有條件模型複核",
+      "summary": "調整EPS 7.02減53週貢獻0.17；低雙位數為基準，非季盈餘直接年化。以FY27 FCF約110億美元交叉檢查。",
+      "risk": "體驗部門支出與體育權利使會計獲利未必全轉成現金。",
+      "revenueYoy": 8.386550172094264,
+      "fcf": {
+        "value": 10572000000,
+        "start": "2025-09-28",
+        "end": "2026-10-03"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000066/dis-20261003.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1744489/000174448926000067/dis-20261117.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 7.055499999999999,
+          "multiple": 13,
+          "netCash": 0,
+          "shares": 1,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 91.72149999999999
+        },
+        {
+          "label": "基準",
+          "driver": 7.6035,
+          "multiple": 16,
+          "netCash": 0,
+          "shares": 1,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 121.656
+        },
+        {
+          "label": "樂觀",
+          "driver": 8.0145,
+          "multiple": 19,
+          "netCash": 0,
+          "shares": 1,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 152.2755
+        },
+        {
+          "label": "壓力",
+          "driver": 6.3705,
+          "multiple": 11,
+          "netCash": 0,
+          "shares": 1,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 70.0755
+        }
+      ]
+    },
+    {
+      "ticker": "CBRS",
+      "company": "Cerebras Systems Inc.",
+      "business": "AI晶片與算力服務。",
+      "watch": "已部署算力、客戶收入集中，以及權證攤銷、資本投入。",
+      "model": "sales",
+      "formula": "（營收 × EV／營收 + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "未來12個月",
+      "market": 82.67,
+      "oldBase": 143.0769230769,
+      "range": [
+        57.39130434782609,
+        70.14492753623189
+      ],
+      "discountThreshold": 51.014492753623195,
+      "gap": -0.2286426038220758,
+      "status": "既有條件模型複核",
+      "summary": "單季營收2.108億、營損2.241億；首九月簡式FCF負14.35億。以加速上線而非將合約整筆轉為收入；預留算力資本投入及權證稀釋。",
+      "risk": "交付延後、客戶集中與認股權證使模型對收入和股數特別敏感。",
+      "revenueYoy": 55.33327438584082,
+      "fcf": {
+        "value": -1434953000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026073494/cbrs-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/2021728/000162828026073494/cbrs-20260930.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 1.15,
+          "multiple": 6,
+          "netCash": 1.4,
+          "shares": 0.365,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 22.739726027397257
+        },
+        {
+          "label": "基準",
+          "driver": 1.95,
+          "multiple": 10,
+          "netCash": 2.5,
+          "shares": 0.345,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 63.76811594202899
+        },
+        {
+          "label": "樂觀",
+          "driver": 3.0,
+          "multiple": 16,
+          "netCash": 3.2,
+          "shares": 0.33,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 155.15151515151516
+        },
+        {
+          "label": "壓力",
+          "driver": 0.85,
+          "multiple": 4,
+          "netCash": 0.9,
+          "shares": 0.38,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 11.31578947368421
+        }
+      ]
+    },
+    {
+      "ticker": "SPCX",
+      "company": "Space Exploration Technologies Corp.",
+      "business": "指定資料集中的SpaceX：發射、衛星寬頻與算力。",
+      "watch": "分別追蹤衛星寬頻、發射和AI算力的營業獲利及資本耗用。",
+      "model": "sales",
+      "formula": "（營收 × EV／營收 + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "未來12個月",
+      "market": 127.79,
+      "oldBase": 134.31,
+      "range": [
+        70.375,
+        86.0138888888889
+      ],
+      "discountThreshold": 62.55555555555556,
+      "gap": -0.38810200763405245,
+      "status": "既有條件模型複核",
+      "summary": "單季營收145.75億、營益27.91億；首九月簡式FCF負349.72億。封面A/B合計約135.81億股，模型另留稀釋；預期現金依投資強度折扣。",
+      "risk": "算力、衛星與發射投資牽動流動性；年化合約規模不能等同已實現收入。",
+      "revenueYoy": 161.38809182209468,
+      "fcf": {
+        "value": -34972000000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026071689/spcx-20261104.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 61,
+          "multiple": 9,
+          "netCash": 5,
+          "shares": 15,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 36.93333333333333
+        },
+        {
+          "label": "基準",
+          "driver": 79,
+          "multiple": 14,
+          "netCash": 20,
+          "shares": 14.4,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 78.19444444444444
+        },
+        {
+          "label": "樂觀",
+          "driver": 105,
+          "multiple": 20,
+          "netCash": 40,
+          "shares": 14.0,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 152.85714285714286
+        },
+        {
+          "label": "壓力",
+          "driver": 53,
+          "multiple": 7,
+          "netCash": -10,
+          "shares": 15.5,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 23.29032258064516
+        }
+      ]
+    },
+    {
+      "ticker": "UAMY",
+      "company": "United States Antimony Corporation",
+      "business": "銻冶煉與關鍵礦物。",
+      "watch": "確認正式交貨、驗收與收款，再看每單位毛利；不是框架上限。",
+      "model": "sales",
+      "formula": "（營收 × EV／營收 + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "未來12個月",
+      "market": 2.23,
+      "oldBase": 3.4,
+      "range": [
+        null,
+        null
+      ],
+      "discountThreshold": null,
+      "gap": -0.26689172167078135,
+      "status": "資料缺口：僅敏感度",
+      "summary": "單季營收1013萬、營損598萬；首九月簡式FCF負5308萬。交貨與收現分開，模型不採政府框架合約的上限作營收。",
+      "risk": "待核對最新現金與完全稀釋股數；只列條件敏感度，不認定合理價。",
+      "revenueYoy": 16.450173070383876,
+      "fcf": {
+        "value": -53076102,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/101538/000110465926126202/uamy-20260930x10q.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/101538/000110465926128720/tm2629969d1_8k.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 0.04,
+          "multiple": 1.8,
+          "netCash": 0.028,
+          "shares": 0.19,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 0.5263157894736842
+        },
+        {
+          "label": "基準",
+          "driver": 0.07,
+          "multiple": 3.5,
+          "netCash": 0.046,
+          "shares": 0.178,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 1.6348314606741576
+        },
+        {
+          "label": "樂觀",
+          "driver": 0.11,
+          "multiple": 5.5,
+          "netCash": 0.06,
+          "shares": 0.165,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 4.03030303030303
+        },
+        {
+          "label": "壓力",
+          "driver": 0.03,
+          "multiple": 1,
+          "netCash": 0.012,
+          "shares": 0.21,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 0.19999999999999998
+        }
+      ]
+    },
+    {
+      "ticker": "OUST",
+      "company": "Ouster, Inc.",
+      "business": "光達等感測器、感知軟體。",
+      "watch": "感測器出貨與軟體附掛率，並看毛利能否在沒有一次性利益下維持。",
+      "model": "sales",
+      "formula": "（營收 × EV／營收 + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "未來12個月",
+      "market": 23.8,
+      "oldBase": 34.5,
+      "range": [
+        20.57142857142857,
+        25.142857142857142
+      ],
+      "discountThreshold": 18.285714285714285,
+      "gap": -0.03961584633853554,
+      "status": "既有條件模型複核",
+      "summary": "單季營收5933萬、營損1926萬；首九月簡式FCF負6027萬。以本季約2.37億美元年化營收作量級檢查而非全年預測，倍數隨盈虧改善變動。",
+      "risk": "現金不只銀行餘額；未來淨現金是扣除耗現後的模型假設，非申報現金。",
+      "revenueYoy": 50.094876660341555,
+      "fcf": {
+        "value": -60270000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1816581/000162828026069640/oust-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1816581/000162828026069640/oust-20260930.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 0.22,
+          "multiple": 2.8,
+          "netCash": 0.19,
+          "shares": 0.09,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 8.955555555555556
+        },
+        {
+          "label": "基準",
+          "driver": 0.3,
+          "multiple": 5.5,
+          "netCash": 0.27,
+          "shares": 0.084,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 22.857142857142854
+        },
+        {
+          "label": "樂觀",
+          "driver": 0.38,
+          "multiple": 8,
+          "netCash": 0.33,
+          "shares": 0.08,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 42.125
+        },
+        {
+          "label": "壓力",
+          "driver": 0.19,
+          "multiple": 2,
+          "netCash": 0.15,
+          "shares": 0.095,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 5.578947368421053
+        }
+      ]
+    },
+    {
+      "ticker": "FSLR",
+      "company": "First Solar, Inc.",
+      "business": "薄膜太陽能模組與製造稅抵。",
+      "watch": "美國訂單履約、稅抵實際變現與新廠利用率。",
+      "model": "ebitda",
+      "formula": "（EBITDA × EV／EBITDA + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "正常化／未來12個月",
+      "market": 137.59,
+      "oldBase": 238.89,
+      "range": [
+        173.54166666666669,
+        212.1064814814815
+      ],
+      "discountThreshold": 154.25925925925927,
+      "gap": 0.401439596439233,
+      "status": "既有條件模型複核",
+      "summary": "沿用已發布的重估模型：公司年度調整EBITDA區間25.5–27.5億，首九月簡式FCF負8.37億；模型折減補貼與資金占用。",
+      "risk": "抵免收現不等於毛利，不能把抵免永久化。",
+      "revenueYoy": -22.818361030713742,
+      "fcf": {
+        "value": -837376000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1274494/000127449426000212/fslr-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1274494/000127449426000212/fslr-20260930.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 1.65,
+          "multiple": 6,
+          "netCash": 1.2,
+          "shares": 0.109,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 101.83486238532109
+        },
+        {
+          "label": "基準",
+          "driver": 2.55,
+          "multiple": 7.5,
+          "netCash": 1.7,
+          "shares": 0.108,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 192.82407407407408
+        },
+        {
+          "label": "樂觀",
+          "driver": 3.05,
+          "multiple": 9,
+          "netCash": 2.1,
+          "shares": 0.107,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 276.16822429906546
+        },
+        {
+          "label": "壓力",
+          "driver": 1.4,
+          "multiple": 5.5,
+          "netCash": 1.1,
+          "shares": 0.109,
+          "discount": 1,
+          "margin": 0,
+          "tax": 0,
+          "value": 80.73394495412843
+        }
+      ]
+    },
+    {
+      "ticker": "SMCI",
+      "company": "Super Micro Computer, Inc.",
+      "business": "AI伺服器、機櫃及液冷整合。",
+      "watch": "毛利和應收／庫存是否改善，能否將銷售成長變成現金。",
+      "model": "op",
+      "formula": "營收 × 營益率 ×（1－稅率）÷ 稀釋股數 × 本益比",
+      "period": "未來12個月",
+      "market": 21.65,
+      "oldBase": 55,
+      "range": [
+        29.544408510638306,
+        36.10983262411349
+      ],
+      "discountThreshold": 26.261696453900715,
+      "gap": 0.5162642294399951,
+      "status": "既有條件模型複核",
+      "summary": "單季營收199.46億、營益20.64億，但簡式FCF負4.76億。把正常營益率設定低於約10.4%的單季水準；不以該季獲利直接乘四。",
+      "risk": "若應收、存貨與客戶集中推高融資需求，帳面盈利不代表股東能拿到現金。",
+      "revenueYoy": 297.5023267215248,
+      "fcf": {
+        "value": -475609000,
+        "start": "2026-07-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1375365/000137536526000027/smci-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1375365/000137536526000027/smci-20260930.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 54,
+          "multiple": 6,
+          "netCash": 0,
+          "shares": 0.735,
+          "discount": 1,
+          "margin": 0.031,
+          "tax": 0.24,
+          "value": 10.385632653061226
+        },
+        {
+          "label": "基準",
+          "driver": 68,
+          "multiple": 8.5,
+          "netCash": 0,
+          "shares": 0.705,
+          "discount": 1,
+          "margin": 0.052,
+          "tax": 0.23,
+          "value": 32.82712056737589
+        },
+        {
+          "label": "樂觀",
+          "driver": 82,
+          "multiple": 11,
+          "netCash": 0,
+          "shares": 0.685,
+          "discount": 1,
+          "margin": 0.075,
+          "tax": 0.22,
+          "value": 77.03211678832116
+        },
+        {
+          "label": "壓力",
+          "driver": 48,
+          "multiple": 5,
+          "netCash": 0,
+          "shares": 0.76,
+          "discount": 1,
+          "margin": 0.022,
+          "tax": 0.24,
+          "value": 5.28
+        }
+      ]
+    },
+    {
+      "ticker": "IONQ",
+      "company": "IonQ, Inc.",
+      "business": "量子運算及收購後的其他量子業務與代工。",
+      "watch": "將已簽合約轉成收入，拆分併購與有機成長，監控耗現與稀釋。",
+      "model": "sales",
+      "formula": "（營收 × EV／營收 + 淨現金）÷ 稀釋股數 ÷ 折現除數",
+      "period": "2030年終值折現",
+      "market": 20.72,
+      "oldBase": 36.34,
+      "range": [
+        13.533399323187098,
+        16.540821395006454
+      ],
+      "discountThreshold": 12.029688287277422,
+      "gap": -0.2742707355648274,
+      "status": "既有條件模型複核",
+      "summary": "單季營收1.738億、營損4.331億；首九月簡式FCF負6.05億。用遠期商業化收入與期末現金分情境，不將會計淨利或未認列合約當成熟收益。",
+      "risk": "收購併表與現金消耗會改變經濟股數，使用未來稀釋而非帳上基本股數。",
+      "revenueYoy": 336.03822806401445,
+      "fcf": {
+        "value": -605242000,
+        "start": "2026-01-01",
+        "end": "2026-09-30"
+      },
+      "source": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526449829/ionq-20260930.htm",
+      "source2": "https://www.sec.gov/Archives/edgar/data/1824920/000119312526461016/ionq-20261110.htm",
+      "quoteSource": "網站保留的正規盤快照",
+      "cases": [
+        {
+          "label": "悲觀",
+          "driver": 1.15,
+          "multiple": 2,
+          "netCash": -0.35,
+          "shares": 0.56,
+          "discount": 1.9387777599999996,
+          "margin": 0,
+          "tax": 0,
+          "value": 1.7960505474040804
+        },
+        {
+          "label": "基準",
+          "driver": 2.15,
+          "multiple": 6,
+          "netCash": 0.25,
+          "shares": 0.5,
+          "discount": 1.7490062499999994,
+          "margin": 0,
+          "tax": 0,
+          "value": 15.037110359096776
+        },
+        {
+          "label": "樂觀",
+          "driver": 3.7,
+          "multiple": 10,
+          "netCash": 0.9,
+          "shares": 0.47,
+          "discount": 1.5735193600000006,
+          "margin": 0,
+          "tax": 0,
+          "value": 51.24709610966617
+        },
+        {
+          "label": "壓力",
+          "driver": 0.8,
+          "multiple": 1.5,
+          "netCash": -0.5,
+          "shares": 0.6,
+          "discount": 2.0736,
+          "margin": 0,
+          "tax": 0,
+          "value": 0.5626286008230454
+        }
+      ]
+    }
+  ]
+}
