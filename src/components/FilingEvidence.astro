@@ -1,0 +1,23 @@
+---
+import data from '../data/fundamentals.generated.json';
+import { activeModel } from '../data/learning';
+const {ticker, compact=false} = Astro.props;
+const i=data.items.find(x=>x.ticker===ticker);
+const m=activeModel(ticker);
+const amount=(x:number)=>`${(x/1e8).toFixed(3).replace(/0+$/, '').replace(/\.$/, '')} 億美元`;
+const modelStatus=m?.kind==='revalued'?'已有另版新財報條件重估':m?'目前展示條件試算，不代表已逐檔納入後續公告':i && i.statement.filed>i.analysisAsOf?'原模型早於財報，尚未重估':'原研究為有日期的快照，非即時估值';
+---
+{i && <div class="evidence" data-filing-evidence={ticker}>
+  <b>財報資料 · {i.statement.periodEnd} 期末</b>
+  <small>{i.statement.filed} 申報 · {i.statement.form}　│　原模型：{i.analysisAsOf}</small>
+  {i.fields.revenue && <div>營收：<b>{amount(i.fields.revenue.value)}</b>（{i.fields.revenue.start} 至 {i.fields.revenue.end}）</div>}
+  {i.simpleFcf && <div>簡式自由現金流：<b>{amount(i.simpleFcf.value)}</b>（{i.simpleFcf.start} 至 {i.simpleFcf.end}）</div>}
+  {i.preliminary && <div>另有較新初步數字，與上述財報分列。</div>}
+  {i.newerFilingNeedsReview && <div>另有 {i.latestFiling.filed} 的 {i.latestFiling.form}；不視為已納入估值。</div>}
+  <small data-model-status>{modelStatus}</small>
+  {!compact && <div><a href={i.statement.url}>本期申報原文 ↗</a>{i.newerFilingNeedsReview && <> · <a href={i.latestFiling.url}>後續申報 ↗</a></>}</div>}
+  {ticker==='IONQ' && <div data-ionq-review>本季營業虧損 4.331 億美元；歸屬母公司淨利 5.640 億美元，同季有 8.962 億美元的認股權證負債評價利益，不代表本業轉盈。SkyWater 晶圓代工服務部門貢獻 0.83516 億美元營收；營收增長不能全當成量子業務的內生成長。{!compact && <> 2026-11-13 的後續申報披露 3,458 萬餘股的既有股東轉售登記及財務長任命，不是新版財報；不能把轉售股數直接當作新增稀釋。</>}</div>}
+</div>}
+<style>
+.evidence{background:#f5f7f9;border:1px solid #dce4eb;border-radius:8px;padding:10px 13px;margin:12px 0;font-size:.87rem;overflow-wrap:anywhere}.evidence small{display:block;color:#46576d}.evidence div{margin-top:4px}.evidence a{color:#245582}
+</style>

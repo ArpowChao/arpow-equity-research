@@ -1,4 +1,5 @@
 ---
+import FilingEvidence from "../../components/FilingEvidence.astro";
 import BaseWork from "../../components/BaseWork.astro";
 import { activeModel, chinese, termLabel } from "../../data/learning";
 import AnalysisSteps from "../../components/AnalysisSteps.astro";
@@ -58,7 +59,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
 ---
 <Base title={`${report.ticker}｜${report.company} 個股研究`} description={chinese(String(report.thesis))}>
   <section class="shell report-hero">
-    <div><div class="eyebrow">{report.ticker} · {historic ? "原研究／歷史模型" : "研究快照"} {report.asOf}</div><h1>{report.company}</h1><p>{chinese(String(report.thesis))}</p><a class="link" href="#reading-order">從財報閱讀順序開始 ↓</a></div>
+    <div><div class="eyebrow">{report.ticker} · {historic ? "原研究／歷史模型" : "研究快照"} {report.asOf}</div><h1>{report.company}</h1>{!historic && <p>{chinese(String(report.thesis))}</p>}<FilingEvidence ticker={report.ticker} /><a class="link" href="#reading-order">從財報閱讀順序開始 ↓</a></div>
     <div class="quote-column">
       <ModelSummary ticker={report.ticker} />
       {olderModel && model?.kind !== "revalued" && latest && <div class="card" style="padding:16px"><strong>估值尚未納入較新申報</strong><p>財報期末：{latest.statement.periodEnd}。下方保留原估值與分析快照，不代表目前合理價。</p><a href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>查看最新已核對的財報數據 ↗</a></div>}
@@ -68,7 +69,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
         <strong data-live-price>—</strong>
         <small data-live-change>正在取得最新行情…</small>
         <small data-live-time></small>
-        <small class="quote-disclaimer">約每15分鐘更新 · 非交易所即時報價</small>
+        <small class="quote-disclaimer">以實際成交時間為準 · 非交易所即時報價</small>
       </div>
       <div class="snapshot-quote card">
         <span>{historic ? '歷史模型｜原分析股價' : intcAudit ? '本篇分析快照（原模型；稽核保留）' : '本篇分析快照'}</span><strong>${report.snapshot.price.toFixed(2)}</strong>
@@ -79,7 +80,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
   </section>
 
   <div class="shell" id="reading-order"><AnalysisSteps compact /><p><a class="link" href="#company-evidence">看這家公司的營運證據 ↓</a> · <a class="link" href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>用這家公司的申報數字練習 ↗</a> · <a class="link" href="#filing-sources">找原始申報 ↓</a></p></div>
-  {historic && <div class="shell"><h2>歷史模型｜以下數字僅供版本回顧</h2></div>}
+  {historic && <div class="shell"><h2>歷史模型｜以下數字僅供版本回顧</h2><p><b>{report.asOf} 原研究摘要：</b>{chinese(report.thesis)}</p></div>}
   <section class="shell scenario-strip">
     <div class="scenario bear"><span>悲觀</span><strong>${report.snapshot.bear.toFixed(2)}</strong></div>
     <div class="scenario base"><span>{dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守基準（非唯一公平價）' : '基準'}</span><strong>${report.snapshot.base.toFixed(2)}</strong></div>
@@ -202,7 +203,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
         change.textContent = `${delta>=0?'+':''}${delta.toFixed(2)}（${percent>=0?'+':''}${percent.toFixed(2)}%）· 相對${quote.phase==='regular'?'前收':'正規盤收盤'}`;
         change.classList.remove('positive','negative');
         change.classList.add(delta>=0?'positive':'negative');
-        const observed = new Date(quote.observedAt).toLocaleString('zh-TW',{timeZone:quote.exchangeTimezone||'America/New_York',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
+        const observed = new Date(quote.observedAt).toLocaleString('zh-TW',{timeZone:quote.exchangeTimezone||'America/New_York',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false});
         const fetched = new Date(payload.fetchedAt).toLocaleString('zh-TW',{timeZone:quote.exchangeTimezone||'America/New_York',hour:'2-digit',minute:'2-digit',hour12:false});
         time.textContent = `行情 ${observed} · 資料更新 ${fetched}（美東）`;
         liveCard.dataset.state = 'ready';

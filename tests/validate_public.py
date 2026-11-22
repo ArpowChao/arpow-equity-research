@@ -59,6 +59,6 @@ for item in items:
             assert field["accession"].replace('-', '') in item["statement"]["url"]
 assert "全站基本面核對" in index_html
 assert len(re.findall(r'<a[^>]+data-live-card', index_html)) == len(reports)
-for marker in ("最新行情", "分析快照", "基準合理價", "data-live-grid", "約每15分鐘更新"):
+for marker in ("最近可得行情", "分析快照", "基準合理價", "data-live-grid", "data-card-quote-time"):
     assert marker in index_html
 print(f"validated {len(reports)} reports and {len(pages)} pages")

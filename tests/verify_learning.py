@@ -57,3 +57,11 @@ print(f"verified {len(paths)} routes, {len(selection['rows'])} model summaries a
 for t in [r["ticker"] for r in reports]+["ZS"]:
     assert f'data-base-work="{t}"' in html[""], t
 assert html[""].index('data-ticker="IONQ"') < html[""].index('data-ticker="AMD"')
+
+filings = data("fundamentals.generated")["items"]
+for i in filings:
+    ticker=i["ticker"]
+    assert f'data-filing-evidence="{ticker}"' in html[""]
+    assert f'data-filing-evidence="{ticker}"' in html[f"research/{ticker.lower()}/"]
+    assert i["statement"]["url"] in html[f"research/{ticker.lower()}/"]
+assert "8.962 億美元" in html["research/ionq/"]

@@ -3,6 +3,7 @@ import fundamentals from "../data/fundamentals.generated.json";
 import { splits } from "../data/splits";
 import Base from '../layouts/Base.astro';
 import reports from '../data/reports.generated.json';
+import FilingEvidence from "../components/FilingEvidence.astro";
 import BaseWork from "../components/BaseWork.astro";
 import { activeModel, money, chinese } from '../data/learning';
 import AnalysisSteps from '../components/AnalysisSteps.astro';
@@ -28,7 +29,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
   </section>
 
   <section class="shell section" id="stock-cards">
-    <div class="section-head"><div><div class="eyebrow">不必先點進個股頁</div><h2>個股卡片｜先看數字，再看怎麼算</h2></div><p>每張卡直接列基準計算。行情約每15分鐘更新；估值按標示版本固定。符號：× 乘、÷ 除、＋ 加、− 減、＝ 等於、≈ 約等於；$ 表示美元。</p></div>
+    <div class="section-head"><div><div class="eyebrow">不必先點進個股頁</div><h2>個股卡片｜先看數字，再看怎麼算</h2></div><p>每張卡直接列基準計算。行情以實際成交時間為準；估值按標示版本固定。符號：× 乘、÷ 除、＋ 加、− 減、＝ 等於、≈ 約等於；$ 表示美元。</p></div>
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
         const model = activeModel(r.ticker);
@@ -47,9 +48,11 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         const audit = r.ticker === 'INTC' && r.asOf >= '2026-10-24';
         return <a class="report card" id={`card-${r.ticker.toLowerCase()}`} href={`${base}research/${r.ticker.toLowerCase()}/`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined} data-older-model={historic ? "true" : undefined}>
           <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{model ? `${model.label} · ${model.date}` : historic ? `歷史模型 · ${r.asOf}` : `${dual ? '雙軌估值' : rpd || app || amd || lulu ? '未來十二個月獲利模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '研究快照' : '封存快照'} · ${r.asOf}`}</span></div>
-          <h3>{r.ticker === "DIS" ? "迪士尼" : r.ticker === "IONQ" ? "IonQ｜量子運算" : r.company}</h3><p>{chinese(r.thesis)}</p>
+          <h3>{r.ticker === "DIS" ? "迪士尼" : r.ticker === "IONQ" ? "IonQ｜量子運算" : r.company}</h3>
+          <FilingEvidence ticker={r.ticker} compact />
+          {!historic && <p><b>{r.asOf} 研究摘要：</b>{chinese(r.thesis)}</p>}
           <div class="report-numbers">
-            <div class="live-cell"><small>最新行情 <b data-card-status>讀取中</b></small><strong data-card-live-price>—</strong><em data-card-live-gap>正在取得行情…</em></div>
+            <div class="live-cell"><small>最近可得行情 <b data-card-status>讀取中</b></small><strong data-card-live-price>—</strong><small data-card-quote-time></small><em data-card-live-gap>正在取得行情…</em></div>
             {model ? <><div><small>正規盤快照</small><strong>{money(model.price)}</strong><em>{model.date}</em></div><div data-active-model={r.ticker}><small>條件基準</small><strong>{money(model.cases[1]!.value)}</strong><em>美元／股 · 非即時</em></div></> : <>
             <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{r.ticker==='NVDA' && r.asOf==='2026-11-18' ? '11/17正規盤收盤' : dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05 美東盤中 10:20' : amd ? '11/03 美東盤後 19:59' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
             <div><small>{dual || rpd || app || amd || lulu ? '未來十二個月獲利基準' : historic ? '歷史基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
@@ -93,16 +96,18 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           const quote = payload?.quotes?.[card.dataset.ticker || ''];
           const priceNode = card.querySelector<HTMLElement>('[data-card-live-price]');
           const statusNode = card.querySelector<HTMLElement>('[data-card-status]');
+          const timeNode = card.querySelector<HTMLElement>('[data-card-quote-time]');
           const gapNode = card.querySelector<HTMLElement>('[data-card-live-gap]');
           const fair = Number(card.dataset.fairValue);
           if(!quote || !priceNode || !statusNode || !gapNode || !Number.isFinite(Number(quote.price)) || !fair) return;
           const minimum=Date.parse(card.dataset.minObservedAt||'');
           const observedAt=Date.parse(quote.observedAt||'');
-          if(Number.isFinite(minimum)&&(!Number.isFinite(observedAt)||observedAt<minimum)){statusNode.textContent='暫無較新行情';priceNode.textContent='—';gapNode.textContent='行情檔早於分析快照';card.dataset.liveState='stale';return;}
+          if(!Number.isFinite(observedAt)||(Number.isFinite(minimum)&&observedAt<minimum)){statusNode.textContent='暫無較新行情';priceNode.textContent='—';gapNode.textContent='行情檔早於分析快照';card.dataset.liveState='stale';return;}
           const price = Number(quote.price);
           const gap = (fair/price-1)*100;
           priceNode.textContent = `$${price.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
-          statusNode.textContent = phaseLabels[quote.phase] ?? '最新';
+          statusNode.textContent = phaseLabels[quote.phase] ?? '快照';
+          if(timeNode) timeNode.textContent = `${new Intl.DateTimeFormat('sv-SE',{timeZone:'America/New_York',dateStyle:'short',timeStyle:'short'}).format(observedAt)} 美東`;
           if(card.dataset.preSplit === 'true'){
             gapNode.textContent = '拆股後行情 · 不直接比較舊估值';
             card.dataset.liveState = 'ready';
