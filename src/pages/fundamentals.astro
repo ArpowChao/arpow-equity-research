@@ -11,13 +11,14 @@ const items = [...batch.items].sort((a,b)=>a.ticker.localeCompare(b.ticker));
   <main class="shell section">
     <div class="eyebrow">SEC evidence check · 各檔核對日期見卡片</div>
     <h1>全站基本面核對</h1>
-    <p class="intro">本頁包含先前批次SEC申報／XBRL核對，以及個別新增研究；各檔檢查日期不同，不代表全部今天重查。APP於2026-11-05透過完整10-Q鏡像及官方申報索引核對，其餘保留原資料。<strong>這是新證據核對，不是重新估值：</strong>原個股頁的合理價、投資判斷與分析快照仍以其標示日期為準；若近期有新公告，須閱讀全文後才能修訂結論。</p>
+    <p class="intro">本頁包含先前批次SEC申報／XBRL核對，以及個別新增研究；各檔檢查日期不同，不代表全部今天重查。2026-11-22 新核對 PLTR 與 SNDK 的 10-Q 財務欄位；其他標的保留各自上次核對的資料。<strong>這是新證據核對，不是重新估值：</strong>原個股頁的合理價、投資判斷與分析快照仍以其標示日期為準；若近期有新公告，須閱讀全文後才能修訂結論。</p>
     <p class="caution">營收優先採最近申報的單季數值；年度申報或欠缺單季欄位時，明確列出實際起迄期間。營運現金流通常是年初至今累計，不可與單季營收直接相比。多數數值來自 SEC XBRL；LAES 由官方 6-K 附件 99.1 的千美元單位換算。未取得欄位不代表公司沒有該項數值。金額單位為億美元；股價不參與本頁估值。</p>
     <nav class="jump" aria-label="個股快速跳轉">{items.map(i=><a href={`#${i.ticker.toLowerCase()}`}>{i.ticker}</a>)}</nav>
     <div class="cards">
       {items.map(i => <article id={i.ticker.toLowerCase()} class="card stock">
         <header><div><span class="ticker">{i.ticker}</span><h2>{i.company}</h2></div><a href={`${base}research/${i.ticker.toLowerCase()}`}>原研究頁 ↗</a></header>
         <div class="meta"><span>本檔核對：<b>{checkedAtFor(i).slice(0,10)} UTC</b></span><span>財報期間結束：<b>{i.statement.periodEnd}</b></span><span>SEC 提交：<b>{i.statement.filed} · {i.statement.form}</b></span><span>原估值快照：<b>{i.analysisAsOf}</b></span></div>
+        {"filingIndexNotRechecked" in i && i.filingIndexNotRechecked && <p class="warning">本次重核財報原文，未全面重查後續 SEC 申報。</p>}
         {i.newerFilingNeedsReview && <p class="warning">⚠️ 這份財報之後另有 SEC 文件；以下數值尚未涵蓋新文件可能帶來的變動，請查閱「最新提交文件」。</p>}
         <div class="figures">
           <div><small>營收 · {period(i.fields.revenue)}</small><strong>{fmt(i.fields.revenue?.value)}</strong></div>
@@ -25,7 +26,7 @@ const items = [...batch.items].sort((a,b)=>a.ticker.localeCompare(b.ticker));
           <div><small>營運現金流 · {period(i.fields.operatingCashFlow)}</small><strong>{fmt(i.fields.operatingCashFlow?.value)}</strong></div>
           <div><small>帳面現金 · {period(i.fields.cash)}</small><strong>{fmt(i.fields.cash?.value)}</strong></div>
         </div>
-        <div class="links"><a href={i.statement.url} target="_blank" rel="noopener noreferrer">本次財報原文 ↗</a><a href={i.latestFiling.url} target="_blank" rel="noopener noreferrer">最新 SEC 提交文件 ↗</a></div>
+        <div class="links"><a href={i.statement.url} target="_blank" rel="noopener noreferrer">本次財報原文 ↗</a><a href={i.latestFiling.url} target="_blank" rel="noopener noreferrer">{"filingIndexNotRechecked" in i && i.filingIndexNotRechecked ? (i.ticker === "SNDK" ? "已核對拆股 8-K ↗" : "SEC 財報檔案 ↗") : "最新 SEC 提交文件 ↗"}</a></div>
       </article>)}
     </div>
     <p class="foot">原批次資料擷取：{batch.checkedAtUtc}；個別更新時間見卡片。資料源：SEC submissions／companyfacts；APP另核讀SEC2PDF完整申報鏡像。申報書中的分部、指引、調整項目、一次性損益、債務、稀釋與政策風險不一定能由標準 XBRL 欄位反映。不能把此頁當作完成逐檔投資判斷更新。</p>

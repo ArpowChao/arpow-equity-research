@@ -1,4 +1,5 @@
 ---
+import { splits } from "../../data/splits";
 import Base from '../../layouts/Base.astro';
 import reports from '../../data/reports.generated.json';
 import { beginnerGuides, glossary } from '../../data/beginner-guides';
@@ -25,6 +26,8 @@ const amdEconomic = report.ticker==='AMD' && report.asOf>='2026-11-04';
 const pltrSensitivity = report.ticker === 'PLTR' && report.asOf >= '2026-11-04';
 const conditionalModel = dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic || pltrSensitivity;
 const intcAudit = report.ticker === 'INTC' && report.asOf >= '2026-10-24';
+const split = splits[report.ticker];
+const preSplit = split && report.asOf < split.tradingDate;
 const upside = ((report.snapshot.baseFairValue/report.snapshot.price)-1)*100;
 const methodFor = dualEconomic ? dual.method : rpdEconomic ? 'rapid7-economic-ntm' : luluEconomic ? 'lululemon-normalized-ntm' : appEconomic ? 'applovin-economic-ntm' : amdEconomic ? 'amd-economic-ntm' : pltrSensitivity ? 'palantir-growth-valuation' : intcAudit ? 'intel-model-audit' : report.ticker === 'NVDA' && report.asOf >= '2026-10-24' ? 'nvidia-economic-ntm' : report.ticker === 'MU' && report.asOf >= '2026-10-24' ? 'memory-dual-horizon' : report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
@@ -48,6 +51,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
   <section class="shell report-hero">
     <div><div class="eyebrow">{report.ticker} · {report.asOf} 快照</div><h1>{report.company}</h1><p>{report.thesis}</p></div>
     <div class="quote-column">
+      {preSplit && <div class="card" style="padding:16px"><strong>舊模型採拆股前口徑</strong><p>{split.tradingDate} 起按 1 股拆為 {split.ratio} 股交易。原基準換算為每股 ${(report.snapshot.baseFairValue / split.ratio).toFixed(2)}，僅換算單位，不是重新估值。舊圖表、快照與試算仍採原口徑。</p><a href={split.source}>SEC 拆股文件 ↗</a></div>}
       <div class="live-quote card" data-live-quote data-min-observed-at={priceMeta?.observedAtUtc} data-ticker={report.ticker} data-endpoint={`${base}data/live-quotes.json`} aria-live="polite">
         <div class="quote-heading"><span>最新可得行情</span><b data-live-status>讀取中</b></div>
         <strong data-live-price>—</strong>

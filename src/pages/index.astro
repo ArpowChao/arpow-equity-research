@@ -1,4 +1,5 @@
 ---
+import { splits } from "../data/splits";
 import Base from '../layouts/Base.astro';
 import reports from '../data/reports.generated.json';
 import { methods } from '../data/methods';
@@ -26,6 +27,8 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <div class="section-head"><div><div class="eyebrow">Research archive</div><h2>最新個股研究</h2></div><p>最新行情約每15分鐘更新；分析快照與合理價固定保存，不會隨行情自動改寫。</p></div>
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
+        const split = splits[r.ticker];
+        const preSplit = Boolean(split && r.asOf < split.tradingDate);
         const upside = ((r.snapshot.baseFairValue / r.snapshot.price - 1) * 100);
         const dual = 'dualTrack' in r && Boolean(r.dualTrack);
         const rpd = r.ticker==='RPD' && r.asOf>='2026-11-11';
@@ -34,7 +37,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         const amd = r.ticker==='AMD' && r.asOf>='2026-11-04';
         const pltr = r.ticker==='PLTR' && r.asOf>='2026-11-04';
         const audit = r.ticker === 'INTC' && r.asOf >= '2026-10-24';
-        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue}>
+        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined}>
           <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{dual ? '雙軌估值' : rpd || app || amd || lulu ? 'NTM經濟模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '最新研究' : '封存快照'} · {r.asOf}</span></div>
           <h3>{r.company}</h3><p>{r.thesis}</p>
           <div class="report-numbers">
@@ -71,6 +74,11 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           const gap = (fair/price-1)*100;
           priceNode.textContent = `$${price.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
           statusNode.textContent = phaseLabels[quote.phase] ?? '最新';
+          if(card.dataset.preSplit === 'true'){
+            gapNode.textContent = '拆股後行情 · 不直接比較舊估值';
+            card.dataset.liveState = 'ready';
+            return;
+          }
           gapNode.textContent = `${card.dataset.audit === 'true' ? '距保守錨點' : '距基準'} ${gap>=0?'+':''}${gap.toFixed(1)}%`;
           gapNode.classList.remove('positive','negative');
           gapNode.classList.add(gap>=0?'positive':'negative');
