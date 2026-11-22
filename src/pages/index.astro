@@ -1,4 +1,5 @@
 ---
+import Signal from "../components/Signal.astro";
 import fundamentals from "../data/fundamentals.generated.json";
 import { splits } from "../data/splits";
 import Base from '../layouts/Base.astro';
@@ -29,7 +30,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
   </section>
 
   <section class="shell section" id="stock-cards">
-    <div class="section-head"><div><div class="eyebrow">不必先點進個股頁</div><h2>個股卡片｜先看數字，再看怎麼算</h2></div><p>每張卡直接列基準計算。行情以實際成交時間為準；估值按標示版本固定。{gapLabel}＝{gapFormula}。負值代表基準低於快照股價。符號：× 乘、÷ 除、＋ 加、− 減、＝ 等於、≈ 約等於；$ 表示美元。</p></div>
+    <div class="section-head"><div><div class="eyebrow">不必先點進個股頁</div><h2>個股卡片｜先看數字，再看怎麼算</h2></div><p>每張卡直接列基準計算。行情以實際成交時間為準；估值按標示版本固定。{gapLabel}＝{gapFormula}。綠色表示基準高於快照股價，紅色表示低於；不是買賣訊號。符號：× 乘、÷ 除、＋ 加、− 減、＝ 等於、≈ 約等於；$ 表示美元。</p></div>
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
         const model = activeModel(r.ticker);
@@ -58,7 +59,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
             <div><small>{dual || rpd || app || amd || lulu ? '未來十二個月獲利基準' : historic ? '歷史基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em>美元／股 · 非即時</em></div>
             </>}
           </div>
-          <p class="card-gap" data-snapshot-gap>{gapLabel} <b>{comparison}</b></p>
+          <p class="card-gap" data-snapshot-gap>{gapLabel} <Signal value={comparison} kind="gap" /></p>
           {model && <div class="card-cases" aria-label="情境估值，美元每股">{model.cases.map(c=><span>{c.label} <b>{money(c.value)}</b></span>)}{model.stress!=null && <span>壓力 <b>{money(model.stress)}</b></span>}</div>}
           <BaseWork ticker={r.ticker} legacy={r} />
           <span class="open">{model ? "開啟三情境、計算步驟與原研究 →" : olderModel ? "有較新申報，估值仍為舊快照 →" : "開啟完整研究 →"}</span>
@@ -70,7 +71,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           <div class="report-top"><span class="ticker mono">ZS</span><span class="pill">{zs.label} · {zs.date}</span></div>
           <h3>Zscaler｜雲端資安</h3><p>以訂閱方式提供雲端安全服務；情境要驗證成長、收現與股權薪酬稀釋。</p>
           <div class="card-cases" aria-label="情境估值，美元每股"><span>正規盤快照 <b>{money(zs.price)}</b></span>{zs.cases.map(c=><span>{c.label} <b>{money(c.value)}</b></span>)}</div>
-          <p class="card-gap" data-snapshot-gap>{gapLabel} <b>{snapshotGap(zs.cases[1]!.value,zs.price)}</b></p>
+          <p class="card-gap" data-snapshot-gap>{gapLabel} <Signal value={snapshotGap(zs.cases[1]!.value,zs.price)} kind="gap" /></p>
           <BaseWork ticker="ZS" /><span class="open">開啟三情境、輸入來源與風險 →</span>
         </a>;
       })()}

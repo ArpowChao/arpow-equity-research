@@ -1,4 +1,5 @@
 ---
+import Signal from "./Signal.astro";
 import BaseWork from "./BaseWork.astro";
 import { activeModel, money, bilingual, gapLabel, snapshotGap } from '../data/learning';
 const { ticker } = Astro.props;
@@ -12,7 +13,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
  <dl>{m.cases.map(c => <div><dt>{c.label}</dt><dd>{money(c.value)}</dd></div>)}</dl>
  {m.stress != null && <p>額外壓力測試：{money(m.stress)}，不是股價下限。</p>}
  <p><strong>公式：</strong>{bilingual(m.formula)}。</p>
- <p data-snapshot-gap><b>{gapLabel} {snapshotGap(m.cases[1]!.value,m.price)}</b></p>
+ <p data-snapshot-gap>{gapLabel} <Signal value={snapshotGap(m.cases[1]!.value,m.price)} kind="gap" /></p>
  <BaseWork ticker={ticker} />
  <p class="links"><a href={`${base}${m.url}`}>看完整輸入、假設與計算 ↗</a><a href={m.source}>原始財報 ↗</a></p>
 </section>}

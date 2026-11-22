@@ -72,3 +72,8 @@ for ticker,expected in (("IONQ","-27.4%"),("DIS","+3.1%")):
     assert expected in card and 'Revenue（營收）' in card, ticker
     assert expected in html[f'research/{ticker.lower()}/'], ticker
 assert 'Revenue（營收）' in html['fundamentals/']
+
+assert re.search(r'data-direction="negative" data-kind="gap"[^>]*>\s*<b[^>]*>-27.4%', html[''])
+assert re.search(r'data-direction="positive" data-kind="gap"[^>]*>\s*<b[^>]*>\+3.1%', html[''])
+for pg in ('', 'fundamentals/', 'research/ionq/'):
+    assert 'data-direction="negative" data-kind="cash"' in html[pg], pg

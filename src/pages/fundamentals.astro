@@ -1,4 +1,5 @@
 ---
+import Signal from "../components/Signal.astro";
 import { bilingual } from "../data/learning";
 import AnalysisSteps from '../components/AnalysisSteps.astro';
 import Base from '../layouts/Base.astro';
@@ -26,12 +27,12 @@ const items = [...batch.items].sort((a,b)=>a.ticker.localeCompare(b.ticker));
         {i.newerFilingNeedsReview && <p class="warning">申報索引另有後續公司文件；下列財報數字未納入新文件可能帶來的變動。</p>}
         {i.preliminary && <p class="warning"><strong>較新初值：</strong>{i.preliminary.text} <a href={i.preliminary.url}>SEC 公告附件 ↗</a></p>}
         <div class="figures">
-          <div><small>{bilingual("營收")} · {period(i.fields.revenue)}</small><strong>{fmt(i.fields.revenue?.value)}</strong>{i.revenueYoyPct != null && <small>{bilingual("年增率")}：{pct(i.revenueYoyPct)}</small>}</div>
-          <div><small>{i.ticker === "DIS" ? bilingual("分部營業利益合計") + "（非 GAAP）" : "Operating Income (Loss)（申報營業損益；依原表口徑）"} · {period(i.fields.operatingIncome)}</small><strong>{fmt(i.fields.operatingIncome?.value)}</strong></div>
-          <div><small>{bilingual("營運現金流")} · {period(i.fields.operatingCashFlow)}</small><strong>{fmt(i.fields.operatingCashFlow?.value)}</strong></div>
+          <div><small>{bilingual("營收")} · {period(i.fields.revenue)}</small><strong>{fmt(i.fields.revenue?.value)}</strong>{i.revenueYoyPct != null && <small>{bilingual("年增率")}：<Signal value={i.revenueYoyPct} label={pct(i.revenueYoyPct)} /></small>}</div>
+          <div><small>{i.ticker === "DIS" ? bilingual("分部營業利益合計") + "（非 GAAP）" : "Operating Income (Loss)（申報營業損益；依原表口徑）"} · {period(i.fields.operatingIncome)}</small><Signal value={i.fields.operatingIncome?.value} label={fmt(i.fields.operatingIncome?.value)} kind="income" /></div>
+          <div><small>{bilingual("營運現金流")} · {period(i.fields.operatingCashFlow)}</small><Signal value={i.fields.operatingCashFlow?.value} label={fmt(i.fields.operatingCashFlow?.value)} kind="cash" /></div>
           <div><small>{bilingual("帳面現金")} · {period(i.fields.cash)}</small><strong>{fmt(i.fields.cash?.value)}</strong></div>
           <div><small>{bilingual("資本支出")} · {period(i.fields.capitalExpenditure)}</small><strong>{fmt(i.fields.capitalExpenditure?.value)}</strong></div>
-          <div><small>{bilingual("簡式自由現金流")} · {period(i.simpleFcf)}</small><strong>{fmt(i.simpleFcf?.value)}</strong></div>
+          <div><small>{bilingual("簡式自由現金流")} · {period(i.simpleFcf)}</small><Signal value={i.simpleFcf?.value} label={fmt(i.simpleFcf?.value)} kind="cash" /></div>
         </div>
         <p class="foot">資料口徑：{i.sourceMethod}</p>
         <div class="links"><a href={i.statement.url} target="_blank" rel="noopener noreferrer">本次財報原文 ↗</a><a href={i.latestFiling.url} target="_blank" rel="noopener noreferrer">索引最新公司申報 · {i.latestFiling.form} ↗</a></div>

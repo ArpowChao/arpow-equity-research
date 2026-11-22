@@ -1,4 +1,5 @@
 ---
+import Signal from "../../components/Signal.astro";
 import FilingEvidence from "../../components/FilingEvidence.astro";
 import BaseWork from "../../components/BaseWork.astro";
 import { activeModel, chinese, bilingual, termLabel, gapLabel, snapshotGap } from "../../data/learning";
@@ -73,7 +74,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
       </div>
       <div class="snapshot-quote card">
         <span>{historic ? '歷史模型｜原分析股價' : intcAudit ? '本篇分析快照（原模型；稽核保留）' : '本篇分析快照'}</span><strong>${report.snapshot.price.toFixed(2)}</strong>
-        <small>{historic ? '歷史基準' : dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守模型錨點' : '基準合理價'} ${report.snapshot.baseFairValue.toFixed(2)} · <b>{gapLabel} {originalGap}</b></small>
+        <small>{historic ? '歷史基準' : dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守模型錨點' : '基準合理價'} ${report.snapshot.baseFairValue.toFixed(2)} · {gapLabel} <Signal value={originalGap} kind="gap" /></small>
         {priceMeta && <small>{priceMeta.asOf} · 固定不變</small>}
       </div>
     </div>

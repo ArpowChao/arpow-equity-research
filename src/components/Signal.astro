@@ -1,0 +1,11 @@
+---
+interface Props { value: number | string | null | undefined; label?: string; kind?: 'gap' | 'change' | 'cash' | 'income'; }
+const { value, label, kind = 'change' } = Astro.props;
+const observed = typeof value === 'string' ? Number(value.replace('%','')) : value;
+const direction = observed == null || !Number.isFinite(observed) || observed === 0 ? 'neutral' : observed > 0 ? 'positive' : 'negative';
+const descriptor = direction==='neutral' ? observed === 0 ? '持平' : '未取得' : kind==='gap' ? direction==='positive'?'高於快照':'低於快照' : kind==='cash' ? direction==='positive'?'正現金流':'負現金流' : kind==='income' ? direction==='positive'?'營業獲利':'營業虧損' : direction==='positive'?'成長':'下滑';
+---
+<span class="signal-chip" data-direction={direction} data-kind={kind}><b>{label ?? value ?? '—'}</b><span>{descriptor}</span></span>
+<style>
+.signal-chip{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:2px 6px;max-width:100%;padding:2px 8px;border:1px solid;border-radius:7px;font-size:.9em;font-variant-numeric:tabular-nums;line-height:1.4;vertical-align:baseline}.signal-chip b{white-space:nowrap}.signal-chip>span{font-size:.86em}.signal-chip[data-direction=positive]{background:#eaf6ef;color:#13583b;border-color:#b6d9c2}.signal-chip[data-direction=negative]{background:#fff0ee;color:#912a22;border-color:#ebc2bd}.signal-chip[data-direction=neutral]{background:#f1f3f6;color:#465362;border-color:#d6dde5}
+</style>
