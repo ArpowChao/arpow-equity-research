@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import batch from '../../data/revaluation-2026-11-22.json';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const money = (n:number) => `$${n.toFixed(2)}`;
+const pct = (n:number) => `${n > 0 ? '+' : ''}${(n*100).toFixed(1)}%`;
+const pending = batch.scope.filter(t => !batch.models.some(m => m.ticker === t));
+---
+<Base title="新財報重估追蹤｜Arpow 個股研究簿">
+<main class="shell section">
+  <div class="eyebrow">重估版本 · {batch.asOf}</div>
+  <h1>新財報重估追蹤</h1>
+  <p><strong>{batch.models.length}／{batch.scope.length} 檔已重跑三情境。</strong> 股價統一以 {batch.marketAsOf} 美股正規盤收盤比較。原研究保留歷史；下列為條件式模型，非買賣建議。</p>
+  <nav class="jump" aria-label="已完成個股">{batch.models.map(m=><a href={`#${m.ticker.toLowerCase()}`}>{m.ticker}</a>)}</nav>
+  {batch.models.map(m => <article class="card model" id={m.ticker.toLowerCase()}>
+    <header><div><div class="eyebrow">{m.model}</div><h2>{m.ticker}</h2></div><a href={`${base}research/${m.ticker.toLowerCase()}/`}>原研究 ↗</a></header>
+    <div class="bridge"><span>收盤 <b>{money(m.market)}</b></span><span>舊基準 <b>{money(m.previous)}</b></span><span>新基準 <b>{money(m.scenarios[1]!.value)}</b> ({pct(m.scenarios[1]!.value/m.previous-1)})</span></div>
+    <p>{m.anchors}</p><p>{m.description}</p>
+    <p><strong>公式：</strong>{m.formula}；金額與股數輸入均以十億為單位，每股結果為美元。</p>
+    <div class="cases">{m.scenarios.map(v=><section><div>{v.label}</div><strong>{money(v.value)}</strong><p>{'revenue' in v ? `${v.revenue} 營收 × ${(v.margin!*100).toFixed(0)}% 營益率 × (1−${(v.tax!*100).toFixed(0)}%) ÷ ${v.shares} 股數 × ${v.multiple} 倍` : `(${v.ebitda} EBITDA × ${v.multiple} 倍 + ${v.netCash} 淨現金) ÷ ${v.shares} 股數`}</p><small>{v.condition}</small></section>)}</div>
+    <p><strong>低成長／低倍數壓力：{money(m.stress)}。</strong>{m.stressInputs}。這是獨立壓力情境，不是股價下限。</p>
+    <div class="links"><a href={m.source}>SEC 原始財報 ↗</a><a href={m.release}>公司財報與指引 ↗</a></div>
+  </article>)}
+  {pending.length>0 && <p class="pending"><strong>尚未重估（{pending.length} 檔）：</strong>{pending.join('、')}。繼續保留歷史估值，不把新版財報欄位當成新版合理價。</p>}
+</main>
+<style>
+main{max-width:1050px} h1{font-size:clamp(2rem,6vw,3.4rem);margin:.25em 0}h2{margin:.14em 0}.model{padding:clamp(16px,4vw,32px);margin:18px 0;scroll-margin-top:20px}.model header,.links,.bridge,.jump{display:flex;align-items:center;flex-wrap:wrap;gap:10px 20px}.model header{justify-content:space-between}.model p,.pending{line-height:1.65}.bridge{padding:10px 0;border-block:1px solid var(--line)}.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.cases section,.pending{padding:14px;border-radius:10px;background:#edf4ff}.cases strong{display:block;font-size:1.6rem}.cases p{font-size:.88rem}.cases small{color:var(--muted)}@media(max-width:620px){.cases{grid-template-columns:1fr}}
+</style>
+</Base>

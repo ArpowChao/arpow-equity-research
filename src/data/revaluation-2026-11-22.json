@@ -1,0 +1,110 @@
+{
+  "asOf": "2026-11-22",
+  "marketAsOf": "2026-11-20",
+  "scope": [
+    "ARM",
+    "CBRS",
+    "DIS",
+    "FSLR",
+    "GOOGL",
+    "INTC",
+    "IONQ",
+    "LAES",
+    "MP",
+    "OUST",
+    "QBTS",
+    "SMCI",
+    "SNDK",
+    "SPCX",
+    "UAMY"
+  ],
+  "models": [
+    {
+      "ticker": "SNDK",
+      "model": "中週期本益比",
+      "source": "https://www.sec.gov/Archives/edgar/data/2023554/000162828026068601/sndk-20261002.htm",
+      "release": "https://www.sandisk.com/company/newsroom/press-releases/2026/2026-10-29-sandisk-reports-fiscal-first-quarter-2027-financial-results",
+      "market": 79.24,
+      "previous": 159.375,
+      "scenarios": [
+        {
+          "label": "悲觀",
+          "revenue": 26,
+          "margin": 0.2,
+          "tax": 0.23,
+          "shares": 1.24,
+          "multiple": 10,
+          "value": 32.29032258064517,
+          "condition": "供給擴張且平均單價回落，營益率壓縮"
+        },
+        {
+          "label": "基準",
+          "revenue": 33,
+          "margin": 0.37,
+          "tax": 0.23,
+          "shares": 1.24,
+          "multiple": 14,
+          "value": 106.14822580645162,
+          "condition": "資料中心需求續增，但供需逐步正常化"
+        },
+        {
+          "label": "樂觀",
+          "revenue": 40,
+          "margin": 0.48,
+          "tax": 0.23,
+          "shares": 1.24,
+          "multiple": 18,
+          "value": 214.60645161290321,
+          "condition": "高附加價值產品占比提升且供需較長時間偏緊"
+        }
+      ],
+      "formula": "營收 × 營益率 ×（1－正常化稅率）÷ 稀釋股數 × 本益比",
+      "description": "拆股後稀釋股數 12.32 億為已報季度加權口徑；模型固定 12.40 億。營收及營益率為中週期假設，不是單季年化，也不把股權投資利益納入正常化營益。 舊基準為拆股前 EPS 85 美元 × 15 倍後除以 8；新模型以較低正常化 EPS 與 14 倍反映週期回落。",
+      "anchors": "FY2027 Q1 營收110.31億美元、營益87.80億美元、營運現金流63.63億美元、資本支出0.54億美元。下季公司指引營收122–126億美元、拆股前非 GAAP EPS 55–57 美元。",
+      "stress": 24.70209677419355,
+      "stressInputs": "260億美元營收、17%營益率、23%稅率、12.4億股、9倍"
+    },
+    {
+      "ticker": "FSLR",
+      "model": "正常化 EV／EBITDA",
+      "source": "https://www.sec.gov/Archives/edgar/data/1274494/000127449426000212/fslr-20260930.htm",
+      "release": "https://www.sec.gov/Archives/edgar/data/1274494/000127449426000211/ex991pressreleaseq3-2026.htm",
+      "market": 137.59,
+      "previous": 238.89,
+      "scenarios": [
+        {
+          "label": "悲觀",
+          "ebitda": 1.65,
+          "multiple": 6,
+          "netCash": 1.2,
+          "shares": 0.109,
+          "value": 101.83486238532109,
+          "condition": "抵免折價、取消與低利用率限制現金回收"
+        },
+        {
+          "label": "基準",
+          "ebitda": 2.55,
+          "multiple": 7.5,
+          "netCash": 1.7,
+          "shares": 0.108,
+          "value": 192.82407407407408,
+          "condition": "出貨按訂單落地，抵免可變現，營運資金部分回收"
+        },
+        {
+          "label": "樂觀",
+          "ebitda": 3.05,
+          "multiple": 9,
+          "netCash": 2.1,
+          "shares": 0.107,
+          "value": 276.16822429906546,
+          "condition": "新產能與訂單交付順利，抵免收現和量產改善"
+        }
+      ],
+      "formula": "（正常化 EBITDA × EV／EBITDA + 淨現金）÷ 稀釋股數",
+      "description": "最新全年公司指引不是明年預測。模型以 2026 年新 EBITDA 指引作錨，向前估一年，對抵免變現、客戶取消、產能閒置及資本投入分別給予折扣；不把完整補貼永續化，淨現金不含同等流動性不足資產的額外加成。 舊基準使用 30 億美元 EBITDA、8 倍及 18 億美元淨現金，新模型三項都下修。",
+      "anchors": "2026 Q3 季營收12.31億美元、營益5.46億美元；首九月營運現金流負4.03億美元、資本支出4.35億美元。FY2026 調整後 EBITDA 指引由26–28億降至25.5–27.5億美元；公司年度淨現金指引17–23億美元（公司定義包含受限現金）。",
+      "stress": 80.73394495412843,
+      "stressInputs": "14億美元 EBITDA、5.5倍、11億美元淨現金、1.09億股"
+    }
+  ]
+}
