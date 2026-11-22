@@ -21,7 +21,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 <body>
   <header class="shell topbar">
     <a class="brand" href={base}><small>ARPOW RESEARCH</small>個股研究簿</a>
-    <nav class="nav" aria-label="主要導覽"><a href={base}>研究首頁</a><a href={`${base}#methods`}>計算方法</a><a href={`${base}about`}>關於資料</a></nav>
+    <nav class="nav" aria-label="主要導覽"><a href={base}>研究首頁</a><a href={`${base}learn/`}>財報入門</a><a href={`${base}about`}>關於資料</a></nav>
   </header>
   <main><slot /></main>
   <footer><div class="shell">資料、假設與價格皆標示快照日期。內容為研究紀錄，不構成個人化投資建議。</div></footer>

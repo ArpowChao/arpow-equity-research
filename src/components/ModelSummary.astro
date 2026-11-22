@@ -1,0 +1,18 @@
+---
+import { activeModel, money } from '../data/learning';
+const { ticker } = Astro.props;
+const m = activeModel(ticker);
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+{m && <section class="card model-summary" data-active-model={ticker}>
+ <div class="eyebrow">{m.label}</div>
+ <h2>這一版估值怎麼看？</h2>
+ <p>{m.date} 美東正規盤快照 <b>{money(m.price)}</b>；不是即時行情。</p>
+ <dl>{m.cases.map(c => <div><dt>{c.label}</dt><dd>{money(c.value)}</dd></div>)}</dl>
+ {m.stress != null && <p>額外壓力測試：{money(m.stress)}，不是股價下限。</p>}
+ <p><strong>公式：</strong>{m.formula}。</p>
+ <p class="links"><a href={`${base}${m.url}`}>看完整輸入、假設與計算 ↗</a><a href={m.source}>原始財報 ↗</a></p>
+</section>}
+<style>
+.model-summary{padding:18px;border-color:#abc4e3;background:#f2f7ff;min-width:0}.model-summary h2{font-size:1.35rem;margin:.35em 0}.model-summary p{margin:.55em 0;overflow-wrap:anywhere}.model-summary dl{display:flex;flex-wrap:wrap;gap:8px 16px;margin:8px 0}.model-summary dd{margin:0;font-weight:700}.links{display:flex;flex-wrap:wrap;gap:4px 16px}.links a{color:#254e88}
+</style>

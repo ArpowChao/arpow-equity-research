@@ -3,6 +3,8 @@ import fundamentals from "../data/fundamentals.generated.json";
 import { splits } from "../data/splits";
 import Base from '../layouts/Base.astro';
 import reports from '../data/reports.generated.json';
+import { activeModel, money } from '../data/learning';
+import AnalysisSteps from '../components/AnalysisSteps.astro';
 import { methods } from '../data/methods';
 const sorted = [...reports].sort((a,b) => b.asOf.localeCompare(a.asOf));
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
@@ -13,6 +15,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
       <div class="eyebrow">Evidence → Model → Decision</div>
       <h1>把每一次分析，<br><span>變成可追溯的研究資產。</span></h1>
       <p>不是把聊天複製成文章。每一個合理價、股數與現金流，都能回到公式、假設和原始來源。</p>
+      <p><a class="link" href={`${base}learn/`}>新手從這裡開始：用一份財報練習 ↗</a></p>
     </div>
     <aside class="hero-ledger card" aria-label="研究流程">
       <div class="ledger-row"><span>01</span><b>原始證據</b><small>SEC／公司 IR／行情快照</small></div>
@@ -27,9 +30,13 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <p class="card" style="padding:18px 22px"><strong>11/14六股雙軌研究：</strong><a class="link" href={`${base}comparisons/six-2026-11-14/`}>MU／FISV／AMD／NVDA／MSFT／AMZN：正常成長與價值股壓力比較 ↗</a>。統一11/13正規盤收盤；遠期價值與今日現值分開。</p>
     <p class="card" style="padding:18px 22px"><strong>11/22 新財報重估：</strong><a class="link" href={`${base}comparisons/revaluation-2026-11-22/`}>看各檔最新三情境與舊基準差異 ↗</a></p>
     <p class="card" style="padding:18px 22px"><strong>14 檔條件估值：</strong><a class="link" href={`${base}comparisons/selection-14/`}>三情境、壓力測試與財報重點 ↗</a></p>
-    <div class="section-head"><div><div class="eyebrow">Research archive</div><h2>最新個股研究</h2></div><p>最新行情約每15分鐘更新；分析快照與合理價固定保存，不會隨行情自動改寫。</p></div>
+    <AnalysisSteps compact />
+    <div class="section-head"><div><div class="eyebrow">Research archive</div><h2>個股研究與估值版本</h2></div><p>最新行情約每15分鐘更新；分析快照與合理價固定保存，不會隨行情自動改寫。</p></div>
+    <p class="card" data-active-model="ZS" style="padding:16px"><b>ZS · 新增條件模型：</b>基準 <b>{money(activeModel("ZS")!.cases[1]!.value)}</b> · {activeModel("ZS")!.date} 美東正規盤比較。<a class="link" href={`${base}research/zs/`}>開啟固定個股頁 ↗</a></p>
     <div class="reports grid" data-live-grid data-endpoint={`${base}data/live-quotes.json`}>
       {sorted.map((r) => {
+        const model = activeModel(r.ticker);
+        const historic = Boolean(model || (fundamentals.items.find(i => i.ticker === r.ticker)?.statement.filed ?? '') > r.asOf);
         const split = splits[r.ticker];
         const latest = fundamentals.items.find(i => i.ticker === r.ticker);
         const olderModel = Boolean(latest && latest.statement.filed > r.asOf);
@@ -42,15 +49,17 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         const amd = r.ticker==='AMD' && r.asOf>='2026-11-04';
         const pltr = r.ticker==='PLTR' && r.asOf>='2026-11-04';
         const audit = r.ticker === 'INTC' && r.asOf >= '2026-10-24';
-        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined} data-older-model={olderModel ? "true" : undefined}>
-          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{dual ? '雙軌估值' : rpd || app || amd || lulu ? 'NTM經濟模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '最新研究' : '封存快照'} · {r.asOf}</span></div>
+        return <a class="report card" href={`${base}research/${r.ticker.toLowerCase()}`} data-live-card data-min-observed-at={(r.priceMeta as {observedAtUtc?:string}|undefined)?.observedAtUtc} data-audit={audit ? 'true' : undefined} data-ticker={r.ticker} data-fair-value={r.snapshot.baseFairValue} data-pre-split={preSplit ? "true" : undefined} data-older-model={historic ? "true" : undefined}>
+          <div class="report-top"><span class="ticker mono">{r.ticker}</span><span class="pill">{model ? `${model.label} · ${model.date}` : historic ? `歷史模型 · ${r.asOf}` : `${dual ? '雙軌估值' : rpd || app || amd || lulu ? 'NTM經濟模型' : pltr ? '條件式敏感度' : audit ? '模型稽核' : r.status === 'current' ? '研究快照' : '封存快照'} · ${r.asOf}`}</span></div>
           <h3>{r.company}</h3><p>{r.thesis}</p>
           <div class="report-numbers">
             <div class="live-cell"><small>最新行情 <b data-card-status>讀取中</b></small><strong data-card-live-price>—</strong><em data-card-live-gap>正在取得行情…</em></div>
+            {model ? <><div><small>正規盤快照</small><strong>{money(model.price)}</strong><em>{model.date}</em></div><div data-active-model={r.ticker}><small>條件基準</small><strong>{money(model.cases[1]!.value)}</strong><em>三情境與公式見個股頁</em></div></> : <>
             <div><small>分析快照</small><strong>${r.snapshot.price.toFixed(2)}</strong><em>{r.ticker==='NVDA' && r.asOf==='2026-11-18' ? '11/17正規盤收盤' : dual ? '11/13正規盤收盤' : rpd ? '11/10正規盤收盤' : lulu ? '11/06正規盤收盤' : app ? '11/05盤中10:20 EST' : amd ? '11/03盤後19:59 EST' : pltr ? '11/03正規盤收盤' : audit ? '10/22收盤；10/24稽核' : r.asOf}</em></div>
-            <div><small>{dual || rpd || app || amd || lulu ? 'NTM經濟基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
+            <div><small>{dual || rpd || app || amd || lulu ? 'NTM經濟基準' : historic ? '歷史基準' : pltr ? '條件式基準' : audit ? '保守模型錨點' : '基準合理價'}</small><strong>${r.snapshot.baseFairValue.toFixed(2)}</strong><em class={upside >= 0 ? 'positive':'negative'}>快照差距 {upside >= 0 ? '+':''}{upside.toFixed(1)}%</em></div>
+            </>}
           </div>
-          <span class="open">{olderModel ? "有較新申報，估值仍為舊快照 →" : "開啟完整研究 →"}</span>
+          <span class="open">{model ? "開啟三情境、計算步驟與原研究 →" : olderModel ? "有較新申報，估值仍為舊快照 →" : "開啟完整研究 →"}</span>
         </a>
       })}
     </div>
@@ -85,7 +94,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
             return;
           }
           if(card.dataset.olderModel === 'true'){
-            gapNode.textContent = '有較新財報 · 不顯示舊估值差距';
+            gapNode.textContent = '行情與估值快照分開 · 不直接比較';
             card.dataset.liveState = 'ready';
             return;
           }

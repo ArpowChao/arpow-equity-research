@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import AnalysisSteps from '../components/AnalysisSteps.astro';
+import fundamentals from '../data/fundamentals.generated.json';
+import selection from '../data/selection-14.json';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const dis = fundamentals.items.find(m => m.ticker === 'DIS')!;
+const model = selection.rows.find(m => m.ticker === 'DIS')!;
+const baseCase = model.cases.find(c=>c.label==='基準')!;
+const ocf = dis.fields.operatingCashFlow!.value / 1e8;
+const capex = dis.fields.capitalExpenditure!.value / 1e8;
+---
+<Base title="財報入門｜跟著迪士尼算一次">
+<div class="shell lesson section">
+  <div class="eyebrow">入門實作 · 迪士尼 FY2026</div>
+  <h1>拿到財報，第一步看什麼？</h1>
+  <p class="intro">別先找目標價。照這五步讀，你會知道哪個數字是公司公布的、哪個是自己假設的，以及兩者怎麼算成每股價值。</p>
+  <AnalysisSteps />
+  <section class="card lab" id="disney-example" aria-labelledby="example-title">
+    <div class="eyebrow">跟著算 · 金額以億美元、EPS 以美元／股</div>
+    <h2 id="example-title">迪士尼：從營收算到每股價值</h2>
+    <ol>
+      <li><b>生意：</b>先分樂園與郵輪、娛樂串流、體育。樂園可以量價齊升，但建造新設施和買轉播權都要花現金。</li>
+      <li><b>成長：</b>FY2026 營收 1,023.44 ÷ FY2025 的 944.25 − 1 ≈ 8.39%。FY2026 多一週，不能把 8.39% 全當作有機成長。公司公布的分部營業利益合計也不是合併 GAAP 營益。<a href={model.source}>10-K ↗</a></li>
+      <li><b>現金：</b>同一財年營運現金流 {ocf.toFixed(2)} − 資本支出 {capex.toFixed(2)} = <strong>{(ocf-capex).toFixed(2)} 億美元</strong>簡式自由現金流。<a href={model.source}>10-K 現金流量表 ↗</a></li>
+      <li><b>每股：</b>FY2026 的 GAAP 稀釋 EPS 是 5.63，公司調整後 EPS 是 7.02。案例選用調整口徑，再減公司估計的第 53 週貢獻 0.17，得到模型起點 <strong>6.85</strong>。這是正常化假設，不是 FY2026 GAAP EPS。<a href={model.source2}>公司公告與調節表 ↗</a></li>
+      <li><b>估值：</b>基準假設成長 11%、本益比 16 倍。6.85 × (1 + 11%) × 16 = <strong>{baseCase.value.toFixed(2)} 美元／股</strong>。11% 和 16 倍是教學沿用的模型輸入，不是財報事實，也不是公司精確指引。<a href={`${base}comparisons/selection-14/#dis`}>三情境與壓力測試 ↗</a></li>
+    </ol>
+    <form id="eps-lab" autocomplete="off">
+      <h3>動手改一個假設，看看影響</h3>
+      <noscript><p>互動試算需要啟用 JavaScript；固定公式與基準值仍可閱讀。</p></noscript>
+      <div class="choices">
+        <label>正常化 EPS（美元／股）<input name="eps" id="lab-eps" type="number" step="any" min="0.01" required value="6.85"></label>
+        <label>預估成長（%）<input name="growth" id="lab-growth" type="number" step="any" min="-99" required value="11"></label>
+        <label>假設本益比（倍）<input name="multiple" id="lab-multiple" type="number" step="any" min="0.01" required value="16"></label>
+      </div>
+      <p><output aria-live="polite" for="lab-eps lab-growth lab-multiple" id="lab-result"><strong>121.66 美元／股</strong> · 6.85 × (1 + 11%) × 16</output></p>
+      <button type="reset">還原基準</button>
+      <p>如果成長不及預期或市場願付倍數下修，這個基準就不成立。試算價不是保證；不適用於負 EPS 公司。</p>
+    </form>
+  </section>
+  <section class="card lab" aria-labelledby="loss-title">
+    <h2 id="loss-title">公司還在虧錢，怎麼算？</h2>
+    <p>負 EPS 無法用本益比估值。可用營收倍數做<strong>情境敏感度</strong>，但要問「未來能不能賺到錢」，不能只用同業倍數套公式。</p>
+    <p><strong>教學假設：</strong>下一年營收 10 億美元 × 3 倍 = 30 億美元企業價值。加 2 億淨現金，再除以 4 億完全稀釋股數，得到 <strong>8 美元／股</strong>。淨負債則要扣除；若未來需要發新股，應重算股數與現金。這組數字不是任何個股的財報。</p>
+    <p>若用數年後的業績，還要把遠期價值折回今天；若現金跑道不足或難以建立長期利潤，先縮小信賴程度，不把估值當價格底線。<a class="link" href={`${base}research/ionq/`}>看 IONQ 的情境與公式 ↗</a></p>
+  </section>
+  <section class="card lab" aria-labelledby="quiz-title">
+    <h2 id="quiz-title">不看答案，先做自測</h2>
+    <ol><li>營收成長，但自由現金流下降，你先翻哪張表、查哪兩個項目？</li><li>為什麼不能把季度營收跟年初至今的資本支出拿去算同一期比率？</li><li>如果每股盈餘不變，股價下跌就代表更有安全邊際嗎？什麼新證據會讓你下修模型？</li></ol>
+    <p><a class="link" href={`${base}research/dis/`}>打開 DIS 個股頁練習 ↗</a>　<a class="link" href={`${base}fundamentals/`}>換一家公司試試 ↗</a>　<a class="link" href={`${base}#methods`}>看進階估值方法 ↗</a></p>
+  </section>
+</div>
+<script>
+const lab = document.querySelector<HTMLFormElement>('#eps-lab');
+const out = document.querySelector<HTMLOutputElement>('#lab-result');
+function recalc(){
+ if(!lab || !out) return;
+ const data=new FormData(lab);
+ const [eps,growth,multiple]=['eps','growth','multiple'].map(k=>Number(data.get(k))) as [number,number,number];
+ const v=eps*(1+growth/100)*multiple;
+ out.textContent = lab.checkValidity() && Number.isFinite(v) ? `${v.toFixed(2)} 美元／股 · ${eps} × (1 + ${growth}%) × ${multiple}` : '請輸入正的 EPS 與倍數，成長率不得低於 −99%。';
+}
+lab?.addEventListener('submit',e=>e.preventDefault());
+lab?.addEventListener('input',recalc);
+lab?.addEventListener('reset',()=>requestAnimationFrame(recalc));
+</script>
+<style>
+.lesson{max-width:960px}.intro{max-width:650px;font-size:1.1rem}.lab{padding:clamp(16px,4vw,32px);margin:20px 0}.lab h2{margin:.45em 0}.lab ol{padding-left:1.5rem}.lab li{margin:.5rem 0}.lab form{border:1px solid #cdddf0;border-radius:12px;padding:16px;background:#f1f6ff}.lab h3{margin-top:0}.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,185px),1fr));gap:12px}.choices label{display:grid;gap:5px;min-width:0}.choices input{width:100%;min-width:0;border:1px solid #7e96b1;padding:8px;border-radius:6px;background:white}.lab button{border:1px solid #7e96b1;border-radius:6px;background:white;padding:6px 12px;cursor:pointer}.lab output{display:block;font-weight:700;overflow-wrap:anywhere}
+</style>
+</Base>

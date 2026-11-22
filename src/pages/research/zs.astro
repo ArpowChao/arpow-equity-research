@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import AnalysisSteps from '../../components/AnalysisSteps.astro';
+import ModelSummary from '../../components/ModelSummary.astro';
+import selection from '../../data/selection-14.json';
+const zs=selection.rows.find(m=>m.ticker==='ZS')!;
+---
+<Base title="ZS｜Zscaler 條件式研究">
+ <div class="shell section" style="max-width:960px">
+  <div class="eyebrow">ZS · 指定資料集新增條件模型</div>
+  <h1>Zscaler</h1>
+  <p><b>怎麼賺錢：</b>{zs.business}</p><p>{zs.summary}</p>
+  <ModelSummary ticker="ZS" />
+  <AnalysisSteps compact />
+  <p><b>接下來驗證：</b>{zs.watch} {zs.risk}</p>
+  <p>目前是條件研究，不等同納入 26 檔既有 SEC 追蹤清單。</p>
+ </div>
+</Base>

@@ -1,4 +1,5 @@
 ---
+import AnalysisSteps from '../../components/AnalysisSteps.astro';
 import Base from '../../layouts/Base.astro';
 import batch from '../../data/revaluation-2026-11-22.json';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
@@ -10,6 +11,7 @@ const pending = batch.scope.filter(t => !batch.models.some(m => m.ticker === t))
 <main class="shell section">
   <div class="eyebrow">重估版本 · {batch.asOf}</div>
   <h1>新財報重估追蹤</h1>
+  <AnalysisSteps compact />
   <p><strong>{batch.models.length}／{batch.scope.length} 檔已重跑三情境。</strong> 股價統一以 {batch.marketAsOf} 美股正規盤收盤比較。原研究保留歷史；下列為條件式模型，非買賣建議。</p>
   <p class="pending"><strong>15 檔可重算試算表：</strong><a href={`${base}downloads/valuation-scenarios-15.xlsx`} download>下載 Excel ↗</a>。依本頁標示的資料快照做條件試算，不是即時估值；下載檔的涵蓋範圍與下方已個別發布的研究數不同。</p>
   <nav class="jump" aria-label="已完成個股">{batch.models.map(m=><a href={`#${m.ticker.toLowerCase()}`}>{m.ticker}</a>)}</nav>

@@ -37,7 +37,7 @@ for ticker in (x.lower() for x in expected):
     assert "這家公司最該追蹤的業務引擎" in html
     assert "點開白話名詞表" in html
     assert "最新可得行情" in html
-    assert "本篇分析快照" in html
+    assert "本篇分析快照" in html or "歷史模型｜原分析股價" in html
     assert "data-live-quote" in html
 index_html = (ROOT / "dist/index.html").read_text(encoding="utf-8")
 fundamentals = json.loads((ROOT / "src/data/fundamentals.generated.json").read_text(encoding="utf-8"))

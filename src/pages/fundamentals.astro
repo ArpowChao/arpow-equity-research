@@ -1,4 +1,5 @@
 ---
+import AnalysisSteps from '../components/AnalysisSteps.astro';
 import Base from '../layouts/Base.astro';
 import batch from '../data/fundamentals.generated.json';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
@@ -12,6 +13,7 @@ const items = [...batch.items].sort((a,b)=>a.ticker.localeCompare(b.ticker));
   <main class="shell section">
     <div class="eyebrow">SEC evidence check · 各檔核對日期見卡片</div>
     <h1>全站基本面核對</h1>
+  <AnalysisSteps compact />
     <p class="intro">截至 {batch.checkedAtUtc.slice(0,10)} UTC 已逐檔核對 {items.length} 檔的 SEC 申報索引及財報數據。<strong>基本面更新不等於重新估值：</strong>各檔保留原估值快照；後續公告若只核對索引，不視為已納入模型。</p>
     <p class="caution">10-Q 營收採單季口徑，10-K 採全年口徑，其他依實際申報起迄日。簡式自由現金流只用同期間的營運現金流減資本支出，不含租賃本金等其他調整。營運現金流通常是年初至今累計，不可與單季營收直接相比。多數數值來自 SEC XBRL；LAES 由官方 6-K 附件 99.1 的千美元單位換算。未取得欄位不代表公司沒有該項數值。金額單位為億美元；股價不參與本頁估值。</p>
     <nav class="jump" aria-label="個股快速跳轉">{items.map(i=><a href={`#${i.ticker.toLowerCase()}`}>{i.ticker}</a>)}</nav>
@@ -24,7 +26,7 @@ const items = [...batch.items].sort((a,b)=>a.ticker.localeCompare(b.ticker));
         {i.preliminary && <p class="warning"><strong>較新初值：</strong>{i.preliminary.text} <a href={i.preliminary.url}>SEC 公告附件 ↗</a></p>}
         <div class="figures">
           <div><small>營收 · {period(i.fields.revenue)}</small><strong>{fmt(i.fields.revenue?.value)}</strong>{i.revenueYoyPct != null && <small>年增率：{pct(i.revenueYoyPct)}</small>}</div>
-          <div><small>GAAP 營業利益 · {period(i.fields.operatingIncome)}</small><strong>{fmt(i.fields.operatingIncome?.value)}</strong></div>
+          <div><small>{i.ticker === "DIS" ? "分部營業利益合計（非 GAAP）" : "申報營業損益欄位（請核對原始口徑）"} · {period(i.fields.operatingIncome)}</small><strong>{fmt(i.fields.operatingIncome?.value)}</strong></div>
           <div><small>營運現金流 · {period(i.fields.operatingCashFlow)}</small><strong>{fmt(i.fields.operatingCashFlow?.value)}</strong></div>
           <div><small>帳面現金 · {period(i.fields.cash)}</small><strong>{fmt(i.fields.cash?.value)}</strong></div>
           <div><small>資本支出 · {period(i.fields.capitalExpenditure)}</small><strong>{fmt(i.fields.capitalExpenditure?.value)}</strong></div>

@@ -1,5 +1,7 @@
 ---
-import revaluation from "../../data/revaluation-2026-11-22.json";
+import { activeModel } from "../../data/learning";
+import AnalysisSteps from "../../components/AnalysisSteps.astro";
+import ModelSummary from "../../components/ModelSummary.astro";
 import fundamentals from "../../data/fundamentals.generated.json";
 import { splits } from "../../data/splits";
 import Base from '../../layouts/Base.astro';
@@ -30,8 +32,9 @@ const conditionalModel = dualEconomic || rpdEconomic || appEconomic || amdEconom
 const intcAudit = report.ticker === 'INTC' && report.asOf >= '2026-10-24';
 const split = splits[report.ticker];
 const latest = fundamentals.items.find(i => i.ticker === report.ticker);
-const revalued = revaluation.models.some(m => m.ticker === report.ticker);
+const model = activeModel(report.ticker);
 const olderModel = Boolean(latest && latest.statement.filed > report.asOf);
+const historic = Boolean(model || olderModel);
 const preSplit = split && report.asOf < split.tradingDate;
 const upside = ((report.snapshot.baseFairValue/report.snapshot.price)-1)*100;
 const methodFor = dualEconomic ? dual.method : rpdEconomic ? 'rapid7-economic-ntm' : luluEconomic ? 'lululemon-normalized-ntm' : appEconomic ? 'applovin-economic-ntm' : amdEconomic ? 'amd-economic-ntm' : pltrSensitivity ? 'palantir-growth-valuation' : intcAudit ? 'intel-model-audit' : report.ticker === 'NVDA' && report.asOf >= '2026-10-24' ? 'nvidia-economic-ntm' : report.ticker === 'MU' && report.asOf >= '2026-10-24' ? 'memory-dual-horizon' : report.ticker === 'ARM' && report.asOf >= '2026-10-23' ? 'arm-economic-earnings' : report.ticker === 'INTC' && report.asOf >= '2026-10-23' ? 'intel-turnaround' : report.valuation.type === 'ev-sales-diluted' ? 'dilution-rpo' : report.valuation.type === 'future-ev-ebitda' ? 'project-ramp-valuation' : report.valuation.type === 'cycle-pe' ? 'memory-cycle' : 'scenario-valuation';
@@ -54,10 +57,10 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
 ---
 <Base title={`${report.ticker}｜${report.company} 個股研究`} description={report.thesis}>
   <section class="shell report-hero">
-    <div><div class="eyebrow">{report.ticker} · {report.asOf} 快照</div><h1>{report.company}</h1><p>{report.thesis}</p></div>
+    <div><div class="eyebrow">{report.ticker} · {historic ? "原研究／歷史模型" : "研究快照"} {report.asOf}</div><h1>{report.company}</h1><p>{report.thesis}</p><a class="link" href="#reading-order">從財報閱讀順序開始 ↓</a></div>
     <div class="quote-column">
-      {revalued && <div class="card" style="padding:16px"><strong>另有新財報三情境</strong><p>本頁仍保留原估值。<a href={`${base}comparisons/revaluation-2026-11-22/#${report.ticker.toLowerCase()}`}>查看 11/22 重估 ↗</a></p></div>}
-      {olderModel && latest && <div class="card" style="padding:16px"><strong>估值尚未納入較新申報</strong><p>財報期末：{latest.statement.periodEnd}。下方保留原估值與分析快照，不代表目前合理價。</p><a href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>查看最新已核對的財報數據 ↗</a></div>}
+      <ModelSummary ticker={report.ticker} />
+      {olderModel && model?.kind !== "revalued" && latest && <div class="card" style="padding:16px"><strong>估值尚未納入較新申報</strong><p>財報期末：{latest.statement.periodEnd}。下方保留原估值與分析快照，不代表目前合理價。</p><a href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>查看最新已核對的財報數據 ↗</a></div>}
       {preSplit && <div class="card" style="padding:16px"><strong>舊模型採拆股前口徑</strong><p>{split.tradingDate} 起按 1 股拆為 {split.ratio} 股交易。原基準換算為每股 ${(report.snapshot.baseFairValue / split.ratio).toFixed(2)}，僅換算單位，不是重新估值。舊圖表、快照與試算仍採原口徑。</p><a href={split.source}>SEC 拆股文件 ↗</a></div>}
       <div class="live-quote card" data-live-quote data-min-observed-at={priceMeta?.observedAtUtc} data-ticker={report.ticker} data-endpoint={`${base}data/live-quotes.json`} aria-live="polite">
         <div class="quote-heading"><span>最新可得行情</span><b data-live-status>讀取中</b></div>
@@ -67,13 +70,15 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
         <small class="quote-disclaimer">約每15分鐘更新 · 非交易所即時報價</small>
       </div>
       <div class="snapshot-quote card">
-        <span>{intcAudit ? '本篇分析快照（原模型；稽核保留）' : '本篇分析快照'}</span><strong>${report.snapshot.price.toFixed(2)}</strong>
-        <small>{dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守模型錨點' : '基準合理價'} ${report.snapshot.baseFairValue.toFixed(2)} · <b class={upside>=0?'positive':'negative'}>{upside>=0?'+':''}{upside.toFixed(1)}%</b></small>
+        <span>{historic ? '歷史模型｜原分析股價' : intcAudit ? '本篇分析快照（原模型；稽核保留）' : '本篇分析快照'}</span><strong>${report.snapshot.price.toFixed(2)}</strong>
+        <small>{historic ? '歷史基準' : dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守模型錨點' : '基準合理價'} ${report.snapshot.baseFairValue.toFixed(2)} · <b class={upside>=0?'positive':'negative'}>{upside>=0?'+':''}{upside.toFixed(1)}%</b></small>
         {priceMeta && <small>{priceMeta.asOf} · 固定不變</small>}
       </div>
     </div>
   </section>
 
+  <div class="shell" id="reading-order"><AnalysisSteps compact /><p><a class="link" href="#company-evidence">看這家公司的營運證據 ↓</a> · <a class="link" href={`${base}fundamentals/#${report.ticker.toLowerCase()}`}>用這家公司的申報數字練習 ↗</a> · <a class="link" href="#filing-sources">找原始申報 ↓</a></p></div>
+  {historic && <div class="shell"><h2>歷史模型｜以下數字僅供版本回顧</h2></div>}
   <section class="shell scenario-strip">
     <div class="scenario bear"><span>悲觀</span><strong>${report.snapshot.bear.toFixed(2)}</strong></div>
     <div class="scenario base"><span>{dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? 'NTM經濟基準' : pltrSensitivity ? '條件式基準' : intcAudit ? '保守基準（非唯一公平價）' : '基準'}</span><strong>${report.snapshot.base.toFixed(2)}</strong></div>
@@ -91,7 +96,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
     <div class="beginner-steps">
       <article><span class="step-label">它怎麼賺錢？</span><p>{guide.earns}</p></article>
       <article><span class="step-label">現在真正要問什麼？</span><p>{guide.keyQuestion}</p></article>
-      <article class="price-step"><span class="step-label">價格怎麼看？</span><p>{priceVerdict}</p></article>
+      <article class="price-step"><span class="step-label">價格怎麼看？</span><p>{historic ? `下列估值固定於 ${report.asOf}，不是現時判斷。請先核對新財報，再看頁首條件試算（如有）。` : priceVerdict}</p></article>
     </div>
     <div class="watch-head"><div><span>不同產業，看不同數字</span><h3>這家公司最該追蹤的業務引擎</h3></div><p>不用一次看懂所有財報。先盯這幾項，確認它們是在變好，還是變壞。</p></div>
     <div class="watch-grid">{guide.watch.map(item=><article class="watch-card">
@@ -104,7 +109,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
 
   <section class="shell content-grid section">
     <article class={dualEconomic || luluEconomic || rpdEconomic ? 'lulu-research' : undefined}>
-      <div class="section-head"><div><div class="eyebrow">Operating evidence</div><h2>關鍵營運證據</h2></div></div>
+      <div class="section-head" id="company-evidence"><div><div class="eyebrow">Operating evidence</div><h2>關鍵營運證據</h2></div></div>
       <div class="metric-grid grid">{report.metrics.map(m=><div class="metric-card card"><span>{m.label}</span><strong>{m.value}</strong><small>{m.note}</small></div>)}</div>
       <div class="chart card"><img src={chartUrl} alt={`${report.ticker} 於 ${report.asOf} 的${dualEconomic ? '行情與雙軌估值圖' : '一年價格結構圖'}`} loading="lazy" /></div>
       {scenarios.length > 0 && <div class="scenario-table card"><h2>情境假設與驗證條件</h2><div class="table-scroll"><table><thead><tr><th>情境</th><th>核心輸入</th><th>{conditionalModel ? '條件式價值' : '合理價'}</th><th>可觀察條件</th></tr></thead><tbody>{scenarios.map(s=><tr><td><b>{s.label}</b></td><td>{s.assumption}</td><td class="mono">${Number(s.value).toFixed(2)}</td><td>{s.condition}</td></tr>)}</tbody></table></div></div>}
@@ -131,7 +136,7 @@ const priceVerdict = dualEconomic ? dual.verdict : rpdEconomic ? '14.49美元快
     </article>
     <aside>
       <div class="calc card">
-        <div class="eyebrow">Model explorer</div><h2>估值試算</h2>
+        <div class="eyebrow">Model explorer</div><h2>{historic ? "歷史模型估值試算" : "估值試算"}</h2>
         {report.valuation.type === 'future-ev-ebitda' ? <div data-calculator="future-ebitda"><label>遠期 EBITDA（百萬）<input id="ebitda" type="number" step="10" value={report.valuation.forwardEbitda}/></label><label>EV/EBITDA<input id="multiple" type="number" step="0.5" value={report.valuation.baseMultiple}/></label><label>遠期淨現金（百萬；淨負債填負值）<input id="cash" type="number" step="10" value={report.valuation.netCash}/></label><label>折現因子<input id="discount" type="number" step="0.01" value={report.valuation.discountFactor}/></label><label>未來稀釋股數（百萬）<input id="shares" type="number" step="1" value={report.valuation.dilutedShares}/></label><div class="result"><span>試算現值</span><strong id="result">—</strong></div></div> : report.valuation.type !== 'ev-sales-diluted' ? <div data-calculator="pe"><label>{dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? '含SBC的NTM經濟EPS' : report.valuation.type === 'cycle-pe' ? '週期正常化 EPS' : '正常化 EPS'}<input id="earnings" type="number" step="0.01" value={report.valuation.earnings}/></label><label>{dualEconomic || rpdEconomic || appEconomic || amdEconomic || luluEconomic ? '條件式P/E' : '合理 P/E'}<input id="multiple" type="number" step="0.01" value={report.valuation.baseMultiple}/></label><div class="result"><span>{conditionalModel ? '試算條件式價值' : '試算合理價'}</span><strong id="result">—</strong></div></div> : <div data-calculator="ev"><label>前瞻營收（百萬）<input id="revenue" type="number" step="1" value={report.valuation.forwardRevenue}/></label><label>EV/Sales<input id="multiple" type="number" step="0.1" value={report.valuation.baseMultiple}/></label><label>{report.ticker === 'INTC' ? '情境淨資產調整（百萬；含NCI）' : '情境淨現金（百萬）'}<input id="cash" type="number" step="1" value={report.valuation.netCash}/></label><label>完全稀釋股數（百萬）<input id="shares" type="number" step="0.1" value={report.valuation.dilutedShares}/></label><div class="result"><span>{conditionalModel ? '試算條件式價值' : '試算合理價'}</span><strong id="result">—</strong></div></div>}
         {report.modelNotes && <p class="model-note">{report.modelNotes}</p>}
         <a class="method-link" href={`${base}methodology/${methodFor}`}>查看公式、理論與限制 →</a>

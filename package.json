@@ -9,7 +9,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "check": "astro check",
-    "test": "npm run build && python3 tests/validate_public.py",
+    "test": "npm run build && python3 tests/validate_public.py && python3 tests/verify_learning.py",
     "preview": "astro preview",
     "astro": "astro"
   },
