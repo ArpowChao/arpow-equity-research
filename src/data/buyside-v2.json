@@ -1,0 +1,317 @@
+{
+  "version": "2.0",
+  "generatedBy": "valuation_math.py + SEC 8-K/10-K Buy-Side Playbook v2",
+  "items": [
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA",
+      "asOf": "2026-11-18",
+      "priceSnapshot": {
+        "price": 155.46,
+        "date": "2026-11-17",
+        "session": "美東正規盤收盤（盤後曾報 162.74）",
+        "source": "https://query1.finance.yahoo.com/v8/finance/chart/NVDA?range=1y&interval=1d"
+      },
+      "macroContext": {
+        "asOf": "2026-11-19 / 11-20（FRED 與美股收盤快照）",
+        "us10yYieldPct": 5.04,
+        "real10yTipsPct": 2.88,
+        "hyOasPct": 3.52,
+        "marketRegimeNote": "10Y 名目殖利率 5.04% 與實質利率 2.88% 對高估值科技股形成強折現率壓盤；HY OAS 升至 3.52%，市場不再無條件給算力股擴張倍數。"
+      },
+      "verdict": {
+        "tier": "觀察待催化",
+        "oneLiner": "155.46 美元僅交易於約 12.7 倍 NTM 基準 EPS（對比 10Y 美債 ERP +2.85%），已預先反映毛利與治理折價；含 4 年 FCF 後壓測底線升至 101.10～160.67 美元，靜待 Q4 毛利在 71–72% 止穩與 DSO 收斂即可確立賠率。",
+        "positionDiscipline": "在董事會出口監督／獨立調查結果與 Q4 實際收現落實前，採分段觀察或 3%–5% 中小追蹤倉控管單一治理與信用波動風險。",
+        "confirmTriggers": [
+          "未來 1–2 季 GAAP／非 GAAP 毛利率在 71%–72% 區間築底止穩，未因 Rubin 爬坡與 HBM 成本再下修。",
+          "應收帳款週轉天數（DSO）自 64 天回落至 60 天以內，且 OCF／GAAP 淨利轉化率連續維持 80% 以上。"
+        ],
+        "invalidateTriggers": [
+          "Q4 或次季毛利率跌破 70%，同時伴隨 Neocloud 客戶延後驗收或 1,180 億美元擔保池出現實質違約賠付。",
+          "出口管制實質裁罰導致大型Hyperscale 以外訂單明顯砍單，且 DSO 續升突破 70 天並推高存貨週轉壓力。"
+        ]
+      },
+      "storylineSetup": {
+        "tradingNarrative3to6m": "未來 3–6 個月市場正從「AI 算力供不應求」切換成「Rubin 系統級爬坡稀釋毛利＋客戶信用擔保放大＋CEO 交接與合規審查風險」。",
+        "longTermNoise10y": "2030 年遠期兆美元 AI 資本開支願景或單一競爭架構長期取代，與未來 4 季毛利／收現定價節奏不同步，不可拿遠期宏大敘事替短期現金流品質背書。",
+        "consensusExpectation": "賣方與法說共識預期 Q4 營收約 1,300 億美元（基準 NTM 假設 5,750 億美元、EPS 12.27 美元），但資金對 71%–72% 毛利指引反應猶疑。",
+        "setupCrowding": "正規收盤 155.46 美元距離本篇 NTM 20x 基準 245.41 美元仍有空間，且盤後反彈後隨即遭遇大盤去槓桿拋壓，屬於「獲利仍在但倍數遭治理與利率擠壓」的非擁擠位階。",
+        "linearExtrapolationRisk": "多頭風險在於把管理層「FY28 營收上修至 75%」直接線性外推卻忽略 5,180 億美元供應與租賃承諾；空頭風險則是只看 Q4 毛利下修 2.8 個百分點就外推 AI 需求崩盤。"
+      },
+      "earningsQuality": {
+        "periodLabel": "FY2027 Q3（截至 2026-10-25，8-K Ex99.3）＋ TTM 現金流重建",
+        "gaapOperatingIncomeM": 77520.0,
+        "economicOperatingIncomeM": 77520.0,
+        "sbcM": 7675.0,
+        "ttmOcfM": 158863.0,
+        "ttmFcfM": 148572.0,
+        "fcfConversionPct": 73.9,
+        "oneOffAdjustments": "Q3 稅後淨利含 17.67 億美元投資評價收益及衍生工具損益（淨其他合計 14.97 億美元）；本欄保留 GAAP 營業利益 775.20 億美元並排除業外評價收益，FY27 非 GAAP 口徑亦已保留全部股權薪酬（TTM SBC 76.75 億美元不重複加回）。",
+        "keyNote": "Q3 營收 1,158.44 億美元（+103.2% YoY）、營業利益率高達 66.9%；惟 9 個月購買股權證券達 581 億美元不扣於公司口徑 FCF，且應收帳款跳升至 810.33 億美元（DSO 64 天），資本配置與客戶回款必須一併追蹤。"
+      },
+      "segmentBridge": [
+        {
+          "segment": "Hyperscale 資料中心",
+          "revenueM": 60100.0,
+          "yoyPct": null,
+          "direction": "順風",
+          "driverAndOffset": "佔 Q3 總營收逾五成，雲端巨頭 AI 訓練與推論擴建仍是核心現金引擎，支撐高單季規模與 Q4 1,300 億美元展望。"
+        },
+        {
+          "segment": "AI Clouds／工業／企業資料中心",
+          "revenueM": 47500.0,
+          "yoyPct": 195.0,
+          "direction": "中性",
+          "driverAndOffset": "雖創 195% 高速成長並與超大規模客戶共振，但包含 Neocloud 等信用條件較弱客群，擴大長期付款與 1,180 億美元條件擔保曝險。"
+        },
+        {
+          "segment": "Edge Computing（工作站與邊緣）",
+          "revenueM": 8200.0,
+          "yoyPct": 42.0,
+          "direction": "中性",
+          "driverAndOffset": "年增 42% 維持雙位數擴張，但營收僅佔比約 7%，難以單獨對沖資料中心毛利率由 74.8% 滑落至 71%–72% 的整機系統成本逆風。"
+        }
+      ],
+      "unitEconomics": [
+        {
+          "metric": "Q4 指引實質週均動能（+1 週校準）",
+          "value": "季增 +12.2% 實為週均 +4.2%",
+          "interpretation": "Q4 財測 1,300 億美元含額外第 14 週天數紅利，扣除日曆效應後呈溫和階梯爬坡而非線性跳增，需慎防單季表面數字誤判。"
+        },
+        {
+          "metric": "供應承諾與信用擔保覆蓋度",
+          "value": "基礎承諾 5,180 億美元 ＋ 條件擔保 1,180 億美元",
+          "interpretation": "跨期採購與未開始資料中心租賃佔比龐大，對照 535.12 億美元現金短投、323.71 億美元債務與 1,485.72 億美元 TTM FCF，高度仰賴未來兩年客戶正常拉貨與履約付款。"
+        }
+      ],
+      "callCoverage": {
+        "transcriptStatus": "partial_clips",
+        "toneSummary": "已完整核對官方 CFO 財務評論與補充表，並比對公開法說片段（代理 CEO 揭露 Rubin 首季近 200 億美元、FY28 成長預期約 75%），惟完整官方法說 Q&A 逐字稿尚未釋出。",
+        "unansweredQuestions": [
+          "Rubin 爬坡期毛利率於 71%–72% 落底後，HBM 與系統機櫃成本轉嫁的時間表為何？",
+          "兩大直接客戶占應收帳款 18% 與 17%，延長付款條款與 320 億美元 Neocloud 協議的信用減損機率如何定價？",
+          "董事會 11/8 獨立調查與永久 CEO 接班人選對主權基金／出口合規訂單的實際影響？"
+        ]
+      },
+      "reverseValuation": {
+        "currentPrice": 155.46,
+        "ntmBaseEps": 12.270351239669422,
+        "impliedForwardPe": 12.669563972823022,
+        "earningsYieldPct": 7.89293145482402,
+        "erpVs10yPct": 2.85293145482402,
+        "baseGrossMarginForReverse": 0.715,
+        "implied4yRevCagrBaseMargin": 0.16531472057104113,
+        "implied4yRevCagrStressMargin": 0.23371740728616713,
+        "implied4yRevCagrFromNtmSeed": 0.02874858528375626,
+        "verdictNote": "現價 155.46 美元隱含 NTM 本益比 12.67 倍、盈餘殖利率 7.89%（高出 10Y 美債 +2.85%）。若以 15 倍終值 P/E、10% 折現率與 85% FCF 轉化率逆推：從 TTM 3,618 億美元起算在 71.5% 基準毛利僅需 4 年營收年增 16.5%；若改以 NTM 5,750 億美元作起點，僅需續增 2.9% 即支撐現價。"
+      },
+      "valuationAnchors": {
+        "historicalPeBand": "近 5 年 NTM P/E 中樞約 25x–35x，下行恐慌折價區約 18x–22x；本次 NTM 基準採保守 20x、現價隱含約 12.7x。",
+        "peers": [
+          {
+            "ticker": "AMD",
+            "fwdPe": 50.45,
+            "revGrowthNote": "NTM 基準營收 800 億美元（大幅擴張期）",
+            "marginNote": "模型毛利 56% / FCF 轉化仍在爬坡",
+            "relativeNote": "同期間 AMD 收盤 534.06 對應 NTM 基準 EPS 10.59 約 50.4x；NVDA 隱含 12.7x 具顯著倍數保護。"
+          },
+          {
+            "ticker": "MSFT",
+            "fwdPe": 25.24,
+            "revGrowthNote": "雲端與 AI 應用端雙位數穩健擴張",
+            "marginNote": "模型毛利 66.5% / 輕負債高現金流",
+            "relativeNote": "同期間 MSFT 收盤 523.88 對應 NTM EPS 20.76 約 25.2x；市場對下游雲端平台給出近兩倍於 NVDA 的耐久倍數溢價。"
+          },
+          {
+            "ticker": "MU",
+            "fwdPe": 6.02,
+            "revGrowthNote": "HBM 與高價週期強彈（NTM 2,500 億美元假設）",
+            "marginNote": "週期高峰毛利 75%（具高度均值回歸風險）",
+            "relativeNote": "記憶體股僅交易 6x 反映市場擔心週期反轉；NVDA 介於軟體耐久與記憶體週期之間。"
+          }
+        ],
+        "multipleJustification": "20x NTM 基準倍數較過去 AI 主升段下修，已計入 5.04% 無風險利率與治理不確定性折價；15x 壓測終值倍數則對應成熟低成長半導體龍頭水準。"
+      },
+      "stressV2": {
+        "seedBasis": "ttm_conservative",
+        "inputs": {
+          "seedRevenueM": 361808.0,
+          "years": 4,
+          "annualRevenueGrowth": 0.1,
+          "grossMargin": 0.6,
+          "opexRatio": 0.12,
+          "netOtherM": 0.0,
+          "taxRate": 0.22,
+          "initialSharesM": 24200.0,
+          "annualDilution": 0.005,
+          "terminalPe": 15.0,
+          "discountRate": 0.1,
+          "fcfConversion": 0.85
+        },
+        "fcfInclusiveResult": {
+          "terminalValue": 120.50259296906277,
+          "cumFcfPerShare": 23.97485386199749,
+          "totalExitValue": 144.47744683106026,
+          "pvTerminal": 82.30489240425024,
+          "pvInterimFcf": 18.79616090610056,
+          "presentValue": 101.1010533103508,
+          "annualReturnExFcf": -0.06169413230920673,
+          "annualReturnTotal": -0.01814953818208609,
+          "gapPctVsPrice": -0.3496651658925074
+        },
+        "legacyExFcfPv": 82.30489240425024,
+        "fcfPvDelta": 18.796160906100567,
+        "altNtmSeedRevenueM": 575000.0,
+        "altNtmSeedResult": {
+          "terminalValue": 191.50762547320983,
+          "cumFcfPerShare": 38.10181358800402,
+          "totalExitValue": 229.60943906121383,
+          "pvTerminal": 130.80228500321687,
+          "pvInterimFcf": 29.871623958032497,
+          "presentValue": 160.67390896124937,
+          "annualReturnExFcf": 0.053517737581392666,
+          "annualReturnTotal": 0.10240904676781426,
+          "gapPctVsPrice": 0.033538588455225504
+        },
+        "matrix2d": {
+          "growthRates": [
+            0.0,
+            0.1,
+            0.15
+          ],
+          "grossMargins": [
+            0.6,
+            0.65,
+            0.715
+          ],
+          "cells": [
+            [
+              {
+                "growth": 0.0,
+                "grossMargin": 0.6,
+                "year4Eps": 5.486992826950016,
+                "terminalValue": 82.30489240425024,
+                "pvTerminal": 56.21534895447732,
+                "pvInterimFcf": 14.90415418658106,
+                "presentValue": 71.11950314105837,
+                "gapPct": -0.5425221719988527,
+                "annualReturnTotal": -0.10198362854974918
+              },
+              {
+                "growth": 0.0,
+                "grossMargin": 0.65,
+                "year4Eps": 6.05855457975731,
+                "terminalValue": 90.87831869635964,
+                "pvTerminal": 62.07111447056871,
+                "pvInterimFcf": 16.456670247683252,
+                "presentValue": 78.52778471825197,
+                "gapPct": -0.4948682315820664,
+                "annualReturnTotal": -0.07945947488931882
+              },
+              {
+                "growth": 0.0,
+                "grossMargin": 0.715,
+                "year4Eps": 6.801584858406791,
+                "terminalValue": 102.02377287610186,
+                "pvTerminal": 69.68360964148751,
+                "pvInterimFcf": 18.474941127116104,
+                "presentValue": 88.15855076860362,
+                "gapPct": -0.4329181090402443,
+                "annualReturnTotal": -0.052447708302295726
+              }
+            ],
+            [
+              {
+                "growth": 0.1,
+                "grossMargin": 0.6,
+                "year4Eps": 8.033506197937518,
+                "terminalValue": 120.50259296906277,
+                "pvTerminal": 82.30489240425024,
+                "pvInterimFcf": 18.79616090610056,
+                "presentValue": 101.1010533103508,
+                "gapPct": -0.3496651658925074,
+                "annualReturnTotal": -0.01814953818208609
+              },
+              {
+                "growth": 0.1,
+                "grossMargin": 0.65,
+                "year4Eps": 8.870329760222678,
+                "terminalValue": 133.05494640334015,
+                "pvTerminal": 90.87831869635964,
+                "pvInterimFcf": 20.754094333819367,
+                "presentValue": 111.63241303017901,
+                "gapPct": -0.28192195400631026,
+                "annualReturnTotal": 0.006477352124864666
+              },
+              {
+                "growth": 0.1,
+                "grossMargin": 0.715,
+                "year4Eps": 9.958200391193383,
+                "terminalValue": 149.37300586790073,
+                "pvTerminal": 102.02377287610186,
+                "pvInterimFcf": 23.299407789853817,
+                "presentValue": 125.32318066595568,
+                "gapPct": -0.19385577855425407,
+                "annualReturnTotal": 0.03601079532385154
+              }
+            ],
+            [
+              {
+                "growth": 0.15,
+                "grossMargin": 0.6,
+                "year4Eps": 9.596784748040747,
+                "terminalValue": 143.9517712206112,
+                "pvTerminal": 98.32099666731179,
+                "pvInterimFcf": 21.025577586504113,
+                "presentValue": 119.3465742538159,
+                "gapPct": -0.23230043577887627,
+                "annualReturnTotal": 0.023973032742650613
+              },
+              {
+                "growth": 0.15,
+                "grossMargin": 0.65,
+                "year4Eps": 10.596449825961658,
+                "terminalValue": 158.94674738942487,
+                "pvTerminal": 108.56276715349011,
+                "pvInterimFcf": 23.215741918431625,
+                "presentValue": 131.77850907192175,
+                "gapPct": -0.1523317311725091,
+                "annualReturnTotal": 0.049656446393990805
+              },
+              {
+                "growth": 0.15,
+                "grossMargin": 0.715,
+                "year4Eps": 11.896014427258843,
+                "terminalValue": 178.44021640888263,
+                "pvTerminal": 121.87706878552191,
+                "pvInterimFcf": 26.06295554993739,
+                "presentValue": 147.9400243354593,
+                "gapPct": -0.048372415184231965,
+                "annualReturnTotal": 0.08045690998373844
+              }
+            ]
+          ]
+        }
+      },
+      "sources": [
+        {
+          "label": "SEC 8-K Ex99.2：FY27 Q3 CFO 評論、毛利指引與跨期承諾",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/q3fy27cfocommentary.htm"
+        },
+        {
+          "label": "SEC 8-K Ex99.3：FY27 Q3 未經審計補充財務表",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000088/supplementalfinancialinfor.htm"
+        },
+        {
+          "label": "FY2026 完整 10-K：TTM 重建年度基數",
+          "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        },
+        {
+          "label": "NVIDIA 官方 11/12 CEO 交接與 11/17 出口監督委員會公告",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-board-of-directors-establishes-national-security-and-export-control-oversight-committee"
+        }
+      ]
+    }
+  ]
+}

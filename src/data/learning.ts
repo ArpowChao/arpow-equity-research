@@ -22,6 +22,7 @@ const terms: Record<string,string> = {
 };
 const termPattern = new RegExp(`(?<![A-Za-z])(?:${Object.keys(terms).sort((a,b)=>b.length-a.length).join('|')})(?![A-Za-z])`, 'g');
 export const chinese = (text:string) => text.replace(termPattern,v=>terms[v]??v);
+export const naturalProse = (text:string) => text;
 export const termLabel = (t:string) => terms[t] ? `${t}（${terms[t]}）` : t;
 const num=(v:number)=>v.toLocaleString('zh-TW',{maximumFractionDigits:8});
 const usd=(v:number)=>`${v.toFixed(2)} 美元／股`;

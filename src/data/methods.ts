@@ -2,6 +2,19 @@ import { batchMethods } from './methods.batch.generated';
 export const methods = [
   ...batchMethods,
   {
+    slug: 'buyside-v2-playbook',
+    title: 'v2 買方五模組研究標準（含 FCF 含權與逆推定價）',
+    summary: '把故事線 Setup、分部加減帳、同業與歷史錨點、含 4 年 FCF 的二維雙殺壓測與可證偽門檻接成一套決策模型。',
+    formula: 'PV = Σ(t=1..4)[FCF_per_share_t / (1 + r)^t] + (Year4_EPS × Terminal_PE) / (1 + r)^4；Implied CAGR 解 PV = 市價',
+    sections: [
+      ['1. 為什麼修正 v1 Track B？', 'v1 舊式壓力測試僅將第 4 年終值 EPS×P/E 折現，同時假設年稀釋 0.5% 與零股利，形同直接蒸發公司未來四年賺得的全部自由現金流。以 NVIDIA 為例，即使採保守 85% 現金轉化率，4 年期間 FCF 現值高達 18.80 美元／股，佔總現值近二成；忽略期間現金流會系統性低估成熟與現金牛企業。'],
+      ['2. 逆推市場定價（Reverse Valuation）與雙重起點', '與其直接設定一個主觀目標價，v2 先從今日股價反推隱含 Forward P/E、盈餘殖利率對比 10 年期美債的 ERP，以及支撐現價所需的「4 年營收年複合成長率」。對於高成長轉折股，同時並列「TTM 保守起點」與「NTM 基準起點」，杜絕只因採用過時 TTM 基底而算出失真腰斬的斷崖現象。'],
+      ['3. 二維雙殺矩陣（營收增速 × 毛利率）', '實戰中景氣降溫往往同時衝擊出貨與議價力，只下修毛利率而保留樂觀營收共識會高估防禦性。v2 規定必須由 scripts/valuation_math.py 計算至少 3×3 的「營收年增 × 毛利率」二維矩陣，將最好與最壞路徑攤在同一張熱力表內。'],
+      ['4. 總經折現率與至少兩家同業錨點', '每一篇 v2 報告皆須綁定當期 10Y 名目利率、10Y 實質利率與 HY OAS 信用利差，並同時列出公司自身 5 年 P/E 歷史帶及至少 2 檔直接同業的前瞻本益比對照。'],
+      ['5. 可證偽結論、無八股紀律與 Hermes 自動稽核', '全站統一於頁尾揭露非投資建議警語，個股頁面刪除重複法務車輪話；研究代理（Hermes）須將完整結構寫入 src/data/buyside-v2.json，並通過 tests/validate_v2_methodology.py 的 Decimal 數學驗算方可發布。']
+    ]
+  },
+  {
     slug:'rapid7-economic-ntm', title:'Rapid7：核心ARR修復、SBC與還債後經濟盈餘',
     summary:'先分清核心與非核心ARR，再保留股票／現金薪酬、重整與還債後利息，不以7倍調整EPS直接宣稱便宜。',
     formula:'NTM經濟EPS＝[收入×(非GAAP營益率代理−SBC占比−持續重整準備)＋淨其他收益]×(1−稅)÷未來平均稀釋股數；條件式價值＝EPS×P/E',

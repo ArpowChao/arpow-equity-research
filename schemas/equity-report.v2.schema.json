@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://arpowchao.github.io/arpow-equity-research/schemas/equity-report.v2.schema.json",
+  "title": "Arpow Equity Research Buy-Side Report v2 Schema",
+  "type": "object",
+  "required": ["version", "generatedBy", "items"],
+  "properties": {
+    "version": { "const": "2.0" },
+    "generatedBy": { "type": "string", "minLength": 1 },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/reportV2" }
+    }
+  },
+  "$defs": {
+    "stressResultSummary": {
+      "type": "object",
+      "required": [
+        "terminalValue",
+        "cumFcfPerShare",
+        "totalExitValue",
+        "pvTerminal",
+        "pvInterimFcf",
+        "presentValue",
+        "annualReturnExFcf",
+        "annualReturnTotal",
+        "gapPctVsPrice"
+      ],
+      "properties": {
+        "terminalValue": { "type": "number" },
+        "cumFcfPerShare": { "type": "number" },
+        "totalExitValue": { "type": "number" },
+        "pvTerminal": { "type": "number" },
+        "pvInterimFcf": { "type": "number" },
+        "presentValue": { "type": "number" },
+        "annualReturnExFcf": { "type": ["number", "null"] },
+        "annualReturnTotal": { "type": ["number", "null"] },
+        "gapPctVsPrice": { "type": ["number", "null"] }
+      }
+    },
+    "reportV2": {
+      "type": "object",
+      "required": [
+        "ticker",
+        "company",
+        "asOf",
+        "priceSnapshot",
+        "macroContext",
+        "verdict",
+        "storylineSetup",
+        "earningsQuality",
+        "segmentBridge",
+        "unitEconomics",
+        "callCoverage",
+        "reverseValuation",
+        "valuationAnchors",
+        "stressV2",
+        "sources"
+      ],
+      "properties": {
+        "ticker": { "type": "string", "pattern": "^[A-Z0-9.-]{1,10}$" },
+        "company": { "type": "string", "minLength": 1 },
+        "asOf": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "priceSnapshot": {
+          "type": "object",
+          "required": ["price", "date", "session", "source"],
+          "properties": {
+            "price": { "type": "number", "exclusiveMinimum": 0 },
+            "date": { "type": "string" },
+            "session": { "type": "string" },
+            "source": { "type": "string" }
+          }
+        },
+        "macroContext": {
+          "type": "object",
+          "required": ["asOf", "us10yYieldPct", "real10yTipsPct", "hyOasPct", "marketRegimeNote"],
+          "properties": {
+            "asOf": { "type": "string" },
+            "us10yYieldPct": { "type": "number" },
+            "real10yTipsPct": { "type": "number" },
+            "hyOasPct": { "type": "number" },
+            "marketRegimeNote": { "type": "string", "minLength": 10 }
+          }
+        },
+        "verdict": {
+          "type": "object",
+          "required": ["tier", "oneLiner", "positionDiscipline", "confirmTriggers", "invalidateTriggers"],
+          "properties": {
+            "tier": {
+              "type": "string",
+              "enum": ["高勝率賠率", "觀察待催化", "估值透支迴避", "資訊缺口暫緩"]
+            },
+            "oneLiner": { "type": "string", "minLength": 15, "maxLength": 180 },
+            "positionDiscipline": { "type": "string", "minLength": 8 },
+            "confirmTriggers": {
+              "type": "array",
+              "minItems": 2,
+              "items": { "type": "string", "minLength": 8 }
+            },
+            "invalidateTriggers": {
+              "type": "array",
+              "minItems": 2,
+              "items": { "type": "string", "minLength": 8 }
+            }
+          }
+        },
+        "storylineSetup": {
+          "type": "object",
+          "required": [
+            "tradingNarrative3to6m",
+            "longTermNoise10y",
+            "consensusExpectation",
+            "setupCrowding",
+            "linearExtrapolationRisk"
+          ],
+          "properties": {
+            "tradingNarrative3to6m": { "type": "string", "minLength": 15 },
+            "longTermNoise10y": { "type": "string", "minLength": 10 },
+            "consensusExpectation": { "type": "string", "minLength": 15 },
+            "setupCrowding": { "type": "string", "minLength": 10 },
+            "linearExtrapolationRisk": { "type": "string", "minLength": 15 }
+          }
+        },
+        "earningsQuality": {
+          "type": "object",
+          "required": [
+            "periodLabel",
+            "gaapOperatingIncomeM",
+            "economicOperatingIncomeM",
+            "sbcM",
+            "ttmOcfM",
+            "ttmFcfM",
+            "fcfConversionPct",
+            "oneOffAdjustments",
+            "keyNote"
+          ],
+          "properties": {
+            "periodLabel": { "type": "string" },
+            "gaapOperatingIncomeM": { "type": "number" },
+            "economicOperatingIncomeM": { "type": "number" },
+            "sbcM": { "type": "number" },
+            "ttmOcfM": { "type": "number" },
+            "ttmFcfM": { "type": "number" },
+            "fcfConversionPct": { "type": "number" },
+            "oneOffAdjustments": { "type": "string" },
+            "keyNote": { "type": "string", "minLength": 15 }
+          }
+        },
+        "segmentBridge": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["segment", "revenueM", "yoyPct", "direction", "driverAndOffset"],
+            "properties": {
+              "segment": { "type": "string" },
+              "revenueM": { "type": ["number", "null"] },
+              "yoyPct": { "type": ["number", "null"] },
+              "direction": { "type": "string", "enum": ["順風", "逆風", "中性"] },
+              "driverAndOffset": { "type": "string" }
+            }
+          }
+        },
+        "unitEconomics": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["metric", "value", "interpretation"],
+            "properties": {
+              "metric": { "type": "string" },
+              "value": { "type": "string" },
+              "interpretation": { "type": "string" }
+            }
+          }
+        },
+        "callCoverage": {
+          "type": "object",
+          "required": ["transcriptStatus", "toneSummary", "unansweredQuestions"],
+          "properties": {
+            "transcriptStatus": {
+              "type": "string",
+              "enum": ["full_qa", "partial_clips", "press_release_only"]
+            },
+            "toneSummary": { "type": "string" },
+            "unansweredQuestions": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string" }
+            }
+          }
+        },
+        "reverseValuation": {
+          "type": "object",
+          "required": [
+            "currentPrice",
+            "ntmBaseEps",
+            "impliedForwardPe",
+            "earningsYieldPct",
+            "erpVs10yPct",
+            "implied4yRevCagrBaseMargin",
+            "implied4yRevCagrStressMargin",
+            "verdictNote"
+          ],
+          "properties": {
+            "currentPrice": { "type": "number" },
+            "ntmBaseEps": { "type": "number" },
+            "impliedForwardPe": { "type": "number" },
+            "earningsYieldPct": { "type": "number" },
+            "erpVs10yPct": { "type": "number" },
+            "baseGrossMarginForReverse": { "type": "number" },
+            "implied4yRevCagrBaseMargin": { "type": "number" },
+            "implied4yRevCagrStressMargin": { "type": "number" },
+            "implied4yRevCagrFromNtmSeed": { "type": "number" },
+            "verdictNote": { "type": "string", "minLength": 15 }
+          }
+        },
+        "valuationAnchors": {
+          "type": "object",
+          "required": ["historicalPeBand", "peers", "multipleJustification"],
+          "properties": {
+            "historicalPeBand": { "type": "string" },
+            "peers": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "object",
+                "required": ["ticker", "fwdPe", "revGrowthNote", "marginNote", "relativeNote"],
+                "properties": {
+                  "ticker": { "type": "string" },
+                  "fwdPe": { "type": "number" },
+                  "revGrowthNote": { "type": "string" },
+                  "marginNote": { "type": "string" },
+                  "relativeNote": { "type": "string" }
+                }
+              }
+            },
+            "multipleJustification": { "type": "string" }
+          }
+        },
+        "stressV2": {
+          "type": "object",
+          "required": [
+            "seedBasis",
+            "inputs",
+            "fcfInclusiveResult",
+            "legacyExFcfPv",
+            "fcfPvDelta",
+            "matrix2d"
+          ],
+          "properties": {
+            "seedBasis": { "type": "string", "enum": ["ntm_base", "ttm_conservative"] },
+            "inputs": {
+              "type": "object",
+              "required": [
+                "seedRevenueM",
+                "years",
+                "annualRevenueGrowth",
+                "grossMargin",
+                "opexRatio",
+                "netOtherM",
+                "taxRate",
+                "initialSharesM",
+                "annualDilution",
+                "terminalPe",
+                "discountRate",
+                "fcfConversion"
+              ],
+              "properties": {
+                "seedRevenueM": { "type": "number" },
+                "years": { "type": "integer", "minimum": 1 },
+                "annualRevenueGrowth": { "type": "number" },
+                "grossMargin": { "type": "number" },
+                "opexRatio": { "type": "number" },
+                "netOtherM": { "type": "number" },
+                "taxRate": { "type": "number" },
+                "initialSharesM": { "type": "number" },
+                "annualDilution": { "type": "number" },
+                "terminalPe": { "type": "number" },
+                "discountRate": { "type": "number" },
+                "fcfConversion": { "type": "number" }
+              }
+            },
+            "fcfInclusiveResult": { "$ref": "#/$defs/stressResultSummary" },
+            "legacyExFcfPv": { "type": "number" },
+            "fcfPvDelta": { "type": "number" },
+            "altNtmSeedRevenueM": { "type": "number" },
+            "altNtmSeedResult": { "$ref": "#/$defs/stressResultSummary" },
+            "matrix2d": {
+              "type": "object",
+              "required": ["growthRates", "grossMargins", "cells"],
+              "properties": {
+                "growthRates": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" } },
+                "grossMargins": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" } },
+                "cells": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "object",
+                      "required": ["growth", "grossMargin", "year4Eps", "terminalValue", "pvTerminal", "pvInterimFcf", "presentValue", "gapPct"],
+                      "properties": {
+                        "growth": { "type": "number" },
+                        "grossMargin": { "type": "number" },
+                        "year4Eps": { "type": "number" },
+                        "terminalValue": { "type": "number" },
+                        "pvTerminal": { "type": "number" },
+                        "pvInterimFcf": { "type": "number" },
+                        "presentValue": { "type": "number" },
+                        "gapPct": { "type": ["number", "null"] },
+                        "annualReturnTotal": { "type": ["number", "null"] }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["label", "url"],
+            "properties": {
+              "label": { "type": "string" },
+              "url": { "type": "string", "pattern": "^https://" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

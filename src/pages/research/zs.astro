@@ -2,17 +2,74 @@
 import Base from '../../layouts/Base.astro';
 import AnalysisSteps from '../../components/AnalysisSteps.astro';
 import ModelSummary from '../../components/ModelSummary.astro';
+import BuySideBrief from '../../components/BuySideBrief.astro';
 import selection from '../../data/selection-14.json';
 const zs=selection.rows.find(m=>m.ticker==='ZS')!;
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <Base title="ZS｜Zscaler 條件式研究">
- <div class="shell section" style="max-width:960px">
-  <div class="eyebrow">ZS · 指定資料集新增條件模型</div>
-  <h1>Zscaler</h1>
-  <p><b>怎麼賺錢：</b>{zs.business}</p><p>{zs.summary}</p>
+ <div class="shell section zs-shell">
+  <div class="zs-hero">
+    <div>
+      <div class="eyebrow">ZS · 條件研究追蹤</div>
+      <h1>Zscaler</h1>
+      <p><b>怎麼賺錢：</b>{zs.business}</p>
+      <p>{zs.summary}</p>
+    </div>
+    <div class="live-quote card" data-live-quote data-ticker="ZS" data-endpoint={`${base}data/live-quotes.json`} aria-live="polite">
+      <div class="quote-heading"><span>最新可得行情</span><b data-live-status>讀取中</b></div>
+      <strong data-live-price>—</strong>
+      <small data-live-change>正在取得最新行情…</small>
+      <small data-live-time></small>
+      <small class="quote-disclaimer">以實際成交時間為準 · 非交易所即時報價</small>
+    </div>
+  </div>
+  <BuySideBrief ticker="ZS" />
   <ModelSummary ticker="ZS" />
   <AnalysisSteps compact />
   <p><b>接下來驗證：</b>{zs.watch} {zs.risk}</p>
-  <p>目前是條件研究，不等同納入 26 檔既有 SEC 追蹤清單。</p>
+  <p class="muted">行情快照已透過 update_live_quotes.py 自動納入 Zscaler，並保持與 SEC 檔案口徑分離。</p>
  </div>
+ <script>
+  const liveCard = document.querySelector<HTMLElement>('[data-live-quote]');
+  const phaseLabels: Record<string, string> = {'pre-market':'盤前','regular':'正規盤','post-market':'盤後','closed':'收盤'};
+  async function refreshLiveQuote() {
+    if (!liveCard) return;
+    const endpoint = liveCard.dataset.endpoint;
+    const ticker = liveCard.dataset.ticker;
+    const status = liveCard.querySelector<HTMLElement>('[data-live-status]');
+    const price = liveCard.querySelector<HTMLElement>('[data-live-price]');
+    const change = liveCard.querySelector<HTMLElement>('[data-live-change]');
+    const time = liveCard.querySelector<HTMLElement>('[data-live-time]');
+    if (!endpoint || !ticker || !status || !price || !change || !time) return;
+    try {
+      const response = await fetch(`${endpoint}?v=${Date.now()}`, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const payload = await response.json();
+      const quote = payload?.quotes?.[ticker];
+      if (!quote || !Number.isFinite(Number(quote.price))) throw new Error('quote unavailable');
+      const current = Number(quote.price);
+      const delta = Number(quote.change);
+      const percent = Number(quote.changePercent);
+      status.textContent = phaseLabels[quote.phase] ?? '最新成交';
+      price.textContent = `$${current.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      change.textContent = `${delta >= 0 ? '+' : ''}${delta.toFixed(2)}（${percent >= 0 ? '+' : ''}${percent.toFixed(2)}%）· 相對${quote.phase === 'regular' ? '前收' : '正規盤收盤'}`;
+      change.classList.remove('positive', 'negative');
+      change.classList.add(delta >= 0 ? 'positive' : 'negative');
+      const observed = new Date(quote.observedAt).toLocaleString('zh-TW', { timeZone: quote.exchangeTimezone || 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hour12: false });
+      time.textContent = `行情 ${observed}（美東）`;
+      liveCard.dataset.state = 'ready';
+    } catch {
+      status.textContent = '待下次排程同步';
+      price.textContent = '—';
+      change.textContent = '靜待下次 build / quote 更新後顯示最新可得行情。';
+      time.textContent = '';
+      liveCard.dataset.state = 'error';
+    }
+  }
+  refreshLiveQuote();
+ </script>
+ <style>
+  .zs-shell{max-width:980px}.zs-hero{display:grid;grid-template-columns:1fr 310px;gap:28px;align-items:start;margin-bottom:20px}.live-quote{padding:22px 24px;background:#101c2c;color:#fff;border-color:#101c2c;box-shadow:0 18px 42px rgba(16,28,44,.18)}.quote-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.quote-heading span{color:#b9c7da;font-size:13px}.quote-heading b{padding:4px 8px;border:1px solid rgba(255,255,255,.22);border-radius:999px;color:#b9d1ff;font:600 11px 'IBM Plex Mono'}.live-quote>strong{display:block;margin:7px 0 1px;font:600 38px 'IBM Plex Mono'}.live-quote small{display:block;color:#b9c7da}.live-quote small.positive{color:#65d6ad}.live-quote small.negative{color:#ff9d95}.live-quote .quote-disclaimer{margin-top:10px;padding-top:9px;border-top:1px solid rgba(255,255,255,.14);font-size:11px}@media(max-width:820px){.zs-hero{grid-template-columns:1fr}}
+ </style>
 </Base>
